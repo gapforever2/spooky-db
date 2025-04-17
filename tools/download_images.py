@@ -2,8 +2,8 @@ from datetime import datetime, date, timedelta
 import json
 import urllib.request
 
-base_big = 'http://faforever.com/faf/unitsDB/icons/big/{0}_icon.png'
-base_small = 'http://faforever.com/faf/unitsDB/icons/small/{0}_{1}.png'
+base_big = 'http://faforever.com/faf/unitsDB/icons/big/{0}_icon.png' # TODO: need gap files
+base_small = 'http://faforever.com/faf/unitsDB/icons/small/{0}_{1}.png' # TODO: need gap files
 unit_index = 'd:/code/personal/html/unitdb/src/data/index.json'
 
 index = json.loads(open(unit_index).read())

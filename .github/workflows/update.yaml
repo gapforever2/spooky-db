@@ -33,27 +33,18 @@ jobs:
             - name: Checkout spooky db code
               uses: actions/checkout@v4
               with:
-                repository: FAForever/spooky-db
+                repository: gapforever2/spooky-db
                 ref: master
-                
-            - name: Checkout FAForever blueprints and lua files
+
+            - name: Checkout GAP Forever blueprints and lua files
               uses: actions/checkout@v4
               with:
-                  repository: FAForever/fa
+                  repository: gapforever2/fa
                   path: fa
                   sparse-checkout-cone-mode: false
                   sparse-checkout: |
                       *.bp
                       *.lua
-
-            - name: Checkout Nomads blueprints and lua files
-              uses: actions/checkout@v4
-              with:
-                  repository: FAForever/nomads
-                  path: nomads
-                  sparse-checkout-cone-mode: false
-                  sparse-checkout: |
-                      *.bp
 
             # Prepare the Lua context
 
@@ -77,7 +68,6 @@ jobs:
                   mkdir tools/temp/lua
 
                   mv -f fa/units/* tools/temp/units
-                  mv -f nomads/units/* tools/temp/units
                   mv fa/lua/version.lua tools/temp/lua/version.lua
 
             - name: Run the script
@@ -105,13 +95,6 @@ jobs:
                   hash=`git rev-parse --verify HEAD`
                   echo "hash=$hash" >> $GITHUB_OUTPUT
 
-            - name: Retrieve commit hash of Nomads repository
-              id: hashNomads
-              working-directory: nomads
-              run: |
-                  hash=`git rev-parse --verify HEAD`
-                  echo "hash=$hash" >> $GITHUB_OUTPUT
-
             - name: Update repository
               working-directory: app/data
               run: |
@@ -122,15 +105,14 @@ jobs:
                   fi
 
                   # Configure git
-                  git config user.email "administrator@faforever.com"
-                  git config user.name "FAForever"
+                  git config user.email "109466410+gapforever2@users.noreply.github.com"
+                  git config user.name "GapForever Offical"
 
                   # Stage, commit and push the changes
                   git stage .
                   git commit -m 'Update unit blueprint information
 
                   Commit hash of FA repository: ${{ steps.hashFA.outputs.hash }}
-                  Commit hash of Nomads repository: ${{ steps.hashNomads.outputs.hash }}'
 
                   git push origin HEAD:master
 

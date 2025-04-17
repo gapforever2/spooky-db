@@ -41,7 +41,7 @@ jobs:
             - name: Checkout spooky db code
               uses: actions/checkout@v4
               with:
-                  repository: FAForever/spooky-db
+                  repository: gapforever2/spooky-db
                   path: gh-pages
                   ref: gh-pages
 
@@ -67,8 +67,8 @@ jobs:
                   fi
 
                   # Configure git
-                  git config user.email "administrator@faforever.com"
-                  git config user.name "FAForever"
+                  git config user.email "109466410+gapforever2@users.noreply.github.com"
+                  git config user.name "GapForever Offical"
 
                   # Stage, commit and push the changes
                   git stage .

@@ -5,7 +5,7 @@ local cmn = require("common")
 function usage(msg)
     cmn.usageHelper(
         string.format("Usage: %s path/to/version.lua", arg[0]),
-        "Get FAForever version from version.lua",
+        "Get GAP Forever version from version.lua",
         msg
     )
 end
