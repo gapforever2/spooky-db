@@ -1,33 +1,40 @@
-unitdb [![Build Status](https://travis-ci.org/spooky/unitdb.svg?branch=master)](https://travis-ci.org/spooky/unitdb)
-======
+# GAPForever | Units (spooky-db)
 
-Forged Alliance Forever unit database remake. Uses Angular.js + some hack scripts to extract the data from unit blueprint files.
+https://github.com/gapforever2/spooky-db/workflows/deploy/badge.svg
 
-You can see the app [here](http://spooky.github.io/unitdb).
+[![Deploy Status](https://github.com/gapforever2/spooky-db/workflows/deploy/badge.svg)](https://github.com/gapforever2/spooky-db/actions/workflows/deploy.yaml)
 
-images
-------
-cb260 - http://cb260.deviantart.com/
+GAF Unit Database fork of FAF Unit Database. Uses Angular.js + some hack scripts to extract the data from unit blueprint files.
 
-fonts
------
-Zeroes Three - http://www.larabiefonts.com/  
-Muli - http://www.newtypography.co.uk/
+You can see the app [here](https://gapforever2.github.io/spooky-db/#/).
 
+## License
 
-license
--------
-http://www.wtfpl.net/
+- http://www.wtfpl.net/
 
+## Contributing
 
-contributing
-------------
-All contributions are welcome, though I can't guarantee to pull all of them in. If you do want to contribute,
-please create a separate branch and a pull request for that. It'll be a bit easier for me to keep the repo tidy that way.  
-Thanks in advance.
+All contributions are welcome, though I can't guarantee to pull all of them in. If you do want to contribute, please create a separate branch and a pull request for that. It'll be a bit easier for me to keep the repo tidy that way. Thanks in advance.
 
-Running the Application on MAC OS X
------------------------------------
+## Assets
+
+### Images
+
+- cb260 - http://cb260.deviantart.com/
+
+### Fonts
+
+- Zeroes Three - http://www.larabiefonts.com/
+- Muli - http://www.newtypography.co.uk/
+
+## Dev Notes
+
+Where to find the game assets:
+- Unit Icons: `c:\ProgramData\gapforever\gamedata\textures.nx2\textures\ui\common\icons\units`
+- Strategic Icons: `c:\ProgramData\gapforever\gamedata\textures.nx2\textures\ui\icons_strategic`
+
+## Running the Application on MAC OS X
+
 Necessary packages that need to be installed beforehand:
 
 ```shell
@@ -44,18 +51,45 @@ grunt serve
 
 View the program in dist directory.
 
-Running with Docker (on Linux)
-------------------------------
+## Running with Docker (on Linux)
 
-Prepare
+Prepare:
+
 ```shell
-git clone "https://github.com/spooky/unitdb.git"
-cd unitdb
-docker build -t unitdb-server .
-```
-Starting the server
-```shell
-docker run --network=host -v $(pwd):/unitdb -it unitdb-server
+git clone "https://github.com/gapforever2/spooky-db.git"
+cd spooky-db
+docker build -t spooky-db-server .
 ```
 
-Open http://localhost:9000
+Starting the server:
+
+```shell
+docker run --network=host -v $(pwd):/spooky-db -it spooky-db-server
+```
+
+To open the app navigate to http://localhost:9000
+
+## Debug workflows locally
+
+### Prerequisites
+
+1. [Github CLI](https://github.com/cli/cli) – Verify that Github CLI is installed and available via `gh --version`. You need to authorize yourself via `gh login`. Once authorised, verify that `gh auth token` returns a value. You'll need that token to authorize yourself through `act`.
+2. [Act](https://github.com/nektos/act) – Verify that act is installed and available via `act --version`. There are [various ways](https://nektosact.com/installation/index.html) to install it via a tool, downloading the artifact that matches your OS and adding it to the path is sufficient however.
+3. [Docker](https://www.docker.com/products/docker-desktop/) – Verify that docker is installed and available via `docker --version`.  Act uses docker containers to containerize your workflows. You'll need to start the `Docker Desktop` application to guarantee that the docker engine is running.
+
+### Debug a workflow
+
+The tool `act` only works on workflows that have the `push` event. Add the `push` event to the workflow that you want to test if it is missing.
+
+```bash
+#    # Non-standard image that has `pwsh` installed            # Workflow to debug               # Token to authorize
+act -P 'ubuntu-latest=ghcr.io/catthehacker/ubuntu:pwsh-22.04' -W '.github/workflows/build.yaml' -s GITHUB_TOKEN="$(gh auth token)"
+
+# for repeated tests                                                                             # do not pull (-p) the docker image each time
+act -P 'ubuntu-latest=ghcr.io/catthehacker/ubuntu:pwsh-22.04' -W '.github/workflows/build.yaml' -s GITHUB_TOKEN="$(gh auth token)" -p=false
+```
+
+#### Useful references
+
+- [Documentation about act](https://nektosact.com/introduction.html)
+- [List of all official docker images](https://github.com/catthehacker/docker_images)
