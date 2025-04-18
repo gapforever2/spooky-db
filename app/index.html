@@ -1,82 +1,69 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>GAP Forever Units</title>
-        <meta name="description" content="Forged Alliance Forever Unit Database">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
-        <link rel="apple-touch-icon" href="apple-touch-icon-precomposed.png" />
+<html lang="en"> <!--<![endif]-->
 
-        <link rel="manifest" href="site.webmanifest">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GAP Forever Units</title>
+    <meta name="description" content="Forged Alliance Forever Unit Database">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="apple-touch-icon-precomposed.png" />
 
-        <!-- build:css css/vendor.css -->
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/foundation.css">
-        <!-- endbuild -->
+    <link rel="manifest" href="site.webmanifest">
 
-        <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet" type="text/css">
+    <!-- build:css css/vendor.css -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/foundation.css">
+    <!-- endbuild -->
 
-        <!-- build:css(.tmp) css/main.css -->
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/strategic_sprites.css">
-        <link rel="stylesheet" href="css/units_sprites.css">
-        <link rel="stylesheet" href="css/ui_sprites.css">
-        <!-- endbuild -->
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet" type="text/css">
 
-        <!-- build:js js/modernizr.js -->
-        <script src="js/vendor/modernizr-custom-3.6.0.js"></script>
-        <!-- endbuild -->
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+    <!-- build:css(.tmp) css/main.css -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/strategic_sprites.css">
+    <link rel="stylesheet" href="css/units_sprites.css">
+    <link rel="stylesheet" href="css/ui_sprites.css">
+    <!-- endbuild -->
 
-        <ng-view></ng-view>
+    <!-- build:js js/modernizr.js -->
+    <script src="js/vendor/modernizr-custom-3.6.0.js"></script>
+    <!-- endbuild -->
+</head>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <!-- build:js js/jquery.js -->
-        <script>window.jQuery || document.write('<script src="bower_components/jquery/dist/jquery.js"><\/script>')</script>
-        <!-- endbuild -->
+<body>
+    <ng-view></ng-view>
 
-        <!-- build:js js/legacy.js -->
-        <!--[if lt IE 9]>
-            <script src="bower_components/es5-shim/es5-shim.js"></script>
-            <script src="bower_components/json3/lib/json3.min.js"></script>
-        <![endif]-->
-        <!-- endbuild -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- build:js js/jquery.js -->
+    <script>window.jQuery || document.write('<script src="bower_components/jquery/dist/jquery.js"><\/script>')</script>
+    <!-- endbuild -->
 
-        <!-- build:js js/vendor.js -->
-        <script src="bower_components/angular/angular.js"></script>
-        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-        <script src="bower_components/angular-route/angular-route.js"></script>
-        <script src="bower_components/underscore/underscore.js"></script>
-        <script src="bower_components/angular-underscore/angular-underscore.js"></script>
-        <!-- endbuild -->
+    <!-- build:js js/vendor.js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/angular-underscore/angular-underscore.js"></script>
+    <!-- endbuild -->
 
-        <!-- build:js js/scripts.js -->
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/dps.js"></script>
-        <script src="js/UnitDecorator.js"></script>
-        <script src="js/services.js"></script>
-        <script src="js/filters.js"></script>
-        <script src="js/directives.js"></script>
-        <script src="js/controllers.js"></script>
-        <!-- endbuild -->
+    <!-- build:js js/scripts.js -->
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/dps.js"></script>
+    <script src="js/UnitDecorator.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/controllers.js"></script>
+    <!-- endbuild -->
 
-        <script id="init" data-src="data/index.json" data-src-fat="data/index.fat.json">$.get($('#init').data('src'+(window.location.search.search("fat") == -1 ? '' : 'Fat')), function(d){unitDb.start('unitDb', typeof d == 'string' ? JSON.parse(d) : d)})</script>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46228146-1"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'UA-46228146-1');
-        </script>
-    </body>
+    <script id="init" data-src="data/index.json" data-src-fat="data/index.fat.json">
+        $.get($('#init').data(
+            'src' + (window.location.search.search("fat") == -1 ? '' : 'Fat')),
+            function (d) { unitDb.start('unitDb', typeof d == 'string' ? JSON.parse(d) : d) }
+        )
+    </script>
+</body>
+
 </html>
