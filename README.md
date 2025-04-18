@@ -1,7 +1,5 @@
 # GAPForever | Units (spooky-db)
 
-https://github.com/gapforever2/spooky-db/workflows/deploy/badge.svg
-
 [![Deploy Status](https://github.com/gapforever2/spooky-db/workflows/deploy/badge.svg)](https://github.com/gapforever2/spooky-db/actions/workflows/deploy.yaml)
 
 GAF Unit Database fork of FAF Unit Database. Uses Angular.js + some hack scripts to extract the data from unit blueprint files.
