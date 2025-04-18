@@ -1,2 +1,2 @@
-unit icons:             c:\ProgramData\FAForever\gamedata\textures.nx2\textures\ui\common\icons\units
-strategic icons:    c:\ProgramData\FAForever\gamedata\textures.nx2\textures\ui\icons_strategic 
+unit icons:      c:\ProgramData\gapforever\gamedata\textures.nx2\textures\ui\common\icons\units
+strategic icons: c:\ProgramData\gapforever\gamedata\textures.nx2\textures\ui\icons_strategic
