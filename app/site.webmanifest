@@ -1,6 +1,6 @@
 {
-    "short_name": "faf unit db",
-    "name": "Forged Aliance Forever unit database",
+    "short_name": "GAPForever Units",
+    "name": "Here is the most up-to-date information about each GAPForever unit",
     "start_url": "/",
     "icons": [{
         "src": "apple-touch-icon-precomposed.png",
