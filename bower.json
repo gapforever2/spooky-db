@@ -6,9 +6,7 @@
     "es5-shim": "",
     "angular": "",
     "angular-sanitize": "",
-    "angular-route": "",
-    "underscore": "",
-    "angular-underscore": ""
+    "angular-route": ""
   },
   "devDependencies": {
     "angular-mocks": "",
