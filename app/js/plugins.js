@@ -2,12 +2,30 @@
 // avoid `console` errors in browsers that lack a console.
 ((window) => {
     const console = (window.console = window.console || {});
-    const noop = () => { };
+    const noop = () => {};
     const consoleMethods = [
-        'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
-        'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
-        'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
-        'timeStamp', 'trace', 'warn'
+        'assert',
+        'clear',
+        'count',
+        'debug',
+        'dir',
+        'dirxml',
+        'error',
+        'exception',
+        'group',
+        'groupCollapsed',
+        'groupEnd',
+        'info',
+        'log',
+        'markTimeline',
+        'profile',
+        'profileEnd',
+        'table',
+        'time',
+        'timeEnd',
+        'timeStamp',
+        'trace',
+        'warn',
     ];
     // only stub undefined methods
     consoleMethods.forEach((method) => {
@@ -42,7 +60,7 @@
                 { mq: '1365px', columns: 4, gutter: 1 },
                 { mq: '1690px', columns: 5, gutter: 1 },
                 { mq: '2015px', columns: 6, gutter: 1 },
-            ]
+            ],
         });
         bricksInstance.container = container;
         bricksInstance.resize(true);
@@ -52,7 +70,7 @@
         if (!container) return;
 
         const items = container.querySelectorAll('[data-packed]');
-        items.forEach(item => {
+        items.forEach((item) => {
             item.removeAttribute('data-packed');
             item.style.position = '';
             item.style.top = '';

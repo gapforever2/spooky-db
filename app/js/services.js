@@ -1,12 +1,12 @@
 'use strict';
 unitDb.services = {
-    dataProvider: function() {
+    dataProvider: function () {
         let units = [];
         let contenders = [];
         let version = null;
         let error = null;
 
-        this.setIndex = function(index) {
+        this.setIndex = function (index) {
             if (index.version) {
                 units = index.units;
                 version = index.version;
@@ -15,16 +15,19 @@ unitDb.services = {
             }
         };
 
-        this.$get = ['$location', function($location) {
-            return {
-                error,
-                version,
-                items: units.map(unitDb.UnitDecorator),
-                selectedFilterFractions: [],
-                selectedFilterKinds: [],
-                selectedFilterTech: [],
-                contenders,
-            };
-        }];
-    }
+        this.$get = [
+            '$location',
+            function ($location) {
+                return {
+                    error,
+                    version,
+                    items: units.map(unitDb.UnitDecorator),
+                    selectedFilterFractions: [],
+                    selectedFilterKinds: [],
+                    selectedFilterTech: [],
+                    contenders,
+                };
+            },
+        ];
+    },
 };

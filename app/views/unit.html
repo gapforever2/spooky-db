@@ -1,19 +1,34 @@
 <article class="details faction {{ item.faction|lowercase }}">
     <header>
         <span class="thumb icon-{{ item.id }}" title="{{ item.fullName }}">
-            <span class="strategic icon-{{ item.faction  }}_{{ item.strategicIcon}}" ></span>
+            <span class="strategic icon-{{ item.faction  }}_{{ item.strategicIcon}}"></span>
         </span>
         <h1>{{ item.fullName }}</h1>
-        <a href="https://github.com/gapforever2/fa/tree/develop/units/{{ item.id }}/{{ item.id }}_unit.bp" target="_blank"><small>{{ item.id }}</small></a>
+        <a
+            href="https://github.com/gapforever2/fa/tree/develop/units/{{ item.id }}/{{ item.id }}_unit.bp"
+            target="_blank"
+            ><small>{{ item.id }}</small></a
+        >
     </header>
     <section>
         <table>
             <tbody>
                 <tr>
-                    <td title="{{ item.Defense.Health }} hp"><span title="health" class="ic icon-health"></span>{{ item.Defense.Health | shorten }}<small ng-if="item.Defense.RegenRate">&nbsp;({{ item.Defense.RegenRate }}hp/s)</small></td>
-                    <td title="{{ item.Economy.BuildCostMass }}"><span title="mass" class="ic icon-mass"></span>{{ item.Economy.BuildCostMass | shorten }}</td>
-                    <td title="{{ item.Economy.BuildCostEnergy }}"><span title="energy" class="ic icon-energy"></span>{{ item.Economy.BuildCostEnergy | shorten }}</td>
-                    <td title="{{ item.Economy.BuildTime }}"><span title="time" class="ic icon-time"></span>{{ item.Economy.BuildTime | shorten }}</td>
+                    <td title="{{ item.Defense.Health }} hp">
+                        <span title="health" class="ic icon-health"></span>{{ item.Defense.Health | shorten }}<small
+                            ng-if="item.Defense.RegenRate"
+                            >&nbsp;({{ item.Defense.RegenRate }}hp/s)</small
+                        >
+                    </td>
+                    <td title="{{ item.Economy.BuildCostMass }}">
+                        <span title="mass" class="ic icon-mass"></span>{{ item.Economy.BuildCostMass | shorten }}
+                    </td>
+                    <td title="{{ item.Economy.BuildCostEnergy }}">
+                        <span title="energy" class="ic icon-energy"></span>{{ item.Economy.BuildCostEnergy | shorten }}
+                    </td>
+                    <td title="{{ item.Economy.BuildTime }}">
+                        <span title="time" class="ic icon-time"></span>{{ item.Economy.BuildTime | shorten }}
+                    </td>
                 </tr>
 
                 <!-- Shields -->
@@ -39,9 +54,16 @@
                 </tr>
 
                 <!-- Economy -->
-                <tr ng-repeat="(k, v) in item.Economy | pick: ['BuildRate', 'StorageMass', 'StorageEnergy', 'ProductionPerSecondMass', 'ProductionPerSecondEnergy', 'MaintenanceConsumptionPerSecondEnergy']" ng-class="{ sec: $first }">
+                <tr
+                    ng-repeat="(k, v) in item.Economy | pick: ['BuildRate', 'StorageMass', 'StorageEnergy', 'ProductionPerSecondMass', 'ProductionPerSecondEnergy', 'MaintenanceConsumptionPerSecondEnergy']"
+                    ng-class="{ sec: $first }"
+                >
                     <td ng-class="{ invisible: !$first }">Economy</td>
-                    <td colspan="2">{{ {'BuildRate': 'Build rate', 'StorageMass': 'Mass storage', 'StorageEnergy': 'Energy storage', 'ProductionPerSecondMass': 'Mass yield', 'ProductionPerSecondEnergy': 'Energy yield', 'MaintenanceConsumptionPerSecondEnergy': 'Energy drain' }[k] }}</td>
+                    <td colspan="2">
+                        {{ {'BuildRate': 'Build rate', 'StorageMass': 'Mass storage', 'StorageEnergy': 'Energy storage',
+                        'ProductionPerSecondMass': 'Mass yield', 'ProductionPerSecondEnergy': 'Energy yield',
+                        'MaintenanceConsumptionPerSecondEnergy': 'Energy drain' }[k] }}
+                    </td>
                     <td>{{ v }}</td>
                 </tr>
 
@@ -126,61 +148,83 @@
                 <tr ng-if="item.Wreckage.HealthMult" class="sec">
                     <td>Wreckage</td>
                     <td colspan="2">Health</td>
-                    <td title="{{ item.Wreckage.HealthMult*item.Defense.Health | round }}">{{ item.Wreckage.HealthMult*item.Defense.Health | round | shorten }}</td>
+                    <td title="{{ item.Wreckage.HealthMult*item.Defense.Health | round }}">
+                        {{ item.Wreckage.HealthMult*item.Defense.Health | round | shorten }}
+                    </td>
                 </tr>
                 <tr ng-if="item.Wreckage.MassMult">
                     <td></td>
                     <td colspan="2">Mass</td>
-                    <td title="{{ item.Wreckage.HealthMult*item.Wreckage.MassMult*item.Economy.BuildCostMass | round }}">{{ item.Wreckage.HealthMult*item.Wreckage.MassMult*item.Economy.BuildCostMass | round | shorten }}</td>
+                    <td
+                        title="{{ item.Wreckage.HealthMult*item.Wreckage.MassMult*item.Economy.BuildCostMass | round }}"
+                    >
+                        {{ item.Wreckage.HealthMult*item.Wreckage.MassMult*item.Economy.BuildCostMass | round | shorten
+                        }}
+                    </td>
                 </tr>
 
                 <!-- Veterancy -->
                 <tr ng-if="item.Veteran" ng-repeat="lv in [1,2,3,4,5]" ng-class="{ sec: $first }">
                     <td ng-class="{ invisible: !$first }">Veterancy</td>
                     <td title="kills"><small>{{ item.Veteran['Level'+lv] }}</small></td>
-                    <td title="{{ item.Defense.Health * (1 + lv * 0.1) | round }}hp health"><small>{{ item.Defense.Health * (1 + lv * 0.1) | round | shorten }} hp</small></td>
-                    <td title="regeneration rate"><small>{{ item.Defense.RegenRate + item.Buffs.Regen['Level'+lv] }} hp/s</small></td>
+                    <td title="{{ item.Defense.Health * (1 + lv * 0.1) | round }}hp health">
+                        <small>{{ item.Defense.Health * (1 + lv * 0.1) | round | shorten }} hp</small>
+                    </td>
+                    <td title="regeneration rate">
+                        <small>{{ item.Defense.RegenRate + item.Buffs.Regen['Level'+lv] }} hp/s</small>
+                    </td>
                 </tr>
 
                 <!-- Weapons -->
                 <tr ng-if="item.Weapon" ng-repeat-start="w in item.Weapon" class="sec">
                     <td ng-class="{ invisible: !$first }">Weapons</td>
-                    <td colspan="3">{{ w.DisplayName }} <small ng-if="w.WeaponNumber > 0">(&times;{{ w.WeaponNumber }})</small></td>
+                    <td colspan="3">
+                        {{ w.DisplayName }} <small ng-if="w.WeaponNumber > 0">(&times;{{ w.WeaponNumber }})</small>
+                    </td>
                 </tr>
                 <tr ng-if="w.dps || w.Damage">
                     <td></td>
-                    <td title="category (damage type)" colspan="2"><small>{{ w.WeaponCategory }} ({{ w.DamageType }})</small></td>
-                    <td><small ng-if="w.dps" title="damage per second">{{ w.dps | round:2 }}dps<br /></small><small title="damage per shot">{{ w.Damage | round }}dmg</small></td>
+                    <td title="category (damage type)" colspan="2">
+                        <small>{{ w.WeaponCategory }} ({{ w.DamageType }})</small>
+                    </td>
+                    <td>
+                        <small ng-if="w.dps" title="damage per second">{{ w.dps | round:2 }}dps<br /></small
+                        ><small title="damage per shot">{{ w.Damage | round }}dmg</small>
+                    </td>
                 </tr>
                 <tr ng-if="w.MaxRadius">
                     <td></td>
                     <td title="range" colspan="2"><small>Range</small></td>
-                    <td title="min - max"><small>{{ w.MinRadius || 0  }} - {{ w.MaxRadius | shorten }}</small></td>
+                    <td title="min - max"><small>{{ w.MinRadius || 0 }} - {{ w.MaxRadius | shorten }}</small></td>
                 </tr>
                 <tr ng-if="w.DamageRadius">
                     <td></td>
                     <td colspan="2"><small>Damage radius</small></td>
-                    <td title="damage radius"><small>{{ w.DamageRadius  }}</small></td>
+                    <td title="damage radius"><small>{{ w.DamageRadius }}</small></td>
                 </tr>
                 <tr ng-if="w.MuzzleVelocity">
                     <td></td>
                     <td colspan="2"><small>Muzzle velocity</small></td>
-                    <td title="muzzle velocity"><small>{{ w.MuzzleVelocity  }}</small></td>
+                    <td title="muzzle velocity"><small>{{ w.MuzzleVelocity }}</small></td>
                 </tr>
                 <tr ng-if="w.ProjectileLifetime">
                     <td></td>
                     <td colspan="2"><small>Lifetime</small></td>
-                    <td title="muzzle lifetime"><small>{{ w.ProjectileLifetime  }}</small></td>
+                    <td title="muzzle lifetime"><small>{{ w.ProjectileLifetime }}</small></td>
                 </tr>
                 <tr ng-if="w.NukeInnerRingRadius && w.NukeOuterRingRadius">
                     <td></td>
                     <td colspan="2"><small>Ring radius</small></td>
-                    <td title="inner ring radius | outer ring radius"><small>{{ w.NukeInnerRingRadius  }} | {{ w.NukeOuterRingRadius }}</small></td>
+                    <td title="inner ring radius | outer ring radius">
+                        <small>{{ w.NukeInnerRingRadius }} | {{ w.NukeOuterRingRadius }}</small>
+                    </td>
                 </tr>
                 <tr ng-if="w.NukeInnerRingDamage && w.NukeOuterRingDamage">
                     <td></td>
                     <td colspan="2"><small>Ring damage</small></td>
-                    <td title="inner ring damage | outer ring damage"><small>{{ w.NukeInnerRingDamage | shorten }} | {{ w.NukeOuterRingDamage | shorten }}</small></td>
+                    <td title="inner ring damage | outer ring damage">
+                        <small>{{ w.NukeInnerRingDamage | shorten }} | {{ w.NukeOuterRingDamage | shorten }}</small>
+                    </td>
                 </tr>
 
                 <tr ng-if="w.BeamLifetime">
@@ -197,19 +241,25 @@
 
                 <tr ng-if="(w.ManualFire || w.MuzzleSalvoSize) && ! w.isTML">
                     <td></td>
-                    <td colspan="2" title="{{ 'manual fire' | if:w.ManualFire }}"><small>Fire cycle{{ " ⦿"| if:w.ManualFire }}</small></td>
+                    <td colspan="2" title="{{ 'manual fire' | if:w.ManualFire }}">
+                        <small>Fire cycle{{ " ⦿"| if:w.ManualFire }}</small>
+                    </td>
                     <td><small ng-bind-html="item.fireCycle(w) | unsafe"></small></td>
                 </tr>
 
                 <tr ng-if="w.TurretPitchRange">
                     <td></td>
                     <td colspan="2"><small>Turret pitch</small></td>
-                    <td title="min ~ max @ speed"><small>{{ w.TurretPitch }}~{{ w.TurretPitchRange }}° @&nbsp;{{ w.TurretPitchSpeed }}°/s</small></td>
+                    <td title="min ~ max @ speed">
+                        <small>{{ w.TurretPitch }}~{{ w.TurretPitchRange }}° @&nbsp;{{ w.TurretPitchSpeed }}°/s</small>
+                    </td>
                 </tr>
                 <tr ng-if="w.TurretYawRange">
                     <td></td>
                     <td colspan="2"><small>Turret yaw</small></td>
-                    <td title="min ~ max @ speed"><small>{{ w.TurretYaw }}~{{ w.TurretYawRange }}° @&nbsp;{{ w.TurretYawSpeed }}°/s</small></td>
+                    <td title="min ~ max @ speed">
+                        <small>{{ w.TurretYaw }}~{{ w.TurretYawRange }}° @&nbsp;{{ w.TurretYawSpeed }}°/s</small>
+                    </td>
                 </tr>
 
                 <tr ng-if="w.FiringTolerance">
@@ -225,15 +275,25 @@
                 </tr>
 
                 <!-- Upgrades -->
-                <tr  ng-if="item.Enhancements" ng-repeat-start="u in item.Enhancements | where: {RemoveEnhancements:undefined} | sortBy: 'Slot'" class="sec">
+                <tr
+                    ng-if="item.Enhancements"
+                    ng-repeat-start="u in item.Enhancements | where: {RemoveEnhancements:undefined} | sortBy: 'Slot'"
+                    class="sec"
+                >
                     <td ng-class="{ invisible: !$first }">Upgrades</td>
                     <td colspan="3">{{ u.Name }}</td>
                 </tr>
-                <tr title="{{ u }}" >
+                <tr title="{{ u }}">
                     <td><small>{{ u.Slot }}</small></td>
-                    <td title="{{ u.BuildCostMass }}"><span title="mass" class="ic icon-mass"></span>{{ u.BuildCostMass | shorten }}</td>
-                    <td title="{{ u.BuildCostEnergy }}"><span title="energy" class="ic icon-energy"></span>{{ u.BuildCostEnergy | shorten }}</td>
-                    <td title="{{ u.BuildTime }}"><span title="time" class="ic icon-time"></span>{{ u.BuildTime | shorten }}</td>
+                    <td title="{{ u.BuildCostMass }}">
+                        <span title="mass" class="ic icon-mass"></span>{{ u.BuildCostMass | shorten }}
+                    </td>
+                    <td title="{{ u.BuildCostEnergy }}">
+                        <span title="energy" class="ic icon-energy"></span>{{ u.BuildCostEnergy | shorten }}
+                    </td>
+                    <td title="{{ u.BuildTime }}">
+                        <span title="time" class="ic icon-time"></span>{{ u.BuildTime | shorten }}
+                    </td>
                 </tr>
                 <tr ng-if="u.NewMaxRadius">
                     <td></td>

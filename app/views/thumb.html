@@ -1,6 +1,8 @@
-<a class="thumb {{ item.faction|lowercase }} icon-{{ item.id }}"
+<a
+    class="thumb {{ item.faction|lowercase }} icon-{{ item.id }}"
     ng-class="{selected: item.selected}"
     title="{{ item.fullName }} [{{ item.id }}]"
-    ng-click="unitClick(item,$event)">
-    <span class="strategic icon-{{ item.faction }}_{{ item.strategicIcon }}" ></span>
+    ng-click="unitClick(item,$event)"
+>
+    <span class="strategic icon-{{ item.faction }}_{{ item.strategicIcon }}"></span>
 </a>

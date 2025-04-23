@@ -109,33 +109,37 @@ textarea {
 @font-face {
     font-family: 'Zeroes Three';
     src: url('fonts/zeroes_3-webfont.eot');
-    src: url('fonts/zeroes_3-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/zeroes_3-webfont.woff') format('woff'),
-         url('fonts/zeroes_3-webfont.ttf') format('truetype'),
-         url('fonts/zeroes_3-webfont.svg#zeroes_threeregular') format('svg');
+    src:
+        url('fonts/zeroes_3-webfont.eot?#iefix') format('embedded-opentype'),
+        url('fonts/zeroes_3-webfont.woff') format('woff'),
+        url('fonts/zeroes_3-webfont.ttf') format('truetype'),
+        url('fonts/zeroes_3-webfont.svg#zeroes_threeregular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 @keyframes neon-glow {
-  from {
-    text-shadow:
-        0 0 1px #fff,
-        0 0 4px  #fff,
-        0 0 6px  #fff,
-        0 0 8px  #f90,
-        0 0 15px  #f90,
-        0 0 20px  #f90,
-        0 0 30px #f90,
-        0 0 40px #f90;
-  }
-  to {
-    text-shadow: 0 0 0 #fff;
-  }
+    from {
+        text-shadow:
+            0 0 1px #fff,
+            0 0 4px #fff,
+            0 0 6px #fff,
+            0 0 8px #f90,
+            0 0 15px #f90,
+            0 0 20px #f90,
+            0 0 30px #f90,
+            0 0 40px #f90;
+    }
+    to {
+        text-shadow: 0 0 0 #fff;
+    }
 }
 @keyframes background-glow {
-  from { background-color: #f90; }
-  to { background-color: transparent; }
+    from {
+        background-color: #f90;
+    }
+    to {
+        background-color: transparent;
+    }
 }
 body {
     background-color: #222;
@@ -144,27 +148,40 @@ body {
     padding: 0;
     height: 100vh;
 }
-body, input, button, textarea {
+body,
+input,
+button,
+textarea {
     font-family: 'Muli', Verdana, Arial, sans-serif;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Zeroes Three', 'Muli', Verdana, Arial, sans-serif;
 }
 a {
     text-decoration: none;
 }
-a:link, a:visited, a:active, footer span {
+a:link,
+a:visited,
+a:active,
+footer span {
     color: #fff;
 }
-a:hover, a:focus {
-    color: rgb(253,160,5);
+a:hover,
+a:focus {
+    color: rgb(253, 160, 5);
 }
-header, footer {
+header,
+footer {
     padding: 5px;
-    color: rgb(253,160,5);
+    color: rgb(253, 160, 5);
 }
 footer {
-    font-size: .8em;
+    font-size: 0.8em;
     clear: both;
     text-align: right;
     background-color: #2f2f2f;
@@ -190,12 +207,13 @@ footer {
     width: 325px;
     max-width: 325px;
 }
-.faction h1, .filters header {
+.faction h1,
+.filters header {
     margin: 0 0 3px;
-    padding: .67em 0;
+    padding: 0.67em 0;
 }
 .filters {
-    float: right;/*To have almost the same behaviour as before:
+    float: right; /*To have almost the same behaviour as before:
     aside bar on the right when the screen is big enough*/
     max-width: 153px;
     margin-left: 3px;
@@ -213,7 +231,9 @@ footer {
     padding: 3px 5px;
     margin: 0;
 }
-.filters header a:hover, .filters header a:focus, .filters header a:active {
+.filters header a:hover,
+.filters header a:focus,
+.filters header a:active {
     color: #fff;
 }
 .filters a {
@@ -224,7 +244,8 @@ footer {
 .filters input {
     width: 100%;
 }
-.filters p, .filters .view-switcher a {
+.filters p,
+.filters .view-switcher a {
     float: left;
     margin-right: 3px;
 }
@@ -259,22 +280,47 @@ footer {
     top: 0;
     left: 0;
 }
-.filters a:hover, .filters a:focus, .filters a.active,
-.faction a.thumb:hover, .faction a.thumb:focus, .faction a.thumb.selected,
-.tools a:hover, .tools a:focus, .tools a:active {
-    background-color: rgba(255,255,255, .4);
+.filters a:hover,
+.filters a:focus,
+.filters a.active,
+.faction a.thumb:hover,
+.faction a.thumb:focus,
+.faction a.thumb.selected,
+.tools a:hover,
+.tools a:focus,
+.tools a:active {
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 /*.faction h1 { background: no-repeat 50px -165px / 160%; padding-left: .33em; }*/ /* css to achieve current faction logo with original images */
-.faction h1 { background: no-repeat right top; padding-left: .33em; }
-.uef { background-color: rgba(45,120,178, .2); /*#2d78b2*/ }
-h1.uef  { background-image: url(../img/SC_UEF.jpg) }
-.cybran { background-color: rgba(223,45,14, .2); /*#df2d0e*/ }
-h1.cybran { background-image: url(../img/SC_Cybran.jpg) }
-.aeon { background-color: rgba(10,157,47, .2); /*#0a9d2f*/ }
-h1.aeon { background-image: url(../img/SC_Aeon.jpg) }
-.seraphim { background-color: rgba(241,194,64, .2); /*#f1c240*/ }
-h1.seraphim { background-image: url(../img/SC_Seraphim.jpg) }
+.faction h1 {
+    background: no-repeat right top;
+    padding-left: 0.33em;
+}
+.uef {
+    background-color: rgba(45, 120, 178, 0.2); /*#2d78b2*/
+}
+h1.uef {
+    background-image: url(../img/SC_UEF.jpg);
+}
+.cybran {
+    background-color: rgba(223, 45, 14, 0.2); /*#df2d0e*/
+}
+h1.cybran {
+    background-image: url(../img/SC_Cybran.jpg);
+}
+.aeon {
+    background-color: rgba(10, 157, 47, 0.2); /*#0a9d2f*/
+}
+h1.aeon {
+    background-image: url(../img/SC_Aeon.jpg);
+}
+.seraphim {
+    background-color: rgba(241, 194, 64, 0.2); /*#f1c240*/
+}
+h1.seraphim {
+    background-image: url(../img/SC_Seraphim.jpg);
+}
 
 .details {
     padding: 5px;
@@ -305,10 +351,10 @@ h1.seraphim { background-image: url(../img/SC_Seraphim.jpg) }
     white-space: normal;
 }
 .details table td:first-child {
-    min-width:  92px;
+    min-width: 92px;
 }
 .details table td:last-child {
-  white-space: normal;
+    white-space: normal;
 }
 .details table .sec td {
     border-top: 1px solid rgba(255, 255, 255, 0.16);
@@ -340,14 +386,17 @@ h1.seraphim { background-image: url(../img/SC_Seraphim.jpg) }
         display: block;
         background-repeat: no-repeat;
     }
-    .filters header a, .filters header a:hover, .filters header a:focus {
+    .filters header a,
+    .filters header a:hover,
+    .filters header a:focus {
         color: transparent;
     }
     .filters input {
         width: 48px;
         display: block;
     }
-    .filters p, .filters .view-switcher a {
+    .filters p,
+    .filters .view-switcher a {
         clear: left;
         margin-top: 0;
         margin-right: 0;
@@ -357,7 +406,7 @@ h1.seraphim { background-image: url(../img/SC_Seraphim.jpg) }
         color: #fff;
     }
     .filters .clear:hover {
-        background: rgba(255,255,255, .4);
+        background: rgba(255, 255, 255, 0.4);
         color: #fff;
     }
     .filters .compare {
@@ -401,7 +450,9 @@ h1.seraphim { background-image: url(../img/SC_Seraphim.jpg) }
         margin: 3px 0 0;
         padding: 0 3px;
     }
-    .filters header, .filters input, .filters p {
+    .filters header,
+    .filters input,
+    .filters p {
         margin: 0 16px 0 0;
         float: left;
         clear: none;
@@ -422,7 +473,9 @@ h1.seraphim { background-image: url(../img/SC_Seraphim.jpg) }
         padding: 0;
         display: inline-block;
     }
-    .filters header a, .filters header a:hover, .filters header a:focus {
+    .filters header a,
+    .filters header a:hover,
+    .filters header a:focus {
         color: #fff;
         background-image: none;
     }
@@ -461,7 +514,7 @@ h1.seraphim { background-image: url(../img/SC_Seraphim.jpg) }
         width: auto;
         text-align: left;
         padding-top: 8px;
-        margin-left: 16px!important;
+        margin-left: 16px !important;
     }
 }
 
@@ -482,7 +535,7 @@ h1.seraphim { background-image: url(../img/SC_Seraphim.jpg) }
 }
 
 .ir:before {
-    content: "";
+    content: '';
     display: block;
     width: 0;
     height: 150%;
@@ -549,7 +602,7 @@ h1.seraphim { background-image: url(../img/SC_Seraphim.jpg) }
 
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
+    content: ' '; /* 1 */
     display: table; /* 2 */
 }
 
@@ -576,10 +629,7 @@ h1.seraphim { background-image: url(../img/SC_Seraphim.jpg) }
     /* Style adjustments for viewports that meet the condition */
 }
 
-@media print,
-       (-o-min-device-pixel-ratio: 5/4),
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 120dpi) {
+@media print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
     /* Style adjustments for high resolution devices */
 }
 
@@ -602,11 +652,11 @@ h1.seraphim { background-image: url(../img/SC_Seraphim.jpg) }
     }
 
     a[href]:after {
-        content: " (" attr(href) ")";
+        content: ' (' attr(href) ')';
     }
 
     abbr[title]:after {
-        content: " (" attr(title) ")";
+        content: ' (' attr(title) ')';
     }
 
     /*
@@ -614,9 +664,9 @@ h1.seraphim { background-image: url(../img/SC_Seraphim.jpg) }
      */
 
     .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-        content: "";
+    a[href^='javascript:']:after,
+    a[href^='#']:after {
+        content: '';
     }
 
     pre,
@@ -655,46 +705,45 @@ h1.seraphim { background-image: url(../img/SC_Seraphim.jpg) }
     }
 }
 
-
 div.gdiBaseCategory {
-   width: 100%;
-   display: block;
-   clear: both;
+    width: 100%;
+    display: block;
+    clear: both;
 }
 
 div.gdiBaseCategory div.clear {
-   clear: both;
+    clear: both;
 }
 
 section.gdiCategory {
-   width: 100%;
-   display: block;
-   clear: both;
+    width: 100%;
+    display: block;
+    clear: both;
 }
 
 section.gdiCategory h2.gdiCategory {
-   /*width: 600px;*/
-   margin-left: 8px;
-   margin-right: 8px;
-   float: left;
+    /*width: 600px;*/
+    margin-left: 8px;
+    margin-right: 8px;
+    float: left;
 }
 
 section.gdiCategory .faction {
-   min-height: 72px;
-   width: 72px;
-   display:block;
+    min-height: 72px;
+    width: 72px;
+    display: block;
 }
 
 section.gdiCategory a.thumb {
-   margin-bottom: 8px;
+    margin-bottom: 8px;
 }
 
 div.gdiItemsContainer {
-   float: left;
+    float: left;
 }
 .filters.gdi {
-   float: left;
-   margin-right: 7px;
+    float: left;
+    margin-right: 7px;
 }
 
 @media only screen and (min-width: 1479px) {
@@ -739,7 +788,7 @@ div.gdiItemsContainer {
     background: none;
     width: 21px;
     height: 21px;
-    margin-right: 3px
+    margin-right: 3px;
 }
 
 .compact .thumb .strategic {

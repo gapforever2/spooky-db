@@ -1,0 +1,28 @@
+# deps and builds
+node_modules/
+dist/
+app/js/vendor/
+
+# fonts
+*.eot
+*.ttf
+*.woff
+
+# images
+*.png
+*.psd
+*.svg
+*.jpg
+*.ico
+
+# other files
+*.txt
+.*ignore
+.git*
+.htaccess
+.editorconfig
+
+# no working plugins for these yet
+*.ps1
+*.py
+Dockerfile

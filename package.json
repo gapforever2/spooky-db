@@ -4,15 +4,20 @@
   "license": "WTFPL",
   "repository": "https://github.com/gapforever2/spooky-db/",
   "scripts": {
-    "start": "grunt serve",
-    "build": "grunt build",
-    "test": "grunt test --force"
+    "start": "npm run clean && grunt serve",
+    "build": "npm run clean && grunt build",
+    "build:demo": "npm run build && live-server --port=8900 dist",
+    "format": "prettier --write **/*",
+    "test": "grunt test",
+    "clean": "grunt clean && rm -rf .tmp && rm -rf dist && rm -rf app/bower_components"
   },
   "engines": {
-    "node": ">= 0.10",
-    "npm": ">= 1.4"
+    "node": ">= 18.20.8",
+    "npm": ">= 10.8.2"
   },
   "devDependencies": {
+    "@prettier/plugin-lua": "0.0.3",
+    "@prettier/plugin-xml": "^3.4.1",
     "acorn": "^7.4.1",
     "grunt": "^1.6.1",
     "grunt-auto-install": "^0.3.1",
@@ -48,8 +53,44 @@
     "karma-jasmine": "^3.3.1",
     "karma-ng-scenario": "^1.0.0",
     "karma-phantomjs-launcher": "^1.0.4",
+    "live-server": "^1.2.2",
     "load-grunt-tasks": "^5.1.0",
     "natives": "^1.1.6",
+    "prettier": "^3.5.3",
+    "prettier-plugin-sh": "^0.17.2",
     "time-grunt": "^2.0.0"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all",
+    "tabWidth": 4,
+    "semi": true,
+    "printWidth": 120,
+    "plugins": [
+      "@prettier/plugin-xml",
+      "@prettier/plugin-lua",
+      "prettier-plugin-sh"
+    ],
+    "overrides": [
+      {
+        "files": "*.json",
+        "options": {
+          "tabWidth": 2
+        }
+      },
+      {
+        "files": "*.yml",
+        "options": {
+          "tabWidth": 2
+        }
+      },
+      {
+        "files": ".*rc",
+        "options": {
+          "tabWidth": 2,
+          "parser": "json"
+        }
+      }
+    ]
   }
 }

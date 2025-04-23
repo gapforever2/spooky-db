@@ -33,8 +33,8 @@ jobs:
             - name: Checkout spooky db code
               uses: actions/checkout@v4
               with:
-                repository: gapforever2/spooky-db
-                ref: master
+                  repository: gapforever2/spooky-db
+                  ref: master
 
             - name: Checkout GAP Forever blueprints and lua files
               uses: actions/checkout@v4
@@ -51,7 +51,7 @@ jobs:
             - name: Install Lua
               uses: leafo/gh-actions-lua@v10
               with:
-                  luaVersion: "5.1.5"
+                  luaVersion: '5.1.5'
 
             - uses: leafo/gh-actions-luarocks@v4
 

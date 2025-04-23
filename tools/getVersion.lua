@@ -1,11 +1,9 @@
-#!/usr/bin/lua
-
-local cmn = require("common")
+local cmn = require('common')
 
 function usage(msg)
     cmn.usageHelper(
-        string.format("Usage: %s path/to/version.lua", arg[0]),
-        "Get GAP Forever version from version.lua",
+        string.format('Usage: %s path/to/version.lua', arg[0]),
+        'Get GAP Forever version from version.lua',
         msg
     )
 end
@@ -19,7 +17,7 @@ function GetVersion()
 end
 
 function readError()
-    usage("Missing argument")
+    usage('Missing argument')
 end
 
 versionFile = cmn.readFile(arg[1], readError)

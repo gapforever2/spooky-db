@@ -1,9 +1,7 @@
-#!/usr/bin/lua
-
 local common = {}
 
-local os = require("os")
-local io = require("io")
+local os = require('os')
+local io = require('io')
 
 function common.usageHelper(runCmd, desc, msg)
     print(runCmd)
@@ -20,14 +18,14 @@ function common.readFile(file, errCallback)
 
     local handle = io.open(file)
     if not handle then
-        error(string.format("Cannot open handle to %s", file))
+        error(string.format('Cannot open handle to %s', file))
         os.exit(-1)
         return
     end
 
-    local file = handle:read("*a")
+    local file = handle:read('*a')
     if not file then
-        error(string.format("Cannot read %s", file))
+        error(string.format('Cannot read %s', file))
         os.exit(-1)
         return
     end

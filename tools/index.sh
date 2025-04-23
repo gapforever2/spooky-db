@@ -1,13 +1,12 @@
 #!/bin/bash
 
-TMPFILE=`mktemp -q /tmp/blueprint2json.XXXXXX`
+TMPFILE=$(mktemp -q /tmp/blueprint2json.XXXXXX)
 trap 'rm $TMPFILE' EXIT
 
-index()
-{
+index() {
     echo -n '['
     while [ "$#" -gt 0 ]; do
-        JSON=`lua ./blueprint2json.lua $1 2> $TMPFILE`
+        JSON=$(lua ./blueprint2json.lua $1 2> $TMPFILE)
         ok=$?
         shift
 

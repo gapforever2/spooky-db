@@ -3,16 +3,17 @@ unitDb = unitDb || {};
 
 // dps fun
 unitDb.DpsCalculator = {
-    next : null,
-    canCalculate: function() { return false; },
-    _dps: function() { },
-    dps: function(weapon, stats, isSpecial) {
-        if (this.canCalculate(weapon))
-            return this._dps(weapon, stats, isSpecial);
+    next: null,
+    canCalculate: function () {
+        return false;
+    },
+    _dps: function () {},
+    dps: function (weapon, stats, isSpecial) {
+        if (this.canCalculate(weapon)) return this._dps(weapon, stats, isSpecial);
         else if (this.next && this.next.dps) {
             return this.next.dps(weapon, stats, isSpecial);
         }
-    }
+    },
 };
 
 // the old way
@@ -92,46 +93,60 @@ unitDb.DpsCalculator = {
 
 // the new way
 unitDb.StubDpsCalculator = angular.extend({}, unitDb.DpsCalculator, {
-    canCalculate: function() { return true; },
-    _dps: function() {
+    canCalculate: function () {
+        return true;
+    },
+    _dps: function () {
         return -1;
-    }
+    },
 });
 
 // this is retarded - literally, exotic_retard sent this in :P
 unitDb.NotNukeDpsCalculator = angular.extend({}, unitDb.DpsCalculator, {
     next: unitDb.StubDpsCalculator,
-    canCalculate: function(w) { return !w.NukeWeapon; },
-    _dps: function(w, s, isSpecial) {
+    canCalculate: function (w) {
+        return !w.NukeWeapon;
+    },
+    _dps: function (w, s, isSpecial) {
         // fall back to the old calculation formula for the special snowflakes
         if (isSpecial) {
             return (s.shots * w.Damage * s.dotPulse) / s.cycle;
         }
 
-        var trueReload = Math.max(0.1*Math.floor(10 / w.RateOfFire), 0.1); //the rof is rounded down to the nearest tick since the game runs in ticks.
+        var trueReload = Math.max(0.1 * Math.floor(10 / w.RateOfFire), 0.1); //the rof is rounded down to the nearest tick since the game runs in ticks.
         // some weapons also have separate charge and reload times which results in them firing less often. yeah.
         // in theory if your total MuzzleSalvoDelay is longer than the reload time your weapon waits for the reload time twice, but thats pretty much a bug so not taken into account here
-        trueReload = Math.max((w.RackSalvoChargeTime || 0) + (w.RackSalvoReloadTime || 0) + (w.MuzzleSalvoDelay || 0)*((w.MuzzleSalvoSize || 1)-1), trueReload);
+        trueReload = Math.max(
+            (w.RackSalvoChargeTime || 0) +
+                (w.RackSalvoReloadTime || 0) +
+                (w.MuzzleSalvoDelay || 0) * ((w.MuzzleSalvoSize || 1) - 1),
+            trueReload,
+        );
 
         var trueSalvoSize = 1;
-        if ((w.MuzzleSalvoDelay || 0) > 0) { // if theres no muzzle delay, all muzzles fire at the same time. yeah.
-            trueSalvoSize = (w.MuzzleSalvoSize || 1);
-        } else if (w.RackBones && w.RackBones.length > 0) { // dummy weapons dont have racks
+        if ((w.MuzzleSalvoDelay || 0) > 0) {
+            // if theres no muzzle delay, all muzzles fire at the same time. yeah.
+            trueSalvoSize = w.MuzzleSalvoSize || 1;
+        } else if (w.RackBones && w.RackBones.length > 0) {
+            // dummy weapons dont have racks
             if (w.RackFireTogether) {
-              trueSalvoSize = w.RackBones.length * w.RackBones[0].MuzzleBones.length;
+                trueSalvoSize = w.RackBones.length * w.RackBones[0].MuzzleBones.length;
             } else {
-              trueSalvoSize = w.RackBones[0].MuzzleBones.length;
+                trueSalvoSize = w.RackBones[0].MuzzleBones.length;
             }
         }
 
-        var trueDamage = w.Damage*(w.DoTPulses || 1) + (w.InitialDamage || 0);
+        var trueDamage = w.Damage * (w.DoTPulses || 1) + (w.InitialDamage || 0);
         // beam weapons are a thing and do their own thing. yeah good luck working out that.
-        trueDamage = Math.max((Math.floor((w.BeamLifetime || 0) / ((w.BeamCollisionDelay || 0)+0.1))+1)*w.Damage, trueDamage);
+        trueDamage = Math.max(
+            (Math.floor((w.BeamLifetime || 0) / ((w.BeamCollisionDelay || 0) + 0.1)) + 1) * w.Damage,
+            trueDamage,
+        );
         var salvoDamage = trueSalvoSize * trueDamage * (isSpecial ? w.ProjectilesPerOnFire || 1 : 1);
-        var trueDPS = (salvoDamage / trueReload);
+        var trueDPS = salvoDamage / trueReload;
 
         return trueDPS;
-    }
+    },
 });
 
 unitDb.dpsCalculator = unitDb.NotNukeDpsCalculator;
