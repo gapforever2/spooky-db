@@ -68,18 +68,20 @@
         <script src="js/controllers.js"></script>
         <!-- endbuild -->
 
-        <script id="init" data-src="data/index.json" data-src-fat="data/index.fat.json" type="module">
-            const initScript = document.querySelector('#init');
-            const pageSearchParams = new URLSearchParams(location.search);
-            const path = pageSearchParams.has('fat') ? initScript.dataset.srcFat : initScript.dataset.src;
-            try {
-                const jsonRequest = await fetch(path);
-                const jsonResponse = await jsonRequest.json();
-                unitDb.start('unitDb', jsonResponse);
-            } catch (e) {
-                console.error('Error fetching JSON data:', e);
-                unitDb.start('unitDb', { error: 'Failed to load data' });
-            }
+        <script id="init" data-src="data/index.json" data-src-fat="data/index.fat.json">
+            (async () => {
+                const initScript = document.querySelector('#init');
+                const pageSearchParams = new URLSearchParams(location.search);
+                const path = pageSearchParams.has('fat') ? initScript.dataset.srcFat : initScript.dataset.src;
+                try {
+                    const jsonRequest = await fetch(path);
+                    const jsonResponse = await jsonRequest.json();
+                    unitDb.start('unitDb', jsonResponse);
+                } catch (e) {
+                    console.error('Error fetching JSON data:', e);
+                    unitDb.start('unitDb', { error: 'Failed to load data' });
+                }
+            })();
         </script>
     </body>
 </html>

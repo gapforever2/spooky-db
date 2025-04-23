@@ -37,7 +37,8 @@
 
 // add helper functions to the global scope
 ((window) => {
-    const isClient = () => Boolean(window.navigator.userAgent.includes('JavaFX'));
+    const USER_AGENT = window.navigator?.userAgent;
+    const isClient = () => USER_AGENT?.includes('JavaFX') || USER_AGENT?.includes('Chrome/90.0.4430.85');
     const isWeb = () => !isClient();
 
     window.helpers = window.helpers || {};
@@ -47,12 +48,13 @@
 
 // add brick layout functionality
 ((window) => {
+    const PACKED = 'data-packed';
     const initBricks = (selector) => {
         const container = document.querySelector(selector);
         if (!container) return;
         const bricksInstance = new Bricks({
             container: container,
-            packed: 'data-packed',
+            packed: PACKED,
             sizes: [
                 { columns: 1, gutter: 1 },
                 { mq: '715px', columns: 2, gutter: 1 },
@@ -60,6 +62,10 @@
                 { mq: '1365px', columns: 4, gutter: 1 },
                 { mq: '1690px', columns: 5, gutter: 1 },
                 { mq: '2015px', columns: 6, gutter: 1 },
+                { mq: '2340px', columns: 7, gutter: 1 },
+                { mq: '2665px', columns: 8, gutter: 1 },
+                { mq: '2990px', columns: 9, gutter: 1 },
+                { mq: '3315px', columns: 10, gutter: 1 },
             ],
         });
         bricksInstance.container = container;
@@ -69,9 +75,9 @@
     const resetBricks = (container) => {
         if (!container) return;
 
-        const items = container.querySelectorAll('[data-packed]');
+        const items = container.querySelectorAll(`[${PACKED}]`);
         items.forEach((item) => {
-            item.removeAttribute('data-packed');
+            item.removeAttribute(PACKED);
             item.style.position = '';
             item.style.top = '';
             item.style.left = '';
