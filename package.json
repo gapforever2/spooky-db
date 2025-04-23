@@ -2,7 +2,7 @@
   "name": "unitdb",
   "version": "1.0.0",
   "license": "WTFPL",
-  "repository": "https://github.com/spooky/unitdb",
+  "repository": "https://github.com/gapforever2/spooky-db/",
   "scripts": {
     "start": "grunt serve",
     "build": "grunt build",

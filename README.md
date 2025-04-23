@@ -1,4 +1,4 @@
-# GAPForever | Units (spooky-db)
+# GAP Forever | Units (spooky-db)
 
 [![Deploy Status](https://github.com/gapforever2/spooky-db/workflows/deploy/badge.svg)](https://github.com/gapforever2/spooky-db/actions/workflows/deploy.yaml)
 
@@ -12,7 +12,7 @@ You can see the app [here](https://gapforever2.github.io/spooky-db/#/).
 
 ## Contributing
 
-All contributions are welcome, though I can't guarantee to pull all of them in. If you do want to contribute, please create a separate branch and a pull request for that. It'll be a bit easier for me to keep the repo tidy that way. Thanks in advance.
+All contributions are welcome, though We can't guarantee to pull all of them in. If you do want to contribute, please create a separate branch and a pull request for that. It'll be a bit easier for me to keep the repo tidy that way. Thanks in advance.
 
 ## Assets
 
@@ -28,8 +28,8 @@ All contributions are welcome, though I can't guarantee to pull all of them in. 
 ## Dev Notes
 
 Where to find the game assets:
-- Unit Icons: `c:\ProgramData\gapforever\gamedata\textures.nx2\textures\ui\common\icons\units`
-- Strategic Icons: `c:\ProgramData\gapforever\gamedata\textures.nx2\textures\ui\icons_strategic`
+- Unit Icons: `C:\ProgramData\GAPForever\gamedata\textures.nx2\textures\ui\common\icons\units`
+- Strategic Icons: `C:\ProgramData\GAPForever\gamedata\textures.nx2\textures\ui\icons_strategic`
 
 ## Running the Application
 
@@ -79,8 +79,6 @@ View the program in dist directory.
 Prepare:
 
 ```shell
-git clone "https://github.com/gapforever2/spooky-db.git"
-cd spooky-db
 docker build -t spooky-db-server .
 ```
 

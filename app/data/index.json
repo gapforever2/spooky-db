@@ -7798,7 +7798,7 @@
         "VISIBLETORECON",
         null
       ],
-      "Description": "Suport Land Factory",
+      "Description": "Land Factory",
       "BuildIconSortPriority": 41,
       "General": {
         "FactionName": "UEF",
