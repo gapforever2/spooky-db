@@ -39,7 +39,9 @@ var unitDb = (function() {
             // services
             app.provider('data', unitDb.services.dataProvider);
             app.config(['dataProvider', function(dataProvider) {
-                if (!payload) throw 'need unit data!';
+                if (!payload) {
+                    throw new Error('No data payload provided to the dataProvider');
+                }
                 dataProvider.setIndex(payload);
             }]);
 

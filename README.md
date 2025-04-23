@@ -31,7 +31,32 @@ Where to find the game assets:
 - Unit Icons: `c:\ProgramData\gapforever\gamedata\textures.nx2\textures\ui\common\icons\units`
 - Strategic Icons: `c:\ProgramData\gapforever\gamedata\textures.nx2\textures\ui\icons_strategic`
 
-## Running the Application on MAC OS X
+## Running the Application
+
+Prepare:
+
+```shell
+git clone "https://github.com/gapforever2/spooky-db.git"
+cd spooky-db
+```
+
+### Running the Application on Windows
+
+Make sure you have Node.js and npm installed. You can download the latest version from [nodejs.org](https://nodejs.org/).
+
+Prepare:
+
+```shell
+npm install
+```
+
+Starting the server:
+
+```shell
+npm start
+```
+
+### Running the Application on MAC OS X
 
 Necessary packages that need to be installed beforehand:
 
@@ -49,7 +74,7 @@ grunt serve
 
 View the program in dist directory.
 
-## Running with Docker (on Linux)
+### Running with Docker (on Linux)
 
 Prepare:
 

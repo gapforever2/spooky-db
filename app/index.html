@@ -46,11 +46,6 @@
 <body>
     <ng-view></ng-view>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- build:js js/jquery.js -->
-    <script>window.jQuery || document.write('<script src="bower_components/jquery/dist/jquery.js"><\/script>')</script>
-    <!-- endbuild -->
-
     <!-- build:js js/vendor.js -->
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
@@ -70,11 +65,18 @@
     <script src="js/controllers.js"></script>
     <!-- endbuild -->
 
-    <script id="init" data-src="data/index.json" data-src-fat="data/index.fat.json">
-        $.get($('#init').data(
-            'src' + (window.location.search.search("fat") == -1 ? '' : 'Fat')),
-            function (d) { unitDb.start('unitDb', typeof d == 'string' ? JSON.parse(d) : d) }
-        )
+    <script id="init" data-src="data/index.json" data-src-fat="data/index.fat.json" type="module">
+        const initScript = document.querySelector('#init');
+        const pageSearchParams = new URLSearchParams(location.search);
+        const path = pageSearchParams.has('fat') ? initScript.dataset.srcFat : initScript.dataset.src;
+        try {
+            const jsonRequest = await fetch(path);
+            const jsonResponse = await jsonRequest.json();
+            unitDb.start('unitDb', jsonResponse);
+        } catch (e) {
+            console.error('Error fetching JSON data:', e);
+            unitDb.start('unitDb', {"error": "Failed to load data" });
+        }
     </script>
 </body>
 
