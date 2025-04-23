@@ -1,11 +1,13 @@
-<!doctype html><html lang="en"><!--<![endif]--><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>GAP Forever | Units</title><meta name="description" content="Here is the most up-to-date information about each GAP Forever unit"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="./favicon.ico" type="image/x-icon"><link rel="apple-touch-icon" href="./apple-touch-icon-precomposed.png"><link rel="manifest" href="site.webmanifest"><!-- META Tags for Social Sharing --><meta property="og:title" content="GAP Forever | Units"><meta property="og:description" content="Here is the most up-to-date information about each GAP Forever unit"><meta property="og:type" content="website"><meta property="og:url" content="https://gapforever2.github.io/spooky-db/"><meta property="og:image" content="./thumbnail.png"><meta property="og:image:alt" content="GAP Forever | Units"><meta name="twitter:name" content="GAP Forever"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="GAP Forever | Units"><meta name="twitter:description" content="Here is the most up-to-date information about each GAP Forever unit"><meta name="twitter:image" content="./thumbnail.png"><link rel="stylesheet" href="css/3c5c7fe0.vendor.css"><link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet" type="text/css"><link rel="stylesheet" href="css/26dd502f.main.css"><script src="js/0442ccf6.vendor.js"></script><body><ng-view></ng-view><script src="js/74b42b97.vendor-bower-components.js"></script><script src="js/4d540069.scripts.js"></script><script id="init" data-src="data/097d16e3.index.json" data-src-fat="data/9deb0eb3.index.fat.json" type="module">const initScript = document.querySelector('#init');
-            const pageSearchParams = new URLSearchParams(location.search);
-            const path = pageSearchParams.has('fat') ? initScript.dataset.srcFat : initScript.dataset.src;
-            try {
-                const jsonRequest = await fetch(path);
-                const jsonResponse = await jsonRequest.json();
-                unitDb.start('unitDb', jsonResponse);
-            } catch (e) {
-                console.error('Error fetching JSON data:', e);
-                unitDb.start('unitDb', { error: 'Failed to load data' });
-            }</script>
+<!doctype html><html lang="en"><!--<![endif]--><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>GAP Forever | Units</title><meta name="description" content="Here is the most up-to-date information about each GAP Forever unit"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="./favicon.ico" type="image/x-icon"><link rel="apple-touch-icon" href="./apple-touch-icon-precomposed.png"><link rel="manifest" href="site.webmanifest"><!-- META Tags for Social Sharing --><meta property="og:title" content="GAP Forever | Units"><meta property="og:description" content="Here is the most up-to-date information about each GAP Forever unit"><meta property="og:type" content="website"><meta property="og:url" content="https://gapforever2.github.io/spooky-db/"><meta property="og:image" content="./thumbnail.png"><meta property="og:image:alt" content="GAP Forever | Units"><meta name="twitter:name" content="GAP Forever"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="GAP Forever | Units"><meta name="twitter:description" content="Here is the most up-to-date information about each GAP Forever unit"><meta name="twitter:image" content="./thumbnail.png"><link rel="stylesheet" href="css/3c5c7fe0.vendor.css"><link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet" type="text/css"><link rel="stylesheet" href="css/26dd502f.main.css"><script src="js/0442ccf6.vendor.js"></script><body><ng-view></ng-view><script src="js/74b42b97.vendor-bower-components.js"></script><script src="js/5212f36a.scripts.js"></script><script id="init" data-src="data/097d16e3.index.json" data-src-fat="data/9deb0eb3.index.fat.json">(async () => {
+                const initScript = document.querySelector('#init');
+                const pageSearchParams = new URLSearchParams(location.search);
+                const path = pageSearchParams.has('fat') ? initScript.dataset.srcFat : initScript.dataset.src;
+                try {
+                    const jsonRequest = await fetch(path);
+                    const jsonResponse = await jsonRequest.json();
+                    unitDb.start('unitDb', jsonResponse);
+                } catch (e) {
+                    console.error('Error fetching JSON data:', e);
+                    unitDb.start('unitDb', { error: 'Failed to load data' });
+                }
+            })();</script>
