@@ -163,9 +163,8 @@ unitDb.controllers = {
                 else if (!selected) $scope.contenders.splice(idx, 1);
             };
             $scope.toggleBpSelectedByGdiClass = function (gdiClass) {
-                console.log('gdiClass', gdiClass);
                 const longId = (item) => item.factionId + item.id.substr(-4);
-                const byLongId = (a, b) => (lingId(a) > longId(b) ? 1 : -1);
+                const byLongId = (a, b) => (longId(a) > longId(b) ? 1 : -1);
                 const inClassification = (item) => item.gdiClassification === gdiClass && $scope.strain(item);
                 const classItems = $scope.index.filter(inClassification).sort(byLongId);
                 var newStateIsSelected = true;
