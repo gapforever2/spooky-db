@@ -1,5 +1,5 @@
 {
-  "version": "1.5",
+  "version": "6",
   "units": [
     {
       "Categories": [
@@ -7798,7 +7798,7 @@
         "VISIBLETORECON",
         null
       ],
-      "Description": "Suport Land Factory",
+      "Description": "Land Factory",
       "BuildIconSortPriority": 41,
       "General": {
         "FactionName": "UEF",
@@ -9777,7 +9777,8 @@
           "Radar",
           "Sonar",
           "Submersible",
-          "Torpedoes"
+          "Torpedoes",
+          "Torpedo Defense"
         ]
       },
       "BuildIconSortPriority": 20,
@@ -36361,7 +36362,7 @@
         "Classification": "RULEUC_MilitaryAircraft",
         "FactionName": "Seraphim",
         "Icon": "air",
-        "UnitName": "Vulthatha-Ioz"
+        "UnitName": "Qozihath"
       },
       "Physics": {
         "TurnRate": 100,

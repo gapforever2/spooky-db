@@ -1,5 +1,5 @@
 {
-  "version": "1.5",
+  "version": "6",
   "units": [
     {
       "Categories": [
@@ -23871,7 +23871,7 @@
         "VISIBLETORECON",
         null
       ],
-      "Description": "Suport Land Factory",
+      "Description": "Land Factory",
       "LifeBarSize": 4.75,
       "BuildIconSortPriority": 41,
       "General": {
@@ -30412,7 +30412,8 @@
           "Radar",
           "Sonar",
           "Submersible",
-          "Torpedoes"
+          "Torpedoes",
+          "Torpedo Defense"
         ],
         "IdleEffects": {
           "Sub": {
@@ -113173,7 +113174,7 @@
       "SizeSphere": 1.6,
       "BuildIconSortPriority": 30,
       "Interface": {
-        "HelpText": "Missile Gunship"
+        "HelpText": "Torpedo Gunship"
       },
       "LifeBarOffset": 0.6,
       "LifeBarHeight": 0.075,
@@ -113256,7 +113257,7 @@
         "FactionName": "Seraphim",
         "Icon": "air",
         "UnitWeight": 1,
-        "UnitName": "Vulthatha-Ioz"
+        "UnitName": "Qozihath"
       },
       "Physics": {
         "TurnRate": 100,
