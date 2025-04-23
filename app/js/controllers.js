@@ -8,6 +8,7 @@ unitDb.controllers = {
         $scope.index = data.items;
         $scope.version = data.version;
         $scope.contenders = data.contenders;
+        $scope.isWeb = $window.helpers.isWeb();
 
         var toggleArray = function(arr, el) {
             var idx = arr.indexOf(el);
@@ -105,6 +106,7 @@ unitDb.controllers = {
         $scope.version = data.version;
         $scope.visibleIndex = data.visibleIndex;
         $scope.contenders = data.contenders;
+        $scope.isWeb = $window.helpers.isWeb();
 
         var toggleArray = function(arr, el) {
             var idx = arr.indexOf(el);
@@ -237,19 +239,29 @@ unitDb.controllers = {
         };
     }],
 
-    compareCtrl: ['$scope', '$routeParams', '$location', 'data', function($scope, $routeParams, $location, data) {
-        $scope.layoutClass = localStorage.getItem('compareLayout');
+    compareCtrl: ['$scope', '$window', '$routeParams', '$location', '$timeout', 'data', function ($scope, $window, $routeParams, $location, $timeout, data) {
+        $scope.layoutClass = localStorage.getItem('compareLayout') || 'bricks';
+        $scope.timeFormatted = localStorage.getItem('timeFormatted') === 'm:ss';
+        $scope.isWeb = $window.helpers.isWeb();
 
-        var ids = $routeParams.ids.split(',');
-        $scope.contenders = _.sortBy(_.filter(data.items, function(x) { return _.contains(ids, x.id); }),
-                                    function(x) { return ids.indexOf(x.id); });
+        const ids = $routeParams.ids.split(',').map(id => id.trim());
+        const byIds = (a, b) => {
+            return ids.indexOf(a.id) - ids.indexOf(b.id);
+        };
+        $scope.contenders = data.items.filter(item => ids.includes(item.id)).sort(byIds);
 
-        $scope.layout = function(className) {
+        $timeout(() => {
+            $scope.brickInstance = $scope.brickInstance || $window.helpers.initBricks('div.compare-container section');
+            $window.helpers.repackBricks($scope.brickInstance, $scope.layoutClass);
+        }, 100);
+
+        $scope.layout = (className) => {
             $scope.layoutClass = className;
+            $window.helpers.repackBricks($scope.brickInstance, $scope.layoutClass);
             localStorage.setItem('compareLayout', className);
         };
 
-        $scope.back = function() {
+        $scope.back = () => {
             var lastView = localStorage.getItem('lastView') || '/';
             $location.path(lastView);
         };

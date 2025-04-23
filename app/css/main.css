@@ -10,6 +10,10 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
+* {
+    box-sizing: border-box;
+}
+
 html,
 button,
 input,
@@ -32,11 +36,13 @@ html {
 ::-moz-selection {
     background: #b3d4fc;
     text-shadow: none;
+    color: #000;
 }
 
 ::selection {
     background: #b3d4fc;
     text-shadow: none;
+    color: #000;
 }
 
 /*
@@ -136,6 +142,7 @@ body {
     background-size: cover;
     color: #fff;
     padding: 0;
+    height: 100vh;
 }
 body, input, button, textarea {
     font-family: 'Muli', Verdana, Arial, sans-serif;
@@ -160,6 +167,11 @@ footer {
     font-size: .8em;
     clear: both;
     text-align: right;
+    background-color: #2f2f2f;
+    padding: 5px 15px 15px;
+    min-width: 1300px;
+    position: sticky;
+    bottom: 0;
 }
 .glow {
     animation: neon-glow 1.5s ease-in-out infinite alternate;
@@ -175,7 +187,7 @@ footer {
 }
 .faction {
     float: left;
-    width: 25%;
+    width: 325px;
     max-width: 325px;
 }
 .faction h1, .filters header {
@@ -289,6 +301,9 @@ h1.seraphim { background-image: url(../img/SC_Seraphim.jpg) }
     vertical-align: top;
     white-space: nowrap;
 }
+.details table td small {
+    white-space: normal;
+}
 .details table td:first-child {
     min-width:  92px;
 }
@@ -306,21 +321,6 @@ h1.seraphim { background-image: url(../img/SC_Seraphim.jpg) }
 .details .ic {
     display: inline-block;
     vertical-align: middle;
-}
-
-/* full mode */
-@media only screen and (min-width: 1479px) {
-    .filters {
-        position: fixed;
-        top: 0;
-        right: 0;
-    }
-    .filters .count:after {
-        content: ' selected';
-    }
-    .filters .patchnotes-link {
-        margin-bottom: 0;
-    }
 }
 
 /* filter in single column */
@@ -369,6 +369,21 @@ h1.seraphim { background-image: url(../img/SC_Seraphim.jpg) }
     .filters .patchnotes-link {
         width: 48px;
         text-align: center;
+    }
+}
+
+/* full mode */
+@media only screen and (min-width: 1481px) {
+    .filters {
+        position: fixed;
+        top: 0;
+        right: 0;
+    }
+    .filters .count:after {
+        content: ' selected';
+    }
+    .filters .patchnotes-link {
+        margin-bottom: 0;
     }
 }
 
@@ -704,7 +719,7 @@ div.gdiItemsContainer {
 
 .compact-toggle {
     position: fixed;
-    margin: 0.67em;
+    padding: 0.67em;
     top: 0;
     right: 0;
 }
@@ -741,14 +756,25 @@ div.gdiItemsContainer {
     width: 24px;
 }
 
-.compare .tools {
+.compare-container {
+    min-width: 325px;
+    padding-left: 45px;
+    overflow-x: auto;
+    height: 100%;
     position: relative;
-    top: 0;
-    float: left;
-    min-height: 100vh;
-    margin: 0.67em;
 }
-.compare .tools a {
+.compare-container .tools {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    float: left;
+    padding: 10px;
+    background-color: #222;
+    z-index: 100;
+}
+.compare-container .tools a {
     display: block;
     margin-bottom: 0.33em;
 }
@@ -756,9 +782,6 @@ div.gdiItemsContainer {
     display: flex;
     align-items: flex-start;
     flex-wrap: nowrap;
-    overflow-x: auto;
-    min-height: 100%;
-    min-height: 100vh;
 }
 .compare .horizontal .details {
     flex: none;

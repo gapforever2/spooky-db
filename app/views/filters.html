@@ -18,12 +18,11 @@
         <a ng-repeat="t in ['T1', 'T2', 'T3', 'EXP']" title="{{ t }}" ng-click="toggleTech(t)"
             ng-class="{active: techSelected(t)}" class="icon-{{ t }}"></a>
     </p>
-
     <p class="view-switcher">
         <a title="view units by kind" href="#/" class="icon-by_kind"></a>
         <a title="view units by class" href="#/by-class" class="icon-by_class"></a>
     </p>
-    <p class="patchnotes-link">
+    <p class="patchnotes-link" ng-if="isWeb">
         <a href="https://gapforever2.github.io/patchnotes/" target="_blank">GAF Patchnotes</a>
     </p>
 </aside>
