@@ -1,5 +1,5 @@
 {
-  "version": "6",
+  "version": "7",
   "units": [
     {
       "Categories": [
@@ -5703,6 +5703,31 @@
       "SizeZ": 1.2,
       "VeteranMassMult": 0.5,
       "Enhancements": {
+        "HeavyAntiMatterDeeKey": {
+          "BuildCostEnergy": 120000,
+          "Slot": "RCH",
+          "ShowBones": [
+            "Right_Upgrade"
+          ],
+          "UpgradeEffectBones": [
+            "Right_Upgrade",
+            "Right_Upgrade_Muzzle",
+            "Right_Arm_Muzzle",
+            "Right_Arm_Barrel"
+          ],
+          "AdditionalDamage": 100,
+          "BuildCostMass": 2100,
+          "BuildTime": 3500,
+          "NewMaxRadius": 30,
+          "Name": " Zephyr DeeKey",
+          "Prerequisite": "HeavyAntiMatterCannon",
+          "NewDamageRadius": 1,
+          "UpgradeUnitAmbientBones": [
+            "UEL0001"
+          ],
+          "Icon": "hamc2",
+          "NewRateOfFire": 1.5
+        },
         "Shield": {
           "ShieldSize": 3,
           "UpgradeEffectBones": [
@@ -5769,20 +5794,20 @@
           "BuildCostMass": 15000,
           "Icon": "pqt"
         },
-        "ShieldRemove": {
-          "Slot": "Back",
+        "HeavyAntiMatterDeeKeyRemove": {
+          "Slot": "RCH",
           "BuildCostEnergy": 1,
           "BuildTime": 0.1,
-          "Name": "Remove Personal Shield Generator",
-          "Prerequisite": "Shield",
+          "Name": " Remove Zephyr DeeKey",
+          "Prerequisite": "HeavyAntiMatterDeeKey",
           "HideBones": [
-            "Back_Upgrade_B01"
+            "Right_Upgrade"
           ],
-          "Icon": "sgf",
+          "Icon": "hamc2",
           "BuildCostMass": 1,
           "RemoveEnhancements": [
-            "Shield",
-            "ShieldRemove"
+            "HeavyAntiMatterDeeKey",
+            "HeavyAntiMatterDeeKeyRemove"
           ]
         },
         "ResourceAllocationRemove": {
@@ -5818,6 +5843,22 @@
             "TacticalNukeMissileRemove"
           ]
         },
+        "LeftPodRemove": {
+          "Slot": "Back",
+          "BuildCostEnergy": 1,
+          "BuildTime": 0.1,
+          "Name": "Remove C-D1 Shoulder Drone",
+          "Prerequisite": "LeftPod",
+          "HideBones": [
+            "Back_Upgrade_B01"
+          ],
+          "Icon": "led",
+          "BuildCostMass": 1,
+          "RemoveEnhancements": [
+            "LeftPod",
+            "LeftPodRemove"
+          ]
+        },
         "ShieldGeneratorFieldRemove": {
           "Slot": "Back",
           "BuildCostEnergy": 1,
@@ -5833,6 +5874,28 @@
             "ShieldGeneratorField",
             "ShieldGeneratorFieldRemove"
           ]
+        },
+        "T3Engineering": {
+          "Slot": "LCH",
+          "NewBuildRate": 100,
+          "UpgradeEffectBones": [
+            "Left_Upgrade",
+            "Left_Upgrade_Muzzle",
+            "Left_Arm_Muzzle",
+            "Left_Arm_Barrel"
+          ],
+          "BuildCostEnergy": 50000,
+          "BuildCostMass": 2400,
+          "BuildTime": 8400,
+          "NewHealth": 3000,
+          "Name": "Tech 3 Engineering Suite",
+          "Prerequisite": "AdvancedEngineering",
+          "BuildableCategoryAdds": "BUILTBYTIER3COMMANDER UEF",
+          "UpgradeUnitAmbientBones": [
+            "UEL0001"
+          ],
+          "Icon": "ees",
+          "NewRegenRate": 20
         },
         "AdvancedEngineeringRemove": {
           "Slot": "LCH",
@@ -5881,43 +5944,69 @@
           "BuildCostMass": 1400,
           "BuildTime": 1500
         },
-        "LeftPodRemove": {
+        "RightPodRemove": {
           "Slot": "Back",
           "BuildCostEnergy": 1,
           "BuildTime": 0.1,
           "Name": "Remove C-D1 Shoulder Drone",
-          "Prerequisite": "LeftPod",
+          "Prerequisite": "RightPod",
           "HideBones": [
             "Back_Upgrade_B01"
           ],
-          "Icon": "led",
+          "Icon": "red",
           "BuildCostMass": 1,
           "RemoveEnhancements": [
             "LeftPod",
-            "LeftPodRemove"
+            "RightPod",
+            "RightPodRemove"
           ]
         },
-        "T3Engineering": {
-          "Slot": "LCH",
-          "NewBuildRate": 100,
+        "Regen": {
+          "ShieldSize": 3,
           "UpgradeEffectBones": [
-            "Left_Upgrade",
-            "Left_Upgrade_Muzzle",
-            "Left_Arm_Muzzle",
-            "Left_Arm_Barrel"
+            "Back_Upgrade_B01"
           ],
-          "BuildCostEnergy": 50000,
-          "BuildCostMass": 2400,
-          "BuildTime": 8400,
-          "NewHealth": 3000,
-          "Name": "Tech 3 Engineering Suite",
-          "Prerequisite": "AdvancedEngineering",
-          "BuildableCategoryAdds": "BUILTBYTIER3COMMANDER UEF",
+          "BuildCostEnergy": 70000,
+          "BuildTime": 2100,
+          "ShieldRegenRate": 100,
+          "OwnerShieldMesh": "/units/uel0001/UEL0001_PhaseShield_mesh",
+          "ImpactEffects": "UEFShieldHit01",
+          "ShieldVerticalOffset": 0,
+          "Icon": "dse",
+          "Slot": "Back",
+          "ShowBones": [
+            "Back_Upgrade_B01"
+          ],
+          "ShieldEnergyDrainRechargeTime": 5,
+          "MaintenanceConsumptionPerSecondEnergy": 250,
+          "ShieldRegenStartTime": 0,
+          "BuildCostMass": 2100,
+          "ShieldRechargeTime": 60,
+          "Name": "Personal Shield Regen",
+          "RegenAssistMult": 10,
+          "ShieldMaxHealth": 19000,
           "UpgradeUnitAmbientBones": [
             "UEL0001"
           ],
+          "PersonalShield": true,
+          "Prerequisite": "Shield"
+        },
+        "T3EngineeringRemove": {
+          "Slot": "LCH",
+          "BuildCostEnergy": 1,
+          "BuildTime": 0.1,
+          "Name": "Remove Engineering Suites",
+          "Prerequisite": "T3Engineering",
+          "HideBones": [
+            "Left_Upgrade"
+          ],
           "Icon": "ees",
-          "NewRegenRate": 20
+          "BuildCostMass": 1,
+          "RemoveEnhancements": [
+            "AdvancedEngineering",
+            "T3Engineering",
+            "T3EngineeringRemove"
+          ]
         },
         "HeavyAntiMatterCannon": {
           "Slot": "RCH",
@@ -5966,12 +6055,12 @@
             "AttachSpecial01"
           ],
           "BuildCostEnergy": 2400,
-          "BuildTime": 400,
+          "BuildTime": 350,
           "Name": "C-D1 Shoulder Drone",
           "UpgradeUnitAmbientBones": [
             "UEL0001"
           ],
-          "BuildCostMass": 120,
+          "BuildCostMass": 300,
           "Icon": "led"
         },
         "DamageStabilizationRemove": {
@@ -6014,21 +6103,20 @@
           "Icon": "aes",
           "NewRegenRate": 10
         },
-        "RightPodRemove": {
+        "ShieldRemove": {
           "Slot": "Back",
           "BuildCostEnergy": 1,
           "BuildTime": 0.1,
-          "Name": "Remove C-D1 Shoulder Drone",
-          "Prerequisite": "RightPod",
+          "Name": "Remove Personal Shield Generator",
+          "Prerequisite": "Shield",
           "HideBones": [
             "Back_Upgrade_B01"
           ],
-          "Icon": "red",
+          "Icon": "sgf",
           "BuildCostMass": 1,
           "RemoveEnhancements": [
-            "LeftPod",
-            "RightPod",
-            "RightPodRemove"
+            "Shield",
+            "ShieldRemove"
           ]
         },
         "Slots": {
@@ -6048,21 +6136,20 @@
             "name": ""
           }
         },
-        "T3EngineeringRemove": {
-          "Slot": "LCH",
+        "RegenRemove": {
+          "Slot": "Back",
           "BuildCostEnergy": 1,
           "BuildTime": 0.1,
-          "Name": "Remove Engineering Suites",
-          "Prerequisite": "T3Engineering",
+          "Name": "Remove Personal Shield Regen",
+          "Prerequisite": "Regen",
           "HideBones": [
-            "Left_Upgrade"
+            "Back_Upgrade_B01"
           ],
-          "Icon": "ees",
+          "Icon": "dse",
           "BuildCostMass": 1,
           "RemoveEnhancements": [
-            "AdvancedEngineering",
-            "T3Engineering",
-            "T3EngineeringRemove"
+            "Regen",
+            "RegenRemove"
           ]
         },
         "RightPod": {
@@ -6071,13 +6158,13 @@
             "AttachSpecial02"
           ],
           "BuildCostEnergy": 2400,
-          "BuildTime": 400,
+          "BuildTime": 350,
           "Name": "C-D1 Shoulder Drone",
           "Prerequisite": "LeftPod",
           "UpgradeUnitAmbientBones": [
             "UEL0001"
           ],
-          "BuildCostMass": 120,
+          "BuildCostMass": 300,
           "Icon": "red"
         },
         "ResourceAllocation": {
@@ -22896,7 +22983,7 @@
       "Weapon": [
         {
           "DamageRadius": 1.5,
-          "FiringRandomness": 10,
+          "Label": "MissileWeapon",
           "RateOfFire": 0.083333333333333,
           "WeaponUnpackAnimation": "/units/xel0306/xel0306_aopen.sca",
           "DamageFriendly": true,
@@ -22911,7 +22998,7 @@
               "RackBone": "B05_Launcher"
             }
           ],
-          "Damage": 300,
+          "Damage": 360,
           "ProjectileLifetime": 20,
           "DamageType": "Normal",
           "Audio": {
@@ -22929,28 +23016,27 @@
           "MinRadius": 12,
           "CountedProjectile": false,
           "ProjectileId": "/projectiles/TIFMissileCruise05/TIFMissileCruise05_proj.bp",
-          "Label": "MissileWeapon",
           "MuzzleVelocity": 9,
           "RackSalvoReloadTime": 6,
           "RackSalvoChargeTime": 0,
           "MaxRadius": 80,
-          "MuzzleSalvoSize": 10,
-          "AnimationReload": "/units/xel0306/xel0306_aload.sca",
+          "MuzzleSalvoSize": 6,
+          "WeaponUnpackAnimationRate": 1,
           "FireTargetLayerCapsTable": {
             "Land": "Land|Water|Seabed",
             "Water": "Land|Water|Seabed"
           },
           "BallisticArc": "RULEUBA_None",
-          "ProjectilesPerOnFire": 3,
           "RackRecoilDistance": 0,
+          "ProjectilesPerOnFire": 3,
           "MuzzleSalvoDelay": 0.35,
           "RackReloadTimeout": 0,
-          "FiringTolerance": 8,
           "RenderFireClock": true,
+          "FiringTolerance": 1,
           "SkipReadyState": true,
-          "CollideFriendly": false,
-          "WeaponRepackTimeout": 1,
           "TargetRestrictDisallow": "UNTARGETABLE",
+          "WeaponRepackTimeout": 1,
+          "CollideFriendly": false,
           "TargetPriorities": [
             "STRUCTURE DEFENSE",
             "SNIPER",
@@ -22960,10 +23046,10 @@
           ],
           "SlavedToBody": true,
           "Turreted": false,
-          "WeaponCategory": "Missile",
+          "WeaponCategory": "Tactical",
           "MuzzleChargeDelay": 0,
           "WeaponUnpacks": true,
-          "WeaponUnpackAnimationRate": 1
+          "AnimationReload": "/units/xel0306/xel0306_aload.sca"
         }
       ]
     },
@@ -34895,9 +34981,9 @@
       "LifeBarHeight": 0.075,
       "SelectionThickness": 0.46,
       "Economy": {
-        "BuildTime": 850,
-        "BuildCostEnergy": 4250,
-        "BuildCostMass": 170
+        "BuildTime": 340,
+        "BuildCostEnergy": 1840,
+        "BuildCostMass": 64
       },
       "Footprint": {
         "MaxSlope": 0.25,
@@ -34925,14 +35011,14 @@
         "MinAirspeed": 3,
         "KTurnDamping": 1.5,
         "CirclingElevationChangeRatio": 0.25,
-        "MaxAirspeed": 10,
+        "MaxAirspeed": 11.3,
         "Winged": false
       },
       "Defense": {
         "ArmorType": "Light",
         "SurfaceThreatLevel": 5,
-        "Health": 350,
-        "MaxHealth": 350
+        "Health": 165,
+        "MaxHealth": 165
       },
       "Audio": {
         "UISelection": {
@@ -35099,7 +35185,7 @@
         {
           "DamageRadius": 0,
           "Label": "MainGun",
-          "RateOfFire": 3.3333333333333,
+          "RateOfFire": 5,
           "ProjectilesPerOnFire": 1,
           "TurretYaw": 0,
           "RackBones": [
@@ -35110,7 +35196,7 @@
               "RackBone": "Laser_Muzzle"
             }
           ],
-          "Damage": 15,
+          "Damage": 6,
           "DamageType": "Normal",
           "Audio": {
             "Fire": {
@@ -35136,7 +35222,7 @@
           ],
           "MaxRadius": 20,
           "ProjectileId": "/projectiles/CDFLaserHeavy03/CDFLaserHeavy03_proj.bp",
-          "MuzzleVelocity": 35,
+          "MuzzleVelocity": 45,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
           "TurretBoneMuzzle": "Laser_Muzzle",
@@ -36903,7 +36989,7 @@
           "Prerequisite": "FAF_SelfRepairSystem"
         },
         "ResourceAllocationRemove": {
-          "Slot": "Back",
+          "Slot": "RCH",
           "BuildCostEnergy": 1,
           "BuildTime": 0.1,
           "Name": "Remove Resource Allocation System",
@@ -37114,7 +37200,7 @@
           ]
         },
         "ResourceAllocation": {
-          "Slot": "Back",
+          "Slot": "RCH",
           "ProductionPerSecondMass": 12,
           "UpgradeEffectBones": [
             "Right_Arm_B01",
@@ -37919,7 +38005,7 @@
               "RackBone": "Center_Turret"
             }
           ],
-          "Damage": 300,
+          "Damage": 400,
           "BeamCollisionDelay": 0,
           "DamageType": "Normal",
           "Audio": {
@@ -37981,7 +38067,7 @@
           "ProjectilesPerOnFire": 1,
           "BeamLifetime": 0,
           "Turreted": true,
-          "DamageRadius": 0.5,
+          "DamageRadius": 1,
           "CollideFriendly": false,
           "MuzzleSalvoDelay": 0,
           "RackRecoilDistance": 0,
@@ -41242,7 +41328,7 @@
         },
         {
           "AlwaysRecheckTarget": false,
-          "RateOfFire": 0.05,
+          "RateOfFire": 0.1,
           "DisableWhileReloading": true,
           "TurretYaw": 0,
           "RackBones": [
@@ -41274,8 +41360,8 @@
           "TurretYawSpeed": 0,
           "WeaponCategory": "Defense",
           "DepthCharge": {
-            "ProjectilesToDeflect": 3,
-            "Radius": 5
+            "ProjectilesToDeflect": 2,
+            "Radius": 10
           },
           "MuzzleVelocity": 5,
           "RackFireTogether": false,
@@ -41302,8 +41388,8 @@
           "RackReloadTimeout": 0,
           "TurretDualManipulators": false,
           "Turreted": false,
-          "MaxRadius": 25,
-          "MuzzleSalvoSize": 1
+          "MaxRadius": 20,
+          "MuzzleSalvoSize": 2
         }
       ]
     },
@@ -41323,6 +41409,7 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "TANK",
+        "STEALTH",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -41357,7 +41444,7 @@
         "DragCoefficient": 0.2,
         "MaxSpeedReverse": 4,
         "MotionType": "RULEUMT_Amphibious",
-        "WaterSpeedMultiplier": 0.9,
+        "WaterSpeedMultiplier": 1.25,
         "TurnRadius": 0,
         "BackUpDistance": 8,
         "RotateOnSpot": false,
@@ -41437,6 +41524,7 @@
       },
       "SizeX": 0.9,
       "Intel": {
+        "SonarStealth": true,
         "WaterVisionRadius": 20,
         "VisionRadius": 22
       },
@@ -41500,6 +41588,7 @@
         },
         "Abilities": [
           "Torpedoes",
+          "Personal Sonar Stealth",
           "Amphibious"
         ]
       },
@@ -41507,7 +41596,7 @@
       "BuildIconSortPriority": 25,
       "Weapon": [
         {
-          "DamageRadius": 0,
+          "DamageRadius": 1.4,
           "Label": "Rocket",
           "RateOfFire": 0.25,
           "ProjectilesPerOnFire": 1,
@@ -61061,7 +61150,7 @@
       "StrategicIconName": "icon_experimental_generic",
       "Physics": {
         "LayerChangeOffsetHeight": -1,
-        "MaxAcceleration": 1.5,
+        "MaxAcceleration": 2,
         "MotionType": "RULEUMT_Amphibious",
         "RotateOnSpot": false,
         "SkirtSizeX": 8,
@@ -61069,14 +61158,14 @@
         "MaxSteerForce": 10,
         "DragCoefficient": 0.2,
         "SkirtOffsetZ": -1,
-        "MaxSpeed": 1.5,
+        "MaxSpeed": 2,
         "RotateOnSpotThreshold": 0.5,
         "TurnRadius": 2,
         "BackUpDistance": 15,
-        "MaxSpeedReverse": 1.5,
+        "MaxSpeedReverse": 2,
         "SkirtSizeZ": 8,
         "SkirtOffsetX": -1.5,
-        "MaxBrake": 1.5
+        "MaxBrake": 2
       },
       "Intel": {
         "WaterVisionRadius": 24,
@@ -61255,7 +61344,7 @@
         {
           "WeaponUnpackAnimatorPrecedence": 0,
           "FiringRandomness": 0,
-          "RateOfFire": 0.1,
+          "RateOfFire": 0.083333333333333,
           "WeaponUnpackAnimation": "/units/URL0401/URL0401_aopen.sca",
           "EnergyRequired": 25000,
           "RackSalvoFiresAfterCharge": false,
@@ -61272,7 +61361,7 @@
               "RackBone": "Turret_Aim_Barrel"
             }
           ],
-          "Damage": 1300,
+          "Damage": 1700,
           "ProjectileLifetime": 150,
           "DamageType": "Normal",
           "Audio": {
@@ -61285,7 +61374,7 @@
           "TurretPitch": 0,
           "RackReloadTimeout": 0,
           "RackSalvoReloadTime": 0,
-          "FixedSpreadRadius": 70,
+          "FixedSpreadRadius": 40,
           "DisplayName": "Proton Artillery",
           "TurretPitchSpeed": 30,
           "TurretBoneYaw": "Turret_Aim",
@@ -61320,7 +61409,7 @@
           "RackSalvoChargeTime": 0,
           "TurretBoneMuzzle": "Turret_Aim_Barrel_Muzzle",
           "WeaponUnpacks": true,
-          "WeaponUnpackAnimationRate": 2.5,
+          "WeaponUnpackAnimationRate": 5,
           "FireTargetLayerCapsTable": {
             "Land": "Land|Water|Seabed",
             "Water": "Land|Water|Seabed"
@@ -61335,7 +61424,7 @@
           "TurretYawRange": 180,
           "BallisticArc": "RULEUBA_HighArc",
           "WeaponRepackTimeout": 0.5,
-          "MuzzleSalvoSize": 20,
+          "MuzzleSalvoSize": 12,
           "MaxRadius": 4000,
           "FiringTolerance": 0,
           "WeaponUnpackLocksMotion": true,
@@ -61427,18 +61516,18 @@
       "LifeBarSize": 6,
       "StrategicIconName": "icon_experimental_generic",
       "Physics": {
-        "MaxSpeedReverse": 1.25,
+        "MaxSpeedReverse": 1.5,
         "LayerChangeOffsetHeight": -3,
         "DragCoefficient": 0.2,
-        "MaxAcceleration": 2.5,
+        "MaxAcceleration": 3,
         "SkirtOffsetZ": -1.5,
         "SinkLower": true,
         "MotionType": "RULEUMT_Amphibious",
         "SkirtOffsetX": -1.5,
         "SkirtSizeZ": 6,
-        "BackUpDistance": 0,
-        "MaxSpeed": 2.5,
-        "TurnRate": 25,
+        "BackUpDistance": 7,
+        "MaxSpeed": 3,
+        "TurnRate": 48,
         "SkirtSizeX": 6,
         "TurnRadius": 5
       },
@@ -61527,8 +61616,8 @@
         "SonarStealthFieldRadius": 28,
         "RadarStealthFieldRadius": 28,
         "RadarStealthField": true,
-        "WaterVisionRadius": 32,
-        "VisionRadius": 32,
+        "WaterVisionRadius": 35,
+        "VisionRadius": 35,
         "SonarStealth": true
       },
       "Veteran": {
@@ -61672,7 +61761,7 @@
       "BuildIconSortPriority": 20,
       "Weapon": [
         {
-          "DamageRadius": 0.5,
+          "DamageRadius": 1,
           "TurretYawRange": 180,
           "RateOfFire": 10,
           "TurretYaw": 0,
@@ -61712,8 +61801,8 @@
           "TurretPitch": -20,
           "AutoInitiateAttackCommand": false,
           "DisplayName": "Heavy Microwave Laser",
-          "TurretPitchSpeed": 20,
-          "MaximumBeamLength": 26,
+          "TurretPitchSpeed": 40,
+          "MaximumBeamLength": 30,
           "ContinuousBeam": true,
           "RangeCategory": "UWRC_DirectFire",
           "AboveWaterTargetsOnly": true,
@@ -61757,7 +61846,7 @@
           "AboveWaterFireOnly": true,
           "RackReloadTimeout": 10,
           "FiringTolerance": 0,
-          "TurretYawSpeed": 40,
+          "TurretYawSpeed": 54,
           "TurretDualManipulators": false,
           "TurretBonePitch": "Center_Turret",
           "WeaponCategory": "Direct Fire Experimental",
@@ -68986,20 +69075,20 @@
             "Left_Arm_B01",
             "Right_Arm_B01"
           ],
-          "BuildCostEnergy": 35000,
-          "BuildTime": 1300,
+          "BuildCostEnergy": 38500,
+          "BuildTime": 1450,
           "ShieldRegenRate": 30,
           "OwnerShieldMesh": "/units/ual0001/ual0001_phaseshield_mesh",
           "ImpactEffects": "AeonShieldHit01",
           "Icon": "ptsg",
-          "Slot": "Back",
+          "Slot": "RCH",
           "ShowBones": [
             "Back_Upgrade"
           ],
           "ShieldEnergyDrainRechargeTime": 5,
           "ShieldRegenStartTime": 1,
           "MaintenanceConsumptionPerSecondEnergy": 150,
-          "BuildCostMass": 1300,
+          "BuildCostMass": 1430,
           "Name": "Personal Shield Generator",
           "ShieldRechargeTime": 75,
           "RegenAssistMult": 10,
@@ -69046,7 +69135,7 @@
           "Icon": "pqt"
         },
         "ShieldRemove": {
-          "Slot": "Back",
+          "Slot": "RCH",
           "BuildCostEnergy": 1,
           "BuildTime": 0.1,
           "Name": "Remove Personal Shield",
@@ -69071,14 +69160,14 @@
             "Left_Arm_B01",
             "Right_Arm_B01"
           ],
-          "BuildCostEnergy": 52500,
+          "BuildCostEnergy": 60375,
           "BuildTime": 1225,
           "Name": "Chrono Dampener",
           "NewHealth": 3000,
           "UpgradeUnitAmbientBones": [
             "UAL0001"
           ],
-          "BuildCostMass": 1750,
+          "BuildCostMass": 2100,
           "Icon": "cd"
         },
         "EnhancedSensors": {
@@ -69134,22 +69223,6 @@
             "T3EngineeringRemove"
           ]
         },
-        "CrysalisBeamRemove": {
-          "Slot": "LCH",
-          "BuildCostEnergy": 1,
-          "BuildTime": 0.1,
-          "Name": "Remove Enhanced Quantum Disruptor",
-          "Prerequisite": "CrysalisBeam",
-          "HideBones": [
-            "Left_Upgrade"
-          ],
-          "Icon": "cba",
-          "BuildCostMass": 1,
-          "RemoveEnhancements": [
-            "CrysalisBeam",
-            "CrysalisBeamRemove"
-          ]
-        },
         "FAF_CrysalisBeamAdvanced": {
           "Slot": "LCH",
           "ShowBones": [
@@ -69162,7 +69235,7 @@
           "BuildCostEnergy": 31000,
           "BuildTime": 1100,
           "Name": "Advanced Quantum Disruptor",
-          "Prerequisite": "CrysalisBeam",
+          "Prerequisite": "HeatSink",
           "Icon": "ecba",
           "UpgradeUnitAmbientBones": [
             "UAL0001"
@@ -69171,7 +69244,7 @@
           "NewMaxRadius": 35
         },
         "ShieldHeavyRemove": {
-          "Slot": "Back",
+          "Slot": "RCH",
           "BuildCostEnergy": 1,
           "BuildTime": 0.1,
           "Name": "Remove Shields",
@@ -69193,20 +69266,20 @@
             "Left_Arm_B01",
             "Right_Arm_B01"
           ],
-          "BuildCostEnergy": 123750,
+          "BuildCostEnergy": 136125,
           "BuildTime": 2450,
           "ShieldRegenRate": 32,
           "OwnerShieldMesh": "/units/ual0001/ual0001_phaseshield_mesh",
           "ImpactEffects": "AeonShieldHit01",
           "Icon": "phtsg",
-          "Slot": "Back",
+          "Slot": "RCH",
           "ShowBones": [
             "Back_Upgrade"
           ],
           "ShieldEnergyDrainRechargeTime": 5,
           "ShieldRegenStartTime": 1,
           "MaintenanceConsumptionPerSecondEnergy": 250,
-          "BuildCostMass": 2300,
+          "BuildCostMass": 2530,
           "Name": "Heavy Personal Shield Generator",
           "ShieldRechargeTime": 160,
           "Prerequisite": "Shield",
@@ -69217,7 +69290,7 @@
           "ShieldMaxHealth": 25000
         },
         "HeatSinkRemove": {
-          "Slot": "RCH",
+          "Slot": "LCH",
           "BuildCostEnergy": 1,
           "BuildTime": 0.1,
           "Name": "Remove Quantum Accelerator",
@@ -69230,22 +69303,6 @@
           "RemoveEnhancements": [
             "HeatSink",
             "HeatSinkRemove"
-          ]
-        },
-        "ResourceAllocationRemove": {
-          "Slot": "Back",
-          "BuildCostEnergy": 1,
-          "BuildTime": 0.1,
-          "Name": "Remove Resource Allocation System",
-          "Prerequisite": "ResourceAllocation",
-          "HideBones": [
-            "Back_Upgrade"
-          ],
-          "Icon": "ras",
-          "BuildCostMass": 1,
-          "RemoveEnhancements": [
-            "ResourceAllocation",
-            "ResourceAllocationRemove"
           ]
         },
         "EnhancedSensorsRemove": {
@@ -69286,25 +69343,6 @@
           "Icon": "aes",
           "NewRegenRate": 10
         },
-        "HeatSink": {
-          "Slot": "RCH",
-          "ShowBones": [
-            "Right_Upgrade"
-          ],
-          "UpgradeEffectBones": [
-            "Right_Turret",
-            "Right_Upgrade"
-          ],
-          "BuildCostEnergy": 15000,
-          "BuildTime": 500,
-          "Name": "Quantum Accelerator",
-          "Icon": "hsa",
-          "UpgradeUnitAmbientBones": [
-            "UAL0001"
-          ],
-          "BuildCostMass": 500,
-          "NewRateOfFire": 2
-        },
         "FAF_CrysalisBeamAdvancedRemove": {
           "Slot": "LCH",
           "BuildCostEnergy": 1,
@@ -69322,45 +69360,37 @@
             "FAF_CrysalisBeamAdvancedRemove"
           ]
         },
-        "ResourceAllocation": {
+        "ChronoDampenerRemove": {
           "Slot": "Back",
-          "ProductionPerSecondMass": 18,
-          "UpgradeEffectBones": [
-            "Back_Upgrade",
-            "Left_Arm_B01",
-            "Right_Arm_B01"
-          ],
-          "BuildCostEnergy": 175000,
-          "BuildTime": 2800,
-          "Name": "Resource Allocation System",
-          "Icon": "ras",
-          "BuildCostMass": 5000,
-          "UpgradeUnitAmbientBones": [
-            "UAL0001"
-          ],
-          "ProductionPerSecondEnergy": 1700,
-          "ShowBones": [
+          "BuildCostEnergy": 1,
+          "BuildTime": 0.1,
+          "Name": "Remove Chrono Dampener",
+          "Prerequisite": "ChronoDampener",
+          "HideBones": [
             "Back_Upgrade"
+          ],
+          "Icon": "cd",
+          "BuildCostMass": 1,
+          "RemoveEnhancements": [
+            "ChronoDampener",
+            "ChronoDampenerRemove"
           ]
         },
-        "CrysalisBeam": {
-          "Slot": "LCH",
-          "ShowBones": [
-            "Left_Upgrade"
+        "ResourceAllocationRemove": {
+          "Slot": "Back",
+          "BuildCostEnergy": 1,
+          "BuildTime": 0.1,
+          "Name": "Remove Resource Allocation System",
+          "Prerequisite": "ResourceAllocation",
+          "HideBones": [
+            "Back_Upgrade"
           ],
-          "UpgradeEffectBones": [
-            "Left_Turret",
-            "Left_Upgrade"
-          ],
-          "BuildCostEnergy": 6000,
-          "BuildTime": 350,
-          "Name": "Enhanced Quantum Disruptor",
-          "Icon": "cba",
-          "UpgradeUnitAmbientBones": [
-            "UAL0001"
-          ],
-          "BuildCostMass": 300,
-          "NewMaxRadius": 30
+          "Icon": "ras",
+          "BuildCostMass": 1,
+          "RemoveEnhancements": [
+            "ResourceAllocation",
+            "ResourceAllocationRemove"
+          ]
         },
         "ResourceAllocationAdvanced": {
           "Slot": "Back",
@@ -69384,6 +69414,27 @@
             "Back_Upgrade"
           ]
         },
+        "ResourceAllocation": {
+          "Slot": "Back",
+          "ProductionPerSecondMass": 18,
+          "UpgradeEffectBones": [
+            "Back_Upgrade",
+            "Left_Arm_B01",
+            "Right_Arm_B01"
+          ],
+          "BuildCostEnergy": 175000,
+          "BuildTime": 2800,
+          "Name": "Resource Allocation System",
+          "Icon": "ras",
+          "BuildCostMass": 5000,
+          "UpgradeUnitAmbientBones": [
+            "UAL0001"
+          ],
+          "ProductionPerSecondEnergy": 1700,
+          "ShowBones": [
+            "Back_Upgrade"
+          ]
+        },
         "ResourceAllocationAdvancedRemove": {
           "Slot": "Back",
           "BuildCostEnergy": 1,
@@ -69401,21 +69452,27 @@
             "ResourceAllocationAdvancedRemove"
           ]
         },
-        "ChronoDampenerRemove": {
-          "Slot": "Back",
-          "BuildCostEnergy": 1,
-          "BuildTime": 0.1,
-          "Name": "Remove Chrono Dampener",
-          "Prerequisite": "ChronoDampener",
-          "HideBones": [
-            "Back_Upgrade"
+        "HeatSink": {
+          "Slot": "LCH",
+          "ShowBones": [
+            "Right_Upgrade"
           ],
-          "Icon": "cd",
-          "BuildCostMass": 1,
-          "RemoveEnhancements": [
-            "ChronoDampener",
-            "ChronoDampenerRemove"
-          ]
+          "UpgradeEffectBones": [
+            "Right_Turret",
+            "Right_Upgrade",
+            "Left_Turret",
+            "Left_Upgrade"
+          ],
+          "BuildCostEnergy": 24000,
+          "BuildTime": 800,
+          "Name": "Quantum Accelerator",
+          "Icon": "hsa",
+          "NewMaxRadius": 30,
+          "UpgradeUnitAmbientBones": [
+            "UAL0001"
+          ],
+          "BuildCostMass": 800,
+          "NewRateOfFire": 2
         },
         "T3Engineering": {
           "NewBuildRate": 100,
@@ -72315,8 +72372,8 @@
           "RackSalvoSize": 1,
           "RangeCategory": "UWRC_Countermeasure",
           "RackSlavedToTurret": false,
-          "MinRadius": 10,
-          "MaxRadius": 32,
+          "MinRadius": 5,
+          "MaxRadius": 25,
           "ProjectileId": "/projectiles/AIMAntiTorpedo02/AIMAntiTorpedo02_proj.bp",
           "MuzzleVelocity": 80,
           "RackFireTogether": false,
@@ -72915,7 +72972,7 @@
       "BuildIconSortPriority": 20,
       "Weapon": [
         {
-          "DamageRadius": 2,
+          "DamageRadius": 1.3,
           "Label": "MainGun",
           "RateOfFire": 0.33333333333333,
           "ProjectilesPerOnFire": 1,
@@ -90870,7 +90927,7 @@
       "LifeBarSize": 3.25,
       "Weapon": [
         {
-          "DamageRadius": 0.5,
+          "DamageRadius": 1,
           "TurretYawRange": 70,
           "RateOfFire": 10,
           "TurretYaw": 0,
@@ -90924,8 +90981,8 @@
           "RackRecoilDistance": 0,
           "MuzzleChargeDelay": 0,
           "MinRadius": 2,
-          "MaxRadius": 40,
-          "TurretPitchRange": 70,
+          "MaxRadius": 44,
+          "TurretPitchRange": 90,
           "RackSalvoReloadTime": 0,
           "FiringTolerance": 0,
           "RackFireTogether": false,
@@ -90967,7 +91024,7 @@
           "DamageRadius": 0,
           "TurretYawRange": 41,
           "TargetCheckInterval": 0.2,
-          "RateOfFire": 2,
+          "RateOfFire": 1,
           "HeadingArcCenter": -35,
           "RackSalvoFiresAfterCharge": true,
           "RackBones": [
@@ -91038,14 +91095,14 @@
           "TurretDualManipulators": false,
           "TurretBonePitch": "Right_Arm_B02",
           "TurretYawSpeed": 20,
-          "MaxRadius": 41
+          "MaxRadius": 45
         },
         {
           "TractorDamage": 729,
           "DamageRadius": 0,
           "TurretYawRange": 41,
           "TargetCheckInterval": 0.2,
-          "RateOfFire": 2,
+          "RateOfFire": 1,
           "HeadingArcCenter": 35,
           "RackSalvoFiresAfterCharge": true,
           "RackBones": [
@@ -91131,7 +91188,7 @@
           "TurretDualManipulators": false,
           "TurretBonePitch": "Left_Arm_B02",
           "TurretYawSpeed": 20,
-          "MaxRadius": 41
+          "MaxRadius": 45
         },
         {
           "DamageType": "DeathExplosion",
@@ -92111,7 +92168,7 @@
           "MuzzleVelocityReduceDistance": 140,
           "NotExclusive": true,
           "MuzzleSalvoDelay": 0,
-          "MuzzleChargeDelay": 1.5,
+          "MuzzleChargeDelay": 0.5,
           "TurretYawRange": 180,
           "RackReloadTimeout": 10,
           "FiringTolerance": 2,
@@ -102769,7 +102826,7 @@
       "BuildIconSortPriority": 30,
       "Weapon": [
         {
-          "DamageRadius": 2,
+          "DamageRadius": 1.4,
           "Label": "TauCannon01",
           "RateOfFire": 0.4,
           "ProjectilesPerOnFire": 1,
@@ -111290,7 +111347,7 @@
       "Weapon": [
         {
           "MaxRadius": 65,
-          "MuzzleSalvoDelay": 1,
+          "MuzzleSalvoDelay": 0.8,
           "TargetPriorities": [
             "SUBMERSIBLE",
             "TECH2 LIGHTBOAT",
@@ -111312,11 +111369,11 @@
               "RackBone": "Torpedo02"
             }
           ],
-          "MuzzleVelocity": 7.5,
+          "MuzzleVelocity": 7.9,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
           "RackRecoilDistance": 0,
-          "MuzzleSalvoSize": 4,
+          "MuzzleSalvoSize": 3,
           "SlavedToBody": true,
           "FireTargetLayerCapsTable": {
             "Sub": "Seabed|Sub|Water",
@@ -111338,18 +111395,18 @@
           "RackSalvoSize": 1,
           "CollideFriendly": false,
           "DisplayName": "Uall Cavitation Torpedo",
-          "RackReloadTimeout": 10,
-          "RateOfFire": 0.2,
+          "RackReloadTimeout": 3,
+          "RateOfFire": 0.33333333333333,
           "SlavedToBodyArcRange": 10,
           "RangeCategory": "UWRC_AntiNavy",
-          "Damage": 380,
+          "Damage": 270,
           "BallisticArc": "RULEUBA_None",
           "Label": "TorpedoFront",
           "RackSlavedToTurret": false
         },
         {
           "AlwaysRecheckTarget": false,
-          "RateOfFire": 0.1,
+          "RateOfFire": 0.125,
           "DisableWhileReloading": true,
           "TurretYaw": 0,
           "RackBones": [
@@ -111361,7 +111418,7 @@
             }
           ],
           "Damage": 2,
-          "ProjectileLifetime": 1.5,
+          "ProjectileLifetime": 2.5,
           "DamageType": "Normal",
           "Audio": {
             "Fire": {
@@ -111378,37 +111435,38 @@
           "RackSalvoSize": 1,
           "RangeCategory": "UWRC_Countermeasure",
           "RackSlavedToTurret": false,
-          "TurretYawSpeed": 180,
-          "MaxRadius": 32,
-          "ProjectileId": "/projectiles/SANAjelluAntiTorpedo01/SANAjelluAntiTorpedo01_proj.bp",
           "Label": "AntiTorpedoLeft",
+          "MinRadius": 5,
+          "WeaponCategory": "Defense",
+          "ProjectileId": "/projectiles/SANAjelluAntiTorpedo01/SANAjelluAntiTorpedo01_proj.bp",
+          "RackRecoilDistance": 0,
           "MuzzleVelocity": 80,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
           "TurretBoneMuzzle": "Left_Turret_Muzzle",
           "MuzzleSalvoSize": 1,
-          "RackRecoilDistance": 0,
+          "Turreted": true,
           "FireTargetLayerCapsTable": {
             "Sub": "Water",
             "Water": "Water"
           },
           "BallisticArc": "RULEUBA_None",
-          "Turreted": true,
-          "TurretYawRange": 90,
+          "TurretYawSpeed": 180,
+          "TargetRestrictDisallow": "UNTARGETABLE",
           "MuzzleSalvoDelay": 0,
           "LeadTarget": false,
-          "TargetRestrictDisallow": "UNTARGETABLE",
-          "RackReloadTimeout": 0,
+          "RackSalvoReloadTime": 0,
           "TargetRestrictOnlyAllow": "TORPEDO",
           "TargetType": "RULEWTT_Projectile",
-          "WeaponRepackTimeout": 0,
           "CollideFriendly": false,
+          "WeaponRepackTimeout": 0,
           "TrackingRadius": 1,
+          "RackReloadTimeout": 0,
           "FiringTolerance": 50,
-          "RackSalvoReloadTime": 0,
+          "TurretYawRange": 90,
           "TurretDualManipulators": false,
           "TurretBonePitch": "Left_Turret_Barrel",
-          "WeaponCategory": "Defense",
+          "MaxRadius": 22,
           "WeaponUnpacks": false,
           "WeaponNumber": 2
         },
@@ -120203,21 +120261,22 @@
       "Physics": {
         "MeshExtentsX": 2.75,
         "LayerChangeOffsetHeight": -5,
-        "MaxAcceleration": 2.5,
+        "MaxAcceleration": 2.4,
         "MotionType": "RULEUMT_Amphibious",
         "SkirtSizeX": 6,
         "MeshExtentsZ": 3,
-        "TurnRate": 60,
+        "TurnRate": 40,
         "StandUpright": true,
         "DragCoefficient": 0.2,
         "SkirtOffsetZ": -1.5,
-        "MaxSpeed": 2.5,
-        "TurnRadius": 3,
+        "MaxSpeed": 2.4,
         "SkirtSizeZ": 6,
-        "MaxSteerForce": 10,
+        "TurnRadius": 3,
         "MeshExtentsY": 6.75,
+        "MaxSpeedReverse": 0,
+        "MaxSteerForce": 10,
         "SkirtOffsetX": -1.5,
-        "MaxBrake": 2.5
+        "MaxBrake": 2.4
       },
       "Intel": {
         "VisionRadius": 50
