@@ -42,7 +42,7 @@ jobs:
               with:
                   repository: gapforever2/fa
                   path: fa
-                  ref: develop
+                  ref: GAP-8BETA-BALANCE
                   sparse-checkout-cone-mode: false
                   sparse-checkout: |
                       *.bp
