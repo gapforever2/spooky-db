@@ -16551,11 +16551,9 @@
       },
       "SizeZ": 1.5,
       "Intel": {
-        "RadarStealth": true,
         "SonarRadius": 36,
         "WaterVisionRadius": 44,
-        "VisionRadius": 20,
-        "SonarStealth": true
+        "VisionRadius": 20
       },
       "Defense": {
         "ArmorType": "Structure",
@@ -16626,7 +16624,6 @@
         ],
         "Abilities": [
           "Sonar",
-          "Personal Stealth",
           "Torpedoes"
         ],
         "IdleEffects": {
@@ -21707,8 +21704,8 @@
       },
       "Defense": {
         "ArmorType": "Normal",
-        "Health": 1900,
-        "MaxHealth": 1900,
+        "Health": 2000,
+        "MaxHealth": 2000,
         "AirThreatLevel": 140
       },
       "Audio": {
@@ -21822,11 +21819,11 @@
       },
       "StrategicIconSortPriority": 85,
       "Economy": {
-        "BuildTime": 3000,
+        "BuildTime": 1800,
         "TeleportMassMod": 1,
-        "BuildCostEnergy": 7500,
+        "BuildCostEnergy": 8000,
         "TeleportTimeMod": 0.01,
-        "BuildCostMass": 600,
+        "BuildCostMass": 800,
         "TeleportEnergyMod": 0.15
       },
       "Weapon": [
@@ -21870,7 +21867,7 @@
               "RackBone": "Turret"
             }
           ],
-          "Damage": 100,
+          "Damage": 85.7,
           "ProjectileLifetime": 2,
           "DamageType": "Normal",
           "Audio": {
@@ -21902,7 +21899,7 @@
             "AIR MOBILE",
             "ALLUNITS"
           ],
-          "MaxRadius": 60,
+          "MaxRadius": 50,
           "ProjectileId": "/projectiles/AAPhalanx01/AAPhalanx01_proj.bp",
           "BallisticArc": "RULEUBA_None",
           "MuzzleVelocity": 100,
@@ -21919,8 +21916,8 @@
           "Turreted": true,
           "TurretYawRange": 180,
           "RackReloadTimeout": 0,
-          "MuzzleSalvoDelay": 0.1,
-          "RackSalvoReloadTime": 4.3,
+          "MuzzleSalvoDelay": 0.02,
+          "RackSalvoReloadTime": 1.1,
           "CollideFriendly": false,
           "TargetRestrictDisallow": "UNTARGETABLE",
           "TurretBoneDualMuzzle": "Right_Muzzle",
@@ -40124,10 +40121,10 @@
           "WeaponCategory": "Anti Air"
         },
         {
-          "DamageRadius": 2,
-          "FiringRandomness": 0.8,
+          "DamageRadius": 3,
+          "FiringRandomness": 0.35,
           "RateOfFire": 0.1,
-          "ProjectilesPerOnFire": 6,
+          "ProjectilesPerOnFire": 2,
           "TurretYaw": 0,
           "RackBones": [
             {
@@ -40143,7 +40140,7 @@
               "RackBone": "Projectile01"
             }
           ],
-          "Damage": 150,
+          "Damage": 200,
           "DamageType": "Normal",
           "Audio": {
             "Fire": {
@@ -40161,36 +40158,37 @@
           "RangeCategory": "UWRC_DirectFire",
           "AboveWaterTargetsOnly": true,
           "RackSlavedToTurret": true,
-          "TargetPriorities": [
-            "STRUCTURE",
-            "ALLUNITS"
-          ],
+          "MinRadius": 10,
           "WeaponCategory": "Direct Fire",
           "ProjectileId": "/projectiles/CIFCorsairMissile01/CIFCorsairMissile01_proj.bp",
-          "MuzzleVelocity": 30,
+          "MuzzleVelocity": 17,
           "RackFireTogether": true,
           "RackSalvoChargeTime": 0,
           "TurretBoneMuzzle": "Projectile_Aim",
-          "MuzzleSalvoSize": 4,
+          "MuzzleSalvoSize": 3,
+          "Label": "GroundMissile",
           "FireTargetLayerCapsTable": {
             "Air": "Land|Seabed|Water",
             "Land": "Land|Seabed|Water",
             "Water": "Land|Seabed|Water"
           },
           "BallisticArc": "RULEUBA_None",
-          "Label": "GroundMissile",
           "ProjectileLifetimeUsesMultiplier": 1.15,
-          "MuzzleSalvoDelay": 0.05,
-          "LeadTarget": true,
           "TurretYawSpeed": 360,
+          "MuzzleSalvoDelay": 0.03,
+          "LeadTarget": true,
           "TurretYawRange": 20,
           "RackSalvoReloadTime": 0,
           "RackReloadTimeout": 10,
+          "TargetPriorities": [
+            "STRUCTURE",
+            "ALLUNITS"
+          ],
           "CollideFriendly": false,
           "TargetRestrictDisallow": "UNTARGETABLE",
           "RackRecoilDistance": 0,
-          "FiringTolerance": 6,
-          "TurretPitchRange": 90,
+          "FiringTolerance": 7,
+          "TurretPitchRange": 110,
           "TurretDualManipulators": false,
           "TurretBonePitch": "Projectile_Aim",
           "MaxRadius": 40,
@@ -47957,11 +47955,9 @@
       },
       "SizeZ": 1.5,
       "Intel": {
-        "RadarStealth": true,
         "SonarRadius": 36,
         "WaterVisionRadius": 44,
-        "VisionRadius": 20,
-        "SonarStealth": true
+        "VisionRadius": 20
       },
       "Defense": {
         "ArmorType": "Structure",
@@ -48032,7 +48028,6 @@
         ],
         "Abilities": [
           "Sonar",
-          "Personal Stealth",
           "Torpedoes"
         ],
         "IdleEffects": {
@@ -53879,11 +53874,11 @@
       },
       "Description": "Mobile Missile Anti-Air",
       "Economy": {
-        "BuildTime": 3000,
+        "BuildTime": 1800,
         "TeleportMassMod": 1,
-        "BuildCostEnergy": 7500,
+        "BuildCostEnergy": 8000,
         "TeleportTimeMod": 0.01,
-        "BuildCostMass": 600,
+        "BuildCostMass": 800,
         "TeleportEnergyMod": 0.15
       },
       "Footprint": {
@@ -53895,8 +53890,8 @@
       "Defense": {
         "ArmorType": "Normal",
         "SurfaceThreatLevel": 10,
-        "Health": 1900,
-        "MaxHealth": 1900,
+        "Health": 2000,
+        "MaxHealth": 2000,
         "AirThreatLevel": 33
       },
       "Audio": {
@@ -54188,7 +54183,7 @@
         {
           "DamageRadius": 1.5,
           "Label": "AAGun",
-          "RateOfFire": 1.6666666666667,
+          "RateOfFire": 2.5,
           "TurretYaw": 0,
           "DamageFriendly": false,
           "RackBones": [
@@ -54263,8 +54258,8 @@
             "ALLUNITS"
           ],
           "WeaponCategory": "Anti Air",
-          "ProjectileId": "/projectiles/CAANanoDartEx/CAANanoDartEx_proj.bp",
-          "MuzzleVelocity": 15,
+          "ProjectileId": "/projectiles/CAAMissileNanite02/CAAMissileNanite02_proj.bp",
+          "MuzzleVelocity": 45,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
           "TurretBoneMuzzle": "Turret_Muzzle_01",
@@ -54279,7 +54274,7 @@
           "PrefersPrimaryWeaponTarget": true,
           "TurretYawSpeed": 180,
           "TurretYawRange": 180,
-          "RackSalvoReloadTime": 2,
+          "RackSalvoReloadTime": 1.5,
           "CollideFriendly": false,
           "RackRecoilDistance": 0,
           "TargetRestrictDisallow": "UNTARGETABLE",
@@ -54288,7 +54283,7 @@
           "TurretDualManipulators": false,
           "TurretBonePitch": "Turret_Barrel01",
           "Turreted": true,
-          "MaxRadius": 62
+          "MaxRadius": 50
         }
       ]
     },
@@ -78942,11 +78937,9 @@
       },
       "SizeZ": 1.5,
       "Intel": {
-        "RadarStealth": true,
         "SonarRadius": 36,
         "WaterVisionRadius": 44,
-        "VisionRadius": 20,
-        "SonarStealth": true
+        "VisionRadius": 20
       },
       "Defense": {
         "ArmorType": "Structure",
@@ -79002,7 +78995,6 @@
         "UniformScale": 0.45,
         "Abilities": [
           "Sonar",
-          "Personal Stealth",
           "Torpedoes"
         ],
         "DamageEffects": [
@@ -83982,11 +83974,11 @@
         "MeshExtentsZ": 1
       },
       "Economy": {
-        "BuildTime": 3000,
+        "BuildTime": 1800,
         "TeleportMassMod": 1,
-        "BuildCostEnergy": 7500,
+        "BuildCostEnergy": 8000,
         "TeleportTimeMod": 0.01,
-        "BuildCostMass": 600,
+        "BuildCostMass": 800,
         "TeleportEnergyMod": 0.15
       },
       "Description": "Mobile Missile Anti-Air",
@@ -83994,8 +83986,8 @@
       "SelectionThickness": 0.5,
       "Defense": {
         "ArmorType": "Normal",
-        "Health": 1700,
-        "MaxHealth": 1700,
+        "Health": 2000,
+        "MaxHealth": 2000,
         "AirThreatLevel": 20
       },
       "Audio": {
@@ -84158,7 +84150,7 @@
         {
           "DamageRadius": 1.5,
           "Label": "Missile",
-          "RateOfFire": 0.16666666666667,
+          "RateOfFire": 0.83333333333333,
           "ProjectilesPerOnFire": 1,
           "TurretYaw": 0,
           "RackBones": [
@@ -84170,7 +84162,7 @@
               "RackBone": "Missile"
             }
           ],
-          "Damage": 1200,
+          "Damage": 400,
           "ProjectileLifetime": 8,
           "DamageType": "Normal",
           "Audio": {
@@ -84203,13 +84195,13 @@
             "AIR MOBILE",
             "ALLUNITS"
           ],
-          "MaxRadius": 64,
+          "MaxRadius": 50,
           "ProjectileId": "/projectiles/AASerpentine/AASerpentine_proj.bp",
-          "MuzzleVelocity": 34,
+          "MuzzleVelocity": 45,
           "RackSalvoReloadTime": 0,
           "RackSalvoChargeTime": 0,
           "WeaponUnpacks": true,
-          "WeaponUnpackAnimationRate": 4,
+          "WeaponUnpackAnimationRate": 9,
           "FireTargetLayerCapsTable": {
             "Air": "Air",
             "Land": "Air",
@@ -84217,19 +84209,19 @@
           },
           "BallisticArc": "RULEUBA_None",
           "RackRecoilDistance": 0,
-          "MuzzleSalvoDelay": 0,
+          "MuzzleSalvoDelay": 0.01,
           "RackReloadTimeout": 10,
           "WeaponCategory": "Anti Air",
           "Turreted": false,
           "TargetRestrictDisallow": "UNTARGETABLE",
           "FiringTolerance": 100,
-          "WeaponRepackTimeout": 5,
+          "WeaponRepackTimeout": 15,
           "CollideFriendly": false,
           "TurretYawRange": 0,
           "SlavedToBody": false,
           "TurretYawSpeed": 0,
           "TurretDualManipulators": false,
-          "MuzzleChargeDelay": 0.1,
+          "MuzzleChargeDelay": 0.05,
           "WeaponUnpackAnimation": "/units/DALK003/DALK003_unpack.sca",
           "MuzzleSalvoSize": 1
         }
@@ -107883,11 +107875,9 @@
       },
       "SizeZ": 1.5,
       "Intel": {
-        "RadarStealth": true,
         "SonarRadius": 36,
         "WaterVisionRadius": 44,
-        "VisionRadius": 20,
-        "SonarStealth": true
+        "VisionRadius": 20
       },
       "Defense": {
         "ArmorType": "Structure",
@@ -107948,7 +107938,6 @@
         "UniformScale": 0.05,
         "Abilities": [
           "Sonar",
-          "Personal Stealth",
           "Torpedoes",
           "Torpedo Defense"
         ],
@@ -114247,11 +114236,11 @@
       "Description": "Lightning Tank",
       "CollisionOffsetZ": 0.1,
       "Economy": {
-        "BuildTime": 3600,
+        "BuildTime": 1800,
         "TeleportMassMod": 1,
-        "BuildCostEnergy": 9600,
+        "BuildCostEnergy": 8000,
         "TeleportTimeMod": 0.01,
-        "BuildCostMass": 720,
+        "BuildCostMass": 800,
         "TeleportEnergyMod": 0.15
       },
       "LifeBarHeight": 0.075,
@@ -114260,8 +114249,8 @@
       "Defense": {
         "ArmorType": "Normal",
         "SurfaceThreatLevel": 6,
-        "Health": 1800,
-        "MaxHealth": 1800,
+        "Health": 2100,
+        "MaxHealth": 2100,
         "AirThreatLevel": 120
       },
       "Audio": {
@@ -114418,7 +114407,7 @@
       "BuildIconSortPriority": 35,
       "Weapon": [
         {
-          "DamageRadius": 1,
+          "DamageRadius": 0,
           "TurretYawRange": 180,
           "RateOfFire": 0.25,
           "WeaponUnpackAnimation": "/units/DSLK004/DSLK004_unpack.sca",
@@ -114432,7 +114421,7 @@
               "RackBone": "muzzle02"
             }
           ],
-          "Damage": 75,
+          "Damage": 5,
           "BeamCollisionDelay": 0.05,
           "DamageType": "Normal",
           "Audio": {
@@ -114494,10 +114483,10 @@
           "TurretYawSpeed": 1000
         },
         {
-          "DamageRadius": 1,
+          "DamageRadius": 1.5,
           "FiringRandomness": 0,
-          "TargetCheckInterval": 0.2,
-          "RateOfFire": 1,
+          "TargetCheckInterval": 0.1,
+          "RateOfFire": 0.27777777777778,
           "WeaponUnpackAnimation": "/units/DSLK004/DSLK004_updummy.sca",
           "TurretYaw": 0,
           "DamageFriendly": false,
@@ -114509,7 +114498,7 @@
               "RackBone": "muzzle01"
             }
           ],
-          "Damage": 200,
+          "Damage": 171.428,
           "BeamCollisionDelay": 0,
           "DamageType": "Normal",
           "Audio": {
@@ -114540,7 +114529,7 @@
           "WeaponCategory": "Anti Air",
           "RackReloadTimeout": 0,
           "BallisticArc": "RULEUBA_None",
-          "RackSalvoReloadTime": 5,
+          "RackSalvoReloadTime": 0,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
           "TurretBoneMuzzle": "muzzle01",
@@ -114571,7 +114560,7 @@
           "MuzzleSalvoSize": 1,
           "TurretDualManipulators": false,
           "TurretBonePitch": "muzzle01",
-          "MaxRadius": 58,
+          "MaxRadius": 50,
           "AutoInitiateAttackCommand": false
         }
       ]

@@ -5413,7 +5413,6 @@
       "Display": {
         "Abilities": [
           "Sonar",
-          "Personal Stealth",
           "Torpedoes"
         ]
       },
@@ -7115,7 +7114,7 @@
         "VisionRadius": 26
       },
       "Defense": {
-        "Health": 1900
+        "Health": 2000
       },
       "Id": "DELK002",
       "Wreckage": {
@@ -7136,9 +7135,9 @@
         ]
       },
       "Economy": {
-        "BuildTime": 3000,
-        "BuildCostEnergy": 7500,
-        "BuildCostMass": 600
+        "BuildTime": 1800,
+        "BuildCostEnergy": 8000,
+        "BuildCostMass": 800
       },
       "Weapon": [
         {
@@ -7165,21 +7164,21 @@
               ]
             }
           ],
-          "Damage": 100,
+          "Damage": 85.7,
           "ProjectileLifetime": 2,
           "DamageType": "Normal",
           "TurretPitch": 0,
           "TurretPitchRange": 60,
           "DisplayName": "Gatling Plasma Cannon",
           "TurretPitchSpeed": 180,
-          "MaxRadius": 60,
+          "MaxRadius": 50,
           "ProjectileId": "/projectiles/AAPhalanx01/AAPhalanx01_proj.bp",
           "MuzzleVelocity": 100,
           "RackFireTogether": true,
           "RackSalvoChargeTime": 1,
           "TurretYawRange": 180,
-          "MuzzleSalvoDelay": 0.1,
-          "RackSalvoReloadTime": 4.3,
+          "MuzzleSalvoDelay": 0.02,
+          "RackSalvoReloadTime": 1.1,
           "MuzzleSalvoSize": 14,
           "TurretYaw": 0,
           "FiringTolerance": 1,
@@ -12915,10 +12914,10 @@
           "WeaponCategory": "Anti Air"
         },
         {
-          "DamageRadius": 2,
-          "FiringRandomness": 0.8,
+          "DamageRadius": 3,
+          "FiringRandomness": 0.35,
           "RateOfFire": 0.1,
-          "ProjectilesPerOnFire": 6,
+          "ProjectilesPerOnFire": 2,
           "TurretYaw": 0,
           "RackBones": [
             {
@@ -12932,24 +12931,25 @@
               ]
             }
           ],
-          "Damage": 150,
+          "Damage": 200,
           "DamageType": "Normal",
           "TurretPitch": 0,
           "DisplayName": "Corsair Missile Launcher",
           "TurretPitchSpeed": 360,
+          "MinRadius": 10,
           "WeaponCategory": "Direct Fire",
           "ProjectileId": "/projectiles/CIFCorsairMissile01/CIFCorsairMissile01_proj.bp",
-          "MuzzleVelocity": 30,
+          "MuzzleVelocity": 17,
           "RackFireTogether": true,
           "RackSalvoChargeTime": 0,
-          "MuzzleSalvoSize": 4,
+          "MuzzleSalvoSize": 3,
           "ProjectileLifetimeUsesMultiplier": 1.15,
-          "MuzzleSalvoDelay": 0.05,
           "TurretYawSpeed": 360,
+          "MuzzleSalvoDelay": 0.03,
           "TurretYawRange": 20,
           "RackSalvoReloadTime": 0,
-          "FiringTolerance": 6,
-          "TurretPitchRange": 90,
+          "FiringTolerance": 7,
+          "TurretPitchRange": 110,
           "MaxRadius": 40
         },
         {
@@ -15552,7 +15552,6 @@
       "Display": {
         "Abilities": [
           "Sonar",
-          "Personal Stealth",
           "Torpedoes"
         ]
       },
@@ -17480,12 +17479,12 @@
       },
       "Description": "Mobile Missile Anti-Air",
       "Economy": {
-        "BuildTime": 3000,
-        "BuildCostEnergy": 7500,
-        "BuildCostMass": 600
+        "BuildTime": 1800,
+        "BuildCostEnergy": 8000,
+        "BuildCostMass": 800
       },
       "Defense": {
-        "Health": 1900
+        "Health": 2000
       },
       "Id": "DRLK001",
       "Wreckage": {
@@ -17602,7 +17601,7 @@
         },
         {
           "DamageRadius": 1.5,
-          "RateOfFire": 1.6666666666667,
+          "RateOfFire": 2.5,
           "TurretYaw": 0,
           "RackBones": [
             {
@@ -17650,17 +17649,17 @@
           "DisplayName": "Nanodart Launcher",
           "TurretPitchSpeed": 180,
           "WeaponCategory": "Anti Air",
-          "ProjectileId": "/projectiles/CAANanoDartEx/CAANanoDartEx_proj.bp",
-          "MuzzleVelocity": 15,
+          "ProjectileId": "/projectiles/CAAMissileNanite02/CAAMissileNanite02_proj.bp",
+          "MuzzleVelocity": 45,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoSize": 2,
           "MuzzleSalvoDelay": 0,
           "TurretYawSpeed": 180,
           "TurretYawRange": 180,
-          "RackSalvoReloadTime": 2,
+          "RackSalvoReloadTime": 1.5,
           "FiringTolerance": 10,
-          "MaxRadius": 62
+          "MaxRadius": 50
         }
       ]
     },
@@ -25625,7 +25624,6 @@
       "Display": {
         "Abilities": [
           "Sonar",
-          "Personal Stealth",
           "Torpedoes"
         ]
       },
@@ -27229,13 +27227,13 @@
         "MaxSpeed": 3.3
       },
       "Economy": {
-        "BuildTime": 3000,
-        "BuildCostEnergy": 7500,
-        "BuildCostMass": 600
+        "BuildTime": 1800,
+        "BuildCostEnergy": 8000,
+        "BuildCostMass": 800
       },
       "Description": "Mobile Missile Anti-Air",
       "Defense": {
-        "Health": 1700
+        "Health": 2000
       },
       "Id": "DALK003",
       "Wreckage": {
@@ -27273,7 +27271,7 @@
         },
         {
           "DamageRadius": 1.5,
-          "RateOfFire": 0.16666666666667,
+          "RateOfFire": 0.83333333333333,
           "ProjectilesPerOnFire": 1,
           "TurretYaw": 0,
           "RackBones": [
@@ -27283,19 +27281,19 @@
               ]
             }
           ],
-          "Damage": 1200,
+          "Damage": 400,
           "ProjectileLifetime": 8,
           "DamageType": "Normal",
           "TurretPitch": 0,
           "TurretPitchRange": 0,
           "DisplayName": "AA Serpentine",
           "TurretPitchSpeed": 0,
-          "MaxRadius": 64,
+          "MaxRadius": 50,
           "ProjectileId": "/projectiles/AASerpentine/AASerpentine_proj.bp",
-          "MuzzleVelocity": 34,
+          "MuzzleVelocity": 45,
           "RackSalvoReloadTime": 0,
           "RackSalvoChargeTime": 0,
-          "MuzzleSalvoDelay": 0,
+          "MuzzleSalvoDelay": 0.01,
           "WeaponCategory": "Anti Air",
           "FiringTolerance": 100,
           "TurretYawRange": 0,
@@ -34636,7 +34634,6 @@
       "Display": {
         "Abilities": [
           "Sonar",
-          "Personal Stealth",
           "Torpedoes",
           "Torpedo Defense"
         ]
@@ -36704,12 +36701,12 @@
       "StrategicIconName": "icon_land3_antiair",
       "Description": "Lightning Tank",
       "Economy": {
-        "BuildTime": 3600,
-        "BuildCostEnergy": 9600,
-        "BuildCostMass": 720
+        "BuildTime": 1800,
+        "BuildCostEnergy": 8000,
+        "BuildCostMass": 800
       },
       "Defense": {
-        "Health": 1800
+        "Health": 2100
       },
       "Physics": {
         "TurnRate": 75,
@@ -36738,7 +36735,7 @@
       "BuildIconSortPriority": 35,
       "Weapon": [
         {
-          "DamageRadius": 1,
+          "DamageRadius": 0,
           "TurretYawRange": 180,
           "RateOfFire": 0.25,
           "TurretYaw": 0,
@@ -36749,7 +36746,7 @@
               ]
             }
           ],
-          "Damage": 75,
+          "Damage": 5,
           "BeamCollisionDelay": 0.05,
           "DamageType": "Normal",
           "TurretPitch": 0,
@@ -36770,9 +36767,9 @@
           "TurretYawSpeed": 1000
         },
         {
-          "DamageRadius": 1,
+          "DamageRadius": 1.5,
           "FiringRandomness": 0,
-          "RateOfFire": 1,
+          "RateOfFire": 0.27777777777778,
           "TurretYaw": 0,
           "RackBones": [
             {
@@ -36781,7 +36778,7 @@
               ]
             }
           ],
-          "Damage": 200,
+          "Damage": 171.428,
           "BeamCollisionDelay": 0,
           "DamageType": "Normal",
           "TurretPitch": 30,
@@ -36792,7 +36789,7 @@
           "TurretYawRange": 180,
           "MinRadius": 0,
           "WeaponCategory": "Anti Air",
-          "RackSalvoReloadTime": 5,
+          "RackSalvoReloadTime": 0,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
           "BeamLifetime": 0.6,
@@ -36800,7 +36797,7 @@
           "TurretYawSpeed": 1000,
           "FiringTolerance": 0,
           "MuzzleSalvoSize": 1,
-          "MaxRadius": 58
+          "MaxRadius": 50
         }
       ]
     },
