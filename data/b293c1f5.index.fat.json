@@ -1,5 +1,5 @@
 {
-  "version": "10",
+  "version": "12",
   "units": [
     {
       "Categories": [
@@ -516,8 +516,8 @@
       "LifeBarSize": 0.5,
       "StrategicIconName": "icon_land1_engineer",
       "LifeBarOffset": 0.2,
-      "CollisionOffsetY": -0.25,
-      "CollisionOffsetZ": -0.1,
+      "CollisionOffsetY": -0.4,
+      "CollisionOffsetZ": -0.05,
       "Economy": {
         "TeleportMassMod": 1,
         "StorageMass": 10,
@@ -634,7 +634,7 @@
         "MassMult": 0.9
       },
       "SizeX": 0.7,
-      "SizeY": 0.8,
+      "SizeY": 0.95,
       "SelectionCenterOffsetZ": -0.1,
       "SelectionSizeZ": 0.4,
       "SelectionThickness": 0.95,
@@ -737,7 +737,10 @@
       },
       "StrategicIconSortPriority": 105,
       "AI": {
-        "GuardScanRadius": 60
+        "GuardScanRadius": 26,
+        "TargetBones": [
+          "AttachPoint"
+        ]
       },
       "BuildIconSortPriority": 10
     },
@@ -1621,8 +1624,8 @@
           "AboveWaterTargetsOnly": true,
           "RackSlavedToTurret": false,
           "TargetPriorities": [
+            "RADAR INTELLIGENCE STRUCTURE",
             "MOBILE",
-            "(STRUCTURE * DEFENSE - ANTIMISSILE)",
             "ALLUNITS"
           ],
           "MaxRadius": 26,
@@ -2153,7 +2156,7 @@
         "KLiftDamping": 2,
         "CanFly": true,
         "Winged": true,
-        "StartTurnDistance": 10,
+        "StartTurnDistance": 5,
         "EngageDistance": 50,
         "KMove": 1.5,
         "MinAirspeed": 10,
@@ -6450,7 +6453,12 @@
             "Weight": 100
           }
         ],
-        "AnimationWalkRate": 1.7,
+        "TransportAnimation": [
+          {
+            "Animation": "/units/UEL0001/UEL0001_afold.sca",
+            "Weight": 100
+          }
+        ],
         "IdleEffects": {
           "Seabed": {
             "Effects": [
@@ -6465,6 +6473,84 @@
               }
             ]
           }
+        },
+        "AttackReticleSize": 55,
+        "WarpInEffect": {
+          "HideBones": [
+            "Back_Upgrade_B01",
+            "Right_Upgrade",
+            "Left_Upgrade"
+          ],
+          "PhaseShieldMesh": "/units/uel0001/UEL0001_PhaseShield_mesh"
+        },
+        "AnimationWalkRate": 1.7,
+        "AnimationWalk": "/units/uel0001/uel0001_a001.sca",
+        "AnimationAction": "/units/uel0001/CERDACER.sca",
+        "Abilities": [
+          "Amphibious",
+          "Customizable",
+          "Engineering Suite",
+          "Not Capturable",
+          "Omni Sensor",
+          "Volatile"
+        ],
+        "DamageEffects": [
+          {
+            "OffsetX": 0.25,
+            "OffsetY": 0.75,
+            "OffsetZ": 0,
+            "Bone": 0
+          },
+          {
+            "OffsetX": -0.25,
+            "OffsetY": 0.75,
+            "OffsetZ": 0,
+            "Bone": 0
+          },
+          {
+            "OffsetX": -0.35,
+            "OffsetY": 0.1,
+            "OffsetZ": 0,
+            "Bone": 0
+          }
+        ],
+        "TeleportEffects": {
+          "PlayChargeFxAtUnit": true,
+          "PlayTeleportInFx": true,
+          "FxSizeY": 2.31,
+          "FxOffsetZ": -0.45,
+          "FxOffsetX": 0,
+          "FxSizeX": 2.31,
+          "FxOffsetY": 0,
+          "ChargeFxAtUnitBones": [
+            {
+              "Offset": [
+                0,
+                0,
+                -0.1
+              ],
+              "Bone": "Torso"
+            }
+          ],
+          "PlayTeleportOutFx": true,
+          "FxSizeZ": 2.42,
+          "PlayChargeFxAtDestination": true
+        },
+        "UniformScale": 0.105,
+        "Mesh": {
+          "IconFadeInZoom": 130,
+          "LODs": [
+            {
+              "LODCutoff": 100,
+              "ShaderName": "Unit"
+            },
+            {
+              "ShaderName": "Unit",
+              "SpecularName": "uel0001_lod1_specteam.dds",
+              "LODCutoff": 215,
+              "AlbedoName": "uel0001_lod1_albedo.dds"
+            }
+          ]
         },
         "MovementEffects": {
           "Land": {
@@ -6530,88 +6616,6 @@
               }
             ]
           }
-        },
-        "AttackReticleSize": 55,
-        "UniformScale": 0.105,
-        "TeleportEffects": {
-          "PlayChargeFxAtUnit": true,
-          "PlayTeleportInFx": true,
-          "FxSizeY": 2.31,
-          "FxOffsetZ": -0.45,
-          "FxOffsetX": 0,
-          "FxSizeX": 2.31,
-          "FxOffsetY": 0,
-          "ChargeFxAtUnitBones": [
-            {
-              "Offset": [
-                0,
-                0,
-                -0.1
-              ],
-              "Bone": "Torso"
-            }
-          ],
-          "PlayTeleportOutFx": true,
-          "FxSizeZ": 2.42,
-          "PlayChargeFxAtDestination": true
-        },
-        "Abilities": [
-          "Amphibious",
-          "Customizable",
-          "Engineering Suite",
-          "Not Capturable",
-          "Omni Sensor",
-          "Volatile"
-        ],
-        "DamageEffects": [
-          {
-            "OffsetX": 0.25,
-            "OffsetY": 0.75,
-            "OffsetZ": 0,
-            "Bone": 0
-          },
-          {
-            "OffsetX": -0.25,
-            "OffsetY": 0.75,
-            "OffsetZ": 0,
-            "Bone": 0
-          },
-          {
-            "OffsetX": -0.35,
-            "OffsetY": 0.1,
-            "OffsetZ": 0,
-            "Bone": 0
-          }
-        ],
-        "AnimationWalk": "/units/uel0001/uel0001_a001.sca",
-        "TransportAnimation": [
-          {
-            "Animation": "/units/UEL0001/UEL0001_afold.sca",
-            "Weight": 100
-          }
-        ],
-        "Mesh": {
-          "IconFadeInZoom": 130,
-          "LODs": [
-            {
-              "LODCutoff": 100,
-              "ShaderName": "Unit"
-            },
-            {
-              "ShaderName": "Unit",
-              "SpecularName": "uel0001_lod1_specteam.dds",
-              "LODCutoff": 215,
-              "AlbedoName": "uel0001_lod1_albedo.dds"
-            }
-          ]
-        },
-        "WarpInEffect": {
-          "HideBones": [
-            "Back_Upgrade_B01",
-            "Right_Upgrade",
-            "Left_Upgrade"
-          ],
-          "PhaseShieldMesh": "/units/uel0001/UEL0001_PhaseShield_mesh"
         }
       },
       "StrategicIconSortPriority": 0,
@@ -6884,7 +6888,7 @@
           "ManualFire": true,
           "AboveWaterTargetsOnly": true,
           "RackSlavedToTurret": false,
-          "MinRadius": 15,
+          "MinRadius": 20,
           "CountedProjectile": true,
           "ProjectileId": "/projectiles/TIFMissileCruiseCDR/TIFMissileCruiseCDR_proj.bp",
           "MuzzleVelocity": 3,
@@ -6945,7 +6949,7 @@
           "AboveWaterTargetsOnly": true,
           "RackSlavedToTurret": false,
           "MaxRadius": 256,
-          "MinRadius": 15,
+          "MinRadius": 20,
           "CountedProjectile": true,
           "ProjectileId": "/projectiles/TIFMissileNukeCDR/TIFMissileNukeCDR_proj.bp",
           "NukeInnerRingRadius": 15,
@@ -7012,8 +7016,8 @@
           "MuzzleSalvoDelay": 0,
           "RateOfFire": 1,
           "CollideFriendly": false,
-          "NukeInnerRingRadius": 24,
-          "NukeOuterRingRadius": 20,
+          "NukeInnerRingRadius": 30,
+          "NukeOuterRingRadius": 40,
           "FiringTolerance": 2,
           "RackRecoilDistance": 0,
           "NukeInnerRingDamage": 2000,
@@ -8160,7 +8164,7 @@
           "Cue": "UEL0208_Move_Start"
         }
       },
-      "CollisionOffsetY": -0.25,
+      "CollisionOffsetY": -0.4,
       "Id": "UEL0208",
       "Wreckage": {
         "EnergyMult": 0,
@@ -8176,7 +8180,7 @@
         "MassMult": 0.9
       },
       "SizeX": 0.7,
-      "SizeY": 0.9,
+      "SizeY": 1.05,
       "SelectionCenterOffsetZ": -0.1,
       "SelectionThickness": 0.8,
       "Intel": {
@@ -8279,7 +8283,10 @@
       },
       "StrategicIconSortPriority": 95,
       "AI": {
-        "GuardScanRadius": 60
+        "GuardScanRadius": 26,
+        "TargetBones": [
+          "AttachPoint"
+        ]
       },
       "Transport": {
         "TransportClass": 2
@@ -8361,7 +8368,7 @@
       "LifeBarSize": 0.6,
       "BuildIconSortPriority": 15,
       "AI": {
-        "GuardScanRadius": 26
+        "GuardScanRadius": 8
       },
       "StrategicIconName": "icon_land2_engineer",
       "Physics": {
@@ -9290,7 +9297,7 @@
         {
           "UseFiringSolutionInsteadOfAimBone": true,
           "FiringRandomness": 0.1,
-          "RateOfFire": 2,
+          "RateOfFire": 1,
           "ProjectilesPerOnFire": 1,
           "RackSalvoFiresAfterCharge": false,
           "RackBones": [
@@ -9301,7 +9308,7 @@
               "RackBone": "Left_Arm_Barrel"
             }
           ],
-          "Damage": 8,
+          "Damage": 15,
           "DamageType": "Normal",
           "Audio": {
             "Fire": {
@@ -9313,7 +9320,7 @@
           "TurretPitch": 0,
           "TurretPitchRange": 50,
           "DisplayName": "Gatling Plasma Cannon",
-          "TurretPitchSpeed": 60,
+          "TurretPitchSpeed": 50,
           "TurretBoneYaw": "Torso",
           "RackSalvoSize": 1,
           "RangeCategory": "UWRC_DirectFire",
@@ -9332,12 +9339,12 @@
           "WeaponCategory": "Direct Fire",
           "ProjectileId": "/projectiles/TDFPlasma02/TDFPlasma02_proj.bp",
           "BallisticArc": "RULEUBA_None",
-          "MuzzleVelocity": 30,
+          "MuzzleVelocity": 28,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 1,
           "TurretBoneMuzzle": "Left_Arm_Barrel_Muzzle",
           "WeaponUnpacks": true,
-          "TurretYawSpeed": 100,
+          "TurretYawSpeed": 90,
           "FireTargetLayerCapsTable": {
             "Air": "Land|Water|Seabed",
             "Land": "Land|Water|Seabed",
@@ -9346,10 +9353,10 @@
           "Turreted": true,
           "RackRecoilDistance": 0,
           "TurretYaw": 0,
-          "MuzzleSalvoDelay": 0.01,
+          "MuzzleSalvoDelay": 0.2,
           "AimsStraightOnDisable": false,
           "RackReloadTimeout": 0,
-          "RackSalvoReloadTime": 1,
+          "RackSalvoReloadTime": 2,
           "CollideFriendly": false,
           "TargetRestrictDisallow": "UNTARGETABLE",
           "WeaponRepackTimeout": 2,
@@ -9359,14 +9366,14 @@
           "TurretYawRange": 180,
           "TurretDualManipulators": false,
           "TurretBonePitch": "Left_Arm_B01",
-          "MuzzleSalvoSize": 24,
-          "MaxRadius": 32
+          "MuzzleSalvoSize": 15,
+          "MaxRadius": 34
         },
         {
-          "DamageRadius": 3,
+          "DamageRadius": 2,
           "FiringRandomness": 2.5,
-          "RateOfFire": 0.7,
-          "ProjectilesPerOnFire": 1,
+          "RateOfFire": 0.14925373134328,
+          "ProjectilesPerOnFire": 3,
           "TurretYaw": 0,
           "RackBones": [
             {
@@ -9376,7 +9383,7 @@
               "RackBone": "Right_Arm_B02"
             }
           ],
-          "Damage": 36,
+          "Damage": 50,
           "DamageType": "Normal",
           "Audio": {
             "Fire": {
@@ -9390,7 +9397,7 @@
           "DisplayName": "Heavy Fragmentation Grenade Launcher",
           "TurretPitchSpeed": 45,
           "TurretBoneYaw": "Right_Arm_B01",
-          "RackSalvoSize": 1,
+          "RackSalvoSize": 3,
           "RangeCategory": "UWRC_DirectFire",
           "AboveWaterTargetsOnly": true,
           "RackSlavedToTurret": false,
@@ -9403,11 +9410,11 @@
           ],
           "WeaponCategory": "Direct Fire",
           "ProjectileId": "/projectiles/TDFFragmentationGrenade01/TDFFragmentationGrenade01_proj.bp",
-          "MuzzleVelocity": 14,
+          "MuzzleVelocity": 12.8,
           "RackSalvoReloadTime": 0,
           "RackSalvoChargeTime": 0,
           "TurretBoneMuzzle": "Right_Arm_B02_Muzzle",
-          "MuzzleSalvoSize": 1,
+          "MuzzleSalvoSize": 4,
           "FireTargetLayerCapsTable": {
             "Air": "Land|Water|Seabed",
             "Land": "Land|Water|Seabed",
@@ -9415,21 +9422,21 @@
           },
           "BallisticArc": "RULEUBA_LowArc",
           "Label": "Grenade",
-          "MuzzleSalvoDelay": 0,
+          "MuzzleSalvoDelay": 0.3,
           "AimsStraightOnDisable": false,
-          "ProjectileLifetimeUsesMultiplier": 1.4,
+          "ProjectileLifetimeUsesMultiplier": 1.3,
           "Turreted": true,
           "TurretYawSpeed": 90,
           "TargetRestrictDisallow": "UNTARGETABLE",
           "CollideFriendly": false,
-          "RackReloadTimeout": 10,
-          "RackRecoilDistance": -1.5,
+          "RackReloadTimeout": 0,
+          "RackRecoilDistance": 0,
           "FiringTolerance": 1,
           "TurretYawRange": 20,
           "TurretDualManipulators": false,
           "TurretBonePitch": "Right_Arm_B01",
           "UseFiringSolutionInsteadOfAimBone": true,
-          "MaxRadius": 32
+          "MaxRadius": 34
         }
       ]
     },
@@ -10126,9 +10133,9 @@
       "LifeBarHeight": 0.075,
       "Id": "XES0102",
       "Intel": {
-        "SonarRadius": 72,
+        "SonarRadius": 60,
         "WaterVisionRadius": 56,
-        "VisionRadius": 32
+        "VisionRadius": 30
       },
       "SizeX": 0.8,
       "SizeY": 1,
@@ -11198,9 +11205,9 @@
       "LifeBarHeight": 0.075,
       "Id": "UES0201",
       "Intel": {
-        "SonarRadius": 36,
-        "RadarRadius": 40,
-        "WaterVisionRadius": 44,
+        "SonarRadius": 44,
+        "RadarRadius": 44,
+        "WaterVisionRadius": 36,
         "VisionRadius": 32
       },
       "SizeX": 1.5,
@@ -11676,7 +11683,6 @@
         "OVERLAYDIRECTFIRE",
         "OVERLAYINDIRECTFIRE",
         "OVERLAYRADAR",
-        "OVERLAYSONAR",
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
@@ -11775,9 +11781,8 @@
       "LifeBarHeight": 0.075,
       "Id": "UES0202",
       "Intel": {
-        "SonarRadius": 120,
         "RadarRadius": 152,
-        "WaterVisionRadius": 60,
+        "WaterVisionRadius": 32,
         "VisionRadius": 64
       },
       "SizeX": 1.6,
@@ -11797,7 +11802,6 @@
         "Abilities": [
           "Anti-Air",
           "Radar",
-          "Sonar",
           "Tactical Missile Defense"
         ],
         "IdleEffects": {
@@ -15082,8 +15086,8 @@
       },
       "SizeX": 0.7,
       "Intel": {
-        "VisionRadius": 20,
-        "RadarRadius": 50
+        "VisionRadius": 22,
+        "RadarRadius": 52
       },
       "SelectionSizeZ": 0.65,
       "SizeY": 0.5,
@@ -16042,7 +16046,7 @@
       "Economy": {
         "BuildTime": 660,
         "TeleportMassMod": 1,
-        "MaintenanceConsumptionPerSecondEnergy": 50,
+        "MaintenanceConsumptionPerSecondEnergy": 80,
         "BuildCostEnergy": 900,
         "TeleportTimeMod": 0.01,
         "BuildCostMass": 220,
@@ -16075,7 +16079,7 @@
           "MeshZ": "/effects/entities/Shield01/Shield01z_mesh",
           "ShieldRegenStartTime": 3,
           "ShieldSpillOverDamageMod": 0.3,
-          "ShieldRegenRate": 30,
+          "ShieldRegenRate": 55,
           "RegenAssistMult": 60,
           "ImpactEffects": "UEFShieldHit01",
           "ShieldVerticalOffset": -3,
@@ -16519,15 +16523,15 @@
         "VISIBLETORECON",
         null
       ],
-      "AverageDensity": 12800,
+      "AverageDensity": 6400,
       "Description": "Torpedo Launcher",
       "Economy": {
         "BuildTime": 1400,
-        "BuildCostMass": 1080,
+        "BuildCostMass": 2250,
         "RebuildBonusIds": [
           "ueb2205"
         ],
-        "BuildCostEnergy": 9000
+        "BuildCostEnergy": 15000
       },
       "LifeBarOffset": 0.6,
       "LifeBarSize": 1.25,
@@ -16568,15 +16572,15 @@
       },
       "SizeZ": 1.5,
       "Intel": {
-        "SonarRadius": 36,
+        "SonarRadius": 60,
         "WaterVisionRadius": 44,
-        "VisionRadius": 20
+        "VisionRadius": 22
       },
       "Defense": {
         "ArmorType": "Structure",
         "SubThreatLevel": 18,
-        "Health": 12800,
-        "MaxHealth": 12800
+        "Health": 6400,
+        "MaxHealth": 6400
       },
       "Audio": {
         "Destroyed": {
@@ -16682,6 +16686,7 @@
       },
       "Weapon": [
         {
+          "DamageRadius": 1,
           "Label": "Torpedo",
           "RateOfFire": 0.25,
           "ProjectilesPerOnFire": 1,
@@ -16697,7 +16702,7 @@
               "RackBone": "Turret_Muzzle01"
             }
           ],
-          "Damage": 180,
+          "Damage": 360,
           "ProjectileLifetime": 12,
           "DamageType": "Normal",
           "Audio": {
@@ -18533,6 +18538,17 @@
           ],
           "HelpText": "Support Armored Command Unit. Enhanced during construction with the radar jammer and enhanced sensor system enhancements.",
           "BuildIconSortPriority": 35
+        },
+        "RASE": {
+          "SortCategory": "SORTECONOMY",
+          "Description": "SACU (RAS and Pod Engineer preset)",
+          "UnitName": "SACU (RAS preset and Pod Engineer module.)",
+          "Enhancements": [
+            "ResourceAllocation",
+            "Pod"
+          ],
+          "HelpText": "Support Armored Command Unit. Enhanced during construction with a Resource Allocation System and Pod Engineer module.",
+          "BuildIconSortPriority": 30
         }
       },
       "AI": {
@@ -18579,7 +18595,7 @@
           ],
           "ShieldEnergyDrainRechargeTime": 5,
           "ShieldRegenStartTime": 1,
-          "MaintenanceConsumptionPerSecondEnergy": 250,
+          "MaintenanceConsumptionPerSecondEnergy": 270,
           "BuildCostMass": 2000,
           "Name": "Personal Shield Generator",
           "ShieldRechargeTime": 170,
@@ -18657,10 +18673,10 @@
         },
         "DoubleGun": {
           "BuildTime": 3360,
-          "BuildCostMass": 4100,
+          "BuildCostMass": 2100,
           "Name": "Double Gun",
           "Slot": "LCH",
-          "BuildCostEnergy": 85000,
+          "BuildCostEnergy": 60000,
           "UpgradeUnitAmbientBones": [
             "UEL0301"
           ],
@@ -18739,11 +18755,11 @@
           "Prerequisite": "HighExplosiveOrdnance"
         },
         "Pod": {
-          "BuildTime": 1120,
-          "BuildCostMass": 380,
+          "BuildTime": 840,
+          "BuildCostMass": 350,
           "Name": "C-D3 Engineering Drone",
           "Slot": "Back",
-          "BuildCostEnergy": 8700,
+          "BuildCostEnergy": 8500,
           "UpgradeUnitAmbientBones": [
             "UEL0301"
           ],
@@ -18761,7 +18777,7 @@
             "SAM",
             "Cannon_Muzzle"
           ],
-          "BuildCostEnergy": 10000,
+          "BuildCostEnergy": 15000,
           "BuildTime": 1680,
           "Icon": "heo",
           "Name": "Heavy Plasma Refractor",
@@ -19013,14 +19029,14 @@
         "MaxSteerForce": 12,
         "MeshExtentsX": 0.85,
         "DragCoefficient": 0.2,
-        "MaxAcceleration": 2.2,
-        "MaxBrake": 2.2,
+        "MaxAcceleration": 2.5,
+        "MaxBrake": 2,
         "LayerChangeOffsetHeight": -0.85,
         "MeshExtentsY": 2,
         "TurnRadius": 10,
         "MaxSpeedReverse": 0,
         "MotionType": "RULEUMT_Amphibious",
-        "MaxSpeed": 2.2,
+        "MaxSpeed": 2,
         "StandUpright": true,
         "MeshExtentsZ": 2.4
       },
@@ -19624,7 +19640,7 @@
           "Cue": "UEL0309_Move_Start"
         }
       },
-      "CollisionOffsetY": -0.25,
+      "CollisionOffsetY": -0.4,
       "Id": "UEL0309",
       "Wreckage": {
         "EnergyMult": 0,
@@ -19640,7 +19656,7 @@
         "MassMult": 0.9
       },
       "SizeX": 0.85,
-      "SizeY": 0.9,
+      "SizeY": 1.1,
       "SelectionCenterOffsetZ": -0.1,
       "SelectionThickness": 0.64,
       "Intel": {
@@ -20692,7 +20708,7 @@
       "Economy": {
         "BuildTime": 2400,
         "TeleportMassMod": 1,
-        "MaintenanceConsumptionPerSecondEnergy": 10,
+        "MaintenanceConsumptionPerSecondEnergy": 25,
         "BuildCostEnergy": 5250,
         "TeleportTimeMod": 0.01,
         "BuildCostMass": 480,
@@ -21006,7 +21022,8 @@
           "Right_Turret01",
           "Right_Turret02",
           "Right_Turret03"
-        ]
+        ],
+        "GuardScanRadius": 165
       },
       "Weapon": [
         {
@@ -21802,7 +21819,7 @@
       "SizeZ": 1.1,
       "Intel": {
         "VisionRadius": 26,
-        "RadarRadius": 70
+        "RadarRadius": 72
       },
       "Defense": {
         "ArmorType": "Normal",
@@ -27089,7 +27106,7 @@
         "PRODUCTFA",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SIZE12",
+        "SIZE4",
         "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
@@ -28509,15 +28526,12 @@
       ],
       "AverageDensity": 2000,
       "Description": "Sonar Platform",
-      "Economy": {
-        "BuildTime": 1200,
-        "BuildCostEnergy": 12000,
-        "BuildCostMass": 1000,
-        "MaintenanceConsumptionPerSecondEnergy": 500
+      "AI": {
+        "TargetBones": [
+          "Abovetgt",
+          "UES0305"
+        ]
       },
-      "LifeBarSize": 1.25,
-      "BuildIconSortPriority": 190,
-      "LifeBarOffset": 0.45,
       "StrategicIconName": "icon_structure3_intel",
       "General": {
         "CommandCaps": {
@@ -28543,29 +28557,31 @@
         "UpgradesFrom": "ueb3202",
         "Classification": "RULEUC_MilitaryShip"
       },
-      "SelectionThickness": 0.6,
+      "LifeBarOffset": 0.45,
+      "SelectionSizeX": 0.5,
+      "Economy": {
+        "BuildTime": 1200,
+        "BuildCostEnergy": 12000,
+        "BuildCostMass": 1000,
+        "MaintenanceConsumptionPerSecondEnergy": 500
+      },
       "Footprint": {
         "MinWaterDepth": 1.5,
         "SizeX": 2,
         "SizeZ": 2
       },
-      "SizeZ": 1,
-      "Physics": {
-        "TurnRate": 100,
-        "MaxSteerForce": 5,
-        "MeshExtentsX": 1.25,
-        "DragCoefficient": 0.2,
-        "MaxAcceleration": 4.5,
-        "MaxBrake": 4.5,
-        "MaxSpeed": 4.5,
-        "MaxSpeedReverse": 4.5,
-        "MeshExtentsY": 2.8,
-        "TurnRadius": 5,
-        "BackUpDistance": 10,
-        "CatchUpAcc": 10,
-        "MeshExtentsOffsetY": -1.7,
-        "MotionType": "RULEUMT_Water",
-        "MeshExtentsZ": 1.25
+      "SizeZ": 0.95,
+      "Intel": {
+        "JammerBlips": 35,
+        "JamRadius": {
+          "Max": 70,
+          "Min": 70
+        },
+        "SonarRadius": 448,
+        "WaterVisionRadius": 24,
+        "ShowIntelOnSelect": true,
+        "VisionRadius": 32,
+        "ReactivateTime": 6
       },
       "Defense": {
         "ArmorType": "Normal",
@@ -28607,30 +28623,34 @@
       },
       "LifeBarHeight": 0.075,
       "Id": "UES0305",
-      "Intel": {
-        "JammerBlips": 20,
-        "JamRadius": {
-          "Max": 70,
-          "Min": 70
+      "Wreckage": {
+        "EnergyMult": 0,
+        "WreckageLayers": {
+          "Water": true
         },
-        "SonarRadius": 448,
-        "WaterVisionRadius": 24,
-        "ShowIntelOnSelect": true,
-        "VisionRadius": 32,
-        "ReactivateTime": 6
+        "ReclaimTimeMultiplier": 1,
+        "HealthMult": 0.9,
+        "Blueprint": "/props/DefaultWreckage/DefaultWreckage_prop.bp",
+        "MassMult": 0.9
       },
-      "SizeX": 1,
-      "SizeY": 1.2,
-      "SelectionSizeZ": 0.65,
+      "SizeX": 0.9,
+      "SizeY": 1.3,
+      "SelectionSizeZ": 0.5,
+      "Physics": {
+        "TurnRate": 100,
+        "MaxSteerForce": 5,
+        "DragCoefficient": 0.2,
+        "MaxAcceleration": 4.5,
+        "MaxSpeedReverse": 4.5,
+        "CatchUpAcc": 10,
+        "BackUpDistance": 10,
+        "MaxSpeed": 4.5,
+        "MotionType": "RULEUMT_Water",
+        "TurnRadius": 5,
+        "MaxBrake": 4.5
+      },
+      "SelectionThickness": 0.78,
       "CollisionOffsetY": -0.4,
-      "Veteran": {
-        "Level2": 32,
-        "Level3": 48,
-        "Level1": 16,
-        "Level4": 64,
-        "Level5": 80
-      },
-      "SelectionSizeX": 0.65,
       "Display": {
         "UniformScale": 0.02,
         "Abilities": [
@@ -28681,74 +28701,8 @@
         }
       },
       "StrategicIconSortPriority": 230,
-      "AI": {
-        "TargetBones": [
-          "Abovetgt",
-          "UES0305"
-        ]
-      },
-      "Weapon": [
-        {
-          "Label": "Torpedo01",
-          "RateOfFire": 0.25,
-          "TurretYaw": 0,
-          "RackBones": [
-            {
-              "MuzzleBones": [
-                "Projectile01",
-                "Projectile02"
-              ],
-              "RackBone": "Projectile01"
-            }
-          ],
-          "Damage": 75,
-          "ProjectileLifetime": 7,
-          "DamageType": "Normal",
-          "Audio": {
-            "Fire": {
-              "LodCutoff": "Weapon_LodCutoff",
-              "Bank": "UESWeapon",
-              "Cue": "UES0203_Torpedo"
-            }
-          },
-          "TurretPitch": 0,
-          "TurretPitchRange": 0,
-          "DisplayName": "Angler Torpedo",
-          "TurretPitchSpeed": 0,
-          "RackSalvoSize": 1,
-          "RangeCategory": "UWRC_AntiNavy",
-          "RackSlavedToTurret": false,
-          "TargetPriorities": [
-            "MOBILE",
-            "(STRUCTURE * DEFENSE - ANTIMISSILE)",
-            "ALLUNITS"
-          ],
-          "WeaponCategory": "Anti Navy",
-          "ProjectileId": "/projectiles/TANAnglerTorpedo03/TANAnglerTorpedo03_proj.bp",
-          "MuzzleVelocity": 5,
-          "RackFireTogether": false,
-          "RackSalvoChargeTime": 0,
-          "WeaponUnpacks": false,
-          "FireTargetLayerCapsTable": {
-            "Water": "Seabed|Sub|Water"
-          },
-          "BallisticArc": "RULEUBA_None",
-          "MuzzleSalvoDelay": 0.8,
-          "RackRecoilDistance": 0,
-          "RackReloadTimeout": 0,
-          "RackSalvoReloadTime": 0,
-          "CollideFriendly": false,
-          "WeaponRepackTimeout": 0,
-          "TargetRestrictDisallow": "UNTARGETABLE, HOVER",
-          "TurretYawRange": 0,
-          "FiringTolerance": 2,
-          "TurretYawSpeed": 0,
-          "TurretDualManipulators": false,
-          "MaxRadius": 45,
-          "Turreted": false,
-          "MuzzleSalvoSize": 2
-        }
-      ]
+      "LifeBarSize": 1.25,
+      "BuildIconSortPriority": 190
     },
     {
       "Categories": [
@@ -29435,33 +29389,78 @@
     },
     {
       "Categories": [
-        "PRODUCTSC1",
-        "SELECTABLE",
+        "AIRSTAGINGPLATFORM",
+        "AMPHIBIOUS",
+        "ARTILLERY",
+        "BUBBLESHIELDSPILLOVERCHECK",
         "BUILTBYTIER3COMMANDER",
         "BUILTBYTIER3ENGINEER",
-        "UEF",
-        "MOBILE",
-        "LAND",
-        "EXPERIMENTAL",
-        "INDIRECTFIRE",
-        "ARTILLERY",
         "CONSTRUCTION",
-        "AIRSTAGINGPLATFORM",
-        "FACTORY",
-        "NEEDMOBILEBUILD",
-        "ANTIAIR",
-        "VISIBLETORECON",
-        "RECLAIMABLE",
+        "CQUEMOV",
         "DRAGBUILD",
-        "SHOWQUEUE",
-        "OVERLAYMISC",
+        "EXPERIMENTAL",
+        "EXTERNALFACTORY",
+        "INDIRECTFIRE",
+        "LAND",
+        "LOWSELECTPRIO",
+        "MOBILE",
+        "NEEDMOBILEBUILD",
         "OVERLAYANTIAIR",
-        "OVERLAYDEFENSE",
         "OVERLAYANTINAVY",
+        "OVERLAYDEFENSE",
         "OVERLAYDIRECTFIRE",
         "OVERLAYMISC",
-        "RULEUTL_Experimental"
+        "PRODUCTSC1",
+        "RECLAIMABLE",
+        "SELECTABLE",
+        "SHIELD",
+        "SHOWQUEUE",
+        "SNIPEMODE",
+        "UEF",
+        "VISIBLETORECON",
+        null
       ],
+      "AverageDensity": 12500,
+      "General": {
+        "CommandCaps": {
+          "RULEUCC_RetaliateToggle": true,
+          "RULEUCC_Guard": true,
+          "RULEUCC_Transport": true,
+          "RULEUCC_Move": true,
+          "RULEUCC_Patrol": true,
+          "RULEUCC_Pause": true,
+          "RULEUCC_Stop": true,
+          "RULEUCC_Attack": true
+        },
+        "OrderOverrides": {
+          "RULEUCC_Transport": {
+            "helpText": "deploy",
+            "bitmapId": "deploy"
+          },
+          "RULEUTC_ShieldToggle": {
+            "helpText": "toggle_shield_dome",
+            "bitmapId": "shield-dome"
+          }
+        },
+        "ConstructionBar": true,
+        "BuildBones": {
+          "BuildEffectBones": [
+            "Arm_Right01_Build_Emitter",
+            "Arm_Right02_Build_Emitter",
+            "Arm_Right03_Build_Emitter",
+            "Arm_Left01_Build_Emitter",
+            "Arm_Left02_Build_Emitter",
+            "Arm_Left03_Build_Emitter"
+          ]
+        },
+        "UnitName": "Fatboy",
+        "ToggleCaps": {
+          "RULEUTC_ShieldToggle": true
+        },
+        "Icon": "amph",
+        "FactionName": "UEF",
+        "Classification": "RULEUC_MilitaryVehicle"
+      },
       "Transport": {
         "StorageSlots": 0,
         "ClassGenericUpTo": 4,
@@ -29470,97 +29469,85 @@
         "TransportClass": 10,
         "DockingSlots": 4
       },
-      "Description": "Experimental Mobile Factory",
       "LifeBarOffset": 4.35,
-      "Buffs": {
-        "Regen": {
-          "Level2": 30,
-          "Level3": 45,
-          "Level1": 15,
-          "Level4": 60,
-          "Level5": 75
-        }
-      },
-      "Economy": {
-        "BuildTime": 21000,
-        "StorageMass": 200,
-        "BuildCostMass": 28000,
-        "StorageEnergy": 1000,
-        "MaintenanceConsumptionPerSecondEnergy": 500,
-        "BuildableCategory": [
-          "BUILTBYTIER3FACTORY UEF MOBILE LAND",
-          "BUILTBYTIER2FACTORY UEF MOBILE LAND",
-          "BUILTBYLANDTIER2FACTORY UEF MOBILE LAND"
-        ],
-        "BuildCostEnergy": 350000,
-        "BuildRate": 180
-      },
-      "LifeBarSize": 5.75,
-      "Interface": {
-        "HelpText": "Experimental Mobile Factory"
-      },
       "AI": {
-        "AddTargetBones": [
-          "Turret_Left01_Barrel02",
-          "Turret_Left02_Barrel02",
-          "Turret_Right01_Barrel02",
-          "Turret_Right02_Barrel02",
-          "Attachpoint3",
-          "Turret_Left_AA",
-          "Turret_Right_AA"
-        ],
+        "RepairConsumeMass": 0,
         "RefuelingMultiplier": 75,
-        "RepairConsumeMass": 0.5,
+        "StagingPlatformScanRadius": 300,
         "RefuelingRepairAmount": 500,
-        "AttackAngle": 10,
-        "RepairConsumeEnergy": 5,
+        "AttackAngle": 20,
+        "RepairConsumeEnergy": 30,
         "TargetBones": [
-          "Bay_Cover",
           "Front_Core",
           "Rear_Core",
-          "Ramp",
           "Turret_Left01",
           "Turret_Left02",
           "Turret_Right01",
           "Turret_Right02",
           "UEL0401"
-        ],
-        "GuardScanRadius": 300
+        ]
       },
-      "StrategicIconName": "icon_experimental_generic",
-      "SelectionCenterOffsetZ": -0.3,
-      "SelectionCenterOffsetX": 0,
-      "CollisionOffsetZ": 0,
+      "SizeX": 5.2,
+      "LifeBarSize": 5.75,
+      "BuildIconSortPriority": 10,
+      "Physics": {
+        "MeshExtentsX": 8,
+        "LayerChangeOffsetHeight": -0.75,
+        "MaxAcceleration": 1.75,
+        "MotionType": "RULEUMT_Amphibious",
+        "RotateOnSpot": false,
+        "SkirtSizeX": 9,
+        "BankingSlope": 3,
+        "SkirtSizeZ": 9,
+        "MaxSpeedReverse": 1.75,
+        "MaxSteerForce": 1000,
+        "Elevation": 1,
+        "DragCoefficient": 0.2,
+        "RotateOnSpotThreshold": 0.5,
+        "SkirtOffsetZ": -1.5,
+        "MeshExtentsZ": 10.5,
+        "RotateBodyWhileMoving": false,
+        "MaxSpeed": 1.75,
+        "TurnRadius": 0,
+        "BackUpDistance": 30,
+        "MeshExtentsY": 2,
+        "TurnRate": 30,
+        "SkirtOffsetX": -1.5,
+        "MaxBrake": 1.75
+      },
+      "Description": "Experimental Mobile Factory",
+      "SelectionSizeZ": 5.25,
       "SelectionThickness": 0.34,
       "Intel": {
         "WaterVisionRadius": 32,
         "VisionRadius": 32
       },
-      "SizeZ": 8,
-      "SelectionSizeX": 4,
+      "SizeZ": 7.5,
+      "VeteranMassMult": 0.5,
       "Defense": {
         "ArmorType": "Experimental",
         "Shield": {
-          "ShieldSize": 25,
-          "ImpactMesh": "/effects/entities/ShieldSection01/ShieldSection01_mesh",
           "ShieldEnergyDrainRechargeTime": 5,
-          "ShieldRegenStartTime": 1,
+          "ShieldSize": 24,
+          "ShieldMaxHealth": 20000,
           "MeshZ": "/effects/entities/Shield01/Shield01z_mesh",
-          "ShieldRegenRate": 64,
+          "ShieldRegenStartTime": 1,
+          "ShieldSpillOverDamageMod": 0,
+          "ShieldRegenRate": 200,
           "RegenAssistMult": 60,
           "ImpactEffects": "UEFShieldHit01",
           "ShieldVerticalOffset": -7,
-          "ShieldRechargeTime": 160,
+          "ShieldRechargeTime": 75,
           "Mesh": "/effects/entities/Shield01/Shield01_mesh",
-          "ShieldMaxHealth": 20000
+          "ImpactMesh": "/effects/entities/ShieldSection01/ShieldSection01_mesh"
         },
-        "SubThreatLevel": 40,
+        "SubThreatLevel": 8,
         "RegenRate": 20,
-        "SurfaceThreatLevel": 380,
+        "SurfaceThreatLevel": 250,
         "Health": 12500,
-        "EconomyThreatLevel": 0,
+        "EconomyThreatLevel": 2018,
         "MaxHealth": 12500,
-        "AirThreatLevel": 16
+        "AirThreatLevel": 11
       },
       "Audio": {
         "TransitionWater": {
@@ -29629,139 +29616,118 @@
           "Cue": "UEL0401_Move_Start"
         }
       },
-      "Physics": {
-        "MeshExtentsX": 8,
-        "LayerChangeOffsetHeight": -0.75,
-        "MaxAcceleration": 1.75,
-        "MotionType": "RULEUMT_Amphibious",
-        "RotateOnSpot": false,
-        "SkirtSizeZ": 9,
-        "RotateOnSpotThreshold": 0.5,
-        "SkirtSizeX": 9,
-        "BankingSlope": 3,
-        "TurnRate": 30,
-        "MaxSpeedReverse": 1.75,
-        "MaxSteerForce": 1000,
-        "Elevation": 1,
-        "DragCoefficient": 0.2,
-        "MeshExtentsZ": 10.5,
-        "SkirtOffsetZ": -1.5,
-        "RotateBodyWhileMoving": false,
-        "BuildOnLayerCaps": {
-          "LAYER_Sub": false,
-          "LAYER_Land": true,
-          "LAYER_Seabed": false,
-          "LAYER_Orbit": false,
-          "LAYER_Water": true,
-          "LAYER_Air": false
-        },
-        "MaxSpeed": 1.75,
-        "TurnRadius": 0,
-        "BackUpDistance": 15,
-        "MeshExtentsY": 2,
-        "MinSpeedPercent": 0,
-        "SkirtOffsetX": -1.5,
-        "MaxBrake": 1.75
-      },
+      "LifeBarHeight": 0.075,
       "Id": "UEL0401",
       "Wreckage": {
         "EnergyMult": 0,
         "WreckageLayers": {
           "Water": true,
-          "Land": true,
-          "Seabed": true,
           "Sub": true,
-          "Air": false
+          "Land": true,
+          "Seabed": true
         },
         "ReclaimTimeMultiplier": 1,
         "HealthMult": 0.9,
         "Blueprint": "/props/DefaultWreckage/DefaultWreckage_prop.bp",
         "MassMult": 0.9
       },
-      "SizeX": 5.5,
-      "SizeY": 1.5,
-      "SelectionSizeZ": 5.25,
-      "LifeBarHeight": 0.075,
-      "Veteran": {
-        "Level2": 50,
-        "Level3": 75,
-        "Level1": 25,
-        "Level4": 100,
-        "Level5": 125
+      "SelectionSizeX": 4,
+      "SizeY": 1.4,
+      "SelectionCenterOffsetZ": -0.3,
+      "ExternalFactory": {
+        "SelectionSizeZ": 2,
+        "SelectionSizeX": 2,
+        "SelectionCenterOffsetY": 1.5,
+        "SelectionCenterOffsetZ": 2.5
       },
-      "General": {
-        "CommandCaps": {
-          "RULEUCC_RetaliateToggle": true,
-          "RULEUCC_Transport": true,
-          "RULEUCC_Nuke": false,
-          "RULEUCC_Capture": false,
-          "RULEUCC_Pause": true,
-          "RULEUCC_Attack": true,
-          "RULEUCC_Patrol": true,
-          "RULEUCC_Stop": true,
-          "RULEUCC_Move": true,
-          "RULEUCC_CallTransport": false,
-          "RULEUCC_Guard": true,
-          "RULEUCC_Repair": false,
-          "RULEUCC_Reclaim": false
-        },
-        "Classification": "RULEUC_MilitaryVehicle",
-        "ToggleCaps": {
-          "RULEUTC_ShieldToggle": true
-        },
-        "UnitWeight": 1,
-        "Category": "Experimental",
-        "ConstructionBar": true,
-        "OrderOverrides": {
-          "RULEUCC_Transport": {
-            "helpText": "deploy",
-            "bitmapId": "deploy"
-          },
-          "RULEUTC_ShieldToggle": {
-            "helpText": "toggle_shield_dome",
-            "bitmapId": "shield-dome"
+      "Veteran": {
+        "Level2": 80,
+        "Level3": 120,
+        "Level1": 40,
+        "Level4": 160,
+        "Level5": 200
+      },
+      "StrategicIconName": "icon_experimental_generic",
+      "Display": {
+        "UniformScale": 0.215,
+        "Abilities": [
+          "Air Staging",
+          "Amphibious",
+          "Anti-Air",
+          "Factory",
+          "Shield Dome",
+          "Torpedoes",
+          "Volatile"
+        ],
+        "IdleEffects": {
+          "Land": {
+            "Effects": [
+              {
+                "Bones": [
+                  "UEL0401"
+                ],
+                "Type": "SeaIdle02"
+              }
+            ]
           }
         },
-        "BuildBones": {
-          "BuildEffectBones": [
-            "Arm_Right01_Build_Emitter",
-            "Arm_Right02_Build_Emitter",
-            "Arm_Right03_Build_Emitter",
-            "Arm_Left01_Build_Emitter",
-            "Arm_Left02_Build_Emitter",
-            "Arm_Left03_Build_Emitter"
-          ]
+        "LayerChangeEffects": {
+          "SeabedLand": {
+            "Effects": [
+              {
+                "Bones": [
+                  "Front_Core"
+                ],
+                "Type": "Surface01"
+              },
+              {
+                "Bones": [
+                  "Wheel_Left01",
+                  "Wheel_Right01"
+                ],
+                "Type": "Surface02"
+              }
+            ]
+          }
         },
-        "UnitName": "Fatboy",
-        "FactionName": "UEF",
-        "Icon": "amph",
-        "TechLevel": "RULEUTL_Experimental"
-      },
-      "Display": {
+        "AnimationBuild": "/units/uel0401/uel0401_aactivate.sca",
         "MovementEffects": {
           "Land": {
             "Treads": {
+              "Damage": {
+                "Bones": [
+                  "Wheel_Left01",
+                  "Wheel_Right01",
+                  "Wheel_Left02",
+                  "Wheel_Right02"
+                ],
+                "DamageFriendly": false,
+                "PulseInterval": 0.5,
+                "Amount": 400,
+                "Radius": 1.2,
+                "Type": "ExperimentalFootfall"
+              },
               "ScrollTreads": true,
               "TreadMarks": [
                 {
                   "TreadMarksSizeX": 5,
                   "TreadMarksSizeZ": 5.5,
-                  "TreadMarksInterval": 0.6,
+                  "TreadMarksInterval": 0.3,
                   "TreadOffset": [
                     0,
                     0,
-                    -1.5
+                    -0.5
                   ],
                   "TreadMarks": "tank_treads06_albedo"
                 },
                 {
                   "TreadMarksSizeX": 5.5,
                   "TreadMarksSizeZ": 5.5,
-                  "TreadMarksInterval": 0.6,
+                  "TreadMarksInterval": 0.3,
                   "TreadOffset": [
                     0,
                     0,
-                    -5.5
+                    -4.5
                   ],
                   "TreadMarks": "tank_treads06_albedo"
                 }
@@ -29812,48 +29778,6 @@
             }
           }
         },
-        "UniformScale": 0.22,
-        "LayerChangeEffects": {
-          "SeabedLand": {
-            "Effects": [
-              {
-                "Bones": [
-                  "Front_Core"
-                ],
-                "Type": "Surface01"
-              },
-              {
-                "Bones": [
-                  "Wheel_Left01",
-                  "Wheel_Right01"
-                ],
-                "Type": "Surface02"
-              }
-            ]
-          }
-        },
-        "Abilities": [
-          "Air Staging",
-          "Amphibious",
-          "Anti-Air",
-          "Factory",
-          "Shield Dome",
-          "Torpedoes",
-          "Volatile"
-        ],
-        "IdleEffects": {
-          "Land": {
-            "Effects": [
-              {
-                "Bones": [
-                  "UEL0401"
-                ],
-                "Type": "SeaIdle02"
-              }
-            ]
-          }
-        },
-        "AnimationBuild": "/units/uel0401/uel0401_aactivate.sca",
         "Mesh": {
           "IconFadeInZoom": 130,
           "LODs": [
@@ -29869,17 +29793,27 @@
               "AlbedoName": "uel0401_lod1_albedo.dds"
             }
           ]
-        },
-        "SpawnRandomRotation": true,
-        "PlaceholderMeshName": "UXB0000"
+        }
       },
       "StrategicIconSortPriority": 45,
-      "BuildIconSortPriority": 10,
+      "Economy": {
+        "BuildTime": 47500,
+        "StorageMass": 200,
+        "BuildCostMass": 28000,
+        "StorageEnergy": 1000,
+        "MaintenanceConsumptionPerSecondEnergy": 600,
+        "BuildableCategory": [
+          "BUILTBYTIER3FACTORY UEF MOBILE LAND",
+          "BUILTBYTIER2FACTORY UEF MOBILE LAND",
+          "BUILTBYLANDTIER2FACTORY UEF MOBILE LAND"
+        ],
+        "BuildCostEnergy": 350000,
+        "BuildRate": 135
+      },
       "Weapon": [
         {
           "DamageRadius": 1.5,
           "FiringRandomness": 1.1,
-          "TargetCheckInterval": 0.5,
           "RateOfFire": 1,
           "HeadingArcCenter": 75,
           "TurretYaw": -20,
@@ -29918,24 +29852,21 @@
           "TurretPitchSpeed": 50,
           "TurretBoneYaw": "Turret_Right01",
           "RackSalvoSize": 1,
-          "RangeCategory": "UWRC_DirectFire",
+          "RangeCategory": "UWRC_IndirectFire",
           "AboveWaterTargetsOnly": true,
           "RackSlavedToTurret": true,
           "HeadingArcRange": 120,
           "Label": "RightTurret01",
-          "TurretYawSpeed": 50,
           "TargetPriorities": [
-            "SPECIALHIGHPRI",
             "EXPERIMENTAL",
             "SUBCOMMANDER",
             "TECH3 MOBILE",
             "TECH2 MOBILE",
             "TECH1 MOBILE",
-            "STRUCTURE DEFENSE",
-            "SPECIALLOWPRI",
+            "(STRUCTURE * DEFENSE - ANTIMISSILE)",
             "ALLUNITS"
           ],
-          "WeaponCategory": "Direct Fire",
+          "WeaponCategory": "Indirect Fire",
           "ProjectileId": "/projectiles/TDFGauss04/TDFGauss04_proj.bp",
           "BallisticArc": "RULEUBA_LowArc",
           "MuzzleVelocity": 25,
@@ -29943,20 +29874,20 @@
           "RackSalvoChargeTime": 0,
           "TurretBoneMuzzle": "Turret_Right01_Muzzle02",
           "WeaponUnpacks": false,
-          "RackReloadTimeout": 10,
+          "TurretYawSpeed": 50,
           "FireTargetLayerCapsTable": {
             "Land": "Land|Water|Seabed",
             "Seabed": "Land|Water|Seabed"
           },
           "Turreted": true,
           "MuzzleVelocityReduceDistance": 90,
-          "RackRecoilDistance": -1,
+          "RackReloadTimeout": 10,
           "MuzzleSalvoDelay": 0,
-          "ProjectileLifetimeUsesMultiplier": 1.15,
+          "ProjectileLifetimeUsesMultiplier": 1.6,
+          "RackRecoilDistance": -1,
           "RackSalvoReloadTime": 0,
-          "TrackingRadius": 1.15,
-          "CollideFriendly": false,
           "TargetRestrictDisallow": "UNTARGETABLE",
+          "CollideFriendly": false,
           "WeaponRepackTimeout": 0,
           "AboveWaterFireOnly": true,
           "ProjectilesPerOnFire": 3,
@@ -29970,8 +29901,7 @@
         },
         {
           "Label": "RightRiotgun",
-          "TargetCheckInterval": 0.16,
-          "RateOfFire": 3,
+          "RateOfFire": 3.3333333333333,
           "HeadingArcCenter": 90,
           "TurretYaw": 0,
           "RackBones": [
@@ -30001,17 +29931,15 @@
           "AboveWaterTargetsOnly": true,
           "RackSlavedToTurret": false,
           "TargetPriorities": [
-            "SPECIALHIGHPRI",
             "TECH1 MOBILE",
             "TECH2 MOBILE",
             "TECH3 MOBILE",
-            "STRUCTURE DEFENSE",
-            "SPECIALLOWPRI",
+            "(STRUCTURE * DEFENSE - ANTIMISSILE)",
             "ALLUNITS"
           ],
-          "MaxRadius": 45,
+          "WeaponCategory": "Direct Fire",
           "ProjectileId": "/projectiles/TDFRiot02/TDFRiot02_proj.bp",
-          "MuzzleVelocity": 45,
+          "MuzzleVelocity": 60,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
           "TurretBoneMuzzle": "Riot_Gun_Right_Barrel_Muzzle",
@@ -30022,27 +29950,25 @@
           },
           "BallisticArc": "RULEUBA_LowArc",
           "HeadingArcRange": 90,
-          "RackRecoilDistance": 0,
           "MuzzleSalvoDelay": 0,
           "ProjectileLifetimeUsesMultiplier": 1.15,
+          "RackRecoilDistance": 0,
           "TurretYawSpeed": 60,
           "TurretYawRange": 90,
           "TargetRestrictDisallow": "UNTARGETABLE",
-          "RackReloadTimeout": 10,
           "CollideFriendly": false,
           "AboveWaterFireOnly": true,
-          "TrackingRadius": 1.15,
+          "RackReloadTimeout": 10,
           "FiringTolerance": 2,
           "RackSalvoReloadTime": 0,
           "TurretDualManipulators": false,
           "TurretBonePitch": "Riot_Gun_Right_Barrel",
           "Turreted": true,
-          "WeaponCategory": "Direct Fire",
+          "MaxRadius": 45,
           "WeaponNumber": 2
         },
         {
-          "AlwaysRecheckTarget": true,
-          "TargetCheckInterval": 0.3,
+          "FiringRandomness": 0.01,
           "EffectiveRadius": 42,
           "ProjectilesPerOnFire": 1,
           "TurretYaw": 0,
@@ -30055,7 +29981,7 @@
               "RackBone": "Turret_Right_AA_Barrel"
             }
           ],
-          "Damage": 20,
+          "Damage": 40,
           "DamageType": "Normal",
           "Audio": {
             "Fire": {
@@ -30073,56 +29999,50 @@
           "RackSalvoSize": 1,
           "RangeCategory": "UWRC_AntiAir",
           "RackSlavedToTurret": false,
-          "FiringRandomness": 0.01,
-          "Label": "RightAAGun",
           "TargetPriorities": [
-            "SPECIALHIGHPRI",
-            "AIR MOBILE HIGHPRIAIR",
             "AIR MOBILE TECH3 BOMBER",
             "AIR MOBILE BOMBER",
             "AIR MOBILE GROUNDATTACK",
             "AIR MOBILE TRANSPORTATION",
             "AIR MOBILE",
-            "SPECIALLOWPRI",
             "ALLUNITS"
           ],
-          "MaxRadius": 45,
+          "MaxRadius": 55,
           "ProjectileId": "/projectiles/TAARailgun01/TAARailgun01_proj.bp",
-          "BallisticArc": "RULEUBA_None",
+          "Label": "RightAAGun",
           "MuzzleVelocity": 90,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
           "TurretBoneMuzzle": "Turret_Right_AA_Muzzle01",
           "MuzzleSalvoSize": 1,
-          "TurretYawSpeed": 180,
+          "RackRecoilDistance": -0.5,
           "FireTargetLayerCapsTable": {
             "Water": "Air",
             "Land": "Air",
             "Seabed": "Air"
           },
+          "BallisticArc": "RULEUBA_None",
           "Turreted": true,
-          "RackSalvoReloadTime": 0,
-          "RackReloadTimeout": 10,
+          "TurretYawSpeed": 180,
           "MuzzleSalvoDelay": 0,
           "ProjectileLifetimeUsesMultiplier": 1.25,
-          "RateOfFire": 1.5,
-          "TrackingRadius": 1.4,
-          "CollideFriendly": false,
+          "RateOfFire": 1.4285714285714,
+          "RackSalvoReloadTime": 0,
           "TargetRestrictDisallow": "UNTARGETABLE",
+          "CollideFriendly": false,
           "WeaponRepackTimeout": 0,
           "AboveWaterFireOnly": true,
-          "RackRecoilDistance": -0.5,
+          "RackReloadTimeout": 10,
           "FiringTolerance": 0.05,
           "TurretYawRange": 180,
           "TurretDualManipulators": false,
           "TurretBonePitch": "Turret_Right_AA_Barrel",
-          "WeaponUnpacks": false,
           "WeaponCategory": "Anti Air",
+          "WeaponUnpacks": false,
           "WeaponNumber": 2
         },
         {
           "Label": "Torpedo",
-          "TargetCheckInterval": 2.5,
           "RateOfFire": 0.25,
           "TurretYaw": 0,
           "RackBones": [
@@ -30153,14 +30073,8 @@
           "RackSalvoSize": 1,
           "RangeCategory": "UWRC_AntiNavy",
           "RackSlavedToTurret": false,
-          "TargetPriorities": [
-            "SPECIALHIGHPRI",
-            "MOBILE",
-            "STRUCTURE DEFENSE",
-            "SPECIALLOWPRI",
-            "ALLUNITS"
-          ],
-          "MaxRadius": 40,
+          "TurretYawSpeed": 0,
+          "WeaponCategory": "Anti Navy",
           "ProjectileId": "/projectiles/TANAnglerTorpedo02/TANAnglerTorpedo02_proj.bp",
           "MuzzleVelocity": 5,
           "RackFireTogether": false,
@@ -30173,16 +30087,21 @@
           "MuzzleSalvoDelay": 0,
           "RackRecoilDistance": 0,
           "RackReloadTimeout": 10,
-          "RackSalvoReloadTime": 0,
           "CollideFriendly": false,
+          "RackSalvoReloadTime": 0,
           "TurretYawRange": 0,
-          "TrackingRadius": 1.15,
           "FiringTolerance": 2,
           "TargetRestrictDisallow": "UNTARGETABLE, HOVER",
           "TurretDualManipulators": false,
-          "TurretYawSpeed": 0,
-          "Turreted": false,
-          "WeaponCategory": "Anti Navy"
+          "TargetPriorities": [
+            "SUBMERSIBLE",
+            "(STRUCTURE * DEFENSE - ANTIAIR)",
+            "(TECH2 * MOBILE * NAVAL - CRUISER)",
+            "MOBILE",
+            "ALLUNITS"
+          ],
+          "MaxRadius": 40,
+          "Turreted": false
         },
         {
           "Damage": 4000,
@@ -30191,7 +30110,7 @@
           "Label": "DeathWeapon",
           "WeaponCategory": "Death",
           "DamageRadius": 7,
-          "DamageType": "Normal",
+          "DamageType": "DeathExplosion",
           "DisplayName": "Death Weapon"
         }
       ]
@@ -30383,7 +30302,7 @@
         {
           "UseFiringSolutionInsteadOfAimBone": true,
           "Label": "OrbitalDeathLaserWeapon",
-          "TargetCheckInterval": 0.2,
+          "TargetCheckInterval": 0.05,
           "RateOfFire": 0.05,
           "TurretYaw": 0,
           "DamageFriendly": true,
@@ -30454,7 +30373,7 @@
           "TargetRestrictDisallow": "UNTARGETABLE",
           "DamageRadius": 1,
           "TurretBoneYaw": "Turret_Barrel01",
-          "WeaponRepackTimeout": 10,
+          "WeaponRepackTimeout": 9,
           "RackReloadTimeout": 0,
           "TurretPitchRange": 180,
           "SlavedToBody": false,
@@ -31855,7 +31774,7 @@
       "AverageDensity": 145,
       "Description": "Engineer",
       "AI": {
-        "GuardScanRadius": 60
+        "GuardScanRadius": 26
       },
       "StrategicIconName": "icon_land1_engineer",
       "General": {
@@ -31884,7 +31803,7 @@
         "Classification": "RULEUC_Engineer"
       },
       "LifeBarOffset": 0.25,
-      "CollisionOffsetY": -0.25,
+      "CollisionOffsetY": -0.375,
       "Economy": {
         "TeleportMassMod": 1,
         "StorageMass": 10,
@@ -31998,7 +31917,7 @@
         "MassMult": 0.9
       },
       "SizeX": 0.7,
-      "SizeY": 0.8,
+      "SizeY": 0.925,
       "SelectionSizeZ": 0.4,
       "SelectionThickness": 0.95,
       "BuildBotTotal": 1,
@@ -32888,7 +32807,7 @@
         "KLiftDamping": 2,
         "CanFly": true,
         "Winged": true,
-        "StartTurnDistance": 10,
+        "StartTurnDistance": 5,
         "EngageDistance": 50,
         "KMove": 1.5,
         "MinAirspeed": 10,
@@ -35057,7 +34976,7 @@
           "TurretDualManipulators": false,
           "TurretBonePitch": "Front_Turret_Barrel",
           "Turreted": true,
-          "MaxRadius": 26
+          "MaxRadius": 28
         },
         {
           "AlwaysRecheckTarget": false,
@@ -37739,6 +37658,76 @@
           }
         ],
         "AnimationWalkRate": 1.45,
+        "WarpInEffect": {
+          "HideBones": [
+            "Back_Upgrade",
+            "Right_Upgrade"
+          ],
+          "PhaseShieldMesh": "/units/url0001/URL0001_PhaseShield_mesh"
+        },
+        "TeleportEffects": {
+          "PlayChargeFxAtUnit": true,
+          "ChargeFxAtUnitBones": [
+            {
+              "Offset": [
+                0,
+                0.05,
+                0.2
+              ],
+              "Bone": "Back_Upgrade"
+            }
+          ],
+          "PlayTeleportInFx": true,
+          "PlayTeleportOutFx": true,
+          "PlayChargeFxAtDestination": true
+        },
+        "AnimationWalk": "/units/url0001/url0001_awalk02.sca",
+        "AnimationAction": "/units/url0001/CERDACER_CYB.sca",
+        "Abilities": [
+          "Amphibious",
+          "Customizable",
+          "Engineering Suite",
+          "Not Capturable",
+          "Omni Sensor",
+          "Volatile"
+        ],
+        "IdleEffects": {
+          "Seabed": {
+            "Effects": [
+              {
+                "Bones": [
+                  "Left_Arm_B01",
+                  "Right_Arm_B01",
+                  "Turret_Muzzle_01",
+                  "Turret_Muzzle_02"
+                ],
+                "Type": "UnderWater01"
+              }
+            ]
+          }
+        },
+        "UniformScale": 0.16,
+        "TransportAnimation": [
+          {
+            "Animation": "/units/URL0001/URL0001_afold.sca",
+            "Weight": 100
+          }
+        ],
+        "Mesh": {
+          "IconFadeInZoom": 130,
+          "LODs": [
+            {
+              "LODCutoff": 100,
+              "ShaderName": "Insect"
+            },
+            {
+              "ShaderName": "Insect",
+              "SpecularName": "url0001_lod1_specteam.dds",
+              "LODCutoff": 215,
+              "AlbedoName": "url0001_lod1_albedo.dds"
+            }
+          ]
+        },
         "MovementEffects": {
           "Land": {
             "Footfall": {
@@ -37803,75 +37792,6 @@
               }
             ]
           }
-        },
-        "AnimationWalk": "/units/url0001/url0001_awalk02.sca",
-        "TeleportEffects": {
-          "PlayChargeFxAtUnit": true,
-          "ChargeFxAtUnitBones": [
-            {
-              "Offset": [
-                0,
-                0.05,
-                0.2
-              ],
-              "Bone": "Back_Upgrade"
-            }
-          ],
-          "PlayTeleportInFx": true,
-          "PlayTeleportOutFx": true,
-          "PlayChargeFxAtDestination": true
-        },
-        "Abilities": [
-          "Amphibious",
-          "Customizable",
-          "Engineering Suite",
-          "Not Capturable",
-          "Omni Sensor",
-          "Volatile"
-        ],
-        "IdleEffects": {
-          "Seabed": {
-            "Effects": [
-              {
-                "Bones": [
-                  "Left_Arm_B01",
-                  "Right_Arm_B01",
-                  "Turret_Muzzle_01",
-                  "Turret_Muzzle_02"
-                ],
-                "Type": "UnderWater01"
-              }
-            ]
-          }
-        },
-        "TransportAnimation": [
-          {
-            "Animation": "/units/URL0001/URL0001_afold.sca",
-            "Weight": 100
-          }
-        ],
-        "UniformScale": 0.16,
-        "Mesh": {
-          "IconFadeInZoom": 130,
-          "LODs": [
-            {
-              "LODCutoff": 100,
-              "ShaderName": "Insect"
-            },
-            {
-              "ShaderName": "Insect",
-              "SpecularName": "url0001_lod1_specteam.dds",
-              "LODCutoff": 215,
-              "AlbedoName": "url0001_lod1_albedo.dds"
-            }
-          ]
-        },
-        "WarpInEffect": {
-          "HideBones": [
-            "Back_Upgrade",
-            "Right_Upgrade"
-          ],
-          "PhaseShieldMesh": "/units/url0001/URL0001_PhaseShield_mesh"
         }
       },
       "StrategicIconSortPriority": 0,
@@ -38200,8 +38120,8 @@
           "MuzzleSalvoDelay": 0,
           "RateOfFire": 1,
           "CollideFriendly": false,
-          "NukeInnerRingRadius": 24,
-          "NukeOuterRingRadius": 20,
+          "NukeInnerRingRadius": 30,
+          "NukeOuterRingRadius": 40,
           "FiringTolerance": 2,
           "RackRecoilDistance": 0,
           "NukeInnerRingDamage": 2000,
@@ -39711,7 +39631,7 @@
       "LifeBarSize": 0.75,
       "StrategicIconName": "icon_land2_engineer",
       "LifeBarOffset": 0.3,
-      "CollisionOffsetY": -0.25,
+      "CollisionOffsetY": -0.375,
       "General": {
         "CommandCaps": {
           "RULEUCC_Repair": true,
@@ -39853,7 +39773,7 @@
         "MassMult": 0.9
       },
       "SizeX": 0.7,
-      "SizeY": 0.9,
+      "SizeY": 1.025,
       "SelectionSizeZ": 0.45,
       "SelectionThickness": 0.85,
       "BuildBotTotal": 2,
@@ -40606,7 +40526,7 @@
             "(STRUCTURE * DEFENSE - ANTIMISSILE)",
             "ALLUNITS"
           ],
-          "MaxRadius": 34,
+          "MaxRadius": 38,
           "ProjectileId": "/projectiles/CDFRocketIridium02/CDFRocketIridium02_proj.bp",
           "MuzzleVelocity": 25,
           "RackFireTogether": false,
@@ -41360,8 +41280,8 @@
       "Id": "XRS0204",
       "Intel": {
         "RadarStealth": true,
-        "SonarRadius": 60,
-        "WaterVisionRadius": 32,
+        "SonarRadius": 52,
+        "WaterVisionRadius": 44,
         "VisionRadius": 32,
         "SonarStealth": true
       },
@@ -41593,7 +41513,7 @@
           "RackSalvoSize": 1,
           "RangeCategory": "UWRC_Countermeasure",
           "RackSlavedToTurret": false,
-          "MinRadius": 5,
+          "MinRadius": 0,
           "WeaponCategory": "Defense",
           "DepthCharge": {
             "ProjectilesToDeflect": 3,
@@ -41691,9 +41611,9 @@
       "Economy": {
         "BuildTime": 1320,
         "TeleportMassMod": 1,
-        "BuildCostEnergy": 1980,
+        "BuildCostEnergy": 1650,
         "TeleportTimeMod": 0.01,
-        "BuildCostMass": 297,
+        "BuildCostMass": 280,
         "TeleportEnergyMod": 0.15
       },
       "Description": "Amphibious Tank",
@@ -41966,7 +41886,7 @@
         },
         {
           "Label": "Torpedo",
-          "RateOfFire": 0.25,
+          "RateOfFire": 0.083333333333333,
           "ProjectilesPerOnFire": 2,
           "TurretYaw": 0,
           "RackBones": [
@@ -41977,7 +41897,7 @@
               "RackBone": "Turret02"
             }
           ],
-          "Damage": 30,
+          "Damage": 100,
           "ProjectileLifetime": 6,
           "DamageType": "Normal",
           "Audio": {
@@ -42011,7 +41931,7 @@
             "Seabed": "Seabed|Sub|Water"
           },
           "BallisticArc": "RULEUBA_None",
-          "MuzzleSalvoDelay": 0.8,
+          "MuzzleSalvoDelay": 0.4,
           "RackRecoilDistance": 0,
           "RackReloadTimeout": 10,
           "TurretYawSpeed": 90,
@@ -42056,7 +41976,15 @@
       ],
       "AverageDensity": 6500,
       "Description": "Destroyer",
+      "Economy": {
+        "BuildTime": 10000,
+        "BuildCostEnergy": 15000,
+        "BuildCostMass": 2250
+      },
+      "LifeBarOffset": 1.8,
+      "LifeBarSize": 1.5,
       "BuildIconSortPriority": 25,
+      "StrategicIconName": "icon_ship2_antinavy",
       "General": {
         "CommandCaps": {
           "RULEUCC_RetaliateToggle": true,
@@ -42080,21 +42008,44 @@
         "UnitName": "Salem Class",
         "Classification": "RULEUC_MilitaryShip"
       },
-      "AltFootprint": {
-        "OccupancyCaps": 8,
-        "MinWaterDepth": 1.5,
-        "SizeX": 2,
-        "SizeZ": 8
+      "Physics": {
+        "TurnRate": 50,
+        "MaxSteerForce": 5,
+        "AltMotionType": "RULEUMT_Water",
+        "DragCoefficient": 0.2,
+        "MaxAcceleration": 5,
+        "LayerTransitionDuration": 4,
+        "LayerChangeOffsetHeight": -1,
+        "MaxSpeed": 5,
+        "LandSpeedMultiplier": 0.5,
+        "TurnRadius": 15,
+        "BackUpDistance": 10,
+        "MaxSpeedReverse": 5,
+        "CatchUpAcc": 10,
+        "MotionType": "RULEUMT_AmphibiousFloating",
+        "MaxBrake": 5
       },
-      "AI": {
-        "GuardReturnRadius": 30,
-        "TargetBones": [
-          "URS0201",
-          "Muzzle_Back",
-          "Turret_Mount_Front"
-        ]
+      "SelectionThickness": 0.22,
+      "Footprint": {
+        "SizeX": 3,
+        "SizeZ": 5
       },
-      "StrategicIconName": "icon_ship2_antinavy",
+      "SizeZ": 4.7,
+      "Intel": {
+        "SonarRadius": 44,
+        "RadarRadius": 44,
+        "WaterVisionRadius": 36,
+        "VisionRadius": 32
+      },
+      "Defense": {
+        "ArmorType": "Normal",
+        "SurfaceThreatLevel": 14,
+        "Health": 6500,
+        "EconomyThreatLevel": 95,
+        "SubThreatLevel": 10,
+        "MaxHealth": 6500,
+        "AirThreatLevel": 3
+      },
       "Audio": {
         "StopMoveLand": {
           "LodCutoff": "UnitMove_LodCutoff",
@@ -42152,46 +42103,7 @@
           "Cue": "URS0201_Destroy"
         }
       },
-      "LifeBarSize": 1.5,
-      "SelectionSizeX": 0.65,
-      "Economy": {
-        "BuildTime": 10000,
-        "BuildCostEnergy": 15000,
-        "BuildCostMass": 2250
-      },
-      "Footprint": {
-        "SizeX": 2,
-        "SizeZ": 8
-      },
-      "SizeZ": 5.4,
-      "SelectionThickness": 0.22,
-      "Defense": {
-        "ArmorType": "Normal",
-        "SurfaceThreatLevel": 14,
-        "Health": 6500,
-        "EconomyThreatLevel": 95,
-        "SubThreatLevel": 10,
-        "MaxHealth": 6500,
-        "AirThreatLevel": 3
-      },
-      "LifeBarOffset": 1.8,
-      "Physics": {
-        "TurnRate": 50,
-        "MaxSteerForce": 5,
-        "AltMotionType": "RULEUMT_Water",
-        "DragCoefficient": 0.2,
-        "MaxAcceleration": 5,
-        "LayerTransitionDuration": 4,
-        "LayerChangeOffsetHeight": -1,
-        "MaxSpeed": 5,
-        "LandSpeedMultiplier": 0.5,
-        "TurnRadius": 15,
-        "BackUpDistance": 10,
-        "MaxSpeedReverse": 5,
-        "CatchUpAcc": 10,
-        "MotionType": "RULEUMT_AmphibiousFloating",
-        "MaxBrake": 5
-      },
+      "LifeBarHeight": 0.075,
       "Id": "URS0201",
       "Wreckage": {
         "EnergyMult": 0,
@@ -42205,15 +42117,10 @@
         "Blueprint": "/props/DefaultWreckage/DefaultWreckage_prop.bp",
         "MassMult": 0.9
       },
-      "SizeX": 1.5,
-      "SizeY": 1.4,
+      "SizeX": 1.2,
+      "SizeY": 1.2,
       "SelectionSizeZ": 3,
-      "Intel": {
-        "SonarRadius": 32,
-        "RadarRadius": 36,
-        "WaterVisionRadius": 44,
-        "VisionRadius": 32
-      },
+      "CollisionOffsetY": -0.4,
       "Veteran": {
         "Level2": 32,
         "Level3": 48,
@@ -42221,7 +42128,7 @@
         "Level4": 64,
         "Level5": 80
       },
-      "LifeBarHeight": 0.075,
+      "SelectionSizeX": 0.65,
       "Display": {
         "AnimationWalkRate": 2.8,
         "LandAnimationDeath": [
@@ -42378,7 +42285,14 @@
         ]
       },
       "StrategicIconSortPriority": 155,
-      "CollisionOffsetY": -0.4,
+      "AI": {
+        "GuardReturnRadius": 30,
+        "TargetBones": [
+          "URS0201",
+          "Muzzle_Back",
+          "Turret_Mount_Front"
+        ]
+      },
       "Weapon": [
         {
           "DamageRadius": 1,
@@ -42538,7 +42452,7 @@
               "RackBone": "Torp_Launcher_L"
             }
           ],
-          "TargetRestrictDisallow": "UNTARGETABLE, HOVER",
+          "Damage": 40,
           "ProjectileLifetime": 7,
           "DamageType": "Normal",
           "Audio": {
@@ -42569,6 +42483,7 @@
             "Water": "Seabed|Sub|Water"
           },
           "BallisticArc": "RULEUBA_None",
+          "NotExclusive": true,
           "MuzzleSalvoDelay": 0.8,
           "DoTTime": 0.4,
           "RackRecoilDistance": 0,
@@ -42577,9 +42492,9 @@
           "RackSalvoReloadTime": 0,
           "SlavedToBodyArcRange": 10,
           "SlavedToBody": true,
-          "MaxRadius": 45,
           "FiringTolerance": 2,
-          "Damage": 40,
+          "MaxRadius": 45,
+          "TargetRestrictDisallow": "UNTARGETABLE, HOVER",
           "Turreted": false
         },
         {
@@ -43075,8 +42990,8 @@
       "SelectionSizeZ": 0.65,
       "SizeZ": 1,
       "Intel": {
-        "VisionRadius": 20,
-        "RadarRadius": 50
+        "VisionRadius": 22,
+        "RadarRadius": 52
       },
       "Defense": {
         "ArmorType": "Normal",
@@ -43333,7 +43248,6 @@
         "OVERLAYDIRECTFIRE",
         "OVERLAYMISC",
         "OVERLAYRADAR",
-        "OVERLAYSONAR",
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
@@ -43454,9 +43368,8 @@
       "SizeY": 1.6,
       "SelectionSizeZ": 4.2,
       "Intel": {
-        "SonarRadius": 120,
         "RadarRadius": 148,
-        "WaterVisionRadius": 60,
+        "WaterVisionRadius": 32,
         "VisionRadius": 64
       },
       "Veteran": {
@@ -43473,7 +43386,6 @@
           "Air Staging",
           "Anti-Air",
           "Radar",
-          "Sonar",
           "Tactical Missile Deflection"
         ],
         "IdleEffects": {
@@ -44883,7 +44795,7 @@
         "BuildTime": 3000,
         "BuildCostEnergy": 6000,
         "BuildCostMass": 600,
-        "MaintenanceConsumptionPerSecondEnergy": 100
+        "MaintenanceConsumptionPerSecondEnergy": 200
       },
       "Footprint": {
         "SizeX": 2,
@@ -44948,9 +44860,9 @@
       "CollisionOffsetY": -0.4,
       "Intel": {
         "RadarRadius": 64,
-        "RadarStealthFieldRadius": 40,
+        "RadarStealthFieldRadius": 52,
         "SonarRadius": 60,
-        "SonarStealthFieldRadius": 40,
+        "SonarStealthFieldRadius": 52,
         "VisionRadius": 32
       },
       "Display": {
@@ -46128,7 +46040,7 @@
       "Economy": {
         "BuildTime": 800,
         "TeleportMassMod": 1,
-        "MaintenanceConsumptionPerSecondEnergy": 50,
+        "MaintenanceConsumptionPerSecondEnergy": 40,
         "BuildCostEnergy": 1600,
         "TeleportTimeMod": 0.01,
         "BuildCostMass": 160,
@@ -47256,7 +47168,8 @@
         },
         "InstantDeathOnSelfDestruct": true,
         "ToggleCaps": {
-          "RULEUTC_ProductionToggle": true
+          "RULEUTC_ProductionToggle": true,
+          "RULEUTC_CloakToggle": true
         },
         "UnitName": "Fire Beetle",
         "ExcludeFromVeterancy": true,
@@ -47290,8 +47203,9 @@
       "Description": "Mobile Bomb",
       "CollisionOffsetZ": 0.05,
       "Economy": {
-        "BuildTime": 550,
+        "BuildTime": 700,
         "TeleportMassMod": 1,
+        "MaintenanceConsumptionPerSecondEnergy": 10,
         "BuildCostEnergy": 1300,
         "TeleportTimeMod": 0.01,
         "BuildCostMass": 190,
@@ -47512,90 +47426,65 @@
     },
     {
       "Categories": [
-        "PRODUCTSC1",
-        "SELECTABLE",
-        "BUILTBYTIER2ENGINEER",
-        "BUILTBYTIER3ENGINEER",
         "BUILTBYTIER2COMMANDER",
+        "BUILTBYTIER2ENGINEER",
         "BUILTBYTIER3COMMANDER",
+        "BUILTBYTIER3ENGINEER",
+        "CQUEMOV",
         "CYBRAN",
-        "STRUCTURE",
         "DEFENSE",
-        "TECH2",
         "DIRECTFIRE",
         "DRAGBUILD",
-        "SIZE4",
-        "VISIBLETORECON",
-        "RECLAIMABLE",
         "OVERLAYDIRECTFIRE",
+        "PRODUCTSC1",
+        "RECLAIMABLE",
+        "SELECTABLE",
+        "SIZE4",
+        "SNIPEMODE",
         "SORTDEFENSE",
-        "RULEUTL_Advanced"
+        "STRUCTURE",
+        "TECH2",
+        "VISIBLETORECON",
+        null
       ],
+      "AverageDensity": 2000,
       "Description": "Point Defense",
       "BuildIconSortPriority": 110,
-      "LifeBarHeight": 0.075,
-      "Buffs": {
-        "Regen": {
-          "Level2": 4,
-          "Level3": 6,
-          "Level1": 2,
-          "Level4": 8,
-          "Level5": 10
-        }
-      },
       "LifeBarSize": 1.1,
       "StrategicIconName": "icon_structure2_directfire",
+      "LifeBarOffset": 0.45,
+      "CollisionOffsetY": -0.25,
       "General": {
         "CommandCaps": {
           "RULEUCC_RetaliateToggle": true,
-          "RULEUCC_Transport": false,
-          "RULEUCC_Nuke": false,
-          "RULEUCC_Capture": false,
           "RULEUCC_Attack": true,
-          "RULEUCC_Patrol": false,
-          "RULEUCC_Stop": true,
-          "RULEUCC_Move": false,
-          "RULEUCC_CallTransport": false,
-          "RULEUCC_Guard": false,
-          "RULEUCC_Repair": false,
-          "RULEUCC_Reclaim": false
+          "RULEUCC_Stop": true
         },
-        "Classification": "RULEUC_MilitaryStructure",
-        "TechLevel": "RULEUTL_Advanced",
-        "UnitWeight": 1,
-        "Category": "Defense",
         "UnitName": "Cerberus",
         "SelectionPriority": 5,
         "Icon": "land",
-        "FactionName": "Cybran"
+        "FactionName": "Cybran",
+        "Classification": "RULEUC_MilitaryStructure"
       },
-      "LifeBarOffset": 0.45,
-      "SelectionSizeX": 0.75,
       "Economy": {
-        "BuildTime": 400,
+        "BuildTime": 600,
         "BuildCostMass": 480,
         "RebuildBonusIds": [
           "urb2301"
         ],
-        "BuildCostEnergy": 3400
+        "BuildCostEnergy": 3360
       },
       "Footprint": {
         "SizeX": 1,
         "SizeZ": 1
       },
-      "Interface": {
-        "HelpText": "Point Defense"
-      },
+      "SizeZ": 0.7,
       "SelectionThickness": 0.5,
       "Defense": {
         "ArmorType": "Structure",
-        "SurfaceThreatLevel": 18,
+        "SurfaceThreatLevel": 10,
         "Health": 2000,
-        "AirThreatLevel": 0,
-        "EconomyThreatLevel": 6,
-        "SubThreatLevel": 0,
-        "MaxHealth": 2000,
-        "RegenRate": 0
+        "MaxHealth": 2000
       },
       "Audio": {
         "Destroyed": {
@@ -47615,47 +47504,29 @@
         }
       },
       "Physics": {
-        "TurnRate": 0,
-        "MaxSteerForce": 0,
-        "DragCoefficient": 0.2,
-        "SkirtOffsetZ": -0.5,
-        "BuildOnLayerCaps": {
-          "LAYER_Sub": false,
-          "LAYER_Land": true,
-          "LAYER_Seabed": false,
-          "LAYER_Orbit": false,
-          "LAYER_Water": false,
-          "LAYER_Air": false
-        },
-        "MotionType": "RULEUMT_None",
-        "SkirtSizeZ": 2,
-        "SkirtOffsetX": -0.5,
         "FlattenSkirt": true,
-        "MinSpeedPercent": 0,
+        "SkirtSizeZ": 2,
+        "SkirtOffsetZ": -0.5,
+        "DragCoefficient": 0.2,
+        "SkirtOffsetX": -0.5,
         "SkirtSizeX": 2,
-        "BankingSlope": 0
+        "MotionType": "RULEUMT_None"
       },
       "Id": "URB2301",
       "Wreckage": {
         "EnergyMult": 0,
         "WreckageLayers": {
-          "Water": false,
-          "Land": true,
-          "Seabed": false,
-          "Sub": false,
-          "Air": false
+          "Land": true
         },
         "ReclaimTimeMultiplier": 1,
         "HealthMult": 0.9,
         "Blueprint": "/props/DefaultWreckage/DefaultWreckage_prop.bp",
         "MassMult": 0.9
       },
-      "SizeX": 0.5,
+      "SelectionSizeX": 0.75,
       "SizeY": 1.8,
       "SelectionSizeZ": 0.75,
-      "Intel": {
-        "VisionRadius": 28
-      },
+      "SizeX": 0.5,
       "Veteran": {
         "Level2": 24,
         "Level3": 36,
@@ -47663,7 +47534,9 @@
         "Level4": 48,
         "Level5": 60
       },
-      "CollisionOffsetY": -0.25,
+      "Intel": {
+        "VisionRadius": 28
+      },
       "Display": {
         "Tarmacs": [
           {
@@ -47697,19 +47570,16 @@
             }
           ]
         },
-        "UniformScale": 0.06,
-        "SpawnRandomRotation": true,
-        "PlaceholderMeshName": "UXB0003"
+        "UniformScale": 0.06
       },
       "StrategicIconSortPriority": 200,
-      "SizeZ": 0.7,
+      "LifeBarHeight": 0.075,
       "Weapon": [
         {
-          "FiringRandomness": 0,
-          "TargetCheckInterval": 0.3,
-          "RateOfFire": 1,
+          "Label": "MainGun",
+          "RateOfFire": 3.3333333333333,
+          "ProjectilesPerOnFire": 1,
           "TurretYaw": 0,
-          "DamageFriendly": false,
           "RackBones": [
             {
               "MuzzleBones": [
@@ -47720,8 +47590,7 @@
               "RackBone": "Turret_B02"
             }
           ],
-          "Damage": 12,
-          "BeamCollisionDelay": 0.2,
+          "Damage": 10,
           "DamageType": "Normal",
           "Audio": {
             "Fire": {
@@ -47740,36 +47609,38 @@
           "AboveWaterTargetsOnly": true,
           "RackSlavedToTurret": false,
           "TargetPriorities": [
-            "SPECIALHIGHPRI",
-            "MOBILE",
-            "STRUCTURE DEFENSE",
-            "SPECIALLOWPRI",
+            "EXPERIMENTAL",
+            "(STRUCTURE * TECH2 * DEFENSE - ANTIMISSILE)",
+            "MOBILE TECH1 ARTILLERY",
+            "MOBILE TECH3",
+            "MOBILE TECH2",
+            "MOBILE TECH1",
+            "COMMAND",
             "ALLUNITS"
           ],
           "MaxRadius": 50,
+          "ProjectileId": "/projectiles/CDFLaserHeavy02/CDFLaserHeavy02_proj.bp",
+          "MuzzleVelocity": 100,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
           "TurretBoneMuzzle": "Turret_Muzzle01",
-          "MuzzleSalvoSize": 1,
+          "MuzzleSalvoSize": 2,
           "FireTargetLayerCapsTable": {
             "Land": "Land|Water|Seabed",
             "Water": "Land|Water|Seabed"
           },
-          "BeamLifetime": 0.6,
-          "BallisticArc": "RULEUBA_None",
-          "Label": "MainGun",
-          "TurretYawSpeed": 60,
+          "BallisticArc": "RULEUBA_LowArc",
           "MuzzleSalvoDelay": 0,
           "ProjectileLifetimeUsesMultiplier": 1.15,
-          "TurretYawRange": 180,
-          "RackSalvoReloadTime": 0,
           "RackRecoilDistance": -1,
-          "ReTargetOnMiss": true,
+          "RackReloadTimeout": 10,
+          "TurretYawSpeed": 120,
+          "TurretYawRange": 180,
           "CollideFriendly": false,
           "TargetRestrictDisallow": "UNTARGETABLE",
-          "TrackingRadius": 1.15,
-          "FiringTolerance": 2,
-          "RackReloadTimeout": 10,
+          "RackSalvoReloadTime": 0,
+          "FiringTolerance": 1,
+          "ReTargetOnMiss": true,
           "TurretDualManipulators": false,
           "TurretBonePitch": "Turret_B02",
           "Turreted": true,
@@ -48065,15 +47936,15 @@
         "VISIBLETORECON",
         null
       ],
-      "AverageDensity": 11600,
+      "AverageDensity": 5600,
       "Description": "Torpedo Launcher",
       "Economy": {
         "BuildTime": 1400,
-        "BuildCostMass": 1080,
+        "BuildCostMass": 2250,
         "RebuildBonusIds": [
           "urb2205"
         ],
-        "BuildCostEnergy": 9000
+        "BuildCostEnergy": 15000
       },
       "LifeBarOffset": 0.75,
       "LifeBarSize": 1.5,
@@ -48118,8 +47989,8 @@
       "Defense": {
         "ArmorType": "Structure",
         "SubThreatLevel": 23,
-        "Health": 11600,
-        "MaxHealth": 11600
+        "Health": 5600,
+        "MaxHealth": 5600
       },
       "Audio": {
         "Destroyed": {
@@ -48170,7 +48041,7 @@
             "Normal": "Tarmacs/Tar6x_cybran_01_normals",
             "FadeOut": 150,
             "Albedo": "Tarmacs/Tar6x_cybran_01_albedo",
-            "DeathLifetime": 300,
+            "DeathLifetime": 400,
             "RemoveWhenDead": false,
             "Length": 6.4,
             "Orientations": [
@@ -48220,6 +48091,7 @@
       },
       "Weapon": [
         {
+          "DamageRadius": 1,
           "Label": "Turret01",
           "RateOfFire": 0.25,
           "ProjectilesPerOnFire": 1,
@@ -48232,7 +48104,7 @@
               "RackBone": "Turret_Barrel"
             }
           ],
-          "Damage": 60,
+          "Damage": 120,
           "ProjectileLifetime": 12,
           "DamageType": "Normal",
           "Audio": {
@@ -50821,6 +50693,19 @@
       ],
       "AverageDensity": 19000,
       "EnhancementPresets": {
+        "Combat": {
+          "SortCategory": "SORTINTEL",
+          "Description": "SACU (Combatant preset)",
+          "Enhancements": [
+            "FocusConvertor",
+            "RapidFire",
+            "StealthGenerator"
+          ],
+          "UnitName": "SACU (Combatant preset)",
+          "HelpText": "Support Armored Command Unit. Enhanced during construction with the EMP burst and disintegrator amplifier enhancements.",
+          "SelectionPriority": 1,
+          "BuildIconSortPriority": 15
+        },
         "Rambo": {
           "SortCategory": "SORTINTEL",
           "Description": "Support Armored Command Unit (Rambo preset)",
@@ -50835,18 +50720,16 @@
           "SelectionPriority": 1,
           "BuildIconSortPriority": 25
         },
-        "Combat": {
-          "SortCategory": "SORTINTEL",
-          "Description": "SACU (Combatant preset)",
+        "RASE": {
+          "SortCategory": "SORTECONOMY",
+          "Description": "SACU (RAS and Engineer preset)",
+          "UnitName": "SACU (RAS and Engineer module.)",
           "Enhancements": [
-            "FocusConvertor",
-            "RapidFire",
-            "StealthGenerator"
+            "ResourceAllocation",
+            "Switchback"
           ],
-          "UnitName": "SACU (Combatant preset)",
-          "HelpText": "Support Armored Command Unit. Enhanced during construction with the EMP burst and disintegrator amplifier enhancements.",
-          "SelectionPriority": 1,
-          "BuildIconSortPriority": 15
+          "HelpText": "Support Armored Command Unit. Enhanced during construction with a Resource Allocation System and Engineer module.",
+          "BuildIconSortPriority": 30
         },
         "AntiAir": {
           "SortCategory": "SORTDEFENSE",
@@ -50951,16 +50834,16 @@
         },
         "CloakingGenerator": {
           "Slot": "Back",
-          "BuildCostEnergy": 200000,
-          "BuildTime": 14000,
+          "BuildCostEnergy": 176200,
+          "BuildTime": 13440,
           "Icon": "cfs",
           "Name": "Personal Cloaking Generator",
           "NewHealth": 15500,
-          "MaintenanceConsumptionPerSecondEnergy": 1500,
+          "MaintenanceConsumptionPerSecondEnergy": 1520,
           "UpgradeUnitAmbientBones": [
             "URL0301"
           ],
-          "BuildCostMass": 5000,
+          "BuildCostMass": 3600,
           "Prerequisite": "StealthGenerator"
         },
         "ResourceAllocationRemove": {
@@ -51055,26 +50938,26 @@
         "Switchback": {
           "Slot": "RCH",
           "NewBuildRate": 112,
-          "BuildTime": 1680,
+          "BuildTime": 1120,
           "Name": "Rapid Fabricator",
           "Icon": "ses",
           "BuildableCategoryAdds": "BUILTBYTIER3ENGINEER CYBRAN",
           "UpgradeUnitAmbientBones": [
             "URL0301"
           ],
-          "BuildCostMass": 800,
-          "BuildCostEnergy": 51100
+          "BuildCostMass": 560,
+          "BuildCostEnergy": 12800
         },
         "DisintigratorGun": {
           "BuildTime": 5040,
           "Name": "Disintegrator",
           "Slot": "LCH",
-          "BuildCostMass": 3300,
+          "BuildCostMass": 2300,
           "UpgradeUnitAmbientBones": [
             "URL0301"
           ],
           "Icon": "emp",
-          "BuildCostEnergy": 90000
+          "BuildCostEnergy": 70000
         },
         "StealthGenerator": {
           "BuildTime": 1120,
@@ -51325,7 +51208,7 @@
         "TurnRate": 130,
         "MaxSteerForce": 12,
         "DragCoefficient": 0.2,
-        "MaxAcceleration": 2.1,
+        "MaxAcceleration": 2.5,
         "TurnRadius": 10,
         "MaxSpeed": 2,
         "LayerChangeOffsetHeight": -0.9,
@@ -51957,7 +51840,7 @@
           "Cue": "URL0309_Move_Start"
         }
       },
-      "CollisionOffsetY": -0.25,
+      "CollisionOffsetY": -0.4,
       "Id": "URL0309",
       "Wreckage": {
         "EnergyMult": 0,
@@ -51973,7 +51856,7 @@
         "MassMult": 0.9
       },
       "SizeX": 0.85,
-      "SizeY": 0.9,
+      "SizeY": 1.1,
       "SelectionCenterOffsetZ": 0.025,
       "Intel": {
         "VisionRadius": 26
@@ -52769,7 +52652,7 @@
           "TurretYaw": 0,
           "TurretDualManipulators": false,
           "TurretBonePitch": "Barrel_L",
-          "MaxRadius": 20,
+          "MaxRadius": 24,
           "BallisticArc": "RULEUBA_LowArc"
         },
         {
@@ -54103,7 +53986,7 @@
       "SizeX": 1.2,
       "Intel": {
         "VisionRadius": 26,
-        "RadarRadius": 70
+        "RadarRadius": 72
       },
       "SelectionSizeZ": 0.9,
       "SizeY": 0.9,
@@ -59440,6 +59323,7 @@
       "LifeBarHeight": 0.075,
       "Weapon": [
         {
+          "DamageRadius": 1,
           "Label": "Turret01",
           "RateOfFire": 0.25,
           "ProjectilesPerOnFire": 1,
@@ -59481,7 +59365,7 @@
             "(STRUCTURE * DEFENSE - ANTIMISSILE)",
             "ALLUNITS"
           ],
-          "MaxRadius": 70,
+          "MaxRadius": 80,
           "ProjectileId": "/projectiles/CANKrilTorpedo01/CANKrilTorpedo01_proj.bp",
           "MuzzleVelocity": 5,
           "RackFireTogether": false,
@@ -60765,8 +60649,8 @@
       },
       "SizeZ": 0.95,
       "Intel": {
-        "SonarStealthFieldRadius": 40,
-        "RadarStealthFieldRadius": 40,
+        "SonarStealthFieldRadius": 52,
+        "RadarStealthFieldRadius": 52,
         "SonarRadius": 448,
         "WaterVisionRadius": 24,
         "ShowIntelOnSelect": true,
@@ -61408,13 +61292,13 @@
         ],
         "RollOffPoints": [
           {
-            "UnitSpin": 0,
+            "UnitSpin": 180,
             "X": 0,
             "Y": 0,
             "Z": -3
           },
           {
-            "UnitSpin": 180,
+            "UnitSpin": 0,
             "X": 0,
             "Y": 0,
             "Z": 3
@@ -64169,7 +64053,7 @@
         "MassMult": 0.9
       },
       "SizeX": 0.8,
-      "SizeY": 0.7,
+      "SizeY": 0.8,
       "SelectionSizeZ": 0.4,
       "Physics": {
         "MeshExtentsX": 0.65,
@@ -64286,7 +64170,7 @@
       },
       "StrategicIconSortPriority": 105,
       "AI": {
-        "GuardScanRadius": 60
+        "GuardScanRadius": 26
       },
       "BuildIconSortPriority": 10
     },
@@ -65109,8 +64993,8 @@
           "AboveWaterTargetsOnly": true,
           "RackSlavedToTurret": false,
           "TargetPriorities": [
+            "RADAR INTELLIGENCE STRUCTURE",
             "MOBILE",
-            "(STRUCTURE * DEFENSE - ANTIMISSILE)",
             "ALLUNITS"
           ],
           "MaxRadius": 33,
@@ -65228,7 +65112,7 @@
         "KLiftDamping": 2,
         "CanFly": true,
         "Winged": true,
-        "StartTurnDistance": 10,
+        "StartTurnDistance": 5,
         "EngageDistance": 50,
         "KMove": 1.5,
         "MinAirspeed": 10,
@@ -66807,24 +66691,43 @@
     },
     {
       "Categories": [
-        "PRODUCTSC1",
-        "SELECTABLE",
+        "AEON",
         "BUILTBYTIER1FACTORY",
         "BUILTBYTIER2FACTORY",
         "BUILTBYTIER3FACTORY",
-        "AEON",
-        "MOBILE",
-        "LAND",
-        "TECH1",
         "DIRECTFIRE",
         "HOVER",
-        "VISIBLETORECON",
-        "RECLAIMABLE",
-        "TANK",
+        "LAND",
+        "MOBILE",
         "OVERLAYDIRECTFIRE",
-        "RULEUTL_Basic"
+        "PRODUCTSC1",
+        "RECLAIMABLE",
+        "SELECTABLE",
+        "TANK",
+        "TECH1",
+        "VISIBLETORECON",
+        null
       ],
-      "Description": "Light Tank",
+      "AverageDensity": 77.5,
+      "General": {
+        "UnitName": "Aurora",
+        "FactionName": "Aeon",
+        "Icon": "amph",
+        "CommandCaps": {
+          "RULEUCC_RetaliateToggle": true,
+          "RULEUCC_Attack": true,
+          "RULEUCC_Move": true,
+          "RULEUCC_CallTransport": true,
+          "RULEUCC_Guard": true,
+          "RULEUCC_Patrol": true,
+          "RULEUCC_Stop": true
+        },
+        "Classification": "RULEUC_MilitaryVehicle"
+      },
+      "LifeBarSize": 0.65,
+      "StrategicIconName": "icon_land1_directfire",
+      "BuildIconSortPriority": 40,
+      "LifeBarOffset": 0.4,
       "Economy": {
         "BuildTime": 290,
         "TeleportMassMod": 1,
@@ -66833,54 +66736,14 @@
         "BuildCostMass": 54,
         "TeleportEnergyMod": 0.15
       },
-      "LifeBarSize": 0.65,
-      "BuildIconSortPriority": 40,
-      "LifeBarOffset": 0.4,
-      "Buffs": {
-        "Regen": {
-          "Level2": 2,
-          "Level3": 3,
-          "Level1": 1,
-          "Level4": 4,
-          "Level5": 5
-        }
-      },
-      "StrategicIconName": "icon_land1_directfire",
-      "SelectionThickness": 0.58,
-      "Physics": {
-        "MeshExtentsX": 0.75,
-        "TurnFacingRate": 90,
-        "WobbleFactor": 0.1,
-        "WobbleSpeed": 0.01,
-        "MotionType": "RULEUMT_Hover",
-        "RotateOnSpot": false,
-        "MeshExtentsZ": 0.8,
-        "TurnRate": 310,
-        "MaxSteerForce": 3,
-        "Elevation": 0.25,
-        "DragCoefficient": 0.2,
-        "MaxAcceleration": 3,
-        "MeshExtentsY": 0.5,
-        "MaxSpeed": 3,
-        "BackUpDistance": 6,
-        "RotateBodyWhileMoving": true,
-        "TurnRadius": 1.2,
-        "MaxSpeedReverse": 3,
-        "MaxBrake": 15
-      },
-      "SizeZ": 0.9,
-      "Intel": {
-        "VisionRadius": 20
-      },
+      "Description": "Light Tank",
+      "SizeZ": 1.1,
+      "SelectionSizeX": 0.5,
       "Defense": {
         "ArmorType": "Normal",
-        "SurfaceThreatLevel": 1,
+        "SurfaceThreatLevel": 2,
         "Health": 155,
-        "AirThreatLevel": 0,
-        "EconomyThreatLevel": 0,
-        "SubThreatLevel": 0,
-        "MaxHealth": 155,
-        "RegenRate": 0
+        "MaxHealth": 155
       },
       "Audio": {
         "UISelection": {
@@ -66914,21 +66777,22 @@
       "Wreckage": {
         "EnergyMult": 0,
         "WreckageLayers": {
-          "Water": false,
+          "Water": true,
+          "Sub": true,
           "Land": true,
-          "Seabed": false,
-          "Sub": false,
-          "Air": false
+          "Seabed": true
         },
         "ReclaimTimeMultiplier": 1,
         "HealthMult": 0.9,
         "Blueprint": "/props/DefaultWreckage/DefaultWreckage_prop.bp",
         "MassMult": 0.9
       },
-      "SelectionSizeX": 0.5,
-      "SizeY": 0.5,
-      "SelectionSizeZ": 0.7,
       "SizeX": 0.7,
+      "Intel": {
+        "VisionRadius": 20
+      },
+      "SelectionSizeZ": 0.7,
+      "SelectionThickness": 0.58,
       "Veteran": {
         "Level2": 6,
         "Level3": 9,
@@ -66936,29 +66800,7 @@
         "Level4": 12,
         "Level5": 15
       },
-      "General": {
-        "CommandCaps": {
-          "RULEUCC_RetaliateToggle": true,
-          "RULEUCC_Transport": false,
-          "RULEUCC_Nuke": false,
-          "RULEUCC_Capture": false,
-          "RULEUCC_Attack": true,
-          "RULEUCC_Patrol": true,
-          "RULEUCC_Stop": true,
-          "RULEUCC_Move": true,
-          "RULEUCC_CallTransport": true,
-          "RULEUCC_Guard": true,
-          "RULEUCC_Repair": false,
-          "RULEUCC_Reclaim": false
-        },
-        "Classification": "RULEUC_MilitaryVehicle",
-        "TechLevel": "RULEUTL_Basic",
-        "Category": "Direct Fire",
-        "FactionName": "Aeon",
-        "Icon": "amph",
-        "UnitWeight": 1,
-        "UnitName": "Aurora"
-      },
+      "SizeY": 0.5,
       "Display": {
         "UniformScale": 0.1,
         "Abilities": [
@@ -66980,6 +66822,21 @@
               }
             ]
           }
+        },
+        "Mesh": {
+          "IconFadeInZoom": 130,
+          "LODs": [
+            {
+              "LODCutoff": 100,
+              "ShaderName": "Aeon"
+            },
+            {
+              "ShaderName": "Aeon",
+              "SpecularName": "ual0201_lod1_specteam.dds",
+              "LODCutoff": 215,
+              "AlbedoName": "ual0201_lod1_albedo.dds"
+            }
+          ]
         },
         "MovementEffects": {
           "Land": {
@@ -67014,35 +66871,35 @@
               }
             ]
           }
-        },
-        "Mesh": {
-          "IconFadeInZoom": 130,
-          "LODs": [
-            {
-              "LODCutoff": 100,
-              "ShaderName": "Aeon"
-            },
-            {
-              "ShaderName": "Aeon",
-              "SpecularName": "ual0201_lod1_specteam.dds",
-              "LODCutoff": 215,
-              "AlbedoName": "ual0201_lod1_albedo.dds"
-            }
-          ]
-        },
-        "SpawnRandomRotation": true,
-        "PlaceholderMeshName": "UXL0001"
+        }
       },
       "StrategicIconSortPriority": 135,
-      "Interface": {
-        "HelpText": "Light Tank"
+      "Physics": {
+        "MeshExtentsX": 0.75,
+        "TurnFacingRate": 120,
+        "WobbleFactor": 0.1,
+        "WobbleSpeed": 0.01,
+        "MotionType": "RULEUMT_Hover",
+        "RotateOnSpot": false,
+        "MeshExtentsZ": 0.8,
+        "TurnRate": 310,
+        "MaxSteerForce": 3,
+        "Elevation": 0.25,
+        "DragCoefficient": 0.2,
+        "MaxAcceleration": 3,
+        "MeshExtentsY": 0.5,
+        "MaxSpeed": 3,
+        "BackUpDistance": 6,
+        "RotateBodyWhileMoving": true,
+        "TurnRadius": 1.2,
+        "MaxSpeedReverse": 3,
+        "MaxBrake": 15
       },
       "Weapon": [
         {
-          "DamageRadius": 0,
+          "UseFiringSolutionInsteadOfAimBone": true,
           "Label": "MainGun",
-          "TargetCheckInterval": 0.75,
-          "RateOfFire": 0.5,
+          "RateOfFire": 0.55555555555556,
           "ProjectilesPerOnFire": 1,
           "TurretYaw": 0,
           "RackBones": [
@@ -67065,51 +66922,50 @@
           "TurretPitch": 0,
           "TurretPitchRange": 20,
           "DisplayName": "Disruptor Cannon",
-          "TurretPitchSpeed": 60,
+          "FiringRandomnessWhileMoving": 0.1,
           "TurretBoneYaw": "Turret",
           "RackSalvoSize": 1,
           "RangeCategory": "UWRC_DirectFire",
           "AboveWaterTargetsOnly": true,
           "RackSlavedToTurret": false,
           "TargetPriorities": [
-            "SPECIALHIGHPRI",
             "TECH1 MOBILE",
             "TECH2 MOBILE",
             "TECH3 MOBILE",
-            "STRUCTURE DEFENSE",
-            "SPECIALLOWPRI",
+            "(STRUCTURE * DEFENSE - ANTIMISSILE)",
             "ALLUNITS"
           ],
-          "MaxRadius": 24,
+          "WeaponCategory": "Direct Fire",
           "ProjectileId": "/projectiles/ADFDisruptor01/ADFDisruptor01_proj.bp",
-          "MuzzleVelocity": 30,
+          "RackRecoilDistance": 0,
+          "MuzzleVelocity": 25,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
           "TurretBoneMuzzle": "Turret_Barrel",
           "MuzzleSalvoSize": 1,
-          "RackRecoilDistance": 0,
+          "RackReloadTimeout": 10,
           "FireTargetLayerCapsTable": {
             "Land": "Land|Water|Seabed",
             "Water": "Land|Water|Seabed"
           },
           "BallisticArc": "RULEUBA_LowArc",
-          "RackReloadTimeout": 10,
-          "MuzzleChargeDelay": 0.5,
+          "MuzzleChargeDelay": 0.1,
+          "TurretYawSpeed": 60,
           "MuzzleSalvoDelay": 0,
           "ProjectileLifetimeUsesMultiplier": 1.15,
-          "TurretYawRange": 10,
           "SlavedToBody": true,
           "FiringTolerance": 2,
-          "TurretYawSpeed": 60,
-          "CollideFriendly": false,
+          "TurretPitchSpeed": 60,
           "TargetRestrictDisallow": "UNTARGETABLE",
-          "TrackingRadius": 1.15,
-          "SlavedToBodyArcRange": 5,
+          "CollideFriendly": false,
+          "DamageRadius": 0,
           "RackSalvoReloadTime": 0,
+          "SlavedToBodyArcRange": 10,
+          "TurretYawRange": 10,
           "TurretDualManipulators": false,
           "TurretBonePitch": "Turret_Barrel",
           "Turreted": true,
-          "WeaponCategory": "Direct Fire"
+          "MaxRadius": 26
         }
       ]
     },
@@ -69498,16 +69354,16 @@
             "Left_Upgrade"
           ],
           "BuildCostEnergy": 20000,
-          "BuildTime": 500,
+          "BuildTime": 600,
           "Icon": "hsa",
           "Name": "Quantum Accelerator",
           "Prerequisite": "GAP_CrysalisBeamAdvancedAeon",
-          "NewRateOfFire": 2,
+          "NewMaxRadius": 30,
           "UpgradeUnitAmbientBones": [
             "UAL0001"
           ],
           "BuildCostMass": 600,
-          "NewMaxRadius": 30
+          "NewRateOfFire": 2
         },
         "GAP_CrysalisBeamAdaptiveAeon": {
           "Slot": "LCH",
@@ -69518,12 +69374,12 @@
             "Left_Turret",
             "Left_Upgrade"
           ],
-          "BuildCostEnergy": 38500,
-          "BuildTime": 1450,
+          "BuildCostEnergy": 32000,
+          "BuildTime": 1200,
           "Icon": "ecba2",
           "Name": "Enhanced advanced cascade amplifier",
           "Prerequisite": "HeatSinkAeon",
-          "NewMaxRadius": 36,
+          "NewMaxRadius": 34,
           "UpgradeUnitAmbientBones": [
             "UAL0001"
           ],
@@ -69556,7 +69412,7 @@
             "Left_Upgrade"
           ],
           "BuildCostEnergy": 4000,
-          "BuildTime": 300,
+          "BuildTime": 200,
           "Name": "Advanced Quantum Disruptor",
           "Icon": "ecba",
           "UpgradeUnitAmbientBones": [
@@ -69986,6 +69842,78 @@
           }
         ],
         "AnimationWalkRate": 2.5,
+        "WarpInEffect": {
+          "HideBones": [
+            "Back_Upgrade",
+            "Right_Upgrade",
+            "Left_Upgrade"
+          ],
+          "PhaseShieldMesh": "/units/ual0001/UAL0001_PhaseShield_mesh"
+        },
+        "TeleportEffects": {
+          "PlayChargeFxAtUnit": true,
+          "ChargeFxAtUnitBones": [
+            {
+              "Offset": [
+                0,
+                0,
+                -0.1
+              ],
+              "Bone": "Back_Upgrade"
+            }
+          ],
+          "PlayTeleportInFx": true,
+          "PlayTeleportOutFx": true,
+          "PlayChargeFxAtDestination": true
+        },
+        "AnimationWalk": "/units/ual0001/ual0001_awalk.sca",
+        "AnimationAction": "/units/ual0001/CERDACER.sca",
+        "Abilities": [
+          "Amphibious",
+          "Customizable",
+          "Engineering Suite",
+          "Not Capturable",
+          "Omni Sensor",
+          "Volatile"
+        ],
+        "IdleEffects": {
+          "Seabed": {
+            "Effects": [
+              {
+                "Bones": [
+                  "Left_Arm_B02",
+                  "Right_Arm_B02",
+                  "Right_Turret_Barrel",
+                  "Left_Turret_Muzzle"
+                ],
+                "Type": "UnderWater01"
+              }
+            ]
+          }
+        },
+        "UniformScale": 0.018,
+        "TransportAnimation": [
+          {
+            "Animation": "/units/UAL0001/UAL0001_afold.sca",
+            "Weight": 100
+          }
+        ],
+        "Mesh": {
+          "IconFadeInZoom": 130,
+          "LODs": [
+            {
+              "ShaderName": "Aeon",
+              "LODCutoff": 100,
+              "Scrolling": true
+            },
+            {
+              "ShaderName": "Aeon",
+              "SpecularName": "ual0001_lod1_specteam.dds",
+              "LODCutoff": 215,
+              "AlbedoName": "ual0001_lod1_albedo.dds"
+            }
+          ]
+        },
         "MovementEffects": {
           "Land": {
             "Footfall": {
@@ -70051,77 +69979,6 @@
               }
             ]
           }
-        },
-        "AnimationWalk": "/units/ual0001/ual0001_awalk.sca",
-        "TeleportEffects": {
-          "PlayChargeFxAtUnit": true,
-          "ChargeFxAtUnitBones": [
-            {
-              "Offset": [
-                0,
-                0,
-                -0.1
-              ],
-              "Bone": "Back_Upgrade"
-            }
-          ],
-          "PlayTeleportInFx": true,
-          "PlayTeleportOutFx": true,
-          "PlayChargeFxAtDestination": true
-        },
-        "Abilities": [
-          "Amphibious",
-          "Customizable",
-          "Engineering Suite",
-          "Not Capturable",
-          "Omni Sensor",
-          "Volatile"
-        ],
-        "IdleEffects": {
-          "Seabed": {
-            "Effects": [
-              {
-                "Bones": [
-                  "Left_Arm_B02",
-                  "Right_Arm_B02",
-                  "Right_Turret_Barrel",
-                  "Left_Turret_Muzzle"
-                ],
-                "Type": "UnderWater01"
-              }
-            ]
-          }
-        },
-        "TransportAnimation": [
-          {
-            "Animation": "/units/UAL0001/UAL0001_afold.sca",
-            "Weight": 100
-          }
-        ],
-        "UniformScale": 0.018,
-        "Mesh": {
-          "IconFadeInZoom": 130,
-          "LODs": [
-            {
-              "ShaderName": "Aeon",
-              "LODCutoff": 100,
-              "Scrolling": true
-            },
-            {
-              "ShaderName": "Aeon",
-              "SpecularName": "ual0001_lod1_specteam.dds",
-              "LODCutoff": 215,
-              "AlbedoName": "ual0001_lod1_albedo.dds"
-            }
-          ]
-        },
-        "WarpInEffect": {
-          "HideBones": [
-            "Back_Upgrade",
-            "Right_Upgrade",
-            "Left_Upgrade"
-          ],
-          "PhaseShieldMesh": "/units/ual0001/UAL0001_PhaseShield_mesh"
         }
       },
       "StrategicIconSortPriority": 0,
@@ -70459,8 +70316,8 @@
           "MuzzleSalvoDelay": 0,
           "RateOfFire": 1,
           "CollideFriendly": false,
-          "NukeInnerRingRadius": 24,
-          "NukeOuterRingRadius": 20,
+          "NukeInnerRingRadius": 30,
+          "NukeOuterRingRadius": 40,
           "FiringTolerance": 2,
           "RackRecoilDistance": 0,
           "NukeInnerRingDamage": 2000,
@@ -72203,7 +72060,7 @@
         "KTurn": 1.5,
         "TurnSpeed": 1.8,
         "KRoll": 2,
-        "MaxAirspeed": 19,
+        "MaxAirspeed": 18,
         "LiftFactor": 5,
         "AutoLandTime": 1,
         "BankForward": false,
@@ -72215,7 +72072,7 @@
         "StartTurnDistance": 10,
         "EngageDistance": 50,
         "KMove": 1.5,
-        "MinAirspeed": 9,
+        "MinAirspeed": 6,
         "KTurnDamping": 2,
         "CombatTurnSpeed": 1.9,
         "TightTurnMultiplier": 1.03,
@@ -72594,7 +72451,7 @@
       "Id": "XAS0204",
       "Intel": {
         "SonarRadius": 60,
-        "WaterVisionRadius": 44,
+        "WaterVisionRadius": 40,
         "VisionRadius": 32
       },
       "SizeX": 0.8,
@@ -73944,8 +73801,8 @@
       "SizeY": 0.5,
       "SelectionCenterOffsetZ": -0.05,
       "Intel": {
-        "VisionRadius": 20,
-        "RadarRadius": 50
+        "VisionRadius": 22,
+        "RadarRadius": 52
       },
       "Veteran": {
         "Level2": 8,
@@ -74853,9 +74710,9 @@
       "LifeBarHeight": 0.075,
       "Id": "UAS0201",
       "Intel": {
-        "SonarRadius": 36,
-        "RadarRadius": 40,
-        "WaterVisionRadius": 44,
+        "SonarRadius": 44,
+        "RadarRadius": 44,
+        "WaterVisionRadius": 36,
         "VisionRadius": 32
       },
       "SizeX": 1.5,
@@ -74942,7 +74799,7 @@
       "Weapon": [
         {
           "DamageRadius": 1.4,
-          "FiringRandomness": 0.25,
+          "FiringRandomness": 0.2,
           "RateOfFire": 0.2,
           "TurretYaw": 0,
           "RackBones": [
@@ -75000,18 +74857,18 @@
           "RackRecoilDistance": -1,
           "MuzzleSalvoDelay": 0,
           "MuzzleChargeDelay": 0.1,
-          "TurretYawRange": 150,
+          "TurretYawRange": 160,
           "RackSalvoReloadTime": 0,
-          "FiringTolerance": 2,
+          "FiringTolerance": 1,
           "SlavedToBody": true,
           "CollideFriendly": false,
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 100,
           "TargetRestrictDisallow": "UNTARGETABLE",
           "SlavedToBodyArcRange": 155,
           "RackReloadTimeout": 10,
           "TurretDualManipulators": false,
           "TurretBonePitch": "Turret_Front_Barrel01",
-          "MaxRadius": 70,
+          "MaxRadius": 75,
           "Turreted": true
         },
         {
@@ -76022,7 +75879,6 @@
         "OVERLAYDEFENSE",
         "OVERLAYDIRECTFIRE",
         "OVERLAYRADAR",
-        "OVERLAYSONAR",
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
@@ -76116,9 +75972,8 @@
       "LifeBarHeight": 0.075,
       "Id": "UAS0202",
       "Intel": {
-        "SonarRadius": 120,
         "RadarRadius": 148,
-        "WaterVisionRadius": 60,
+        "WaterVisionRadius": 32,
         "VisionRadius": 64
       },
       "SizeX": 1.6,
@@ -76138,7 +75993,6 @@
         "Abilities": [
           "Anti-Air",
           "Radar",
-          "Sonar",
           "Tactical Missile Defense"
         ],
         "IdleEffects": {
@@ -79135,15 +78989,15 @@
         "VISIBLETORECON",
         null
       ],
-      "AverageDensity": 12200,
+      "AverageDensity": 6100,
       "Description": "Torpedo Launcher",
       "Economy": {
         "BuildTime": 1400,
-        "BuildCostMass": 1080,
+        "BuildCostMass": 2250,
         "RebuildBonusIds": [
           "uab2205"
         ],
-        "BuildCostEnergy": 9000
+        "BuildCostEnergy": 15000
       },
       "LifeBarOffset": 0.6,
       "LifeBarSize": 1.25,
@@ -79184,15 +79038,15 @@
       },
       "SizeZ": 1.5,
       "Intel": {
-        "SonarRadius": 36,
+        "SonarRadius": 60,
         "WaterVisionRadius": 44,
-        "VisionRadius": 20
+        "VisionRadius": 22
       },
       "Defense": {
         "ArmorType": "Structure",
         "SubThreatLevel": 18,
-        "Health": 12200,
-        "MaxHealth": 12200
+        "Health": 6100,
+        "MaxHealth": 6100
       },
       "Audio": {
         "Destroyed": {
@@ -79308,6 +79162,7 @@
       },
       "Weapon": [
         {
+          "DamageRadius": 1,
           "Label": "Turret01",
           "RateOfFire": 0.25,
           "ProjectilesPerOnFire": 1,
@@ -79323,7 +79178,7 @@
               "RackBone": "Turret_Barrel"
             }
           ],
-          "Damage": 180,
+          "Damage": 360,
           "ProjectileLifetime": 12,
           "DamageType": "Normal",
           "Audio": {
@@ -80974,7 +80829,7 @@
       "AverageDensity": 15000,
       "EnhancementPresets": {
         "NanoCombat": {
-          "SortCategory": "SORTOTHER",
+          "SortCategory": "SORTINTEL",
           "Description": "SACU (Nano Combatant preset)",
           "Enhancements": [
             "StabilitySuppressant",
@@ -80996,6 +80851,17 @@
           "SelectionPriority": 1,
           "BuildIconSortPriority": 15
         },
+        "RASE": {
+          "SortCategory": "SORTECONOMY",
+          "Description": "SACU (RAS and Engineer preset)",
+          "UnitName": "SACU (RAS preset  and Engineer module.)",
+          "Enhancements": [
+            "ResourceAllocation",
+            "EngineeringFocusingModule"
+          ],
+          "HelpText": "Support Armored Command Unit. Enhanced during construction with a Resource Allocation System and Engineer module.",
+          "BuildIconSortPriority": 30
+        },
         "RAS": {
           "SortCategory": "SORTECONOMY",
           "Description": "SACU (RAS preset)",
@@ -81008,27 +80874,27 @@
         },
         "Rambo": {
           "SortCategory": "SORTOTHER",
-          "Description": "SACU (Rambo preset)",
+          "Description": "SACU (Special preset)",
           "Enhancements": [
             "StabilitySuppressant",
             "Shield",
             "ShieldHeavy",
             "Redeemer"
           ],
-          "UnitName": "SACU (Rambo preset)",
+          "UnitName": "SACU (Special preset)",
           "HelpText": "Support Armored Command Unit. Enhanced during construction with a personal shield and the reacton refractor enhancements.",
           "SelectionPriority": 1,
           "BuildIconSortPriority": 35
         },
         "ShieldCombat": {
-          "SortCategory": "SORTSTRATEGIC",
+          "SortCategory": "SORTINTEL",
           "Description": "SACU (Shield Combatant preset)",
           "Enhancements": [
             "StabilitySuppressant",
-            "SystemIntegrityCompensator",
-            "Shield"
+            "Shield",
+            "Redeemer"
           ],
-          "UnitName": "SACU (Shield Combatant preset)",
+          "UnitName": "SACU (Rambo preset)",
           "HelpText": "Support Armored Command Unit. Enhanced during construction with a personal shield and the reacton refractor enhancements.",
           "SelectionPriority": 1,
           "BuildIconSortPriority": 30
@@ -81055,9 +80921,9 @@
           "UpgradeEffectBones": [
             "Turbine"
           ],
-          "BuildCostEnergy": 15400,
+          "BuildCostEnergy": 40400,
           "BuildTime": 5040,
-          "ShieldRegenRate": 40,
+          "ShieldRegenRate": 50,
           "OwnerShieldMesh": "/units/ual0301/ual0301_personalshield_mesh",
           "ImpactEffects": "AeonShieldHit01",
           "Icon": "tsg",
@@ -81066,9 +80932,9 @@
             "Turbine"
           ],
           "ShieldEnergyDrainRechargeTime": 5,
-          "ShieldRegenStartTime": 1,
-          "MaintenanceConsumptionPerSecondEnergy": 150,
-          "BuildCostMass": 1000,
+          "ShieldRegenStartTime": 3,
+          "MaintenanceConsumptionPerSecondEnergy": 220,
+          "BuildCostMass": 2500,
           "Name": "Personal Shield Generator",
           "ShieldRechargeTime": 150,
           "RegenAssistMult": 10,
@@ -81076,7 +80942,7 @@
             "UAL0301"
           ],
           "PersonalShield": true,
-          "ShieldMaxHealth": 15000
+          "ShieldMaxHealth": 20000
         },
         "TeleporterRemove": {
           "BuildTime": 0.1,
@@ -81233,15 +81099,15 @@
         "EngineeringFocusingModule": {
           "Slot": "RCH",
           "NewBuildRate": 112,
-          "BuildTime": 1680,
+          "BuildTime": 1120,
           "Name": "Rapid Fabricator",
           "Icon": "efm",
-          "BuildCostMass": 800,
+          "BuildCostMass": 560,
           "UpgradeUnitAmbientBones": [
             "UAL0301"
           ],
           "NewDamageRadiusMod": 2,
-          "BuildCostEnergy": 50500
+          "BuildCostEnergy": 12800
         },
         "ResourceAllocation": {
           "Slot": "Back",
@@ -81273,12 +81139,12 @@
           "BuildTime": 6720,
           "Name": "Redeemer",
           "Slot": "LCH",
-          "BuildCostMass": 4300,
+          "BuildCostMass": 2300,
           "UpgradeUnitAmbientBones": [
             "UAL0301"
           ],
           "Icon": "rdmr",
-          "BuildCostEnergy": 90000
+          "BuildCostEnergy": 70000
         },
         "SystemIntegrityCompensator": {
           "Slot": "Back",
@@ -81303,17 +81169,17 @@
           "UpgradeEffectBones": [
             "Turbine"
           ],
-          "BuildCostEnergy": 25000,
+          "BuildCostEnergy": 50000,
           "BuildTime": 6720,
-          "ShieldRegenRate": 120,
+          "ShieldRegenRate": 200,
           "OwnerShieldMesh": "/units/ual0301/ual0301_personalshield_mesh",
           "ImpactEffects": "AeonShieldHit01",
           "Icon": "phtsg",
           "Slot": "Back",
           "ShieldEnergyDrainRechargeTime": 5,
-          "ShieldRegenStartTime": 1,
-          "MaintenanceConsumptionPerSecondEnergy": 350,
-          "BuildCostMass": 1500,
+          "ShieldRegenStartTime": 3,
+          "MaintenanceConsumptionPerSecondEnergy": 670,
+          "BuildCostMass": 3500,
           "Name": "Heavy Personal Shield Generator",
           "ShieldRechargeTime": 200,
           "Prerequisite": "Shield",
@@ -81321,7 +81187,7 @@
             "UAL0301"
           ],
           "PersonalShield": true,
-          "ShieldMaxHealth": 30000
+          "ShieldMaxHealth": 40000
         },
         "Slots": {
           "RCH": {
@@ -81374,14 +81240,14 @@
         "MaxSteerForce": 12,
         "MeshExtentsX": 1.25,
         "DragCoefficient": 0.2,
-        "MaxAcceleration": 2,
-        "MaxBrake": 1.9,
+        "MaxAcceleration": 2.5,
+        "MaxBrake": 2,
         "LayerChangeOffsetHeight": -0.85,
         "MeshExtentsY": 1.9,
         "TurnRadius": 10,
         "MaxSpeedReverse": 0,
         "MotionType": "RULEUMT_Amphibious",
-        "MaxSpeed": 1.9,
+        "MaxSpeed": 2,
         "StandUpright": true,
         "MeshExtentsZ": 1.75
       },
@@ -82074,7 +81940,7 @@
         "MassMult": 0.9
       },
       "SizeX": 0.9,
-      "SizeY": 0.7,
+      "SizeY": 0.8,
       "SelectionSizeZ": 0.7,
       "SelectionThickness": 0.55,
       "CollisionOffsetY": -0.25,
@@ -84291,7 +84157,7 @@
       "SizeX": 1,
       "Intel": {
         "VisionRadius": 26,
-        "RadarRadius": 70
+        "RadarRadius": 72
       },
       "SelectionSizeZ": 0.85,
       "SizeY": 1.1,
@@ -84865,7 +84731,7 @@
         "Elevation": 0.35,
         "DragCoefficient": 0.2,
         "TurnRadius": 0,
-        "MaxSpeed": 2.2,
+        "MaxSpeed": 4,
         "BackUpDistance": 8,
         "MeshExtentsY": 0.5,
         "RotateBodyWhileMoving": true,
@@ -85700,7 +85566,7 @@
       },
       "StrategicIconSortPriority": 65,
       "Economy": {
-        "BuildTime": 5500,
+        "BuildTime": 6600,
         "BuildCostEnergy": 55000,
         "BuildCostMass": 1650
       },
@@ -85748,7 +85614,7 @@
           "BallisticArc": "RULEUBA_None",
           "HeadingArcRange": 30,
           "Label": "Bomb",
-          "MuzzleSalvoDelay": 0.1,
+          "MuzzleSalvoDelay": 0.2,
           "ProjectilesPerOnFire": 4,
           "MinRadius": 4,
           "RackReloadTimeout": 10,
@@ -85773,7 +85639,7 @@
           "FiringTolerance": 6,
           "TurretPitchRange": 0,
           "TurretDualManipulators": false,
-          "MaxRadius": 16,
+          "MaxRadius": 26,
           "TurretYawRange": 0,
           "Turreted": false
         },
@@ -85793,105 +85659,82 @@
     },
     {
       "Categories": [
+        "AEON",
+        "ANTISHIELD",
+        "BUILTBYTIER3FACTORY",
+        "DIRECTFIRE",
+        "HOVER",
+        "LAND",
+        "MOBILE",
+        "OVERLAYDIRECTFIRE",
         "PRODUCTDL",
+        "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "BUILTBYTIER3FACTORY",
-        "AEON",
-        "MOBILE",
-        "LAND",
-        "TECH3",
-        "DIRECTFIRE",
-        "VISIBLETORECON",
-        "RECLAIMABLE",
-        "HOVER",
+        "SNIPEMODE",
         "TANK",
-        "OVERLAYDIRECTFIRE",
-        "RULEUTL_Basic"
+        "TECH3",
+        "VISIBLETORECON",
+        null
       ],
+      "AverageDensity": 400,
       "General": {
+        "UnitName": "Absolver",
+        "FactionName": "Aeon",
+        "Icon": "amph",
         "CommandCaps": {
           "RULEUCC_RetaliateToggle": true,
-          "RULEUCC_Transport": false,
-          "RULEUCC_Nuke": false,
-          "RULEUCC_Capture": false,
           "RULEUCC_Attack": true,
-          "RULEUCC_Patrol": true,
-          "RULEUCC_Stop": true,
           "RULEUCC_Move": true,
           "RULEUCC_CallTransport": true,
           "RULEUCC_Guard": true,
-          "RULEUCC_Repair": false,
-          "RULEUCC_Reclaim": false
+          "RULEUCC_Patrol": true,
+          "RULEUCC_Stop": true
         },
-        "Classification": "RULEUC_MilitaryVehicle",
-        "TechLevel": "RULEUTL_Basic",
-        "Category": "Direct Fire",
-        "FactionName": "Aeon",
-        "Icon": "amph",
-        "UnitWeight": 1,
-        "UnitName": "Absolver"
+        "Classification": "RULEUC_MilitaryVehicle"
       },
       "Transport": {
         "TransportClass": 3
       },
-      "LifeBarOffset": 0.8,
-      "Buffs": {
-        "Regen": {
-          "Level2": 6,
-          "Level3": 9,
-          "Level1": 3,
-          "Level4": 12,
-          "Level5": 15
-        }
-      },
       "LifeBarSize": 0.75,
-      "BuildIconSortPriority": 40,
-      "Interface": {
-        "HelpText": "Shield Disruptor"
-      },
+      "StrategicIconName": "icon_land3_antishield",
+      "LifeBarOffset": 0.8,
       "Physics": {
         "MeshExtentsX": 0.75,
         "TurnFacingRate": 120,
         "MaxAcceleration": 3.5,
         "MotionType": "RULEUMT_Hover",
         "RotateOnSpot": false,
-        "BankingSlope": 0,
+        "MeshExtentsZ": 0.8,
         "TurnRate": 90,
         "RotateBodyWhileMoving": true,
-        "Elevation": 0.25,
+        "Elevation": 0.5,
         "DragCoefficient": 0.2,
-        "MaxSpeed": 3.5,
-        "BuildOnLayerCaps": {
-          "LAYER_Sub": false,
-          "LAYER_Land": true,
-          "LAYER_Seabed": false,
-          "LAYER_Orbit": false,
-          "LAYER_Water": false,
-          "LAYER_Air": false
-        },
-        "MeshExtentsY": 0.5,
         "TurnRadius": 0,
-        "MaxSpeedReverse": 0,
-        "MeshExtentsZ": 0.8,
-        "MinSpeedPercent": 0,
+        "MaxSpeed": 3.5,
+        "BackUpDistance": 10,
+        "MeshExtentsY": 0.5,
+        "MaxSpeedReverse": 3.5,
         "MaxSteerForce": 50,
         "MaxBrake": 3.5
       },
       "CollisionOffsetZ": 0.1,
-      "SelectionThickness": 0.37,
+      "Economy": {
+        "BuildTime": 3600,
+        "TeleportMassMod": 1,
+        "BuildCostEnergy": 4800,
+        "TeleportTimeMod": 0.01,
+        "BuildCostMass": 420,
+        "TeleportEnergyMod": 0.15
+      },
       "Description": "Shield Disruptor",
       "SizeZ": 1.1,
-      "SizeX": 0.8,
+      "SelectionThickness": 0.37,
       "Defense": {
         "ArmorType": "Normal",
-        "SurfaceThreatLevel": 9,
-        "Health": 1200,
-        "AirThreatLevel": 0,
-        "EconomyThreatLevel": 0,
-        "SubThreatLevel": 0,
-        "MaxHealth": 1200,
-        "RegenRate": 0
+        "SkipDynamicThreatCalculations": true,
+        "Health": 800,
+        "MaxHealth": 800
       },
       "Audio": {
         "UISelection": {
@@ -85926,22 +85769,21 @@
         "EnergyMult": 0,
         "WreckageLayers": {
           "Water": true,
-          "Land": true,
-          "Seabed": true,
           "Sub": true,
-          "Air": false
+          "Land": true,
+          "Seabed": true
         },
         "ReclaimTimeMultiplier": 1,
         "HealthMult": 0.9,
         "Blueprint": "/props/DefaultWreckage/DefaultWreckage_prop.bp",
         "MassMult": 0.9
       },
-      "SelectionSizeX": 0.6,
-      "SizeY": 0.3,
-      "SelectionSizeZ": 1.05,
+      "SizeX": 0.8,
       "Intel": {
         "VisionRadius": 20
       },
+      "SelectionSizeZ": 1.05,
+      "SizeY": 0.5,
       "Veteran": {
         "Level2": 18,
         "Level3": 27,
@@ -85949,12 +85791,11 @@
         "Level4": 36,
         "Level5": 45
       },
-      "StrategicIconName": "icon_land3_directfire",
+      "SelectionSizeX": 0.6,
       "Display": {
         "UniformScale": 0.06,
         "Abilities": [
-          "Hover",
-          "EMP Weapon"
+          "Hover"
         ],
         "IdleEffects": {
           "Land": {
@@ -85972,6 +85813,21 @@
               }
             ]
           }
+        },
+        "Mesh": {
+          "IconFadeInZoom": 130,
+          "LODs": [
+            {
+              "LODCutoff": 100,
+              "ShaderName": "Aeon"
+            },
+            {
+              "ShaderName": "Aeon",
+              "SpecularName": "dal0310_lod1_specteam.dds",
+              "LODCutoff": 215,
+              "AlbedoName": "dal0310_lod1_albedo.dds"
+            }
+          ]
         },
         "MovementEffects": {
           "Land": {
@@ -86006,47 +85862,23 @@
               }
             ]
           }
-        },
-        "Mesh": {
-          "IconFadeInZoom": 130,
-          "LODs": [
-            {
-              "LODCutoff": 100,
-              "ShaderName": "Aeon"
-            },
-            {
-              "ShaderName": "Aeon",
-              "SpecularName": "dal0310_lod1_specteam.dds",
-              "LODCutoff": 215,
-              "AlbedoName": "dal0310_lod1_albedo.dds"
-            }
-          ]
-        },
-        "SpawnRandomRotation": true,
-        "PlaceholderMeshName": "UXL0001"
+        }
       },
       "StrategicIconSortPriority": 135,
-      "Economy": {
-        "BuildTime": 3600,
-        "TeleportMassMod": 1,
-        "BuildCostEnergy": 4800,
-        "TeleportTimeMod": 0.01,
-        "BuildCostMass": 420,
-        "TeleportEnergyMod": 0.15
-      },
+      "BuildIconSortPriority": 40,
       "Weapon": [
         {
-          "UseFiringSolutionInsteadOfAimBone": true,
-          "FiringRandomness": 0.05,
+          "DamageRadius": 3,
+          "Label": "MainGun",
           "RateOfFire": 0.5,
           "ProjectilesPerOnFire": 1,
           "TurretYaw": 0,
           "RackBones": [
             {
               "MuzzleBones": [
-                "Turret_Barrel"
+                "Turret_Barrel_Muzzle"
               ],
-              "RackBone": "Turret_Barrel"
+              "RackBone": "Turret_Barrel_Muzzle"
             }
           ],
           "Damage": 10,
@@ -86068,90 +85900,55 @@
           "AboveWaterTargetsOnly": true,
           "RackSlavedToTurret": false,
           "DamageToShields": 1090,
-          "Label": "MainGun",
           "TargetPriorities": [
-            "TECH1 MOBILE",
-            "TECH2 MOBILE",
-            "TECH3 MOBILE",
+            "SHIELD",
+            "PERSONALSHIELD",
+            "MOBILE",
             "(STRUCTURE * DEFENSE - ANTIMISSILE)",
             "ALLUNITS"
           ],
-          "MaxRadius": 65,
+          "WeaponCategory": "Direct Fire",
           "ProjectileId": "/projectiles/ADFShieldDisruptor01/ADFShieldDisruptor01_proj.bp",
-          "MuzzleChargeDelay": 0.25,
-          "MuzzleVelocity": 60,
+          "MuzzleVelocity": 30,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
           "TurretBoneMuzzle": "Turret_Barrel",
           "MuzzleSalvoSize": 1,
+          "MuzzleChargeDelay": 0.5,
+          "FireTargetLayerCapsTable": {
+            "Land": "Land|Water|Seabed",
+            "Water": "Land|Water|Seabed"
+          },
+          "BallisticArc": "RULEUBA_LowArc",
+          "RackRecoilDistance": 0,
           "Buffs": [
             {
-              "Radius": 2,
-              "AppliedToTarget": true,
-              "Add": {
-                "OnImpact": true
-              },
-              "BuffType": "STUN",
-              "Duration": 3,
-              "TargetAllow": "TECH1",
-              "TargetDisallow": "TECH2,TECH3,EXPERIMENTAL,COMMAND,SUBCOMMANDER,SHIELD,WALL"
-            },
-            {
-              "Radius": 2,
+              "Radius": 3,
               "AppliedToTarget": true,
               "Add": {
                 "OnImpact": true
               },
               "BuffType": "STUN",
               "Duration": 1,
-              "TargetAllow": "TECH2,SHIELD",
-              "TargetDisallow": "TECH1,TECH3,EXPERIMENTAL,COMMAND,SUBCOMMANDER,WALL"
-            },
-            {
-              "Radius": 2,
-              "AppliedToTarget": true,
-              "Add": {
-                "OnImpact": true
-              },
-              "BuffType": "STUN",
-              "Duration": 0.5,
-              "TargetAllow": "TECH3",
-              "TargetDisallow": "TECH1,TECH2,EXPERIMENTAL,COMMAND,SUBCOMMANDER,SHIELD,WALL"
-            },
-            {
-              "Radius": 2,
-              "AppliedToTarget": true,
-              "Add": {
-                "OnImpact": true
-              },
-              "BuffType": "STUN",
-              "Duration": 0.3,
-              "TargetAllow": "SUBCOMMANDER",
-              "TargetDisallow": "TECH1,TECH2,SHIELD,WALL"
+              "TargetAllow": "NAVAL,TECH1,TECH2,TECH3,SUBCOMMANDER",
+              "TargetDisallow": "EXPERIMENTAL,COMMAND,WALL"
             }
           ],
-          "FireTargetLayerCapsTable": {
-            "Land": "Land|Water|Seabed",
-            "Water": "Land|Water|Seabed"
-          },
-          "Turreted": true,
-          "TurretYawSpeed": 120,
-          "RackReloadTimeout": 10,
           "MuzzleSalvoDelay": 0,
           "ProjectileLifetimeUsesMultiplier": 1.15,
-          "FiringTolerance": 5,
-          "RackSalvoReloadTime": 0,
-          "SlavedToBody": true,
-          "RackRecoilDistance": 0,
-          "CollideFriendly": false,
-          "TargetRestrictDisallow": "UNTARGETABLE",
-          "DamageRadius": 2,
-          "SlavedToBodyArcRange": 10,
           "TurretYawRange": 10,
+          "RackSalvoReloadTime": 0,
+          "FiringTolerance": 1,
+          "SlavedToBody": true,
+          "CollideFriendly": false,
+          "TurretYawSpeed": 60,
+          "TargetRestrictDisallow": "UNTARGETABLE",
+          "SlavedToBodyArcRange": 5,
+          "RackReloadTimeout": 10,
           "TurretDualManipulators": false,
           "TurretBonePitch": "Turret_Barrel",
-          "BallisticArc": "RULEUBA_LowArc",
-          "WeaponCategory": "Direct Fire"
+          "MaxRadius": 65,
+          "Turreted": true
         }
       ]
     },
@@ -90165,7 +89962,7 @@
         ],
         "MaintenanceConsumptionPerSecondEnergy": 300,
         "BuildCostEnergy": 44000,
-        "BuildCostMass": 3000
+        "BuildCostMass": 2400
       },
       "Footprint": {
         "SizeX": 3,
@@ -90490,7 +90287,7 @@
           "UseFiringSolutionInsteadOfAimBone": true,
           "AlwaysRecheckTarget": false,
           "TargetCheckInterval": 1,
-          "RateOfFire": 0.14925373134328,
+          "RateOfFire": 0.25,
           "DisableWhileReloading": true,
           "TurretYaw": 0,
           "RackBones": [
@@ -91371,7 +91168,7 @@
       "VeteranMassMult": 0.5,
       "Defense": {
         "ArmorType": "Experimental",
-        "SurfaceThreatLevel": 200,
+        "SurfaceThreatLevel": 250,
         "Health": 99999,
         "MaxHealth": 99999,
         "RegenRate": 10
@@ -94069,7 +93866,7 @@
       },
       "StrategicIconSortPriority": 105,
       "AI": {
-        "GuardScanRadius": 60
+        "GuardScanRadius": 26
       },
       "BuildIconSortPriority": 10
     },
@@ -95242,7 +95039,7 @@
         "KLiftDamping": 2,
         "CanFly": true,
         "Winged": true,
-        "StartTurnDistance": 10,
+        "StartTurnDistance": 5,
         "EngageDistance": 50,
         "KMove": 1.5,
         "MinAirspeed": 10,
@@ -95809,9 +95606,9 @@
       "Defense": {
         "ArmorType": "Normal",
         "SurfaceThreatLevel": 2,
-        "Health": 550,
+        "Health": 610,
         "SubThreatLevel": 4,
-        "MaxHealth": 550
+        "MaxHealth": 610
       },
       "Audio": {
         "UISelection": {
@@ -96441,7 +96238,7 @@
       },
       "Weapon": [
         {
-          "DamageRadius": 3,
+          "DamageRadius": 4,
           "RackReloadTimeout": 10,
           "RateOfFire": 0.2,
           "ProjectilesPerOnFire": 1,
@@ -98779,7 +98576,7 @@
       },
       "StrategicIconName": "icon_commander_generic",
       "SizeZ": 1.2,
-      "VeteranMassMult": 0.3,
+      "VeteranMassMult": 0.5,
       "Enhancements": {
         "DamageStabilizationSeraphimRemove": {
           "Slot": "Back",
@@ -99496,6 +99293,72 @@
           }
         ],
         "AnimationWalkRate": 1.1,
+        "WarpInEffect": {
+          "HideBones": [
+            "Back_Upgrade",
+            "Right_Upgrade",
+            "Left_Upgrade"
+          ]
+        },
+        "TeleportEffects": {
+          "PlayChargeFxAtUnit": true,
+          "ChargeFxAtUnitBones": [
+            {
+              "Offset": [
+                0,
+                0,
+                -0.1
+              ],
+              "Bone": "Back_Upgrade"
+            }
+          ],
+          "PlayTeleportInFx": true,
+          "PlayTeleportOutFx": true,
+          "PlayChargeFxAtDestination": true
+        },
+        "AnimationWalk": "/units/xsl0001/xsl0001_awalk.sca",
+        "AnimationAction": "/units/xsl0001/CERDACER_SERA.sca",
+        "Abilities": [
+          "Amphibious",
+          "Customizable",
+          "Engineering Suite",
+          "Not Capturable",
+          "Omni Sensor",
+          "Volatile"
+        ],
+        "IdleEffects": {
+          "Seabed": {
+            "Effects": [
+              {
+                "Bones": [
+                  "Left_Arm_B02",
+                  "Right_Arm_B02",
+                  "Right_Turret_Muzzle",
+                  "Left_Turret_Muzzle"
+                ],
+                "Type": "UnderWater01"
+              }
+            ]
+          }
+        },
+        "UniformScale": 0.05,
+        "TransportAnimation": [
+          {
+            "Animation": "/units/XSL0001/XSL0001_afold.sca",
+            "Weight": 100
+          }
+        ],
+        "Mesh": {
+          "IconFadeInZoom": 130,
+          "LODs": [
+            {
+              "LODCutoff": 175,
+              "ShaderName": "Seraphim",
+              "LookupName": "/textures/environment/Falloff_seraphim_lookup.dds",
+              "Scrolling": true
+            }
+          ]
+        },
         "MovementEffects": {
           "Land": {
             "Footfall": {
@@ -99561,71 +99424,6 @@
               }
             ]
           }
-        },
-        "AnimationWalk": "/units/xsl0001/xsl0001_awalk.sca",
-        "TeleportEffects": {
-          "PlayChargeFxAtUnit": true,
-          "ChargeFxAtUnitBones": [
-            {
-              "Offset": [
-                0,
-                0,
-                -0.1
-              ],
-              "Bone": "Back_Upgrade"
-            }
-          ],
-          "PlayTeleportInFx": true,
-          "PlayTeleportOutFx": true,
-          "PlayChargeFxAtDestination": true
-        },
-        "Abilities": [
-          "Amphibious",
-          "Customizable",
-          "Engineering Suite",
-          "Not Capturable",
-          "Omni Sensor",
-          "Volatile"
-        ],
-        "IdleEffects": {
-          "Seabed": {
-            "Effects": [
-              {
-                "Bones": [
-                  "Left_Arm_B02",
-                  "Right_Arm_B02",
-                  "Right_Turret_Muzzle",
-                  "Left_Turret_Muzzle"
-                ],
-                "Type": "UnderWater01"
-              }
-            ]
-          }
-        },
-        "TransportAnimation": [
-          {
-            "Animation": "/units/XSL0001/XSL0001_afold.sca",
-            "Weight": 100
-          }
-        ],
-        "UniformScale": 0.05,
-        "Mesh": {
-          "IconFadeInZoom": 130,
-          "LODs": [
-            {
-              "LODCutoff": 175,
-              "ShaderName": "Seraphim",
-              "LookupName": "/textures/environment/Falloff_seraphim_lookup.dds",
-              "Scrolling": true
-            }
-          ]
-        },
-        "WarpInEffect": {
-          "HideBones": [
-            "Back_Upgrade",
-            "Right_Upgrade",
-            "Left_Upgrade"
-          ]
         }
       },
       "StrategicIconSortPriority": 0,
@@ -99895,8 +99693,8 @@
           "MuzzleSalvoDelay": 0,
           "RateOfFire": 1,
           "CollideFriendly": false,
-          "NukeInnerRingRadius": 24,
-          "NukeOuterRingRadius": 20,
+          "NukeInnerRingRadius": 30,
+          "NukeOuterRingRadius": 40,
           "FiringTolerance": 2,
           "RackRecoilDistance": 0,
           "NukeInnerRingDamage": 2000,
@@ -99936,7 +99734,7 @@
           "ManualFire": true,
           "AboveWaterTargetsOnly": true,
           "RackSlavedToTurret": false,
-          "MinRadius": 15,
+          "MinRadius": 20,
           "CountedProjectile": true,
           "ProjectileId": "/projectiles/SIFLaanseTacticalMissileCDR/SIFLaanseTacticalMissileCDR_proj.bp",
           "MuzzleVelocity": 12,
@@ -101138,7 +100936,7 @@
       "Footprint": {
         "MinWaterDepth": 0
       },
-      "SizeZ": 0.9,
+      "SizeZ": 1.2,
       "Intel": {
         "ReactivateTime": 2,
         "SonarRadius": 180,
@@ -101190,7 +100988,7 @@
       "SelectionSizeX": 0.6,
       "SizeY": 1.2,
       "SelectionSizeZ": 0.6,
-      "SizeX": 1.1,
+      "SizeX": 1.2,
       "SelectionThickness": 0.66,
       "CollisionOffsetY": -0.4,
       "Display": {
@@ -101233,18 +101031,18 @@
       },
       "StrategicIconSortPriority": 235,
       "Physics": {
-        "MeshExtentsX": 1,
+        "MeshExtentsX": 1.5,
         "DragCoefficient": 0.2,
         "SkirtOffsetZ": 0,
         "BuildOnLayerCaps": {
           "LAYER_Water": true
         },
-        "SkirtSizeZ": 1,
-        "MeshExtentsY": 0.65,
+        "SkirtSizeZ": 1.5,
+        "MeshExtentsY": 1,
         "SkirtOffsetX": 0,
         "MotionType": "RULEUMT_None",
-        "SkirtSizeX": 1,
-        "MeshExtentsZ": 1
+        "SkirtSizeX": 1.5,
+        "MeshExtentsZ": 1.5
       },
       "BuildIconSortPriority": 190
     },
@@ -103191,9 +102989,9 @@
       "Economy": {
         "BuildTime": 1050,
         "TeleportMassMod": 1,
-        "BuildCostEnergy": 1320,
+        "BuildCostEnergy": 1400,
         "TeleportTimeMod": 0.01,
-        "BuildCostMass": 220,
+        "BuildCostMass": 230,
         "TeleportEnergyMod": 0.15
       },
       "Description": "Hover Tank",
@@ -103202,8 +103000,8 @@
       "Defense": {
         "ArmorType": "Normal",
         "SurfaceThreatLevel": 6,
-        "Health": 1350,
-        "MaxHealth": 1350
+        "Health": 1400,
+        "MaxHealth": 1400
       },
       "Audio": {
         "EnterWater": {
@@ -103396,7 +103194,7 @@
         {
           "DamageRadius": 0,
           "Label": "TauCannon01",
-          "RateOfFire": 0.3030303030303,
+          "RateOfFire": 0.33333333333333,
           "ProjectilesPerOnFire": 1,
           "TurretYaw": 0,
           "RackBones": [
@@ -103407,7 +103205,7 @@
               "RackBone": "Turret_Barrel"
             }
           ],
-          "Damage": 200,
+          "Damage": 220,
           "DamageType": "Normal",
           "Audio": {
             "Fire": {
@@ -103600,10 +103398,10 @@
       "LifeBarHeight": 0.075,
       "Id": "XSS0201",
       "Intel": {
-        "SonarRadius": 36,
+        "SonarRadius": 60,
         "RadarRadius": 40,
-        "WaterVisionRadius": 44,
-        "VisionRadius": 32
+        "WaterVisionRadius": 40,
+        "VisionRadius": 30
       },
       "SizeX": 1.5,
       "SizeY": 1.3,
@@ -103693,7 +103491,11 @@
       "StrategicIconSortPriority": 155,
       "AI": {
         "AttackAngle": 70,
-        "GuardReturnRadius": 30
+        "GuardReturnRadius": 30,
+        "TargetBones": [
+          "XSS0201",
+          "Center_Target"
+        ]
       },
       "Weapon": [
         {
@@ -103730,7 +103532,7 @@
               "Cue": "XSS0201_Ultrachromatic_Beam"
             }
           },
-          "TurretPitch": 10,
+          "TurretPitch": 0,
           "AutoInitiateAttackCommand": false,
           "DisplayName": "Front Ultrachromatic Beam Generator",
           "TurretPitchSpeed": 30,
@@ -103768,7 +103570,7 @@
           "TurretYawSpeed": 60,
           "WeaponRepackTimeout": 2,
           "RackReloadTimeout": 0,
-          "TurretPitchRange": 20,
+          "TurretPitchRange": 36,
           "SlavedToBodyArcRange": 135,
           "BallisticArc": "RULEUBA_None",
           "TurretDualManipulators": false,
@@ -103810,7 +103612,7 @@
               "Cue": "XSS0201_Ultrachromatic_Beam"
             }
           },
-          "TurretPitch": 10,
+          "TurretPitch": 0,
           "AutoInitiateAttackCommand": false,
           "DisplayName": "Rear Ultrachromatic Beam Generator",
           "TurretPitchSpeed": 30,
@@ -103849,7 +103651,7 @@
           "MuzzleSalvoSize": 1,
           "WeaponRepackTimeout": 2,
           "RackRecoilDistance": 0,
-          "TurretPitchRange": 20,
+          "TurretPitchRange": 36,
           "SlavedToBodyArcRange": 135,
           "TurretYawRange": 140,
           "TurretDualManipulators": false,
@@ -103872,8 +103674,8 @@
           "MuzzleVelocity": 5,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
-          "MuzzleSalvoDelay": 0.9,
-          "MuzzleSalvoSize": 4,
+          "MuzzleSalvoDelay": 0.8,
+          "MuzzleSalvoSize": 3,
           "RackBones": [
             {
               "MuzzleBones": [
@@ -103906,7 +103708,7 @@
           "RackRecoilDistance": 0,
           "RackSalvoSize": 1,
           "RangeCategory": "UWRC_AntiNavy",
-          "Damage": 95,
+          "Damage": 126,
           "FiringRandomness": 1,
           "MaxRadius": 45,
           "RackSlavedToTurret": false
@@ -104092,9 +103894,8 @@
       "LifeBarHeight": 0.075,
       "Id": "XSS0202",
       "Intel": {
-        "SonarRadius": 120,
         "RadarRadius": 148,
-        "WaterVisionRadius": 60,
+        "WaterVisionRadius": 32,
         "VisionRadius": 64
       },
       "SizeX": 1.6,
@@ -104494,8 +104295,8 @@
       "SelectionThickness": 0.5,
       "SizeZ": 1.1,
       "Intel": {
-        "VisionRadius": 20,
-        "RadarRadius": 50
+        "VisionRadius": 22,
+        "RadarRadius": 52
       },
       "Defense": {
         "ArmorType": "Normal",
@@ -105642,7 +105443,7 @@
           "ProjectileId": "/projectiles/SIFLaanseTacticalMissile01/SIFLaanseTacticalMissile01_proj.bp",
           "MaxRadius": 65,
           "MuzzleVelocity": 4,
-          "RackSalvoReloadTime": 0,
+          "RackSalvoReloadTime": 5.8,
           "RackSalvoChargeTime": 0,
           "Turreted": false,
           "WeaponUnpacks": false,
@@ -108203,15 +108004,15 @@
         "VISIBLETORECON",
         null
       ],
-      "AverageDensity": 9600,
+      "AverageDensity": 4800,
       "Description": "Torpedo Launcher",
       "Economy": {
         "BuildTime": 1400,
-        "BuildCostMass": 1080,
+        "BuildCostMass": 2250,
         "RebuildBonusIds": [
           "xsb2205"
         ],
-        "BuildCostEnergy": 9000
+        "BuildCostEnergy": 15000
       },
       "LifeBarOffset": 1.1,
       "LifeBarSize": 1.6,
@@ -108252,15 +108053,15 @@
       },
       "SizeZ": 1.5,
       "Intel": {
-        "SonarRadius": 36,
+        "SonarRadius": 60,
         "WaterVisionRadius": 44,
-        "VisionRadius": 20
+        "VisionRadius": 22
       },
       "Defense": {
         "ArmorType": "Structure",
         "SubThreatLevel": 18,
-        "Health": 9600,
-        "MaxHealth": 9600
+        "Health": 4800,
+        "MaxHealth": 4800
       },
       "Audio": {
         "DoneBeingBuilt": {
@@ -108384,6 +108185,7 @@
       },
       "Weapon": [
         {
+          "DamageRadius": 1,
           "Label": "TorpedoTurrets",
           "RateOfFire": 0.25,
           "ProjectilesPerOnFire": 1,
@@ -108398,7 +108200,7 @@
               "RackBone": "Muzzle01"
             }
           ],
-          "Damage": 242,
+          "Damage": 424,
           "ProjectileLifetime": 12,
           "DamageType": "Normal",
           "Audio": {
@@ -110257,7 +110059,7 @@
           "UnitName": "SACU (Combatant preset)",
           "HelpText": "Support Armored Command Unit. Enhanced during construction with the enhanced sensor system enhancement.",
           "SelectionPriority": 1,
-          "BuildIconSortPriority": 15
+          "BuildIconSortPriority": 90
         },
         "Engineer": {
           "SortCategory": "SORTECONOMY",
@@ -110280,7 +110082,7 @@
           "UnitName": "SACU (Rambo preset)",
           "HelpText": "Support Armored Command Unit. Enhanced during construction with the enhanced sensor system and nano-repair system enhancements.",
           "SelectionPriority": 1,
-          "BuildIconSortPriority": 25
+          "BuildIconSortPriority": 85
         }
       },
       "SelectionYOffset": 0,
@@ -110330,13 +110132,19 @@
           "Prerequisite": "Teleporter"
         },
         "Teleporter": {
+          "Slot": "LCH",
+          "UpgradeEffectBones": [
+            "Back_Upgrade"
+          ],
+          "BuildCostEnergy": 1500000,
           "BuildTime": 20160,
           "Name": "Personal Teleporter",
           "MaintenanceConsumptionPerSecondEnergy": 10000,
+          "UpgradeUnitAmbientBones": [
+            "Torso"
+          ],
           "BuildCostMass": 15000,
-          "BuildCostEnergy": 1500000,
-          "Icon": "pqt",
-          "Slot": "LCH"
+          "Icon": "pqt"
         },
         "MedusaRemove": {
           "BuildTime": 0.1,
@@ -110354,13 +110162,19 @@
         "EnhancedSensors": {
           "NewOmniRadius": 30,
           "Slot": "RCH",
+          "UpgradeEffectBones": [
+            "Back_Upgrade"
+          ],
           "BuildCostEnergy": 12500,
-          "BuildTime": 2240,
           "Icon": "sre",
-          "Name": "Enhanced Sensor System",
+          "BuildTime": 2240,
           "BuildCostMass": 1250,
+          "Name": "Enhanced Sensor System",
           "NewMaxRadius": 35,
           "NewRateOfFire": 1.5,
+          "UpgradeUnitAmbientBones": [
+            "Torso"
+          ],
           "NewDamageRadiusMod": 2.5,
           "NewVisionRadius": 30
         },
@@ -110371,22 +110185,28 @@
             "Left_Arm_Barrel"
           ],
           "NewBuildRate": 98,
-          "BuildTime": 1680,
+          "BuildTime": 1008,
           "Name": "Rapid Fabricator",
           "Icon": "efm",
           "UpgradeUnitAmbientBones": [
             "Torso"
           ],
-          "BuildCostMass": 450,
-          "BuildCostEnergy": 47400
+          "BuildCostMass": 410,
+          "BuildCostEnergy": 10000
         },
         "Medusa": {
           "BuildTime": 4480,
+          "BuildCostMass": 2000,
           "Name": "Medusa",
           "Slot": "LCH",
-          "BuildCostMass": 3350,
+          "BuildCostEnergy": 72300,
+          "UpgradeUnitAmbientBones": [
+            "Torso"
+          ],
           "Icon": "medu",
-          "BuildCostEnergy": 92300
+          "UpgradeEffectBones": [
+            "Back_Upgrade"
+          ]
         },
         "DamageStabilizationRemove": {
           "Slot": "Back",
@@ -110468,11 +110288,11 @@
           "Prerequisite": "EnhancedSensors"
         },
         "Overcharge": {
-          "BuildTime": 6160,
-          "BuildCostMass": 2500,
+          "BuildTime": 5600,
+          "BuildCostMass": 2200,
           "Name": "Overcharge",
           "Slot": "LCH",
-          "BuildCostEnergy": 160000,
+          "BuildCostEnergy": 97300,
           "UpgradeUnitAmbientBones": [
             "Torso"
           ],
@@ -110511,7 +110331,7 @@
           "BuildTime": 5600,
           "Name": "Nano-Repair System",
           "NewHealth": 21000,
-          "BuildCostMass": 2500,
+          "BuildCostMass": 2350,
           "UpgradeUnitAmbientBones": [
             "Torso"
           ],
@@ -110577,7 +110397,7 @@
         "MaxSteerForce": 12,
         "MeshExtentsX": 1.25,
         "DragCoefficient": 0.2,
-        "MaxAcceleration": 2.1,
+        "MaxAcceleration": 2.5,
         "MaxBrake": 2,
         "LayerChangeOffsetHeight": -0.85,
         "MeshExtentsY": 1.9,
@@ -111083,7 +110903,7 @@
           "UseFiringSolutionInsteadOfAimBone": true,
           "Label": "OverCharge",
           "EnabledByEnhancement": "Overcharge",
-          "RateOfFire": 0.1,
+          "RateOfFire": 0.16666666666667,
           "TurretYaw": 0,
           "DamageFriendly": false,
           "RackBones": [
@@ -111094,7 +110914,7 @@
               "RackBone": "Right_Arm"
             }
           ],
-          "Damage": 10000,
+          "Damage": 8000,
           "DamageType": "Overcharge",
           "Audio": {
             "Fire": {
@@ -111113,7 +110933,7 @@
           "ManualFire": true,
           "AboveWaterTargetsOnly": true,
           "RackSlavedToTurret": false,
-          "EnergyRequired": 7500,
+          "EnergyRequired": 4000,
           "OverChargeWeapon": true,
           "MuzzleSalvoSize": 1,
           "TargetPriorities": [
@@ -111153,7 +110973,7 @@
           "SlavedToBody": false,
           "Overcharge": {
             "energyMult": 0.9,
-            "maxDamage": 10000,
+            "maxDamage": 8000,
             "minDamage": 1250,
             "commandDamage": 400,
             "structureDamage": 800
@@ -111167,7 +110987,7 @@
           "UseFiringSolutionInsteadOfAimBone": true,
           "Label": "AutoOverCharge",
           "EnabledByEnhancement": "Overcharge",
-          "RateOfFire": 0.083333333333333,
+          "RateOfFire": 0.14285714285714,
           "TurretYaw": 0,
           "DamageFriendly": false,
           "RackBones": [
@@ -111178,7 +110998,7 @@
               "RackBone": "Right_Arm"
             }
           ],
-          "Damage": 10000,
+          "Damage": 8000,
           "DamageType": "Overcharge",
           "Audio": {
             "Fire": {
@@ -111196,7 +111016,7 @@
           "RangeCategory": "UWRC_DirectFire",
           "AboveWaterTargetsOnly": true,
           "RackSlavedToTurret": false,
-          "EnergyRequired": 7500,
+          "EnergyRequired": 4000,
           "RackRecoilDistance": -0.5,
           "TargetPriorities": [
             "MOBILE EXPERIMENTAL",
@@ -111235,7 +111055,7 @@
           "SlavedToBody": false,
           "Overcharge": {
             "energyMult": 0.9,
-            "maxDamage": 10000,
+            "maxDamage": 8000,
             "minDamage": 1250,
             "commandDamage": 400,
             "structureDamage": 800
@@ -111542,7 +111362,7 @@
         "MassMult": 0.9
       },
       "SizeX": 0.9,
-      "SizeY": 0.7,
+      "SizeY": 0.8,
       "SelectionSizeZ": 0.6,
       "SelectionThickness": 0.65,
       "CollisionOffsetY": -0.25,
@@ -113107,7 +112927,7 @@
       "Weapon": [
         {
           "TurretYawSpeed": 90,
-          "MaxRadius": 60,
+          "MaxRadius": 65,
           "RateOfFire": 0.5,
           "TurretYaw": 0,
           "DamageFriendly": false,
@@ -113252,7 +113072,7 @@
           "RangeCategory": "UWRC_IndirectFire",
           "AboveWaterTargetsOnly": true,
           "RackSlavedToTurret": false,
-          "RackRecoilDistance": -0.1,
+          "RackRecoilDistance": 0,
           "RackReloadTimeout": 0,
           "MuzzleChargeDelay": 0.5,
           "IgnoreIfDisabled": true,
@@ -114692,7 +114512,7 @@
       "SizeX": 0.7,
       "Intel": {
         "VisionRadius": 26,
-        "RadarRadius": 70
+        "RadarRadius": 72
       },
       "SelectionSizeZ": 0.85,
       "SizeY": 0.5,
@@ -116866,7 +116686,7 @@
       "Economy": {
         "BuildTime": 3600,
         "TeleportMassMod": 1,
-        "MaintenanceConsumptionPerSecondEnergy": 100,
+        "MaintenanceConsumptionPerSecondEnergy": 175,
         "BuildCostEnergy": 6400,
         "TeleportTimeMod": 0.01,
         "BuildCostMass": 720,
