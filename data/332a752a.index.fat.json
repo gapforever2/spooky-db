@@ -1,5 +1,5 @@
 {
-  "version": "12",
+  "version": "13",
   "units": [
     {
       "Categories": [
@@ -1673,7 +1673,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "SUBMERSIBLE",
         "T1SUBMARINE",
         "TECH1",
@@ -2650,7 +2649,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH1",
         "UEF",
         "VISIBLETORECON",
@@ -2919,7 +2917,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "SONAR",
         "TECH1",
         "UEF",
@@ -3300,7 +3297,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH1",
         "UEF",
         "VISIBLETORECON",
@@ -4852,7 +4848,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH1",
         "UEF",
         "VISIBLETORECON",
@@ -5681,36 +5676,6 @@
           "BuildCostMass": 800,
           "NewMaxRadius": 30
         },
-        "RegenUEF": {
-          "ShieldSize": 3,
-          "UpgradeEffectBones": [
-            "Back_Upgrade_B01"
-          ],
-          "BuildCostEnergy": 70000,
-          "BuildTime": 2100,
-          "ShieldRegenRate": 100,
-          "OwnerShieldMesh": "/units/uel0001/UEL0001_PhaseShield_mesh",
-          "ImpactEffects": "UEFShieldHit01",
-          "ShieldVerticalOffset": 0,
-          "Icon": "dse",
-          "Slot": "Back",
-          "ShowBones": [
-            "Back_Upgrade_B01"
-          ],
-          "ShieldEnergyDrainRechargeTime": 5,
-          "MaintenanceConsumptionPerSecondEnergy": 250,
-          "ShieldRegenStartTime": 0,
-          "BuildCostMass": 2100,
-          "ShieldRechargeTime": 60,
-          "Name": "Personal Shield Regen",
-          "RegenAssistMult": 10,
-          "ShieldMaxHealth": 19000,
-          "UpgradeUnitAmbientBones": [
-            "UEL0001"
-          ],
-          "PersonalShield": true,
-          "Prerequisite": "ShieldUEF"
-        },
         "ShieldGeneratorFieldUEF": {
           "ShieldSize": 20,
           "UpgradeEffectBones": [
@@ -5741,22 +5706,6 @@
           ],
           "BuildCostMass": 1400,
           "BuildTime": 1500
-        },
-        "HeavyAntiMatterDeeKeyUEFRemove": {
-          "Slot": "RCH",
-          "BuildCostEnergy": 1,
-          "BuildTime": 0.1,
-          "Name": " Remove Zephyr DeeKey",
-          "Prerequisite": "HeavyAntiMatterDeeKeyUEF",
-          "HideBones": [
-            "Right_Upgrade"
-          ],
-          "Icon": "hamc2",
-          "BuildCostMass": 1,
-          "RemoveEnhancements": [
-            "HeavyAntiMatterDeeKeyUEF",
-            "HeavyAntiMatterDeeKeyUEFRemove"
-          ]
         },
         "TacticalMissileUEF": {
           "Slot": "Back",
@@ -5829,6 +5778,22 @@
           "BuildCostMass": 15000,
           "Icon": "pqt"
         },
+        "HeavyAntiMatterDeeKeyUEFRemove": {
+          "Slot": "RCH",
+          "BuildCostEnergy": 1,
+          "BuildTime": 0.1,
+          "Name": " Remove Zephyr DeeKey",
+          "Prerequisite": "HeavyAntiMatterDeeKeyUEF",
+          "HideBones": [
+            "Right_Upgrade"
+          ],
+          "Icon": "hamc2",
+          "BuildCostMass": 1,
+          "RemoveEnhancements": [
+            "HeavyAntiMatterDeeKeyUEF",
+            "HeavyAntiMatterDeeKeyUEFRemove"
+          ]
+        },
         "RightPod": {
           "Slot": "Back",
           "UpgradeEffectBones": [
@@ -5859,23 +5824,6 @@
             "LeftPod",
             "LeftPodRemove"
           ]
-        },
-        "Slots": {
-          "RCH": {
-            "y": 30,
-            "x": -10,
-            "name": ""
-          },
-          "Back": {
-            "y": -10,
-            "x": 38,
-            "name": ""
-          },
-          "LCH": {
-            "y": 30,
-            "x": 105,
-            "name": ""
-          }
         },
         "TacticalNukeMissileUEF": {
           "Slot": "Back",
@@ -6189,21 +6137,22 @@
           "Icon": "aes",
           "NewRegenRate": 10
         },
-        "RegenUEFRemove": {
-          "Slot": "Back",
-          "BuildCostEnergy": 1,
-          "BuildTime": 0.1,
-          "Name": "Remove Personal Shield Regen",
-          "Prerequisite": "RegenUEF",
-          "HideBones": [
-            "Back_Upgrade_B01"
-          ],
-          "Icon": "dse",
-          "BuildCostMass": 1,
-          "RemoveEnhancements": [
-            "RegenUEF",
-            "RegenUEFRemove"
-          ]
+        "Slots": {
+          "RCH": {
+            "y": 30,
+            "x": -10,
+            "name": ""
+          },
+          "Back": {
+            "y": -10,
+            "x": 38,
+            "name": ""
+          },
+          "LCH": {
+            "y": 30,
+            "x": 105,
+            "name": ""
+          }
         }
       },
       "Audio": {
@@ -6670,7 +6619,7 @@
           "RackRecoilDistance": 0,
           "MuzzleSalvoDelay": 0,
           "ProjectileLifetimeUsesMultiplier": 2,
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 100,
           "TurretYawRange": 180,
           "TargetPriorities": [
             "MOBILE",
@@ -6725,7 +6674,7 @@
           "RackSlavedToTurret": false,
           "Label": "OverCharge",
           "MuzzleSalvoSize": 1,
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 100,
           "TargetPriorities": [
             "MOBILE EXPERIMENTAL",
             "MOBILE TECH3",
@@ -6826,7 +6775,7 @@
           "RackSalvoChargeTime": 0,
           "TurretBoneMuzzle": "Right_Arm_Muzzle",
           "WeaponUnpacks": false,
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 100,
           "FireTargetLayerCapsTable": {
             "Water": "Land|Water|Seabed",
             "Land": "Land|Water|Seabed",
@@ -7057,7 +7006,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
         "TECH1",
@@ -7501,7 +7449,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
         "TECH1",
@@ -8283,7 +8230,7 @@
       },
       "StrategicIconSortPriority": 95,
       "AI": {
-        "GuardScanRadius": 26,
+        "GuardScanRadius": 40,
         "TargetBones": [
           "AttachPoint"
         ]
@@ -8674,7 +8621,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH2",
         "UEF",
         "VISIBLETORECON",
@@ -9453,7 +9399,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH2",
         "UEF",
         "VISIBLETORECON",
@@ -10044,7 +9989,6 @@
         "PRODUCTFA",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH2",
         "UEF",
         "VISIBLETORECON",
@@ -10711,7 +10655,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH2",
         "TRANSPORTATION",
         "TRANSPORTFOCUS",
@@ -10760,7 +10703,7 @@
       "SelectionCenterOffsetY": 0.15,
       "Physics": {
         "MeshExtentsX": 1.25,
-        "Elevation": 10,
+        "Elevation": 18,
         "FuelRechargeRate": 5,
         "MaxSpeed": 0.5,
         "GroundCollisionOffset": 1.6,
@@ -11111,7 +11054,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH2",
         "UEF",
         "VISIBLETORECON",
@@ -11688,7 +11630,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SILO",
-        "SNIPEMODE",
         "TECH2",
         "UEF",
         "VISIBLETORECON",
@@ -12223,7 +12164,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH2",
         "TRANSPORTATION",
         "TRANSPORTBUILTBYTIER2FACTORY",
@@ -15273,7 +15213,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SILO",
-        "SNIPEMODE",
         "TECH2",
         "UEF",
         "VISIBLETORECON",
@@ -15774,7 +15713,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
         "TECH2",
@@ -16514,7 +16452,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STEALTH",
         "STRUCTURE",
@@ -16781,7 +16718,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTSTRATEGIC",
         "STRATEGIC",
         "STRUCTURE",
@@ -18452,14 +18388,15 @@
         "OVERLAYCOUNTERINTEL",
         "OVERLAYDIRECTFIRE",
         "OVERLAYOMNI",
+        "OVERLAYRADAR",
         "PATROLHELPER",
         "PODSTAGINGPLATFORM",
         "PRODUCTSC1",
+        "RADAR",
         "RECLAIM",
         "REPAIR",
         "SELECTABLE",
         "SHOWQUEUE",
-        "SNIPEMODE",
         "SUBCOMMANDER",
         "TECH3",
         "UEF",
@@ -18473,7 +18410,7 @@
           "SortCategory": "SORTDEFENSE",
           "Description": "SACU (Shield preset)",
           "Enhancements": [
-            "Shield",
+            "RadarJammer",
             "ShieldGeneratorField"
           ],
           "UnitName": "SACU (Shield preset)",
@@ -18487,8 +18424,7 @@
           "Enhancements": [
             "AdvancedCoolingUpgrade",
             "HighExplosiveOrdnance",
-            "Shield",
-            "DoubleGun"
+            "Shield"
           ],
           "UnitName": "SACU (Rambo preset)",
           "HelpText": "Support Armored Command Unit. Enhanced during construction with a personal shield, energy accelerator and heavy plasma refractor enhancements.",
@@ -18533,8 +18469,9 @@
           "Description": "SACU (Intel Jammer preset)",
           "UnitName": "SACU (Intel Jammer preset)",
           "Enhancements": [
+            "SensorRangeEnhancer",
             "RadarJammer",
-            "SensorRangeEnhancer"
+            "Pod"
           ],
           "HelpText": "Support Armored Command Unit. Enhanced during construction with the radar jammer and enhanced sensor system enhancements.",
           "BuildIconSortPriority": 35
@@ -18562,17 +18499,20 @@
       "SizeZ": 1.1,
       "VeteranMassMult": 3.3335,
       "Enhancements": {
-        "AdvancedCoolingUpgrade": {
-          "Slot": "RCH",
-          "BuildCostEnergy": 10000,
-          "BuildTime": 3360,
-          "Name": "Energy Accelerator",
-          "Icon": "col",
-          "NewRateOfFireDubleGun": 4,
-          "NewRateOfFire": 2,
-          "BuildCostMass": 1000,
-          "UpgradeUnitAmbientBones": [
-            "UEL0301"
+        "SensorRangeEnhancerRemove": {
+          "Slot": "LCH",
+          "BuildCostEnergy": 1,
+          "BuildTime": 0.1,
+          "Name": "Remove Enhanced Sensor System",
+          "Prerequisite": "SensorRangeEnhancer",
+          "HideBones": [
+            "SAM"
+          ],
+          "Icon": "sre",
+          "BuildCostMass": 1,
+          "RemoveEnhancements": [
+            "SensorRangeEnhancer",
+            "SensorRangeEnhancerRemove"
           ]
         },
         "Shield": {
@@ -18584,7 +18524,7 @@
           ],
           "BuildCostEnergy": 39800,
           "BuildTime": 6720,
-          "ShieldRegenRate": 100,
+          "ShieldRegenRate": 75,
           "OwnerShieldMesh": "/units/uel0301/UEL0301_PersonalShield_mesh",
           "ImpactEffects": "UEFShieldHit01",
           "ShieldVerticalOffset": 0,
@@ -18594,11 +18534,11 @@
             "Jetpack"
           ],
           "ShieldEnergyDrainRechargeTime": 5,
-          "ShieldRegenStartTime": 1,
-          "MaintenanceConsumptionPerSecondEnergy": 270,
+          "ShieldRegenStartTime": 3,
+          "MaintenanceConsumptionPerSecondEnergy": 320,
           "BuildCostMass": 2000,
           "Name": "Personal Shield Generator",
-          "ShieldRechargeTime": 170,
+          "ShieldRechargeTime": 175,
           "RegenAssistMult": 10,
           "UpgradeUnitAmbientBones": [
             "UEL0301"
@@ -18617,7 +18557,7 @@
           "BuildCostEnergy": 8000,
           "BuildTime": 1120,
           "Name": "Radar Jammer",
-          "MaintenanceConsumptionPerSecondEnergy": 100,
+          "MaintenanceConsumptionPerSecondEnergy": 20,
           "BuildCostMass": 300,
           "UpgradeUnitAmbientBones": [
             "UEL0301"
@@ -18662,7 +18602,7 @@
           "BuildTime": 0.1,
           "BuildCostMass": 1,
           "Name": "C-D3 Remove Engineering Drone",
-          "Slot": "Back",
+          "Slot": "RCH",
           "BuildCostEnergy": 1,
           "RemoveEnhancements": [
             "Pod",
@@ -18670,21 +18610,6 @@
           ],
           "Icon": "ed",
           "Prerequisite": "Pod"
-        },
-        "DoubleGun": {
-          "BuildTime": 3360,
-          "BuildCostMass": 2100,
-          "Name": "Double Gun",
-          "Slot": "LCH",
-          "BuildCostEnergy": 60000,
-          "UpgradeUnitAmbientBones": [
-            "UEL0301"
-          ],
-          "Icon": "dga",
-          "UpgradeEffectBones": [
-            "Arm_Right_Barrel01",
-            "Arm_Right_B03"
-          ]
         },
         "ShieldGeneratorFieldRemove": {
           "Slot": "Back",
@@ -18719,25 +18644,36 @@
             "AdvancedCoolingUpgradeRemove"
           ]
         },
-        "DoubleGunRemove": {
-          "Slot": "LCH",
-          "UpgradeEffectBones": [
-            "Arm_Right_Barrel01",
-            "Arm_Right_B03"
+        "ShieldGeneratorField": {
+          "ShieldSize": 20,
+          "BuildCostEnergy": 360800,
+          "ShieldSpillOverDamageMod": 0.2,
+          "ShieldRegenRate": 150,
+          "ImpactEffects": "UEFShieldHit01",
+          "ShieldVerticalOffset": -3,
+          "Icon": "sgf",
+          "MaintenanceConsumptionPerSecondEnergy": 1020,
+          "ShieldRechargeTime": 215,
+          "Slot": "Back",
+          "ShowBones": [
+            "Jetpack"
           ],
-          "BuildCostEnergy": 1,
-          "BuildTime": 0.1,
-          "Name": "Remove Double Gun",
-          "Prerequisite": "DoubleGun",
-          "Icon": "dga",
-          "BuildCostMass": 1,
-          "RemoveEnhancements": [
-            "DoubleGun",
-            "DoubleGunRemove"
-          ]
+          "ImpactMesh": "/effects/entities/ShieldSection01/ShieldSection01_mesh",
+          "MeshZ": "/effects/entities/Shield01/Shield01z_mesh",
+          "ShieldRegenStartTime": 5,
+          "Mesh": "/effects/entities/Shield01/Shield01_mesh",
+          "Prerequisite": "RadarJammer",
+          "Name": "Shield Generator Field",
+          "ShieldEnergyDrainRechargeTime": 5,
+          "ShieldMaxHealth": 52000,
+          "UpgradeUnitAmbientBones": [
+            "UEL0301"
+          ],
+          "BuildCostMass": 4500,
+          "BuildTime": 10080
         },
         "HighExplosiveOrdnanceRemove": {
-          "Slot": "RCH",
+          "Slot": "LCH",
           "BuildCostEnergy": 1,
           "Icon": "heo",
           "NewDamageRadius": -2,
@@ -18754,22 +18690,8 @@
           "BuildCostMass": 1,
           "Prerequisite": "HighExplosiveOrdnance"
         },
-        "Pod": {
-          "BuildTime": 840,
-          "BuildCostMass": 350,
-          "Name": "C-D3 Engineering Drone",
-          "Slot": "Back",
-          "BuildCostEnergy": 8500,
-          "UpgradeUnitAmbientBones": [
-            "UEL0301"
-          ],
-          "Icon": "ed",
-          "UpgradeEffectBones": [
-            "AttachSpecial01"
-          ]
-        },
         "HighExplosiveOrdnance": {
-          "Slot": "RCH",
+          "Slot": "LCH",
           "ShowBones": [
             "SAM"
           ],
@@ -18778,35 +18700,30 @@
             "Cannon_Muzzle"
           ],
           "BuildCostEnergy": 15000,
-          "BuildTime": 1680,
-          "Icon": "heo",
+          "NewDamageRadius": 2,
           "Name": "Heavy Plasma Refractor",
-          "Prerequisite": "AdvancedCoolingUpgrade",
+          "Icon": "heo",
           "NewMaxRadius": 35,
           "UpgradeUnitAmbientBones": [
             "UEL0301"
           ],
           "BuildCostMass": 800,
-          "NewDamageRadius": 2
+          "BuildTime": 1680
         },
-        "ResourceAllocationRemove": {
+        "AdvancedCoolingUpgrade": {
+          "BuildTime": 3360,
+          "BuildCostMass": 1000,
+          "Name": "Energy Accelerator",
           "Slot": "RCH",
-          "BuildCostEnergy": 1,
-          "BuildTime": 0.1,
-          "Name": "Remove Resource Allocation System",
-          "Prerequisite": "ResourceAllocation",
-          "HideBones": [
-            "SAM"
+          "BuildCostEnergy": 10000,
+          "UpgradeUnitAmbientBones": [
+            "UEL0301"
           ],
-          "Icon": "isb",
-          "BuildCostMass": 1,
-          "RemoveEnhancements": [
-            "ResourceAllocation",
-            "ResourceAllocationRemove"
-          ]
+          "Icon": "col",
+          "NewRateOfFire": 2
         },
         "ResourceAllocation": {
-          "Slot": "RCH",
+          "Slot": "LCH",
           "ProductionPerSecondMass": 10,
           "UpgradeEffectBones": [
             "SAM"
@@ -18824,53 +18741,40 @@
             "SAM"
           ]
         },
-        "SensorRangeEnhancerRemove": {
+        "ResourceAllocationRemove": {
           "Slot": "LCH",
           "BuildCostEnergy": 1,
           "BuildTime": 0.1,
-          "Name": "Remove Enhanced Sensor System",
-          "Prerequisite": "SensorRangeEnhancer",
+          "Name": "Remove Resource Allocation System",
+          "Prerequisite": "ResourceAllocation",
           "HideBones": [
             "SAM"
           ],
-          "Icon": "sre",
+          "Icon": "isb",
           "BuildCostMass": 1,
           "RemoveEnhancements": [
-            "SensorRangeEnhancer",
-            "SensorRangeEnhancerRemove"
+            "ResourceAllocation",
+            "ResourceAllocationRemove"
           ]
         },
-        "ShieldGeneratorField": {
-          "ShieldSize": 20,
-          "BuildCostEnergy": 360800,
-          "ShieldSpillOverDamageMod": 0.2,
-          "ShieldRegenRate": 150,
-          "ImpactEffects": "UEFShieldHit01",
-          "ShieldVerticalOffset": -3,
-          "Icon": "sgf",
-          "MaintenanceConsumptionPerSecondEnergy": 1000,
-          "ShieldRechargeTime": 215,
-          "Slot": "Back",
-          "ShowBones": [
-            "Jetpack"
-          ],
-          "ImpactMesh": "/effects/entities/ShieldSection01/ShieldSection01_mesh",
-          "MeshZ": "/effects/entities/Shield01/Shield01z_mesh",
-          "ShieldRegenStartTime": 1,
-          "Mesh": "/effects/entities/Shield01/Shield01_mesh",
-          "Prerequisite": "Shield",
-          "Name": "Shield Generator Field",
-          "ShieldEnergyDrainRechargeTime": 5,
-          "ShieldMaxHealth": 52000,
+        "Pod": {
+          "BuildTime": 840,
+          "BuildCostMass": 350,
+          "Name": "C-D3 Engineering Drone",
+          "Slot": "RCH",
+          "BuildCostEnergy": 8500,
           "UpgradeUnitAmbientBones": [
             "UEL0301"
           ],
-          "BuildCostMass": 3500,
-          "BuildTime": 10080
+          "Icon": "ed",
+          "UpgradeEffectBones": [
+            "AttachSpecial01"
+          ]
         },
         "SensorRangeEnhancer": {
-          "NewOmniRadius": 80,
-          "Slot": "LCH",
+          "NewRadarRadius": 150,
+          "NewOmniRadius": 35,
+          "NewVisionRadius": 40,
           "ShowBones": [
             "SAM"
           ],
@@ -18880,12 +18784,13 @@
           "BuildCostEnergy": 20000,
           "BuildTime": 3360,
           "Name": "Enhanced Sensor System",
+          "MaintenanceConsumptionPerSecondEnergy": 50,
           "Icon": "sre",
           "UpgradeUnitAmbientBones": [
             "UEL0301"
           ],
-          "BuildCostMass": 600,
-          "NewVisionRadius": 45
+          "BuildCostMass": 300,
+          "Slot": "LCH"
         },
         "RadarJammerRemove": {
           "Slot": "Back",
@@ -19025,7 +18930,7 @@
         "RegenRate": 10
       },
       "Physics": {
-        "TurnRate": 130,
+        "TurnRate": 120,
         "MaxSteerForce": 12,
         "MeshExtentsX": 0.85,
         "DragCoefficient": 0.2,
@@ -19165,6 +19070,7 @@
           "Engineering Suite",
           "Not Capturable",
           "Omni Sensor",
+          "Radar",
           "Volatile"
         ],
         "IdleEffects": {
@@ -19221,7 +19127,7 @@
         "BuildableCategory": [
           "BUILTBYTIER3ENGINEER UEF"
         ],
-        "BuildCostEnergy": 25200,
+        "BuildCostEnergy": 25000,
         "BuildTime": 10080,
         "TeleportTimeMod": 0.0001,
         "NaturalProducer": true,
@@ -19233,71 +19139,6 @@
         "TeleportEnergyMod": 4
       },
       "Weapon": [
-        {
-          "UseFiringSolutionInsteadOfAimBone": true,
-          "Label": "TargetPainter",
-          "RateOfFire": 0,
-          "TurretYaw": 0,
-          "DamageFriendly": false,
-          "RackBones": [
-            {
-              "MuzzleBones": [
-                "Arm_Left_Muzzle"
-              ],
-              "RackBone": "Arm_Left_Barrel02"
-            }
-          ],
-          "Damage": 0,
-          "BeamCollisionDelay": 999,
-          "DamageType": "Normal",
-          "TurretPitch": 0,
-          "CannotAttackGround": false,
-          "TurretPitchRange": 0,
-          "DisplayName": "Sighting System",
-          "TurretPitchSpeed": 0,
-          "TurretBoneYaw": "Torso",
-          "ContinuousBeam": false,
-          "AboveWaterTargetsOnly": true,
-          "RackSlavedToTurret": false,
-          "TargetPriorities": [
-            "MOBILE EXPERIMENTAL",
-            "COMMAND",
-            "MOBILE TECH3",
-            "MOBILE TECH2",
-            "(STRUCTURE * DEFENSE - ANTIMISSILE)",
-            "ALLUNITS"
-          ],
-          "WeaponCategory": "Direct Fire",
-          "FireTargetLayerCapsTable": {
-            "Land": "Land|Water|Seabed",
-            "Water": "Land|Water|Seabed"
-          },
-          "RackRecoilDistance": 0,
-          "RackFireTogether": false,
-          "RackSalvoChargeTime": 0,
-          "TurretBoneMuzzle": "Arm_Left_Muzzle",
-          "MuzzleSalvoSize": 0,
-          "MaxRadius": 25,
-          "BeamLifetime": 0,
-          "BallisticArc": "RULEUBA_None",
-          "TurretYawSpeed": 30,
-          "RackSalvoSize": 0,
-          "MuzzleSalvoDelay": 0,
-          "ProjectileLifetimeUsesMultiplier": 0,
-          "RackSalvoReloadTime": 0,
-          "ReTargetOnMiss": true,
-          "TargetRestrictDisallow": "UNTARGETABLE",
-          "CollideFriendly": false,
-          "WeaponRepackTimeout": 0,
-          "AboveWaterFireOnly": true,
-          "RackReloadTimeout": 0,
-          "FiringTolerance": 2,
-          "TurretYawRange": 0,
-          "TurretDualManipulators": false,
-          "TurretBonePitch": "Arm_Left_Barrel01",
-          "Turreted": true,
-          "WeaponUnpacks": false
-        },
         {
           "DamageRadius": 0,
           "Label": "RightHeavyPlasmaCannon",
@@ -19366,91 +19207,9 @@
           "FiringTolerance": 2,
           "TurretYawSpeed": 160,
           "TurretDualManipulators": false,
-          "TurretBonePitch": "Arm_Left_Barrel01",
+          "TurretBonePitch": "Arm_Left_Barrel02",
           "WeaponCategory": "Direct Fire",
           "WeaponUnpacks": false
-        },
-        {
-          "DamageRadius": 0,
-          "Label": "LeftHeavyPlasmaCannon",
-          "RateOfFire": 2,
-          "ProjectilesPerOnFire": 1,
-          "TurretYaw": 0,
-          "TurretBoneDualPitch": "Arm_Right_Barrel01",
-          "RackBones": [
-            {
-              "MuzzleBones": [
-                "Arm_Right_Muzzle"
-              ],
-              "RackBone": "Arm_Right_Barrel02"
-            },
-            {
-              "MuzzleBones": [
-                "Arm_Left_Muzzle"
-              ],
-              "RackBone": "Arm_Left_Barrel02"
-            }
-          ],
-          "Damage": 250,
-          "DamageType": "Normal",
-          "Audio": {
-            "Fire": {
-              "LodCutoff": "Weapon_LodCutoff",
-              "Bank": "UELWeapon",
-              "Cue": "UEL0301_BG_Gun"
-            }
-          },
-          "TurretPitch": 0,
-          "CannotAttackGround": false,
-          "TurretPitchRange": 160,
-          "DisplayName": "Double Gun",
-          "TurretPitchSpeed": 90,
-          "TurretBoneYaw": "Torso",
-          "RackSalvoSize": 1,
-          "RangeCategory": "UWRC_DirectFire",
-          "AboveWaterTargetsOnly": true,
-          "RackSlavedToTurret": false,
-          "PrefersPrimaryWeaponTarget": true,
-          "RackRecoilDistance": -0.5,
-          "MinRadius": 1,
-          "WeaponCategory": "Direct Fire",
-          "ProjectileId": "/projectiles/TDFPlasmaHeavy03/TDFPlasmaHeavy03_proj.bp",
-          "UseFiringSolutionInsteadOfAimBone": false,
-          "MuzzleVelocity": 25,
-          "RackFireTogether": false,
-          "RackSalvoChargeTime": 0,
-          "TurretBoneMuzzle": "Arm_Left_Muzzle",
-          "WeaponUnpacks": false,
-          "Turreted": true,
-          "FireTargetLayerCapsTable": {
-            "Land": "Land|Water|Seabed",
-            "Water": "Land|Water|Seabed"
-          },
-          "BallisticArc": "RULEUBA_LowArc",
-          "TargetPriorities": [
-            "MOBILE EXPERIMENTAL",
-            "COMMAND",
-            "MOBILE TECH3",
-            "MOBILE TECH2",
-            "(STRUCTURE * DEFENSE - ANTIMISSILE)",
-            "ALLUNITS"
-          ],
-          "TurretYawRange": 360,
-          "MuzzleSalvoDelay": 0,
-          "ProjectileLifetimeUsesMultiplier": 1.3,
-          "TargetRestrictDisallow": "UNTARGETABLE",
-          "RackReloadTimeout": 0,
-          "CollideFriendly": true,
-          "TurretBoneDualMuzzle": "Arm_Right_Muzzle",
-          "WeaponRepackTimeout": 0,
-          "AboveWaterFireOnly": true,
-          "RackSalvoReloadTime": 0,
-          "FiringTolerance": 3,
-          "TurretYawSpeed": 160,
-          "TurretDualManipulators": true,
-          "TurretBonePitch": "Arm_Left_Barrel01",
-          "MuzzleSalvoSize": 1,
-          "MaxRadius": 25
         },
         {
           "DamageRadius": 10,
@@ -19759,7 +19518,7 @@
       },
       "StrategicIconSortPriority": 85,
       "AI": {
-        "GuardScanRadius": 65
+        "GuardScanRadius": 45
       },
       "Transport": {
         "TransportClass": 3
@@ -19780,7 +19539,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SILO",
-        "SNIPEMODE",
         "SUBMERSIBLE",
         "TECH3",
         "UEF",
@@ -20813,7 +20571,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH3",
         "UEF",
         "VISIBLETORECON",
@@ -21284,7 +21041,6 @@
         "PRODUCTFA",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH3",
         "UEF",
         "VISIBLETORECON",
@@ -22319,7 +22075,8 @@
       "Economy": {
         "BuildTime": 3840,
         "BuildCostEnergy": 51200,
-        "BuildCostMass": 450
+        "BuildCostMass": 450,
+        "MaintenanceConsumptionPerSecondEnergy": 40
       },
       "Weapon": [
         {
@@ -22418,7 +22175,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH3",
         "UEF",
         "VISIBLETORECON",
@@ -22994,7 +22750,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SILO",
-        "SNIPEMODE",
         "TECH3",
         "UEF",
         "VISIBLETORECON",
@@ -24421,7 +24176,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH3",
         "UEF",
         "VISIBLETORECON",
@@ -24560,7 +24314,7 @@
       "Physics": {
         "TurnRate": 100,
         "MaxSteerForce": 100,
-        "Elevation": 10,
+        "Elevation": 18,
         "BankingSlope": 0.5,
         "MaxAcceleration": 10,
         "MeshExtentsX": 2,
@@ -25863,7 +25617,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHIELD",
-        "SNIPEMODE",
         "TECH3",
         "TRANSPORTATION",
         "TRANSPORTBUILTBYTIER3FACTORY",
@@ -27107,7 +26860,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
         "TECH3",
@@ -27585,7 +27337,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SIZE16",
-        "SNIPEMODE",
         "SORTSTRATEGIC",
         "STRATEGIC",
         "STRUCTURE",
@@ -30302,7 +30053,7 @@
         {
           "UseFiringSolutionInsteadOfAimBone": true,
           "Label": "OrbitalDeathLaserWeapon",
-          "TargetCheckInterval": 0.05,
+          "TargetCheckInterval": 0.01,
           "RateOfFire": 0.05,
           "TurretYaw": 0,
           "DamageFriendly": true,
@@ -30373,7 +30124,7 @@
           "TargetRestrictDisallow": "UNTARGETABLE",
           "DamageRadius": 1,
           "TurretBoneYaw": "Turret_Barrel01",
-          "WeaponRepackTimeout": 9,
+          "WeaponRepackTimeout": 6,
           "RackReloadTimeout": 0,
           "TurretPitchRange": 180,
           "SlavedToBody": false,
@@ -33283,7 +33034,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH1",
         "VISIBLETORECON",
         null
@@ -33529,7 +33279,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "SUBMERSIBLE",
         "T1SUBMARINE",
         "TECH1",
@@ -33929,7 +33678,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH1",
         "VISIBLETORECON",
         null
@@ -34717,7 +34465,6 @@
         "RADAR",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "SONAR",
         "TECH1",
         "VISIBLETORECON",
@@ -35072,7 +34819,6 @@
         "PRODUCTFA",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH1",
         "VISIBLETORECON",
         null
@@ -36206,7 +35952,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH1",
         "VISIBLETORECON",
         null
@@ -37906,7 +37651,7 @@
             "Seabed": "Land|Water|Seabed"
           },
           "Turreted": true,
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 110,
           "TurretYawRange": 180,
           "MuzzleSalvoDelay": 0,
           "LeadTarget": true,
@@ -37976,7 +37721,7 @@
           ],
           "MaxRadius": 22,
           "ProjectileId": "/projectiles/CDFCannonMolecularOvercharge01/CDFCannonMolecularOvercharge01_proj.bp",
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 110,
           "MuzzleVelocity": 25,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
@@ -38071,7 +37816,7 @@
             "Seabed": "Land|Water|Seabed"
           },
           "Turreted": true,
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 110,
           "TurretYawRange": 180,
           "MuzzleSalvoDelay": 0,
           "ProjectileLifetimeUsesMultiplier": 2,
@@ -38222,7 +37967,7 @@
           "TurretYawRange": 30,
           "TurretDualManipulators": false,
           "TurretBonePitch": "Center_Turret",
-          "TurretYawSpeed": 110,
+          "TurretYawSpeed": 90,
           "MaxRadius": 22
         },
         {
@@ -38311,7 +38056,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
         "TECH1",
@@ -38756,7 +38500,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
         "TECH1",
@@ -39867,7 +39610,7 @@
       },
       "StrategicIconSortPriority": 95,
       "AI": {
-        "GuardScanRadius": 60
+        "GuardScanRadius": 40
       },
       "Transport": {
         "TransportClass": 2
@@ -39889,7 +39632,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -40570,7 +40312,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -41154,7 +40895,6 @@
         "PRODUCTFA",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "SUBMERSIBLE",
         "T2SUBMARINE",
         "TECH2",
@@ -41549,6 +41289,148 @@
           "WeaponUnpacks": false
         }
       ]
+    },
+    {
+      "Categories": [
+        "CONSTRUCTION",
+        "CRABEGG",
+        "CYBRAN",
+        "DRAGBUILD",
+        "FACTORY",
+        "LAND",
+        "PRODUCTFA",
+        "RALLYPOINT",
+        "RECLAIMABLE",
+        "SELECTABLE",
+        "SHOWQUEUE",
+        "STRUCTURE",
+        "TECH2",
+        "VISIBLETORECON",
+        null
+      ],
+      "AverageDensity": 10,
+      "Description": "Crab Egg (Flak)",
+      "LifeBarSize": 1,
+      "StrategicIconName": "icon_structure_generic",
+      "General": {
+        "CommandCaps": {
+          "RULEUCC_Stop": true
+        },
+        "FactionName": "Cybran",
+        "SelectionPriority": 7,
+        "Icon": "land",
+        "Classification": "RULEUC_Factory"
+      },
+      "Timeropen": 10,
+      "LifeBarHeight": 0.075,
+      "Economy": {
+        "BuildTime": 500,
+        "BuildCostMass": 320,
+        "BuildUnit": "url0205",
+        "BuildCostEnergy": 1600
+      },
+      "Footprint": {
+        "SizeX": 1,
+        "SizeZ": 1
+      },
+      "SizeZ": 1,
+      "Intel": {
+        "VisionRadius": 4
+      },
+      "Defense": {
+        "ArmorType": "Normal",
+        "Health": 100,
+        "MaxHealth": 100
+      },
+      "LifeBarOffset": 0.5,
+      "UnitsCol": 2,
+      "Id": "XRL0004",
+      "Wreckage": {
+        "EnergyMult": 0,
+        "WreckageLayers": {
+          "Land": true
+        },
+        "ReclaimTimeMultiplier": 1,
+        "HealthMult": 0.9,
+        "Blueprint": "/props/DefaultWreckage/DefaultWreckage_prop.bp",
+        "MassMult": 0.9
+      },
+      "SelectionSizeX": 0.65,
+      "SizeY": 1,
+      "SelectionSizeZ": 0.65,
+      "SizeX": 1,
+      "Physics": {
+        "FlattenSkirt": true,
+        "MotionType": "RULEUMT_None",
+        "DragCoefficient": 0.2,
+        "SkirtSizeX": 1,
+        "SkirtSizeZ": 1
+      },
+      "SelectionThickness": 0.6,
+      "Display": {
+        "UniformScale": 0.05,
+        "BuildAttachBone": "AttachPoint",
+        "Mesh": {
+          "IconFadeInZoom": 130,
+          "LODs": [
+            {
+              "LODCutoff": 200,
+              "ShaderName": "Insect"
+            },
+            {
+              "ShaderName": "Insect",
+              "SpecularName": "xrl0004_lod1_specteam.dds",
+              "LODCutoff": 500,
+              "AlbedoName": "xrl0004_lod1_albedo.dds"
+            }
+          ]
+        },
+        "AnimationOpen": "/units/xrl0004/xrl0004_aopen.sca"
+      },
+      "StrategicIconSortPriority": 220,
+      "Audio": {
+        "DeathExplosion": {
+          "LodCutoff": "UnitMove_LodCutoff",
+          "Bank": "URLDestroy",
+          "Cue": "URB_Destroy_Lrg_PreDestroy"
+        },
+        "EggSink": {
+          "LodCutoff": "UnitMove_LodCutoff",
+          "Bank": "XRL_Stream",
+          "Cue": "XRL_Crab_Sink"
+        },
+        "UISelection": {
+          "LodCutoff": "UnitMove_LodCutoff",
+          "Bank": "Interface",
+          "Cue": "Cybran_Select_Factory"
+        },
+        "EggOpen": {
+          "LodCutoff": "UnitMove_LodCutoff",
+          "Bank": "XRL_Stream",
+          "Cue": "XRL_Crab_Egg_Open"
+        },
+        "Construct": {
+          "LodCutoff": "UnitMove_LodCutoff",
+          "Bank": "URB",
+          "Cue": "URB0101_Construct_Start"
+        },
+        "Destroyed": {
+          "LodCutoff": "UnitMove_LodCutoff",
+          "Bank": "URLDestroy",
+          "Cue": "URB_Destroy_Huge"
+        },
+        "DoneBeingBuilt": {
+          "LodCutoff": "UnitMove_LodCutoff",
+          "Bank": "URB",
+          "Cue": "URB0101_Activate"
+        },
+        "ConstructLoop": {
+          "LodCutoff": "UnitMove_LodCutoff",
+          "Bank": "URB",
+          "Cue": "URB0101_Construct_Loop"
+        }
+      },
+      "BuildIconSortPriority": 24
     },
     {
       "Categories": [
@@ -41968,7 +41850,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         "WEAKANTIAIR",
@@ -42577,7 +42458,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -42707,7 +42587,7 @@
       "Physics": {
         "FuelRechargeRate": 5,
         "MaxSpeed": 0.5,
-        "Elevation": 10,
+        "Elevation": 18,
         "FuelUseTime": 400,
         "GroundCollisionOffset": 1.6,
         "MotionType": "RULEUMT_Air"
@@ -43251,7 +43131,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -43745,145 +43624,6 @@
     },
     {
       "Categories": [
-        "CONSTRUCTION",
-        "CRABEGG",
-        "CYBRAN",
-        "DRAGBUILD",
-        "FACTORY",
-        "LAND",
-        "PRODUCTFA",
-        "RALLYPOINT",
-        "RECLAIMABLE",
-        "SELECTABLE",
-        "SHOWQUEUE",
-        "STRUCTURE",
-        "TECH2",
-        "VISIBLETORECON",
-        null
-      ],
-      "AverageDensity": 10,
-      "Description": "Crab Egg (Flak)",
-      "LifeBarSize": 1,
-      "StrategicIconName": "icon_structure_generic",
-      "General": {
-        "CommandCaps": {
-          "RULEUCC_Stop": true
-        },
-        "Icon": "land",
-        "FactionName": "Cybran",
-        "Classification": "RULEUC_Factory"
-      },
-      "Economy": {
-        "BuildTime": 400,
-        "BuildCostMass": 160,
-        "BuildUnit": "url0205",
-        "BuildCostEnergy": 800
-      },
-      "Footprint": {
-        "SizeX": 1,
-        "SizeZ": 1
-      },
-      "SizeZ": 1,
-      "LifeBarOffset": 0.5,
-      "Defense": {
-        "ArmorType": "Normal",
-        "Health": 10,
-        "MaxHealth": 10
-      },
-      "Audio": {
-        "DeathExplosion": {
-          "LodCutoff": "UnitMove_LodCutoff",
-          "Bank": "URLDestroy",
-          "Cue": "URB_Destroy_Lrg_PreDestroy"
-        },
-        "EggSink": {
-          "LodCutoff": "UnitMove_LodCutoff",
-          "Bank": "XRL_Stream",
-          "Cue": "XRL_Crab_Sink"
-        },
-        "UISelection": {
-          "LodCutoff": "UnitMove_LodCutoff",
-          "Bank": "Interface",
-          "Cue": "Cybran_Select_Factory"
-        },
-        "EggOpen": {
-          "LodCutoff": "UnitMove_LodCutoff",
-          "Bank": "XRL_Stream",
-          "Cue": "XRL_Crab_Egg_Open"
-        },
-        "Construct": {
-          "LodCutoff": "UnitMove_LodCutoff",
-          "Bank": "URB",
-          "Cue": "URB0101_Construct_Start"
-        },
-        "Destroyed": {
-          "LodCutoff": "UnitMove_LodCutoff",
-          "Bank": "URLDestroy",
-          "Cue": "URB_Destroy_Huge"
-        },
-        "DoneBeingBuilt": {
-          "LodCutoff": "UnitMove_LodCutoff",
-          "Bank": "URB",
-          "Cue": "URB0101_Activate"
-        },
-        "ConstructLoop": {
-          "LodCutoff": "UnitMove_LodCutoff",
-          "Bank": "URB",
-          "Cue": "URB0101_Construct_Loop"
-        }
-      },
-      "LifeBarHeight": 0.075,
-      "Id": "XRL0004",
-      "Wreckage": {
-        "EnergyMult": 0,
-        "WreckageLayers": {
-          "Land": true
-        },
-        "ReclaimTimeMultiplier": 1,
-        "HealthMult": 0.9,
-        "Blueprint": "/props/DefaultWreckage/DefaultWreckage_prop.bp",
-        "MassMult": 0.9
-      },
-      "SelectionSizeX": 0.65,
-      "Intel": {
-        "VisionRadius": 4
-      },
-      "SelectionSizeZ": 0.65,
-      "SizeY": 1,
-      "SizeX": 1,
-      "SelectionThickness": 0.6,
-      "Display": {
-        "UniformScale": 0.05,
-        "BuildAttachBone": "AttachPoint",
-        "Mesh": {
-          "IconFadeInZoom": 130,
-          "LODs": [
-            {
-              "LODCutoff": 200,
-              "ShaderName": "Insect"
-            },
-            {
-              "ShaderName": "Insect",
-              "SpecularName": "xrl0004_lod1_specteam.dds",
-              "LODCutoff": 500,
-              "AlbedoName": "xrl0004_lod1_albedo.dds"
-            }
-          ]
-        },
-        "AnimationOpen": "/units/xrl0004/xrl0004_aopen.sca"
-      },
-      "StrategicIconSortPriority": 220,
-      "Physics": {
-        "FlattenSkirt": true,
-        "MotionType": "RULEUMT_None",
-        "DragCoefficient": 0.2,
-        "SkirtSizeX": 1,
-        "SkirtSizeZ": 1
-      },
-      "BuildIconSortPriority": 30
-    },
-    {
-      "Categories": [
         "AIR",
         "CANNOTUSEAIRSTAGING",
         "CANTRANSPORTCOMMANDER",
@@ -43894,7 +43634,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH2",
         "TRANSPORTATION",
         "TRANSPORTBUILTBYTIER2FACTORY",
@@ -44482,7 +44221,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SILO",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -44860,9 +44598,9 @@
       "CollisionOffsetY": -0.4,
       "Intel": {
         "RadarRadius": 64,
-        "RadarStealthFieldRadius": 52,
+        "RadarStealthFieldRadius": 42,
         "SonarRadius": 60,
-        "SonarStealthFieldRadius": 52,
+        "SonarStealthFieldRadius": 42,
         "VisionRadius": 32
       },
       "Display": {
@@ -47440,7 +47178,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
         "TECH2",
@@ -47928,7 +47665,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STEALTH",
         "STRUCTURE",
@@ -48178,7 +47914,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTSTRATEGIC",
         "STRATEGIC",
         "STRUCTURE",
@@ -50676,15 +50411,16 @@
         "LAND",
         "MASSPRODUCTION",
         "MOBILE",
+        "OVERLAYRADAR",
         "OVERLAYDIRECTFIRE",
         "OVERLAYOMNI",
         "PATROLHELPER",
         "PRODUCTSC1",
+        "RADAR",
         "RECLAIM",
         "REPAIR",
         "SELECTABLE",
         "SHOWQUEUE",
-        "SNIPEMODE",
         "SUBCOMMANDER",
         "TECH3",
         "USEBUILDPRESETS",
@@ -50712,8 +50448,7 @@
           "Enhancements": [
             "FocusConvertor",
             "RapidFire",
-            "SelfRepairSystem",
-            "DisintigratorGun"
+            "SelfRepairSystem"
           ],
           "UnitName": "SACU (Rambo preset)",
           "HelpText": "Support Armored Command Unit. Enhanced during construction with the EMP burst, disintegrator amplifier and nano-repair system enhancements.",
@@ -50735,6 +50470,8 @@
           "SortCategory": "SORTDEFENSE",
           "Description": "SACU (Anti-Air preset)",
           "Enhancements": [
+            "FocusConvertor",
+            "RapidFire",
             "StealthGenerator",
             "NaniteMissileSystem"
           ],
@@ -50754,12 +50491,13 @@
           "BuildIconSortPriority": 10
         },
         "Stealth": {
-          "SortCategory": "SORTDEFENSE",
+          "SortCategory": "SORTSTRATEGIC",
           "Description": "SACU (Stealth preset)",
           "Enhancements": [
-            "NaniteMissileSystem",
+            "Switchback",
             "StealthGenerator",
-            "Switchback"
+            "NaniteMissileSystem",
+            "SensorRangeEnhancer"
           ],
           "UnitName": "SACU (Stealth preset)",
           "HelpText": "Support Armored Command Unit. Enhanced during construction with the personal stealth generator enhancement.",
@@ -50782,9 +50520,7 @@
           "Enhancements": [
             "FocusConvertor",
             "RapidFire",
-            "StealthGenerator",
-            "CloakingGenerator",
-            "DisintigratorGun"
+            "CloakingGenerator"
           ],
           "UnitName": "SACU (Cloak preset)",
           "HelpText": "Support Armored Command Unit. Enhanced during construction with the personal cloaking generator and disintegrator amplifier enhancements.",
@@ -50803,11 +50539,24 @@
       "SizeZ": 1.1,
       "VeteranMassMult": 3.50029,
       "Enhancements": {
+        "SensorRangeEnhancerRemove": {
+          "BuildTime": 0.1,
+          "BuildCostMass": 1,
+          "Name": "Remove Enhanced Sensor System",
+          "Slot": "LCH",
+          "BuildCostEnergy": 1,
+          "RemoveEnhancements": [
+            "SensorRangeEnhancer",
+            "SensorRangeEnhancerRemove"
+          ],
+          "Icon": "rads",
+          "Prerequisite": "SensorRangeEnhancer"
+        },
         "FocusConvertor": {
           "BuildTime": 1680,
           "BuildCostMass": 800,
           "Name": "Disintegrator Amplifier",
-          "Slot": "RCH",
+          "Slot": "LCH",
           "BuildCostEnergy": 12000,
           "UpgradeUnitAmbientBones": [
             "URL0301"
@@ -50836,21 +50585,20 @@
           "Slot": "Back",
           "BuildCostEnergy": 176200,
           "BuildTime": 13440,
-          "Icon": "cfs",
           "Name": "Personal Cloaking Generator",
-          "NewHealth": 15500,
           "MaintenanceConsumptionPerSecondEnergy": 1520,
+          "Icon": "cfs",
           "UpgradeUnitAmbientBones": [
             "URL0301"
           ],
           "BuildCostMass": 3600,
-          "Prerequisite": "StealthGenerator"
+          "NewHealth": 15500
         },
         "ResourceAllocationRemove": {
           "BuildTime": 0.1,
           "BuildCostMass": 1,
           "Name": "Remove Resource Allocation System",
-          "Slot": "Back",
+          "Slot": "LCH",
           "BuildCostEnergy": 1,
           "RemoveEnhancements": [
             "ResourceAllocation",
@@ -50863,7 +50611,7 @@
           "BuildTime": 0.1,
           "BuildCostMass": 1,
           "Name": "Remove Disintegrator Amplifier",
-          "Slot": "RCH",
+          "Slot": "LCH",
           "BuildCostEnergy": 1,
           "RemoveEnhancements": [
             "FocusConvertor",
@@ -50887,20 +50635,21 @@
         },
         "NaniteMissileSystem": {
           "BuildTime": 2240,
-          "Name": "Nanite Missile System",
-          "Slot": "LCH",
           "BuildCostMass": 800,
+          "Name": "Nanite Missile System",
+          "Slot": "Back",
+          "BuildCostEnergy": 20000,
           "UpgradeUnitAmbientBones": [
             "URL0301"
           ],
           "Icon": "nms",
-          "BuildCostEnergy": 20000
+          "Prerequisite": "StealthGenerator"
         },
         "NaniteMissileSystemRemove": {
           "BuildTime": 0.1,
           "BuildCostMass": 1,
           "Name": "Remove Nanite Missile System",
-          "Slot": "LCH",
+          "Slot": "Back",
           "BuildCostEnergy": 1,
           "RemoveEnhancements": [
             "NaniteMissileSystem",
@@ -50908,19 +50657,6 @@
           ],
           "Icon": "nms",
           "Prerequisite": "NaniteMissileSystem"
-        },
-        "DisintigratorGunRemove": {
-          "BuildTime": 0.1,
-          "BuildCostMass": 1,
-          "Name": "Remove Disintegrator",
-          "Slot": "LCH",
-          "BuildCostEnergy": 1,
-          "RemoveEnhancements": [
-            "DisintigratorGun",
-            "DisintigratorGunRemove"
-          ],
-          "Icon": "emp",
-          "Prerequisite": "DisintigratorGun"
         },
         "SwitchbackRemove": {
           "BuildTime": 0.1,
@@ -50948,16 +50684,19 @@
           "BuildCostMass": 560,
           "BuildCostEnergy": 12800
         },
-        "DisintigratorGun": {
-          "BuildTime": 5040,
-          "Name": "Disintegrator",
-          "Slot": "LCH",
-          "BuildCostMass": 2300,
-          "UpgradeUnitAmbientBones": [
-            "URL0301"
+        "CloakingGeneratorRemove": {
+          "BuildTime": 0.1,
+          "BuildCostMass": 1,
+          "Name": "Remove Personal Cloaking Generator",
+          "Slot": "Back",
+          "BuildCostEnergy": 1,
+          "RemoveEnhancements": [
+            "StealthGenerator",
+            "CloakingGenerator",
+            "CloakingGeneratorRemove"
           ],
-          "Icon": "emp",
-          "BuildCostEnergy": 70000
+          "Icon": "cfs",
+          "Prerequisite": "CloakingGenerator"
         },
         "StealthGenerator": {
           "BuildTime": 1120,
@@ -50976,29 +50715,28 @@
           "BuildCostEnergy": 33600,
           "BuildTime": 6720,
           "Name": "Nano-Repair System",
-          "NewHealth": 19500,
-          "BuildCostMass": 2000,
+          "NewHealth": 10000,
+          "BuildCostMass": 2300,
           "UpgradeUnitAmbientBones": [
             "URL0301"
           ],
           "Icon": "srs",
-          "NewRegenRate": 180
+          "NewRegenRate": 200
         },
         "RapidFire": {
+          "BuildTime": 1680,
+          "BuildCostMass": 900,
+          "Name": "Cooling module",
           "Slot": "RCH",
           "BuildCostEnergy": 8000,
-          "BuildTime": 1680,
-          "Name": "Cooling module",
-          "Prerequisite": "FocusConvertor",
-          "Icon": "saa",
           "UpgradeUnitAmbientBones": [
             "URL0301"
           ],
-          "BuildCostMass": 900,
+          "Icon": "saa",
           "NewRateOfFire": 2
         },
         "ResourceAllocation": {
-          "Slot": "Back",
+          "Slot": "LCH",
           "ProductionPerSecondMass": 10,
           "BuildCostEnergy": 90000,
           "BuildTime": 8400,
@@ -51023,19 +50761,20 @@
           "Icon": "sfs",
           "Prerequisite": "StealthGenerator"
         },
-        "CloakingGeneratorRemove": {
-          "BuildTime": 0.1,
-          "BuildCostMass": 1,
-          "Name": "Remove Personal Cloaking Generator",
-          "Slot": "Back",
-          "BuildCostEnergy": 1,
-          "RemoveEnhancements": [
-            "StealthGenerator",
-            "CloakingGenerator",
-            "CloakingGeneratorRemove"
+        "SensorRangeEnhancer": {
+          "NewRadarRadius": 80,
+          "NewOmniRadius": 35,
+          "Slot": "LCH",
+          "BuildCostEnergy": 20000,
+          "BuildTime": 3360,
+          "Name": "Enhanced Sensor System",
+          "MaintenanceConsumptionPerSecondEnergy": 50,
+          "Icon": "rads",
+          "UpgradeUnitAmbientBones": [
+            "URL0301"
           ],
-          "Icon": "cfs",
-          "Prerequisite": "CloakingGenerator"
+          "BuildCostMass": 300,
+          "NewVisionRadius": 60
         },
         "SelfRepairSystemRemove": {
           "BuildTime": 0.1,
@@ -51165,9 +50904,9 @@
       "Defense": {
         "ArmorType": "Normal",
         "SurfaceThreatLevel": 30,
-        "Health": 14500,
+        "Health": 14000,
         "EconomyThreatLevel": 1208,
-        "MaxHealth": 14500,
+        "MaxHealth": 14000,
         "RegenRate": 20
       },
       "General": {
@@ -51205,7 +50944,7 @@
         "Classification": "RULEUC_Engineer"
       },
       "Physics": {
-        "TurnRate": 130,
+        "TurnRate": 120,
         "MaxSteerForce": 12,
         "DragCoefficient": 0.2,
         "MaxAcceleration": 2.5,
@@ -51314,6 +51053,7 @@
           "Engineering Suite",
           "Not Capturable",
           "Omni Sensor",
+          "Radar",
           "Volatile"
         ],
         "IdleEffects": {
@@ -51406,18 +51146,22 @@
           "RackSalvoChargeTime": 0,
           "TurretBoneMuzzle": "Laser",
           "MuzzleSalvoSize": 1,
-          "ProjectileLifetimeUsesMultiplier": 1.4,
           "FireTargetLayerCapsTable": {
             "Land": "Land|Water|Seabed",
             "Water": "Land|Water|Seabed"
           },
           "BallisticArc": "RULEUBA_LowArc",
-          "NotExclusive": true,
           "RackRecoilDistance": -0.1,
           "MuzzleSalvoDelay": 0,
-          "LeadTarget": true,
+          "ProjectileLifetimeUsesMultiplier": 1.4,
+          "RackReloadTimeout": 10,
           "TurretYawSpeed": 160,
           "TurretYawRange": 360,
+          "TargetRestrictDisallow": "UNTARGETABLE",
+          "CollideFriendly": false,
+          "AboveWaterFireOnly": true,
+          "RackSalvoReloadTime": 0,
+          "FiringTolerance": 2,
           "TargetPriorities": [
             "MOBILE EXPERIMENTAL",
             "COMMAND",
@@ -51426,140 +51170,10 @@
             "(STRUCTURE * DEFENSE - ANTIMISSILE)",
             "ALLUNITS"
           ],
-          "RackReloadTimeout": 10,
-          "CollideFriendly": false,
-          "AboveWaterFireOnly": true,
-          "TargetRestrictDisallow": "UNTARGETABLE",
-          "FiringTolerance": 2,
-          "RackSalvoReloadTime": 0,
           "TurretDualManipulators": false,
           "TurretBonePitch": "Pulse_Laser",
           "Turreted": true,
           "MaxRadius": 25
-        },
-        {
-          "UseFiringSolutionInsteadOfAimBone": true,
-          "FiringRandomness": 0.2,
-          "RateOfFire": 0.33333333333333,
-          "ProjectilesPerOnFire": 1,
-          "RackSalvoFiresAfterCharge": false,
-          "RackBones": [
-            {
-              "MuzzleBones": [
-                "Muzzle_Left"
-              ],
-              "RackBone": "Barrel_L"
-            }
-          ],
-          "Damage": 600,
-          "DamageType": "Normal",
-          "Audio": {
-            "Fire": {
-              "LodCutoff": "Weapon_LodCutoff",
-              "Bank": "URLWeapon",
-              "Cue": "URL0303_Disintegrator"
-            },
-            "MuzzleChargeStart": {
-              "LodCutoff": "Weapon_LodCutoff",
-              "Bank": "URLWeapon",
-              "Cue": "URL0303_Disintegrator_Charge"
-            }
-          },
-          "TurretPitch": 0,
-          "TurretPitchRange": 160,
-          "DisplayName": "Disintigrator Weapon",
-          "TurretPitchSpeed": 90,
-          "TurretBoneYaw": "Barrel_L",
-          "RackSalvoSize": 1,
-          "RangeCategory": "UWRC_DirectFire",
-          "AboveWaterTargetsOnly": true,
-          "RackSlavedToTurret": false,
-          "Label": "Disintigrator",
-          "MuzzleChargeDelay": 0.1,
-          "Buffs": [
-            {
-              "Radius": 3.5,
-              "AppliedToTarget": true,
-              "Add": {
-                "OnImpact": true
-              },
-              "BuffType": "STUN",
-              "Duration": 3,
-              "TargetAllow": "TECH1",
-              "TargetDisallow": "TECH2,TECH3,EXPERIMENTAL,COMMAND,SUBCOMMANDER,SHIELD,WALL"
-            },
-            {
-              "Radius": 2.5,
-              "AppliedToTarget": true,
-              "Add": {
-                "OnImpact": true
-              },
-              "BuffType": "STUN",
-              "Duration": 2,
-              "TargetAllow": "TECH2,SHIELD",
-              "TargetDisallow": "TECH1,TECH3,EXPERIMENTAL,COMMAND,SUBCOMMANDER,WALL"
-            },
-            {
-              "Radius": 1.5,
-              "AppliedToTarget": true,
-              "Add": {
-                "OnImpact": true
-              },
-              "BuffType": "STUN",
-              "Duration": 1,
-              "TargetAllow": "TECH3",
-              "TargetDisallow": "TECH1,TECH2,EXPERIMENTAL,COMMAND,SUBCOMMANDER,SHIELD,WALL"
-            },
-            {
-              "Radius": 1,
-              "AppliedToTarget": true,
-              "Add": {
-                "OnImpact": true
-              },
-              "BuffType": "STUN",
-              "Duration": 0.1,
-              "TargetAllow": "SUBCOMMANDER",
-              "TargetDisallow": "TECH1,TECH2,SHIELD,WALL"
-            }
-          ],
-          "TargetPriorities": [
-            "TECH3 MOBILE",
-            "TECH2 MOBILE",
-            "TECH1 MOBILE",
-            "(STRUCTURE * DEFENSE - ANTIMISSILE)",
-            "ALLUNITS"
-          ],
-          "MaxRadius": 25,
-          "ProjectileId": "/projectiles/CDFBolter03/CDFBolter03_proj.bp",
-          "TurretYawSpeed": 60,
-          "MuzzleVelocity": 29,
-          "RackFireTogether": false,
-          "RackSalvoChargeTime": 0,
-          "TurretBoneMuzzle": "Muzzle_Left",
-          "MuzzleSalvoSize": 3,
-          "ProjectileLifetimeUsesMultiplier": 1.3,
-          "FireTargetLayerCapsTable": {
-            "Land": "Land|Water|Seabed",
-            "Water": "Land|Water|Seabed"
-          },
-          "Turreted": true,
-          "NotExclusive": true,
-          "TurretYaw": 0,
-          "MuzzleSalvoDelay": 0.2,
-          "LeadTarget": true,
-          "RackRecoilDistance": 0,
-          "RackReloadTimeout": 0,
-          "TargetRestrictDisallow": "UNTARGETABLE",
-          "RackSalvoReloadTime": 0,
-          "CollideFriendly": false,
-          "DamageRadius": 3,
-          "PrefersPrimaryWeaponTarget": true,
-          "FiringTolerance": 2,
-          "BallisticArc": "RULEUBA_LowArc",
-          "TurretDualManipulators": false,
-          "TurretBonePitch": "Barrel_L",
-          "TurretYawRange": 20,
-          "WeaponCategory": "Direct Fire"
         },
         {
           "DamageRadius": 1.5,
@@ -51727,7 +51341,7 @@
       "LifeBarSize": 1.25,
       "StrategicIconName": "icon_land3_engineer",
       "AI": {
-        "GuardScanRadius": 65
+        "GuardScanRadius": 45
       },
       "General": {
         "CommandCaps": {
@@ -51982,12 +51596,15 @@
         "CommandCaps": {
           "RULEUCC_Stop": true
         },
-        "Icon": "land",
         "FactionName": "Cybran",
+        "SelectionPriority": 6,
+        "Icon": "amph",
         "Classification": "RULEUC_Factory"
       },
+      "Timeropen": 5,
+      "LifeBarHeight": 0.075,
       "Economy": {
-        "BuildTime": 780,
+        "BuildTime": 500,
         "BuildCostMass": 312,
         "BuildUnit": "url0309",
         "BuildCostEnergy": 1560
@@ -51997,12 +51614,62 @@
         "SizeZ": 1
       },
       "SizeZ": 1,
-      "LifeBarOffset": 0.5,
+      "Intel": {
+        "VisionRadius": 4
+      },
       "Defense": {
         "ArmorType": "Normal",
-        "Health": 10,
-        "MaxHealth": 10
+        "Health": 100,
+        "MaxHealth": 100,
+        "RegenRate": 2
       },
+      "LifeBarOffset": 0.5,
+      "UnitsCol": 1,
+      "Id": "XRL0002",
+      "Wreckage": {
+        "EnergyMult": 0,
+        "WreckageLayers": {
+          "Land": true
+        },
+        "ReclaimTimeMultiplier": 1,
+        "HealthMult": 0.9,
+        "Blueprint": "/props/DefaultWreckage/DefaultWreckage_prop.bp",
+        "MassMult": 0.9
+      },
+      "SelectionSizeX": 0.65,
+      "SizeY": 1,
+      "SelectionSizeZ": 0.65,
+      "SizeX": 1,
+      "Physics": {
+        "FlattenSkirt": true,
+        "MotionType": "RULEUMT_None",
+        "DragCoefficient": 0.2,
+        "SkirtSizeX": 1,
+        "SkirtSizeZ": 1
+      },
+      "SelectionThickness": 0.6,
+      "Display": {
+        "UniformScale": 0.05,
+        "BuildAttachBone": "AttachPoint",
+        "MovePoint": "ExternalFactoryPoint",
+        "AnimationOpen": "/units/xrl0002/xrl0002_aopen.sca",
+        "Mesh": {
+          "IconFadeInZoom": 130,
+          "LODs": [
+            {
+              "LODCutoff": 200,
+              "ShaderName": "Insect"
+            },
+            {
+              "ShaderName": "Insect",
+              "SpecularName": "xrl0002_lod1_specteam.dds",
+              "LODCutoff": 500,
+              "AlbedoName": "xrl0002_lod1_albedo.dds"
+            }
+          ]
+        }
+      },
+      "StrategicIconSortPriority": 220,
       "Audio": {
         "DeathExplosion": {
           "LodCutoff": "UnitMove_LodCutoff",
@@ -52044,54 +51711,6 @@
           "Bank": "URB",
           "Cue": "URB0101_Construct_Loop"
         }
-      },
-      "LifeBarHeight": 0.075,
-      "Id": "XRL0002",
-      "Wreckage": {
-        "EnergyMult": 0,
-        "WreckageLayers": {
-          "Land": true
-        },
-        "ReclaimTimeMultiplier": 1,
-        "HealthMult": 0.9,
-        "Blueprint": "/props/DefaultWreckage/DefaultWreckage_prop.bp",
-        "MassMult": 0.9
-      },
-      "SelectionSizeX": 0.65,
-      "Intel": {
-        "VisionRadius": 4
-      },
-      "SelectionSizeZ": 0.65,
-      "SizeY": 1,
-      "SizeX": 1,
-      "SelectionThickness": 0.6,
-      "Display": {
-        "UniformScale": 0.05,
-        "BuildAttachBone": "AttachPoint",
-        "Mesh": {
-          "IconFadeInZoom": 130,
-          "LODs": [
-            {
-              "LODCutoff": 200,
-              "ShaderName": "Insect"
-            },
-            {
-              "ShaderName": "Insect",
-              "SpecularName": "xrl0002_lod1_specteam.dds",
-              "LODCutoff": 500,
-              "AlbedoName": "xrl0002_lod1_albedo.dds"
-            }
-          ]
-        },
-        "AnimationOpen": "/units/xrl0002/xrl0002_aopen.sca"
-      },
-      "StrategicIconSortPriority": 220,
-      "Physics": {
-        "FlattenSkirt": true,
-        "MotionType": "RULEUMT_None",
-        "DragCoefficient": 0.2,
-        "SkirtSizeX": 1,
-        "SkirtSizeZ": 1
       },
       "BuildIconSortPriority": 10
     },
@@ -52815,7 +52434,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SILO",
-        "SNIPEMODE",
         "SUBMERSIBLE",
         "TECH3",
         "VISIBLETORECON",
@@ -53357,27 +52975,83 @@
         "CommandCaps": {
           "RULEUCC_Stop": true
         },
-        "Icon": "amph",
         "FactionName": "Cybran",
+        "SelectionPriority": 7,
+        "Icon": "amph",
         "Classification": "RULEUC_Factory"
       },
+      "Timeropen": 12,
+      "LifeBarHeight": 0.075,
       "Economy": {
-        "BuildTime": 2400,
+        "BuildTime": 2900,
         "BuildCostMass": 1280,
         "BuildUnit": "xrl0305",
-        "BuildCostEnergy": 17600
+        "BuildCostEnergy": 14000
       },
       "Footprint": {
         "SizeX": 1,
         "SizeZ": 1
       },
       "SizeZ": 1,
-      "LifeBarOffset": 0.5,
+      "Intel": {
+        "VisionRadius": 4
+      },
       "Defense": {
         "ArmorType": "Normal",
-        "Health": 10,
-        "MaxHealth": 10
+        "Health": 100,
+        "MaxHealth": 100,
+        "RegenRate": 2
       },
+      "LifeBarOffset": 0.5,
+      "UnitsCol": 1,
+      "Id": "XRL0003",
+      "Wreckage": {
+        "EnergyMult": 0,
+        "WreckageLayers": {
+          "Land": true
+        },
+        "ReclaimTimeMultiplier": 1,
+        "HealthMult": 0.9,
+        "Blueprint": "/props/DefaultWreckage/DefaultWreckage_prop.bp",
+        "MassMult": 0.9
+      },
+      "SelectionSizeX": 0.65,
+      "SizeY": 1,
+      "SelectionSizeZ": 0.65,
+      "SizeX": 1,
+      "Physics": {
+        "BuildOnLayerCaps": {
+          "LAYER_Seabed": true,
+          "LAYER_Land": true
+        },
+        "MotionType": "RULEUMT_None",
+        "DragCoefficient": 0.2,
+        "FlattenSkirt": true,
+        "SkirtSizeX": 1,
+        "SkirtSizeZ": 1
+      },
+      "SelectionThickness": 0.6,
+      "Display": {
+        "UniformScale": 0.05,
+        "BuildAttachBone": "AttachPoint",
+        "Mesh": {
+          "IconFadeInZoom": 130,
+          "LODs": [
+            {
+              "LODCutoff": 200,
+              "ShaderName": "Insect"
+            },
+            {
+              "ShaderName": "Insect",
+              "SpecularName": "xrl0003_lod1_specteam.dds",
+              "LODCutoff": 500,
+              "AlbedoName": "xrl0003_lod1_albedo.dds"
+            }
+          ]
+        },
+        "AnimationOpen": "/units/xrl0003/xrl0003_aopen.sca"
+      },
+      "StrategicIconSortPriority": 220,
       "Audio": {
         "DeathExplosion": {
           "LodCutoff": "UnitMove_LodCutoff",
@@ -53419,58 +53093,6 @@
           "Bank": "URB",
           "Cue": "URB0101_Construct_Loop"
         }
-      },
-      "LifeBarHeight": 0.075,
-      "Id": "XRL0003",
-      "Wreckage": {
-        "EnergyMult": 0,
-        "WreckageLayers": {
-          "Land": true
-        },
-        "ReclaimTimeMultiplier": 1,
-        "HealthMult": 0.9,
-        "Blueprint": "/props/DefaultWreckage/DefaultWreckage_prop.bp",
-        "MassMult": 0.9
-      },
-      "SelectionSizeX": 0.65,
-      "Intel": {
-        "VisionRadius": 4
-      },
-      "SelectionSizeZ": 0.65,
-      "SizeY": 1,
-      "SizeX": 1,
-      "SelectionThickness": 0.6,
-      "Display": {
-        "UniformScale": 0.05,
-        "BuildAttachBone": "AttachPoint",
-        "Mesh": {
-          "IconFadeInZoom": 130,
-          "LODs": [
-            {
-              "LODCutoff": 200,
-              "ShaderName": "Insect"
-            },
-            {
-              "ShaderName": "Insect",
-              "SpecularName": "xrl0003_lod1_specteam.dds",
-              "LODCutoff": 500,
-              "AlbedoName": "xrl0003_lod1_albedo.dds"
-            }
-          ]
-        },
-        "AnimationOpen": "/units/xrl0003/xrl0003_aopen.sca"
-      },
-      "StrategicIconSortPriority": 220,
-      "Physics": {
-        "BuildOnLayerCaps": {
-          "LAYER_Seabed": true,
-          "LAYER_Land": true
-        },
-        "MotionType": "RULEUMT_None",
-        "DragCoefficient": 0.2,
-        "FlattenSkirt": true,
-        "SkirtSizeX": 1,
-        "SkirtSizeZ": 1
       },
       "BuildIconSortPriority": 20
     },
@@ -54683,7 +54305,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH3",
         "VISIBLETORECON",
         null
@@ -54960,7 +54581,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH3",
         "VISIBLETORECON",
         "WEAKANTIAIR",
@@ -55477,12 +55097,15 @@
         "CommandCaps": {
           "RULEUCC_Stop": true
         },
-        "Icon": "land",
         "FactionName": "Cybran",
+        "SelectionPriority": 7,
+        "Icon": "land",
         "Classification": "RULEUC_Factory"
       },
+      "Timeropen": 8,
+      "LifeBarHeight": 0.075,
       "Economy": {
-        "BuildTime": 2400,
+        "BuildTime": 1200,
         "BuildCostMass": 800,
         "BuildUnit": "url0304",
         "BuildCostEnergy": 8000
@@ -55492,12 +55115,61 @@
         "SizeZ": 1
       },
       "SizeZ": 1,
-      "LifeBarOffset": 0.5,
+      "Intel": {
+        "VisionRadius": 4
+      },
       "Defense": {
         "ArmorType": "Normal",
-        "Health": 10,
-        "MaxHealth": 10
+        "Health": 100,
+        "MaxHealth": 100,
+        "RegenRate": 2
       },
+      "LifeBarOffset": 0.5,
+      "UnitsCol": 1,
+      "Id": "XRL0005",
+      "Wreckage": {
+        "EnergyMult": 0,
+        "WreckageLayers": {
+          "Land": true
+        },
+        "ReclaimTimeMultiplier": 1,
+        "HealthMult": 0.9,
+        "Blueprint": "/props/DefaultWreckage/DefaultWreckage_prop.bp",
+        "MassMult": 0.9
+      },
+      "SelectionSizeX": 0.65,
+      "SizeY": 1,
+      "SelectionSizeZ": 0.65,
+      "SizeX": 1,
+      "Physics": {
+        "FlattenSkirt": true,
+        "MotionType": "RULEUMT_None",
+        "DragCoefficient": 0.2,
+        "SkirtSizeX": 1,
+        "SkirtSizeZ": 1
+      },
+      "SelectionThickness": 0.6,
+      "Display": {
+        "UniformScale": 0.05,
+        "BuildAttachBone": "AttachPoint",
+        "Mesh": {
+          "IconFadeInZoom": 130,
+          "LODs": [
+            {
+              "LODCutoff": 200,
+              "ShaderName": "Insect"
+            },
+            {
+              "ShaderName": "Insect",
+              "SpecularName": "xrl0005_lod1_specteam.dds",
+              "LODCutoff": 500,
+              "AlbedoName": "xrl0005_lod1_albedo.dds"
+            }
+          ]
+        },
+        "AnimationOpen": "/units/xrl0005/xrl0005_aopen.sca"
+      },
+      "StrategicIconSortPriority": 220,
       "Audio": {
         "DeathExplosion": {
           "LodCutoff": "UnitMove_LodCutoff",
@@ -55539,54 +55211,6 @@
           "Bank": "URB",
           "Cue": "URB0101_Construct_Loop"
         }
-      },
-      "LifeBarHeight": 0.075,
-      "Id": "XRL0005",
-      "Wreckage": {
-        "EnergyMult": 0,
-        "WreckageLayers": {
-          "Land": true
-        },
-        "ReclaimTimeMultiplier": 1,
-        "HealthMult": 0.9,
-        "Blueprint": "/props/DefaultWreckage/DefaultWreckage_prop.bp",
-        "MassMult": 0.9
-      },
-      "SelectionSizeX": 0.65,
-      "Intel": {
-        "VisionRadius": 4
-      },
-      "SelectionSizeZ": 0.65,
-      "SizeY": 1,
-      "SizeX": 1,
-      "SelectionThickness": 0.6,
-      "Display": {
-        "UniformScale": 0.05,
-        "BuildAttachBone": "AttachPoint",
-        "Mesh": {
-          "IconFadeInZoom": 130,
-          "LODs": [
-            {
-              "LODCutoff": 200,
-              "ShaderName": "Insect"
-            },
-            {
-              "ShaderName": "Insect",
-              "SpecularName": "xrl0005_lod1_specteam.dds",
-              "LODCutoff": 500,
-              "AlbedoName": "xrl0005_lod1_albedo.dds"
-            }
-          ]
-        },
-        "AnimationOpen": "/units/xrl0005/xrl0005_aopen.sca"
-      },
-      "StrategicIconSortPriority": 220,
-      "Physics": {
-        "FlattenSkirt": true,
-        "MotionType": "RULEUMT_None",
-        "DragCoefficient": 0.2,
-        "SkirtSizeX": 1,
-        "SkirtSizeZ": 1
       },
       "BuildIconSortPriority": 30
     },
@@ -57542,7 +57166,6 @@
         "PRODUCTFA",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH3",
         "VISIBLETORECON",
         "WEAKANTIAIR",
@@ -57680,7 +57303,7 @@
       "Physics": {
         "TurnRate": 100,
         "MaxSteerForce": 100,
-        "Elevation": 10,
+        "Elevation": 18,
         "BankingSlope": 0.5,
         "MaxAcceleration": 10,
         "MeshExtentsX": 2,
@@ -59152,7 +58775,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STEALTH",
         "STRUCTURE",
@@ -59408,7 +59030,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SIZE16",
-        "SNIPEMODE",
         "SORTSTRATEGIC",
         "STRATEGIC",
         "STRUCTURE",
@@ -60640,7 +60261,7 @@
         "BuildTime": 1400,
         "BuildCostEnergy": 14400,
         "BuildCostMass": 1200,
-        "MaintenanceConsumptionPerSecondEnergy": 600
+        "MaintenanceConsumptionPerSecondEnergy": 1200
       },
       "Footprint": {
         "MinWaterDepth": 1.5,
@@ -62384,16 +62005,16 @@
         "LAND",
         "LOWSELECTPRIO",
         "MOBILE",
-        "NEEDMOBILEBUILD",
         "OVERLAYANTIAIR",
         "OVERLAYANTINAVY",
+        "NEEDMOBILEBUILD",
         "OVERLAYDEFENSE",
+        "OVERLAYINDIRECTFIRE",
         "OVERLAYDIRECTFIRE",
         "OVERLAYSONAR",
         "PRODUCTFA",
         "SELECTABLE",
         "SHOWQUEUE",
-        "SNIPEMODE",
         "SNIPER",
         "SONAR",
         "VISIBLETORECON",
@@ -62437,7 +62058,7 @@
       "CollisionOffsetZ": -1.2,
       "Economy": {
         "BuildTime": 60625,
-        "BuildRate": 45,
+        "BuildRate": 220,
         "BuildableCategory": [
           "xrl0001",
           "xrl0002",
@@ -62445,7 +62066,13 @@
           "xrl0004",
           "xrl0005",
           "xrl0006",
-          "drlk005"
+          "xrl0007",
+          "xrl0008",
+          "drlk005",
+          "xrl0009",
+          "xrl0010",
+          "xrl0011",
+          "xrl0012"
         ],
         "BuildCostEnergy": 437500,
         "BuildCostMass": 37500
@@ -62463,7 +62090,7 @@
         "EconomyThreatLevel": 3928,
         "SubThreatLevel": 31,
         "MaxHealth": 110000,
-        "RegenRate": 0.5
+        "RegenRate": 0
       },
       "General": {
         "CommandCaps": {
@@ -62488,17 +62115,17 @@
         "SinkLower": true,
         "RotateOnSpot": false,
         "DragCoefficient": 0.2,
-        "MaxAcceleration": 1.2,
+        "MaxAcceleration": 2,
         "SkirtOffsetZ": -1.5,
         "MotionType": "RULEUMT_Amphibious",
-        "MaxSpeed": 2.2,
-        "WaterSpeedMultiplier": 1.5,
+        "MaxSpeed": 2,
+        "WaterSpeedMultiplier": 1.25,
         "TurnRadius": 15,
         "BackUpDistance": 15,
         "SkirtSizeX": 9,
         "SkirtSizeZ": 9,
         "SkirtOffsetX": -1.5,
-        "TurnRate": 36
+        "TurnRate": 45
       },
       "LifeBarHeight": 0.075,
       "Wreckage": {
@@ -62571,34 +62198,6 @@
       "BuildBotTotal": 12,
       "SizeY": 3.7,
       "Display": {
-        "AnimationWalk": "/units/xrl0403/xrl0403_awalk01.sca",
-        "UniformScale": 0.057,
-        "Abilities": [
-          "Amphibious",
-          "Anti-Air",
-          "Factory",
-          "Massive",
-          "Sonar",
-          "Torpedoes",
-          "Torpedo Defense",
-          "Volatile"
-        ],
-        "AnimationActivate": "/units/xrl0403/xrl0403_awake.sca",
-        "Mesh": {
-          "IconFadeInZoom": 130,
-          "LODs": [
-            {
-              "LODCutoff": 200,
-              "ShaderName": "Insect"
-            },
-            {
-              "ShaderName": "Insect",
-              "SpecularName": "xrl0403_lod1_specteam.dds",
-              "LODCutoff": 400,
-              "AlbedoName": "xrl0403_lod1_albedo.dds"
-            }
-          ]
-        },
         "AnimationWalkRate": 3.6,
         "MovementEffects": {
           "Land": {
@@ -62667,6 +62266,35 @@
               }
             }
           }
+        },
+        "UniformScale": 0.057,
+        "Abilities": [
+          "Amphibious",
+          "Anti-Air",
+          "Factory",
+          "Massive",
+          "Sonar",
+          "Torpedoes",
+          "Torpedo Defense",
+          "Volatile"
+        ],
+        "AnimationActivate": "/units/xrl0403/xrl0403_awake.sca",
+        "AnimationOpen": "/units/xrl0403/xrl0403_open.sca",
+        "AnimationWalk": "/units/xrl0403/xrl0403_awalk01.sca",
+        "Mesh": {
+          "IconFadeInZoom": 130,
+          "LODs": [
+            {
+              "LODCutoff": 200,
+              "ShaderName": "Insect"
+            },
+            {
+              "ShaderName": "Insect",
+              "SpecularName": "xrl0403_lod1_specteam.dds",
+              "LODCutoff": 400,
+              "AlbedoName": "xrl0403_lod1_albedo.dds"
+            }
+          ]
         },
         "AnimationDeath": [
           {
@@ -62763,7 +62391,7 @@
           "CollideFriendly": false,
           "AboveWaterFireOnly": true,
           "RackReloadTimeout": 10,
-          "SlavedToBodyArcRange": 60,
+          "SlavedToBodyArcRange": 50,
           "TurretPitchRange": 90,
           "TurretDualManipulators": false,
           "TurretBonePitch": "Right_Turret_Barrel",
@@ -62991,72 +62619,83 @@
           "DetonatesAtTargetHeight": true
         },
         {
-          "DamageRadius": 0,
-          "FiringRandomness": 0,
-          "RateOfFire": 0.03003003003003,
-          "ProjectilesPerOnFire": 5,
+          "DamageRadius": 10,
+          "FiringRandomness": 1.3,
+          "RateOfFire": 0.1,
+          "ProjectilesPerOnFire": 1,
           "TurretYaw": 0,
-          "DamageFriendly": false,
+          "DamageFriendly": true,
           "ArtilleryShieldBlocks": true,
           "RackBones": [
             {
               "MuzzleBones": [
-                "XRL0403"
+                "Missile_Muzzle"
               ],
-              "RackBone": "XRL0403"
+              "RackBone": "Missile_Barrel"
             }
           ],
-          "Damage": 0,
+          "Damage": 1000,
+          "ProjectileLifetime": 60,
           "DamageType": "Normal",
           "Audio": {
+            "BarrelStart": {
+              "LodCutoff": "WeaponBig_LodCutoff",
+              "Bank": "URB",
+              "Cue": "URB2302_Turret_Start"
+            },
+            "BarrelLoop": {
+              "LodCutoff": "WeaponBig_LodCutoff",
+              "Bank": "URB",
+              "Cue": "URB2302_Turret_Loop"
+            },
             "Fire": {
               "LodCutoff": "Weapon_LodCutoff",
-              "Bank": "XRL_Stream",
-              "Cue": "Op5_Megalith_Fire"
+              "Bank": "URLWeapon",
+              "Cue": "URB2302_Artillery_Proton"
             }
           },
-          "TurretPitch": 45,
-          "TurretPitchRange": 90,
-          "DisplayName": "Brackman Hack Peg Launcher",
-          "TurretPitchSpeed": 70,
+          "TurretPitch": 16,
+          "TurretPitchRange": 38,
+          "DisplayName": "Megalith heavy artillery",
+          "TurretPitchSpeed": 5,
           "TurretBoneYaw": "Missile_Turret",
           "RackSalvoSize": 1,
+          "RangeCategory": "UWRC_IndirectFire",
           "AboveWaterTargetsOnly": true,
           "RackSlavedToTurret": false,
-          "MinRadius": 6,
-          "WeaponCategory": "Artillery",
-          "ProjectileId": "/projectiles/CIFBrackmanHackPegs01/CIFBrackmanHackPegs01_proj.bp",
-          "MuzzleVelocity": 14,
+          "MinRadius": 40,
+          "MaxRadius": 100,
+          "ProjectileId": "/projectiles/CIFArtilleryProton02/CIFArtilleryProton02_proj.bp",
+          "MuzzleVelocity": 26,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
           "TurretBoneMuzzle": "Missile_Muzzle",
           "MuzzleSalvoSize": 1,
-          "Label": "HackPegLauncher",
           "FireTargetLayerCapsTable": {
             "Land": "Land|Water|Seabed",
             "Water": "Land|Water|Seabed"
           },
-          "BallisticArc": "RULEUBA_HighArc",
-          "MuzzleVelocityReduceDistance": 28,
-          "RackRecoilDistance": -1,
+          "BallisticArc": "RULEUBA_LowArc",
+          "Label": "HackPegLauncher",
+          "RackRecoilDistance": -11.5,
           "MuzzleSalvoDelay": 0,
-          "TurretYawSpeed": 70,
-          "TurretYawRange": 45,
+          "TurretYawSpeed": 20,
+          "TurretYawRange": 50,
           "SlavedToBody": true,
-          "FiringTolerance": 0,
-          "RackReloadTimeout": 10,
+          "FiringTolerance": 8,
+          "RackReloadTimeout": 8,
           "CollideFriendly": false,
           "TargetPriorities": [
             "(STRUCTURE * DEFENSE - ANTIMISSILE)",
             "ALLUNITS"
           ],
           "TargetRestrictDisallow": "UNTARGETABLE",
-          "SlavedToBodyArcRange": 40,
+          "SlavedToBodyArcRange": 45,
           "RackSalvoReloadTime": 0,
           "TurretDualManipulators": false,
           "TurretBonePitch": "Missile_Turret",
-          "Turreted": false,
-          "MaxRadius": 30
+          "Turreted": true,
+          "WeaponCategory": "Artillery"
         },
         {
           "DamageType": "DeathExplosion",
@@ -63097,7 +62736,7 @@
         "VISIBLETORECON",
         null
       ],
-      "AverageDensity": 70000,
+      "AverageDensity": 75000,
       "General": {
         "CommandCaps": {
           "RULEUCC_RetaliateToggle": true,
@@ -63161,7 +62800,7 @@
         "CirclingRadiusChangeMinRatio": 0.5,
         "BankFactor": 0.1,
         "LiftFactor": 7,
-        "CirclingRadiusChangeMaxRatio": 0.7,
+        "CirclingRadiusChangeMaxRatio": 0.8,
         "AutoLandTime": 1,
         "BankForward": false,
         "KLift": 1,
@@ -63194,9 +62833,9 @@
       "Defense": {
         "ArmorType": "Experimental",
         "SurfaceThreatLevel": 243,
-        "Health": 70000,
+        "Health": 75000,
         "AirThreatLevel": 24,
-        "MaxHealth": 70000,
+        "MaxHealth": 75000,
         "RegenRate": 75
       },
       "Audio": {
@@ -63404,8 +63043,8 @@
           "TurretBoneMuzzle": "RightFront_Turret_Muzzle",
           "MuzzleSalvoSize": 2,
           "FireTargetLayerCapsTable": {
-            "Air": "Land|Water|Seabed",
-            "Land": "Land|Water|Seabed",
+            "Air": "Air|Land|Water|Seabed",
+            "Land": "Air|Land|Water|Seabed",
             "Water": "Air|Land|Water|Seabed"
           },
           "BallisticArc": "RULEUBA_None",
@@ -63485,7 +63124,7 @@
           "MuzzleSalvoDelay": 0.1,
           "RackSalvoReloadTime": 0,
           "FiringTolerance": 120,
-          "RateOfFire": 3.3333333333333,
+          "RateOfFire": 1,
           "RackReloadTimeout": 0,
           "TargetRestrictDisallow": "UNTARGETABLE,LAND,STRUCTURE,NAVAL",
           "CollideFriendly": false,
@@ -63548,8 +63187,8 @@
           "TurretBoneMuzzle": "Front_Turret_Muzzle01",
           "MuzzleSalvoSize": 1,
           "FireTargetLayerCapsTable": {
-            "Air": "Land|Water|Seabed",
-            "Land": "Land|Water|Seabed",
+            "Air": "Air|Land|Water|Seabed",
+            "Land": "Air|Land|Water|Seabed",
             "Water": "Air|Land|Water|Seabed"
           },
           "BallisticArc": "RULEUBA_None",
@@ -63562,7 +63201,7 @@
           "RackSalvoReloadTime": 0,
           "CollideFriendly": false,
           "RackRecoilDistance": 0,
-          "TargetRestrictDisallow": "UNTARGETABLE",
+          "TargetRestrictDisallow": "HIGHALTAIR, UNTARGETABLE",
           "FiringTolerance": 2,
           "RackReloadTimeout": 0,
           "TurretDualManipulators": false,
@@ -65600,7 +65239,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH1",
         "VISIBLETORECON",
         null
@@ -65858,7 +65496,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "SUBMERSIBLE",
         "T1SUBMARINE",
         "TECH1",
@@ -67245,7 +66882,6 @@
         "RADAR",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "SONAR",
         "TECH1",
         "VISIBLETORECON",
@@ -68502,7 +68138,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH1",
         "VISIBLETORECON",
         null
@@ -70049,7 +69684,7 @@
           "RackReloadTimeout": 10,
           "TurretDualManipulators": false,
           "TurretBonePitch": "Right_Turret",
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 110,
           "Turreted": true
         },
         {
@@ -70088,7 +69723,7 @@
           "RackSlavedToTurret": false,
           "Label": "OverCharge",
           "MuzzleSalvoSize": 1,
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 110,
           "TargetPriorities": [
             "MOBILE EXPERIMENTAL",
             "MOBILE TECH3",
@@ -70189,7 +69824,7 @@
           "RackSalvoChargeTime": 0,
           "TurretBoneMuzzle": "Right_Turret_Muzzle",
           "WeaponUnpacks": false,
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 110,
           "FireTargetLayerCapsTable": {
             "Water": "Land|Water|Seabed",
             "Land": "Land|Water|Seabed",
@@ -70379,7 +70014,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
         "TECH1",
@@ -70834,7 +70468,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
         "TECH1",
@@ -71980,7 +71613,7 @@
       },
       "StrategicIconSortPriority": 95,
       "AI": {
-        "GuardScanRadius": 60
+        "GuardScanRadius": 40
       },
       "Transport": {
         "TransportClass": 2
@@ -72332,7 +71965,6 @@
         "PRODUCTFA",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "SUBMERSIBLE",
         "T2SUBMARINE",
         "TECH2",
@@ -72731,7 +72363,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -74009,7 +73640,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -74137,7 +73767,7 @@
       },
       "Physics": {
         "MeshExtentsX": 1,
-        "Elevation": 10,
+        "Elevation": 18,
         "FuelRechargeRate": 5,
         "MaxSpeed": 0.5,
         "GroundCollisionOffset": 1.6,
@@ -74346,7 +73976,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SILO",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -74620,7 +74249,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -75342,7 +74970,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH2",
         "TRANSPORTATION",
         "TRANSPORTBUILTBYTIER2FACTORY",
@@ -78483,7 +78110,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
         "TECH2",
@@ -78981,7 +78607,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STEALTH",
         "STRUCTURE",
@@ -79258,7 +78883,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTSTRATEGIC",
         "STRATEGIC",
         "STRUCTURE",
@@ -80811,15 +80435,16 @@
         "LAND",
         "MASSPRODUCTION",
         "MOBILE",
+        "OVERLAYRADAR",
         "OVERLAYDIRECTFIRE",
         "OVERLAYOMNI",
         "PATROLHELPER",
         "PRODUCTSC1",
+        "RADAR",
         "RECLAIM",
         "REPAIR",
         "SELECTABLE",
         "SHOWQUEUE",
-        "SNIPEMODE",
         "SUBCOMMANDER",
         "TECH3",
         "USEBUILDPRESETS",
@@ -80840,13 +80465,13 @@
           "SelectionPriority": 1,
           "BuildIconSortPriority": 25
         },
-        "SimpleCombat": {
+        "Support": {
           "SortCategory": "SORTSTRATEGIC",
-          "Description": "SACU (Combatant preset)",
+          "Description": "SACU (Support preset)",
           "Enhancements": [
-            "StabilitySuppressant"
+            "SensorRangeEnhancer"
           ],
-          "UnitName": "SACU (Combatant preset)",
+          "UnitName": "SACU (Support preset)",
           "HelpText": "Support Armored Command Unit. Enhanced during construction with the reacton refractor enhancement.",
           "SelectionPriority": 1,
           "BuildIconSortPriority": 15
@@ -80878,8 +80503,7 @@
           "Enhancements": [
             "StabilitySuppressant",
             "Shield",
-            "ShieldHeavy",
-            "Redeemer"
+            "ShieldHeavy"
           ],
           "UnitName": "SACU (Special preset)",
           "HelpText": "Support Armored Command Unit. Enhanced during construction with a personal shield and the reacton refractor enhancements.",
@@ -80891,8 +80515,7 @@
           "Description": "SACU (Shield Combatant preset)",
           "Enhancements": [
             "StabilitySuppressant",
-            "Shield",
-            "Redeemer"
+            "Shield"
           ],
           "UnitName": "SACU (Rambo preset)",
           "HelpText": "Support Armored Command Unit. Enhanced during construction with a personal shield and the reacton refractor enhancements.",
@@ -80917,6 +80540,19 @@
       "SizeZ": 1.1,
       "VeteranMassMult": 3.5898,
       "Enhancements": {
+        "SensorRangeEnhancerRemove": {
+          "BuildTime": 0.1,
+          "BuildCostMass": 1,
+          "Name": "Remove Enhanced Sensor System",
+          "Slot": "LCH",
+          "BuildCostEnergy": 1,
+          "RemoveEnhancements": [
+            "SensorRangeEnhancer",
+            "SensorRangeEnhancerRemove"
+          ],
+          "Icon": "rads",
+          "Prerequisite": "SensorRangeEnhancer"
+        },
         "Shield": {
           "UpgradeEffectBones": [
             "Turbine"
@@ -80931,9 +80567,9 @@
           "ShowBones": [
             "Turbine"
           ],
-          "ShieldEnergyDrainRechargeTime": 5,
-          "ShieldRegenStartTime": 3,
-          "MaintenanceConsumptionPerSecondEnergy": 220,
+          "ShieldEnergyDrainRechargeTime": 4,
+          "ShieldRegenStartTime": 2,
+          "MaintenanceConsumptionPerSecondEnergy": 270,
           "BuildCostMass": 2500,
           "Name": "Personal Shield Generator",
           "ShieldRechargeTime": 150,
@@ -80942,13 +80578,13 @@
             "UAL0301"
           ],
           "PersonalShield": true,
-          "ShieldMaxHealth": 20000
+          "ShieldMaxHealth": 15000
         },
         "TeleporterRemove": {
           "BuildTime": 0.1,
           "BuildCostMass": 1,
           "Name": "Remove Personal Teleporter",
-          "Slot": "LCH",
+          "Slot": "Back",
           "BuildCostEnergy": 1,
           "RemoveEnhancements": [
             "Teleporter",
@@ -80967,7 +80603,7 @@
             "UAL0301"
           ],
           "Icon": "pqt",
-          "Slot": "LCH"
+          "Slot": "Back"
         },
         "ShieldRemove": {
           "Slot": "Back",
@@ -80989,7 +80625,7 @@
           "BuildTime": 0.1,
           "BuildCostMass": 1,
           "Name": "Remove Resource Allocation System",
-          "Slot": "Back",
+          "Slot": "LCH",
           "BuildCostEnergy": 1,
           "RemoveEnhancements": [
             "ResourceAllocation",
@@ -81001,7 +80637,7 @@
         "StabilitySuppressant": {
           "Slot": "RCH",
           "BuildCostEnergy": 12500,
-          "BuildTime": 1680,
+          "BuildTime": 5040,
           "Icon": "ss",
           "Name": "Reacton Refractor",
           "BuildCostMass": 1250,
@@ -81037,19 +80673,6 @@
             "StabilitySuppressantRemove"
           ]
         },
-        "RedeemerRemove": {
-          "BuildTime": 0.1,
-          "BuildCostMass": 1,
-          "Name": "Remove Redeemer",
-          "Slot": "LCH",
-          "BuildCostEnergy": 1,
-          "RemoveEnhancements": [
-            "Redeemer",
-            "RedeemerRemove"
-          ],
-          "Icon": "rdmr",
-          "Prerequisite": "Redeemer"
-        },
         "ShieldHeavyRemove": {
           "Slot": "Back",
           "BuildCostEnergy": 1,
@@ -81067,21 +80690,29 @@
             "ShieldHeavyRemove"
           ]
         },
-        "SystemIntegrityCompensatorRemove": {
-          "Slot": "Back",
-          "BuildCostEnergy": 1,
-          "BuildTime": 0.1,
-          "Name": "Remove Nano-Repair System",
-          "Prerequisite": "SystemIntegrityCompensator",
-          "HideBones": [
+        "ShieldHeavy": {
+          "UpgradeEffectBones": [
             "Turbine"
           ],
-          "Icon": "sic",
-          "BuildCostMass": 1,
-          "RemoveEnhancements": [
-            "SystemIntegrityCompensator",
-            "SystemIntegrityCompensatorRemove"
-          ]
+          "BuildCostEnergy": 50000,
+          "BuildTime": 6720,
+          "ShieldRegenRate": 100,
+          "OwnerShieldMesh": "/units/ual0301/ual0301_personalshield_mesh",
+          "ImpactEffects": "AeonShieldHit01",
+          "Icon": "phtsg",
+          "Slot": "Back",
+          "ShieldEnergyDrainRechargeTime": 6,
+          "ShieldRegenStartTime": 3,
+          "MaintenanceConsumptionPerSecondEnergy": 420,
+          "BuildCostMass": 2500,
+          "Name": "Heavy Personal Shield Generator",
+          "ShieldRechargeTime": 200,
+          "Prerequisite": "Shield",
+          "UpgradeUnitAmbientBones": [
+            "UAL0301"
+          ],
+          "PersonalShield": true,
+          "ShieldMaxHealth": 35000
         },
         "SacrificeRemove": {
           "BuildTime": 0.1,
@@ -81110,7 +80741,7 @@
           "BuildCostEnergy": 12800
         },
         "ResourceAllocation": {
-          "Slot": "Back",
+          "Slot": "LCH",
           "ProductionPerSecondMass": 10,
           "BuildCostEnergy": 90000,
           "BuildTime": 8400,
@@ -81135,16 +80766,21 @@
           "Icon": "efm",
           "Prerequisite": "EngineeringFocusingModule"
         },
-        "Redeemer": {
-          "BuildTime": 6720,
-          "Name": "Redeemer",
-          "Slot": "LCH",
-          "BuildCostMass": 2300,
-          "UpgradeUnitAmbientBones": [
-            "UAL0301"
+        "SystemIntegrityCompensatorRemove": {
+          "Slot": "Back",
+          "BuildCostEnergy": 1,
+          "BuildTime": 0.1,
+          "Name": "Remove Nano-Repair System",
+          "Prerequisite": "SystemIntegrityCompensator",
+          "HideBones": [
+            "Turbine"
           ],
-          "Icon": "rdmr",
-          "BuildCostEnergy": 70000
+          "Icon": "sic",
+          "BuildCostMass": 1,
+          "RemoveEnhancements": [
+            "SystemIntegrityCompensator",
+            "SystemIntegrityCompensatorRemove"
+          ]
         },
         "SystemIntegrityCompensator": {
           "Slot": "Back",
@@ -81154,40 +80790,31 @@
           "UpgradeEffectBones": [
             "Turbine"
           ],
-          "BuildCostEnergy": 10000,
+          "BuildCostEnergy": 12000,
           "BuildTime": 1960,
           "Name": "Nano-Repair System",
-          "NewHealth": 5000,
-          "BuildCostMass": 1000,
+          "NewHealth": 4500,
+          "BuildCostMass": 1200,
           "UpgradeUnitAmbientBones": [
             "UAL0301"
           ],
           "Icon": "sic",
-          "NewRegenRate": 50
+          "NewRegenRate": 100
         },
-        "ShieldHeavy": {
-          "UpgradeEffectBones": [
-            "Turbine"
-          ],
-          "BuildCostEnergy": 50000,
-          "BuildTime": 6720,
-          "ShieldRegenRate": 200,
-          "OwnerShieldMesh": "/units/ual0301/ual0301_personalshield_mesh",
-          "ImpactEffects": "AeonShieldHit01",
-          "Icon": "phtsg",
-          "Slot": "Back",
-          "ShieldEnergyDrainRechargeTime": 5,
-          "ShieldRegenStartTime": 3,
-          "MaintenanceConsumptionPerSecondEnergy": 670,
-          "BuildCostMass": 3500,
-          "Name": "Heavy Personal Shield Generator",
-          "ShieldRechargeTime": 200,
-          "Prerequisite": "Shield",
+        "SensorRangeEnhancer": {
+          "NewRadarRadius": 90,
+          "NewOmniRadius": 55,
+          "Slot": "LCH",
+          "BuildCostEnergy": 20000,
+          "BuildTime": 3360,
+          "Name": "Enhanced Sensor System",
+          "MaintenanceConsumptionPerSecondEnergy": 50,
+          "Icon": "rads",
           "UpgradeUnitAmbientBones": [
             "UAL0301"
           ],
-          "PersonalShield": true,
-          "ShieldMaxHealth": 40000
+          "BuildCostMass": 300,
+          "NewVisionRadius": 30
         },
         "Slots": {
           "RCH": {
@@ -81236,7 +80863,7 @@
         "RegenRate": 15
       },
       "Physics": {
-        "TurnRate": 130,
+        "TurnRate": 120,
         "MaxSteerForce": 12,
         "MeshExtentsX": 1.25,
         "DragCoefficient": 0.2,
@@ -81525,6 +81152,7 @@
           "Engineering Suite",
           "Not Capturable",
           "Omni Sensor",
+          "Radar",
           "Volatile"
         ],
         "IdleEffects": {
@@ -81647,79 +81275,6 @@
           "TurretBonePitch": "Arm_Left_B03",
           "WeaponCategory": "Direct Fire",
           "TurretYawSpeed": 160
-        },
-        {
-          "UseFiringSolutionInsteadOfAimBone": true,
-          "FiringRandomness": 0.1,
-          "RateOfFire": 0.27027027027027,
-          "TurretYaw": 0,
-          "RackBones": [
-            {
-              "MuzzleBones": [
-                "Arm_Right_Build"
-              ],
-              "RackBone": "Arm_Right_B03"
-            }
-          ],
-          "Damage": 2000,
-          "DamageType": "Normal",
-          "Audio": {
-            "Fire": {
-              "LodCutoff": "Weapon_LodCutoff",
-              "Bank": "UASWeapon",
-              "Cue": "UAS0202_Cannon_Quantum"
-            }
-          },
-          "TurretPitch": 0,
-          "TurretPitchRange": 160,
-          "DisplayName": "Redeemer",
-          "TurretPitchSpeed": 90,
-          "TurretBoneYaw": "Arm_Right_B03",
-          "RackSalvoSize": 1,
-          "RangeCategory": "UWRC_DirectFire",
-          "AboveWaterTargetsOnly": true,
-          "RackSlavedToTurret": false,
-          "Label": "RedeemerGun",
-          "PrefersPrimaryWeaponTarget": true,
-          "MinRadius": 1,
-          "MaxRadius": 30,
-          "ProjectileId": "/projectiles/AIFSonanceShell02/AIFSonanceShell02_proj.bp",
-          "MuzzleChargeDelay": 0.3,
-          "MuzzleVelocity": 32,
-          "RackFireTogether": false,
-          "RackSalvoChargeTime": 0,
-          "TurretBoneMuzzle": "Arm_Right_Build",
-          "MuzzleSalvoSize": 1,
-          "DamageRadius": 3.5,
-          "FireTargetLayerCapsTable": {
-            "Land": "Land|Water|Seabed",
-            "Water": "Land|Water|Seabed"
-          },
-          "Turreted": true,
-          "NotExclusive": true,
-          "RackReloadTimeout": 10,
-          "MuzzleSalvoDelay": 0,
-          "LeadTarget": true,
-          "FiringTolerance": 2,
-          "RackSalvoReloadTime": 0,
-          "RackRecoilDistance": -0.7,
-          "TargetPriorities": [
-            "MOBILE EXPERIMENTAL",
-            "COMMAND",
-            "MOBILE TECH3",
-            "MOBILE TECH2",
-            "(STRUCTURE * DEFENSE - ANTIMISSILE)",
-            "ALLUNITS"
-          ],
-          "CollideFriendly": false,
-          "TargetRestrictDisallow": "UNTARGETABLE",
-          "BallisticArc": "RULEUBA_LowArc",
-          "SlavedToBodyArcRange": 155,
-          "TurretYawRange": 20,
-          "TurretDualManipulators": false,
-          "TurretBonePitch": "Arm_Right_B03",
-          "WeaponCategory": "Direct Fire",
-          "TurretYawSpeed": 60
         },
         {
           "DamageRadius": 10,
@@ -82037,7 +81592,7 @@
       },
       "StrategicIconSortPriority": 85,
       "AI": {
-        "GuardScanRadius": 65
+        "GuardScanRadius": 45
       },
       "Transport": {
         "TransportClass": 3
@@ -82059,7 +81614,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SILO",
-        "SNIPEMODE",
         "SUBMERSIBLE",
         "TECH3",
         "VISIBLETORECON",
@@ -82497,7 +82051,6 @@
         "PRODUCTFA",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "SNIPER",
         "TECH3",
         "VISIBLETORECON",
@@ -82802,7 +82355,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH3",
         "VISIBLETORECON",
         null
@@ -83703,7 +83255,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH3",
         "VISIBLETORECON",
         null
@@ -84690,7 +84241,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH3",
         "VISIBLETORECON",
         null
@@ -84731,12 +84281,12 @@
         "Elevation": 0.35,
         "DragCoefficient": 0.2,
         "TurnRadius": 0,
-        "MaxSpeed": 4,
+        "MaxSpeed": 2.2,
         "BackUpDistance": 8,
         "MeshExtentsY": 0.5,
         "RotateBodyWhileMoving": true,
         "MaxSpeedReverse": 4,
-        "MaxBrake": 4
+        "MaxBrake": 2.2
       },
       "SelectionThickness": 0.43,
       "SelectionSizeZ": 1,
@@ -85324,7 +84874,6 @@
         "PRODUCTFA",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH3",
         "VISIBLETORECON",
         null
@@ -85671,7 +85220,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TANK",
         "TECH3",
         "VISIBLETORECON",
@@ -87474,7 +87022,6 @@
         "PRODUCTFA",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH3",
         "VISIBLETORECON",
         null
@@ -87602,7 +87149,7 @@
       },
       "Physics": {
         "MeshExtentsX": 1.3,
-        "Elevation": 10,
+        "Elevation": 18,
         "FuelRechargeRate": 15,
         "MaxSpeed": 0.5,
         "GroundCollisionOffset": 1.6,
@@ -89096,7 +88643,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SIZE16",
-        "SNIPEMODE",
         "SORTSTRATEGIC",
         "STRATEGIC",
         "STRUCTURE",
@@ -92984,7 +92530,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE20",
-        "SNIPEMODE",
         "STRATEGIC",
         "STRUCTURE",
         "VISIBLETORECON",
@@ -95544,7 +95089,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SERAPHIM",
-        "SNIPEMODE",
         "SUBMERSIBLE",
         "T1SUBMARINE",
         "TECH1",
@@ -96000,7 +95544,6 @@
         "SELECTABLE",
         "SERAPHIM",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH1",
         "VISIBLETORECON",
         null
@@ -96502,7 +96045,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SERAPHIM",
-        "SNIPEMODE",
         "SONAR",
         "TECH1",
         "VISIBLETORECON",
@@ -97649,7 +97191,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SERAPHIM",
-        "SNIPEMODE",
         "TECH1",
         "VISIBLETORECON",
         null
@@ -99495,7 +99036,7 @@
           "RackReloadTimeout": 10,
           "TurretDualManipulators": false,
           "TurretBonePitch": "Right_Arm_B02",
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 110,
           "Turreted": true
         },
         {
@@ -99533,7 +99074,7 @@
           "Label": "OverCharge",
           "AboveWaterTargetsOnly": true,
           "RackSlavedToTurret": false,
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 110,
           "MuzzleSalvoSize": 1,
           "TurretYawRange": 180,
           "MinRadius": 0,
@@ -99619,7 +99160,7 @@
           "RackSlavedToTurret": false,
           "Label": "AutoOverCharge",
           "DamageRadius": 2.5,
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 110,
           "MinRadius": 0,
           "MaxRadius": 22,
           "ProjectileId": "/projectiles/SDFChronatronCannon02/SDFChronatronCannon02_proj.bp",
@@ -99800,7 +99341,6 @@
         "SELECTABLE",
         "SERAPHIM",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
         "TECH1",
@@ -100286,7 +99826,6 @@
         "SELECTABLE",
         "SERAPHIM",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
         "TECH1",
@@ -101534,7 +101073,7 @@
       },
       "StrategicIconSortPriority": 95,
       "AI": {
-        "GuardScanRadius": 60
+        "GuardScanRadius": 40
       },
       "Transport": {
         "TransportClass": 2
@@ -101556,7 +101095,6 @@
         "SELECTABLE",
         "SERAPHIM",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -101978,7 +101516,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SERAPHIM",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -102625,7 +102162,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SERAPHIM",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -102753,7 +102289,7 @@
       },
       "Physics": {
         "MeshExtentsX": 1.75,
-        "Elevation": 10,
+        "Elevation": 18,
         "FuelRechargeRate": 10,
         "MaxSpeed": 0.5,
         "GroundCollisionOffset": 1.6,
@@ -103279,7 +102815,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SERAPHIM",
-        "SNIPEMODE",
         "SUBMERSIBLE",
         "TECH2",
         "VISIBLETORECON",
@@ -103803,7 +103338,6 @@
         "SERAPHIM",
         "SHOWATTACKRETICLE",
         "SILO",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -104625,7 +104159,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SERAPHIM",
-        "SNIPEMODE",
         "TECH2",
         "TRANSPORTATION",
         "TRANSPORTBUILTBYTIER2FACTORY",
@@ -105234,7 +104767,6 @@
         "SELECTABLE",
         "SERAPHIM",
         "SILO",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -107468,7 +107000,6 @@
         "SELECTABLE",
         "SERAPHIM",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
         "TECH2",
@@ -107996,7 +107527,6 @@
         "SELECTABLE",
         "SERAPHIM",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STEALTH",
         "STRUCTURE",
@@ -108340,7 +107870,6 @@
         "SERAPHIM",
         "SHOWATTACKRETICLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTSTRATEGIC",
         "STRATEGIC",
         "STRUCTURE",
@@ -109992,10 +109521,12 @@
         "LAND",
         "MASSPRODUCTION",
         "MOBILE",
+        "OVERLAYRADAR",
         "OVERLAYDIRECTFIRE",
         "OVERLAYOMNI",
         "PATROLHELPER",
         "PRODUCTFA",
+        "RADAR",
         "RECLAIM",
         "REPAIR",
         "SELECTABLE",
@@ -110028,7 +109559,7 @@
           "SortCategory": "SORTINTEL",
           "Description": "SACU (Nano Combatant preset)",
           "Enhancements": [
-            "EnhancedSensors",
+            "RapidFire",
             "Shield"
           ],
           "UnitName": "SACU (Nano Combatant preset)",
@@ -110040,7 +109571,7 @@
           "SortCategory": "SORTOTHER",
           "Description": "SACU (Advanced Combatant preset)",
           "Enhancements": [
-            "EnhancedSensors",
+            "RapidFire",
             "DamageStabilization",
             "Overcharge"
           ],
@@ -110049,17 +109580,26 @@
           "SelectionPriority": 1,
           "BuildIconSortPriority": 30
         },
-        "Combat": {
+        "Support": {
           "SortCategory": "SORTSTRATEGIC",
-          "Description": "SACU (Combatant preset)",
+          "Description": "SACU (Support preset)",
           "Enhancements": [
-            "EnhancedSensors",
-            "Medusa"
+            "SensorRangeEnhancer"
           ],
-          "UnitName": "SACU (Combatant preset)",
+          "UnitName": "SACU (Support preset)",
           "HelpText": "Support Armored Command Unit. Enhanced during construction with the enhanced sensor system enhancement.",
           "SelectionPriority": 1,
           "BuildIconSortPriority": 90
+        },
+        "RAS": {
+          "SortCategory": "SORTECONOMY",
+          "Description": "SACU (RAS preset)",
+          "UnitName": "SACU (RAS preset)",
+          "Enhancements": [
+            "ResourceAllocation"
+          ],
+          "HelpText": "Support Armored Command Unit. Enhanced during construction with a Resource Allocation System.",
+          "BuildIconSortPriority": 10
         },
         "Engineer": {
           "SortCategory": "SORTECONOMY",
@@ -110071,13 +109611,23 @@
           "HelpText": "Support Armored Command Unit. Enhanced during construction with the rapid fabricator enhancement.",
           "BuildIconSortPriority": 20
         },
+        "RASE": {
+          "SortCategory": "SORTECONOMY",
+          "Description": "SACU (RAS and Engineer preset)",
+          "UnitName": "SACU (RAS and Engineer module.)",
+          "Enhancements": [
+            "ResourceAllocation",
+            "EngineeringThroughput"
+          ],
+          "HelpText": "Support Armored Command Unit. Enhanced during construction with a Resource Allocation System and Engineer module.",
+          "BuildIconSortPriority": 30
+        },
         "NanoCombat": {
           "SortCategory": "SORTINTEL",
           "Description": "SACU (Rambo preset)",
           "Enhancements": [
-            "EnhancedSensors",
-            "DamageStabilization",
-            "Medusa"
+            "RapidFire",
+            "DamageStabilization"
           ],
           "UnitName": "SACU (Rambo preset)",
           "HelpText": "Support Armored Command Unit. Enhanced during construction with the enhanced sensor system and nano-repair system enhancements.",
@@ -110091,13 +109641,26 @@
         "CanFireFromTransport": false
       },
       "Enhancements": {
+        "SensorRangeEnhancerRemove": {
+          "BuildTime": 0.1,
+          "BuildCostMass": 1,
+          "Name": "Remove Enhanced Sensor System",
+          "Slot": "LCH",
+          "BuildCostEnergy": 1,
+          "RemoveEnhancements": [
+            "SensorRangeEnhancer",
+            "SensorRangeEnhancerRemove"
+          ],
+          "Icon": "sre",
+          "Prerequisite": "SensorRangeEnhancer"
+        },
         "Shield": {
           "UpgradeEffectBones": [
             "Back_Upgrade"
           ],
           "BuildCostEnergy": 10000,
           "BuildTime": 1960,
-          "ShieldRegenRate": 20,
+          "ShieldRegenRate": 25,
           "OwnerShieldMesh": "/units/xsl0301/xsl0301_personalshield_mesh",
           "ImpactEffects": "SeraphimShieldHit01",
           "Icon": "sp",
@@ -110106,8 +109669,8 @@
             "Back_Upgrade"
           ],
           "ShieldEnergyDrainRechargeTime": 2,
-          "ShieldRegenStartTime": 1,
-          "MaintenanceConsumptionPerSecondEnergy": 300,
+          "ShieldRegenStartTime": 3,
+          "MaintenanceConsumptionPerSecondEnergy": 170,
           "BuildCostMass": 1000,
           "Name": "Personal Shield Generator",
           "ShieldRechargeTime": 60,
@@ -110131,52 +109694,64 @@
           "Icon": "pqt",
           "Prerequisite": "Teleporter"
         },
-        "Teleporter": {
-          "Slot": "LCH",
-          "UpgradeEffectBones": [
+        "Slots": {
+          "RCH": {
+            "y": 50,
+            "x": -16,
+            "name": ""
+          },
+          "Back": {
+            "y": -8,
+            "x": -13,
+            "name": ""
+          },
+          "LCH": {
+            "y": 50,
+            "x": 60,
+            "name": ""
+          }
+        },
+        "ShieldRemove": {
+          "Slot": "Back",
+          "BuildCostEnergy": 1,
+          "BuildTime": 0.1,
+          "Name": "Remove Personal Shield Generator",
+          "Prerequisite": "Shield",
+          "HideBones": [
             "Back_Upgrade"
           ],
-          "BuildCostEnergy": 1500000,
-          "BuildTime": 20160,
-          "Name": "Personal Teleporter",
-          "MaintenanceConsumptionPerSecondEnergy": 10000,
-          "UpgradeUnitAmbientBones": [
-            "Torso"
-          ],
-          "BuildCostMass": 15000,
-          "Icon": "pqt"
+          "Icon": "sp",
+          "BuildCostMass": 1,
+          "RemoveEnhancements": [
+            "Shield",
+            "ShieldRemove"
+          ]
         },
-        "MedusaRemove": {
+        "ResourceAllocationRemove": {
           "BuildTime": 0.1,
           "BuildCostMass": 1,
-          "Name": "Remove Medusa",
-          "Slot": "LCH",
+          "Name": "Remove Resource Allocation System",
+          "Slot": "Back",
           "BuildCostEnergy": 1,
           "RemoveEnhancements": [
-            "Medusa",
-            "MedusaRemove"
+            "ResourceAllocation",
+            "ResourceAllocationRemove"
           ],
-          "Icon": "medu",
-          "Prerequisite": "Medusa"
+          "Icon": "ras",
+          "Prerequisite": "ResourceAllocation"
         },
-        "EnhancedSensors": {
-          "NewOmniRadius": 30,
+        "RapidFireRemove": {
+          "BuildTime": 0.1,
+          "BuildCostMass": 1,
+          "Name": "Remove Rapid Fire",
           "Slot": "RCH",
-          "UpgradeEffectBones": [
-            "Back_Upgrade"
+          "BuildCostEnergy": 1,
+          "RemoveEnhancements": [
+            "RapidFire",
+            "RapidFireRemove"
           ],
-          "BuildCostEnergy": 12500,
-          "Icon": "sre",
-          "BuildTime": 2240,
-          "BuildCostMass": 1250,
-          "Name": "Enhanced Sensor System",
-          "NewMaxRadius": 35,
-          "NewRateOfFire": 1.5,
-          "UpgradeUnitAmbientBones": [
-            "Torso"
-          ],
-          "NewDamageRadiusMod": 2.5,
-          "NewVisionRadius": 30
+          "Icon": "cba",
+          "Prerequisite": "RapidFire"
         },
         "EngineeringThroughput": {
           "Slot": "RCH",
@@ -110193,20 +109768,6 @@
           ],
           "BuildCostMass": 410,
           "BuildCostEnergy": 10000
-        },
-        "Medusa": {
-          "BuildTime": 4480,
-          "BuildCostMass": 2000,
-          "Name": "Medusa",
-          "Slot": "LCH",
-          "BuildCostEnergy": 72300,
-          "UpgradeUnitAmbientBones": [
-            "Torso"
-          ],
-          "Icon": "medu",
-          "UpgradeEffectBones": [
-            "Back_Upgrade"
-          ]
         },
         "DamageStabilizationRemove": {
           "Slot": "Back",
@@ -110240,6 +109801,19 @@
             "MissileRemove"
           ]
         },
+        "OverchargeRemove": {
+          "BuildTime": 0.1,
+          "BuildCostMass": 1,
+          "Name": "Remove Overcharge",
+          "Slot": "LCH",
+          "BuildCostEnergy": 1,
+          "RemoveEnhancements": [
+            "Overcharge",
+            "OverchargeRemove"
+          ],
+          "Icon": "oc",
+          "Prerequisite": "Overcharge"
+        },
         "Missile": {
           "Slot": "Back",
           "ShowBones": [
@@ -110257,35 +109831,37 @@
           "BuildCostMass": 1500,
           "Icon": "tmu"
         },
-        "Slots": {
-          "RCH": {
-            "y": 50,
-            "x": -16,
-            "name": ""
-          },
-          "Back": {
-            "y": -8,
-            "x": -13,
-            "name": ""
-          },
-          "LCH": {
-            "y": 50,
-            "x": 60,
-            "name": ""
-          }
-        },
-        "EnhancedSensorsRemove": {
-          "BuildTime": 0.1,
-          "BuildCostMass": 1,
-          "Name": "Remove Enhanced Sensor System",
-          "Slot": "RCH",
-          "BuildCostEnergy": 1,
-          "RemoveEnhancements": [
-            "EnhancedSensors",
-            "EnhancedSensorsRemove"
+        "Teleporter": {
+          "Slot": "LCH",
+          "UpgradeEffectBones": [
+            "Back_Upgrade"
           ],
-          "Icon": "sre",
-          "Prerequisite": "EnhancedSensors"
+          "BuildCostEnergy": 1500000,
+          "BuildTime": 20160,
+          "Name": "Personal Teleporter",
+          "MaintenanceConsumptionPerSecondEnergy": 10000,
+          "UpgradeUnitAmbientBones": [
+            "Torso"
+          ],
+          "BuildCostMass": 15000,
+          "Icon": "pqt"
+        },
+        "RapidFire": {
+          "Slot": "RCH",
+          "UpgradeEffectBones": [
+            "Back_Upgrade"
+          ],
+          "BuildCostEnergy": 12500,
+          "BuildTime": 5040,
+          "Icon": "cba",
+          "Name": "Rapid Fire",
+          "BuildCostMass": 1250,
+          "NewMaxRadius": 35,
+          "UpgradeUnitAmbientBones": [
+            "Torso"
+          ],
+          "NewDamageRadiusMod": 1.5,
+          "NewRateOfFire": 1.5
         },
         "Overcharge": {
           "BuildTime": 5600,
@@ -110302,21 +109878,18 @@
             "Right_Arm_Barrel"
           ]
         },
-        "ShieldRemove": {
+        "ResourceAllocation": {
           "Slot": "Back",
-          "BuildCostEnergy": 1,
-          "BuildTime": 0.1,
-          "Name": "Remove Personal Shield Generator",
-          "Prerequisite": "Shield",
-          "HideBones": [
-            "Back_Upgrade"
+          "ProductionPerSecondMass": 10,
+          "BuildCostEnergy": 90000,
+          "BuildTime": 8400,
+          "Name": "Resource Allocation System",
+          "Icon": "ras",
+          "UpgradeUnitAmbientBones": [
+            "XSL0301"
           ],
-          "Icon": "sp",
-          "BuildCostMass": 1,
-          "RemoveEnhancements": [
-            "Shield",
-            "ShieldRemove"
-          ]
+          "ProductionPerSecondEnergy": 1000,
+          "BuildCostMass": 4500
         },
         "DamageStabilization": {
           "Slot": "Back",
@@ -110330,26 +109903,28 @@
           "BuildCostEnergy": 35000,
           "BuildTime": 5600,
           "Name": "Nano-Repair System",
-          "NewHealth": 21000,
-          "BuildCostMass": 2350,
+          "NewHealth": 7500,
+          "BuildCostMass": 2000,
           "UpgradeUnitAmbientBones": [
             "Torso"
           ],
           "Icon": "dss",
-          "NewRegenRate": 150
+          "NewRegenRate": 175
         },
-        "OverchargeRemove": {
-          "BuildTime": 0.1,
-          "BuildCostMass": 1,
-          "Name": "Remove Overcharge",
+        "SensorRangeEnhancer": {
+          "NewRadarRadius": 90,
+          "NewOmniRadius": 40,
           "Slot": "LCH",
-          "BuildCostEnergy": 1,
-          "RemoveEnhancements": [
-            "Overcharge",
-            "OverchargeRemove"
+          "BuildCostEnergy": 20000,
+          "BuildTime": 3360,
+          "Name": "Enhanced Sensor System",
+          "MaintenanceConsumptionPerSecondEnergy": 50,
+          "Icon": "sre",
+          "UpgradeUnitAmbientBones": [
+            "XSL0301"
           ],
-          "Icon": "oc",
-          "Prerequisite": "Overcharge"
+          "BuildCostMass": 300,
+          "NewVisionRadius": 40
         },
         "EngineeringThroughputRemove": {
           "BuildTime": 0.1,
@@ -110369,19 +109944,19 @@
         "TeleportMassMod": 0,
         "StorageMass": 275,
         "MaxBuildDistance": 10,
-        "ProductionPerSecondMass": 3,
+        "ProductionPerSecondMass": 1,
         "BuildableCategory": [
           "BUILTBYTIER3ENGINEER SERAPHIM"
         ],
-        "BuildCostEnergy": 30200,
+        "BuildCostEnergy": 25700,
         "TeleportEnergyMod": 5.42,
         "BuildTime": 10080,
         "NaturalProducer": true,
-        "BuildCostMass": 2400,
+        "BuildCostMass": 2050,
         "BuildRate": 56,
         "StorageEnergy": 500,
         "TeleportTimeMod": 0.0001,
-        "ProductionPerSecondEnergy": 300,
+        "ProductionPerSecondEnergy": 20,
         "UseVariableTeleportCosts": true
       },
       "AI": {
@@ -110393,7 +109968,7 @@
       "LifeBarOffset": 0.4,
       "Description": "Support Armored Command Unit",
       "Physics": {
-        "TurnRate": 130,
+        "TurnRate": 120,
         "MaxSteerForce": 12,
         "MeshExtentsX": 1.25,
         "DragCoefficient": 0.2,
@@ -110420,9 +109995,9 @@
       "Defense": {
         "ArmorType": "Normal",
         "SurfaceThreatLevel": 40,
-        "Health": 14000,
+        "Health": 14500,
         "EconomyThreatLevel": 1046,
-        "MaxHealth": 14000,
+        "MaxHealth": 14500,
         "RegenRate": 25
       },
       "Audio": {
@@ -110816,94 +110391,9 @@
         },
         {
           "UseFiringSolutionInsteadOfAimBone": true,
-          "TurretYawRange": 20,
-          "RateOfFire": 10,
-          "ProjectilesPerOnFire": 1,
-          "TurretYaw": 0,
-          "RackBones": [
-            {
-              "MuzzleBones": [
-                "Turret_Muzzle_01"
-              ],
-              "RackBone": "Turret_Barrel_01"
-            },
-            {
-              "MuzzleBones": [
-                "Turret_Muzzle_02"
-              ],
-              "RackBone": "Turret_Barrel_02"
-            }
-          ],
-          "Damage": 70,
-          "DamageType": "Normal",
-          "Audio": {
-            "Fire": {
-              "LodCutoff": "Weapon_LodCutoff",
-              "Bank": "XSA_Weapon",
-              "Cue": "XSA0203_Phasic_Autogun_Hvy"
-            }
-          },
-          "TurretPitch": 0,
-          "AutoInitiateAttackCommand": false,
-          "DisplayName": "Medusa",
-          "TurretPitchSpeed": 90,
-          "TurretBoneYaw": "Turret",
-          "RackSalvoSize": 1,
-          "RangeCategory": "UWRC_DirectFire",
-          "Label": "MedusaGun",
-          "LeadTarget": true,
-          "AboveWaterTargetsOnly": true,
-          "RackSlavedToTurret": false,
-          "WeaponCategory": "Direct Fire",
-          "FiringRandomness": 0,
-          "ProjectileLifetimeUsesMultiplier": 1.3,
-          "TurretYawSpeed": 60,
-          "MaxRadius": 25,
-          "ProjectileId": "/projectiles/SACUHeavyPhasicAutogun02/SACUHeavyPhasicAutogun02_proj.bp",
-          "PrefersPrimaryWeaponTarget": true,
-          "MuzzleVelocity": 25,
-          "RackFireTogether": false,
-          "RackSalvoChargeTime": 0,
-          "TurretBoneMuzzle": "Turret_Muzzle_01",
-          "MuzzleSalvoSize": 4,
-          "RackRecoilDistance": 0,
-          "FireTargetLayerCapsTable": {
-            "Water": "Land|Water|Seabed",
-            "Land": "Land|Water|Seabed",
-            "Seabed": "Land|Water|Seabed"
-          },
-          "Turreted": true,
-          "NotExclusive": true,
-          "NoPause": true,
-          "MuzzleSalvoDelay": 0,
-          "AimsStraightOnDisable": false,
-          "TargetRestrictDisallow": "UNTARGETABLE",
-          "RackReloadTimeout": 0.1,
-          "RackSalvoReloadTime": 0,
-          "TargetPriorities": [
-            "EXPERIMENTAL",
-            "SUBCOMMANDER",
-            "TECH1 MOBILE",
-            "TECH2 MOBILE",
-            "TECH3 MOBILE",
-            "(STRUCTURE * DEFENSE - ANTIMISSILE)",
-            "ALLUNITS"
-          ],
-          "CollideFriendly": false,
-          "AboveWaterFireOnly": true,
-          "BallisticArc": "RULEUBA_LowArc",
-          "FiringTolerance": 2,
-          "TurretPitchRange": 160,
-          "TurretDualManipulators": false,
-          "TurretBonePitch": "Turret",
-          "RackSalvoFiresAfterCharge": false,
-          "MinRadius": 1
-        },
-        {
-          "UseFiringSolutionInsteadOfAimBone": true,
           "Label": "OverCharge",
           "EnabledByEnhancement": "Overcharge",
-          "RateOfFire": 0.16666666666667,
+          "RateOfFire": 0.18867924528302,
           "TurretYaw": 0,
           "DamageFriendly": false,
           "RackBones": [
@@ -110914,7 +110404,7 @@
               "RackBone": "Right_Arm"
             }
           ],
-          "Damage": 8000,
+          "Damage": 15000,
           "DamageType": "Overcharge",
           "Audio": {
             "Fire": {
@@ -110924,16 +110414,16 @@
             }
           },
           "TurretPitch": 0,
-          "TurretPitchRange": 160,
+          "TurretPitchRange": 60,
           "DisplayName": "Light Overcharge Cannon",
-          "TurretPitchSpeed": 90,
+          "TurretPitchSpeed": 30,
           "TurretBoneYaw": "Torso",
           "RackSalvoSize": 1,
           "RangeCategory": "UWRC_DirectFire",
           "ManualFire": true,
           "AboveWaterTargetsOnly": true,
           "RackSlavedToTurret": false,
-          "EnergyRequired": 4000,
+          "EnergyRequired": 7500,
           "OverChargeWeapon": true,
           "MuzzleSalvoSize": 1,
           "TargetPriorities": [
@@ -110952,7 +110442,7 @@
           "RackSalvoChargeTime": 0,
           "TurretBoneMuzzle": "Right_Arm_Muzzle",
           "WeaponUnpacks": false,
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 110,
           "FireTargetLayerCapsTable": {
             "Water": "Land|Water|Seabed",
             "Land": "Land|Water|Seabed",
@@ -110973,7 +110463,7 @@
           "SlavedToBody": false,
           "Overcharge": {
             "energyMult": 0.9,
-            "maxDamage": 8000,
+            "maxDamage": 15000,
             "minDamage": 1250,
             "commandDamage": 400,
             "structureDamage": 800
@@ -110998,7 +110488,7 @@
               "RackBone": "Right_Arm"
             }
           ],
-          "Damage": 8000,
+          "Damage": 15000,
           "DamageType": "Overcharge",
           "Audio": {
             "Fire": {
@@ -111016,7 +110506,7 @@
           "RangeCategory": "UWRC_DirectFire",
           "AboveWaterTargetsOnly": true,
           "RackSlavedToTurret": false,
-          "EnergyRequired": 4000,
+          "EnergyRequired": 7500,
           "RackRecoilDistance": -0.5,
           "TargetPriorities": [
             "MOBILE EXPERIMENTAL",
@@ -111041,7 +110531,7 @@
             "Seabed": "Land|Water|Seabed"
           },
           "BallisticArc": "RULEUBA_None",
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 110,
           "FiringTolerance": 2,
           "MuzzleSalvoDelay": 0,
           "ProjectileLifetimeUsesMultiplier": 2,
@@ -111055,7 +110545,7 @@
           "SlavedToBody": false,
           "Overcharge": {
             "energyMult": 0.9,
-            "maxDamage": 8000,
+            "maxDamage": 15000,
             "minDamage": 1250,
             "commandDamage": 400,
             "structureDamage": 800
@@ -111489,7 +110979,7 @@
       },
       "StrategicIconSortPriority": 85,
       "AI": {
-        "GuardScanRadius": 65
+        "GuardScanRadius": 45
       },
       "Transport": {
         "TransportClass": 3
@@ -111511,7 +111001,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SERAPHIM",
-        "SNIPEMODE",
         "SUBMERSIBLE",
         "TECH3",
         "VISIBLETORECON",
@@ -112694,7 +112183,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SERAPHIM",
-        "SNIPEMODE",
         "SNIPER",
         "TECH3",
         "VISIBLETORECON",
@@ -113140,7 +112628,6 @@
         "SERAPHIM",
         "SHOWATTACKRETICLE",
         "SILO",
-        "SNIPEMODE",
         "TECH3",
         "VISIBLETORECON",
         null
@@ -116343,7 +115830,6 @@
         "SELECTABLE",
         "SERAPHIM",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH3",
         "VISIBLETORECON",
         null
@@ -118203,7 +117689,6 @@
         "SERAPHIM",
         "SHOWATTACKRETICLE",
         "SIZE16",
-        "SNIPEMODE",
         "SORTSTRATEGIC",
         "STRATEGIC",
         "STRUCTURE",
@@ -119776,7 +119261,6 @@
     {
       "Categories": [
         "AIR",
-        "ANTIAIR",
         "BOMBER",
         "BUILTBYTIER3COMMANDER",
         "BUILTBYTIER3ENGINEER",

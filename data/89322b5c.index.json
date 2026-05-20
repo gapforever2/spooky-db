@@ -1,5 +1,5 @@
 {
-  "version": "12",
+  "version": "13",
   "units": [
     {
       "Categories": [
@@ -483,7 +483,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "SUBMERSIBLE",
         "T1SUBMARINE",
         "TECH1",
@@ -783,7 +782,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH1",
         "UEF",
         "VISIBLETORECON",
@@ -886,7 +884,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "SONAR",
         "TECH1",
         "UEF",
@@ -1024,7 +1021,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH1",
         "UEF",
         "VISIBLETORECON",
@@ -1513,7 +1509,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH1",
         "UEF",
         "VISIBLETORECON",
@@ -1802,20 +1797,6 @@
           "BuildCostMass": 800,
           "NewMaxRadius": 30
         },
-        "RegenUEF": {
-          "ShieldSize": 3,
-          "BuildCostEnergy": 70000,
-          "BuildTime": 2100,
-          "ShieldRegenRate": 100,
-          "Icon": "dse",
-          "Slot": "Back",
-          "MaintenanceConsumptionPerSecondEnergy": 250,
-          "ShieldRegenStartTime": 0,
-          "BuildCostMass": 2100,
-          "ShieldRechargeTime": 60,
-          "Name": "Personal Shield Regen",
-          "ShieldMaxHealth": 19000
-        },
         "ShieldGeneratorFieldUEF": {
           "ShieldSize": 20,
           "BuildCostEnergy": 45000,
@@ -2017,7 +1998,7 @@
           "MuzzleSalvoSize": 1,
           "MuzzleSalvoDelay": 0,
           "ProjectileLifetimeUsesMultiplier": 2,
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 100,
           "TurretYawRange": 180,
           "FiringTolerance": 2,
           "MaxRadius": 22
@@ -2040,7 +2021,7 @@
           "TurretPitchSpeed": 30,
           "ManualFire": true,
           "MuzzleSalvoSize": 1,
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 100,
           "MaxRadius": 22,
           "ProjectileId": "/projectiles/TDFOverCharge01/TDFOverCharge01_proj.bp",
           "MuzzleVelocity": 25,
@@ -2076,7 +2057,7 @@
           "MuzzleVelocity": 25,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 100,
           "FiringTolerance": 2,
           "RackSalvoReloadTime": 0,
           "MuzzleSalvoDelay": 0,
@@ -2197,7 +2178,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
         "TECH1",
@@ -2388,7 +2368,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
         "TECH1",
@@ -2757,7 +2736,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH2",
         "UEF",
         "VISIBLETORECON",
@@ -3029,7 +3007,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH2",
         "UEF",
         "VISIBLETORECON",
@@ -3231,7 +3208,6 @@
         "PRODUCTFA",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH2",
         "UEF",
         "VISIBLETORECON",
@@ -3450,7 +3426,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH2",
         "TRANSPORTATION",
         "TRANSPORTFOCUS",
@@ -3472,7 +3447,7 @@
       "BuildIconSortPriority": 30,
       "StrategicIconName": "icon_gunship2_directfire",
       "Physics": {
-        "Elevation": 10,
+        "Elevation": 18,
         "FuelRechargeRate": 5,
         "MaxSpeed": 0.5,
         "FuelUseTime": 400
@@ -3567,7 +3542,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH2",
         "UEF",
         "VISIBLETORECON",
@@ -3836,7 +3810,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SILO",
-        "SNIPEMODE",
         "TECH2",
         "UEF",
         "VISIBLETORECON",
@@ -4063,7 +4036,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH2",
         "TRANSPORTATION",
         "TRANSPORTBUILTBYTIER2FACTORY",
@@ -4935,7 +4907,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SILO",
-        "SNIPEMODE",
         "TECH2",
         "UEF",
         "VISIBLETORECON",
@@ -5098,7 +5069,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
         "TECH2",
@@ -5371,7 +5341,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STEALTH",
         "STRUCTURE",
@@ -5475,7 +5444,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTSTRATEGIC",
         "STRATEGIC",
         "STRUCTURE",
@@ -6057,14 +6025,15 @@
         "OVERLAYCOUNTERINTEL",
         "OVERLAYDIRECTFIRE",
         "OVERLAYOMNI",
+        "OVERLAYRADAR",
         "PATROLHELPER",
         "PODSTAGINGPLATFORM",
         "PRODUCTSC1",
+        "RADAR",
         "RECLAIM",
         "REPAIR",
         "SELECTABLE",
         "SHOWQUEUE",
-        "SNIPEMODE",
         "SUBCOMMANDER",
         "TECH3",
         "UEF",
@@ -6074,27 +6043,18 @@
       ],
       "StrategicIconName": "icon_subcommander",
       "Enhancements": {
-        "AdvancedCoolingUpgrade": {
-          "Slot": "RCH",
-          "BuildCostEnergy": 10000,
-          "BuildTime": 3360,
-          "Name": "Energy Accelerator",
-          "Icon": "col",
-          "NewRateOfFire": 2,
-          "BuildCostMass": 1000
-        },
         "Shield": {
           "ShieldSize": 3,
           "BuildCostEnergy": 39800,
           "BuildTime": 6720,
-          "ShieldRegenRate": 100,
+          "ShieldRegenRate": 75,
           "Icon": "psg",
           "Slot": "Back",
-          "ShieldRegenStartTime": 1,
-          "MaintenanceConsumptionPerSecondEnergy": 270,
+          "ShieldRegenStartTime": 3,
+          "MaintenanceConsumptionPerSecondEnergy": 320,
           "BuildCostMass": 2000,
           "Name": "Personal Shield Generator",
-          "ShieldRechargeTime": 170,
+          "ShieldRechargeTime": 175,
           "ShieldMaxHealth": 26000
         },
         "RadarJammer": {
@@ -6102,38 +6062,45 @@
           "BuildCostEnergy": 8000,
           "BuildTime": 1120,
           "Name": "Radar Jammer",
-          "MaintenanceConsumptionPerSecondEnergy": 100,
+          "MaintenanceConsumptionPerSecondEnergy": 20,
           "BuildCostMass": 300,
           "Icon": "rj"
         },
-        "DoubleGun": {
-          "BuildTime": 3360,
-          "BuildCostMass": 2100,
-          "Name": "Double Gun",
-          "Slot": "LCH",
-          "BuildCostEnergy": 60000,
-          "Icon": "dga"
-        },
-        "Pod": {
-          "BuildTime": 840,
-          "BuildCostMass": 350,
-          "Name": "C-D3 Engineering Drone",
+        "ShieldGeneratorField": {
+          "ShieldSize": 20,
+          "BuildCostEnergy": 360800,
+          "ShieldRegenRate": 150,
+          "Icon": "sgf",
+          "MaintenanceConsumptionPerSecondEnergy": 1020,
+          "ShieldRechargeTime": 215,
           "Slot": "Back",
-          "BuildCostEnergy": 8500,
-          "Icon": "ed"
+          "ShieldRegenStartTime": 5,
+          "Name": "Shield Generator Field",
+          "ShieldMaxHealth": 52000,
+          "BuildCostMass": 4500,
+          "BuildTime": 10080
         },
         "HighExplosiveOrdnance": {
-          "Slot": "RCH",
+          "Slot": "LCH",
           "BuildCostEnergy": 15000,
-          "BuildTime": 1680,
-          "Icon": "heo",
+          "NewDamageRadius": 2,
           "Name": "Heavy Plasma Refractor",
+          "Icon": "heo",
           "NewMaxRadius": 35,
           "BuildCostMass": 800,
-          "NewDamageRadius": 2
+          "BuildTime": 1680
+        },
+        "AdvancedCoolingUpgrade": {
+          "BuildTime": 3360,
+          "BuildCostMass": 1000,
+          "Name": "Energy Accelerator",
+          "Slot": "RCH",
+          "BuildCostEnergy": 10000,
+          "Icon": "col",
+          "NewRateOfFire": 2
         },
         "ResourceAllocation": {
-          "Slot": "RCH",
+          "Slot": "LCH",
           "ProductionPerSecondMass": 10,
           "BuildCostEnergy": 90000,
           "BuildTime": 8400,
@@ -6142,28 +6109,23 @@
           "BuildCostMass": 4500,
           "ProductionPerSecondEnergy": 1000
         },
-        "ShieldGeneratorField": {
-          "ShieldSize": 20,
-          "BuildCostEnergy": 360800,
-          "ShieldRegenRate": 150,
-          "Icon": "sgf",
-          "MaintenanceConsumptionPerSecondEnergy": 1000,
-          "ShieldRechargeTime": 215,
-          "Slot": "Back",
-          "ShieldRegenStartTime": 1,
-          "Name": "Shield Generator Field",
-          "ShieldMaxHealth": 52000,
-          "BuildCostMass": 3500,
-          "BuildTime": 10080
+        "Pod": {
+          "BuildTime": 840,
+          "BuildCostMass": 350,
+          "Name": "C-D3 Engineering Drone",
+          "Slot": "RCH",
+          "BuildCostEnergy": 8500,
+          "Icon": "ed"
         },
         "SensorRangeEnhancer": {
-          "NewOmniRadius": 80,
-          "Slot": "LCH",
+          "NewOmniRadius": 35,
           "BuildCostEnergy": 20000,
           "BuildTime": 3360,
           "Name": "Enhanced Sensor System",
+          "MaintenanceConsumptionPerSecondEnergy": 50,
           "Icon": "sre",
-          "BuildCostMass": 600
+          "BuildCostMass": 300,
+          "Slot": "LCH"
         }
       },
       "Id": "UEL0301",
@@ -6180,7 +6142,7 @@
         "RegenRate": 10
       },
       "Physics": {
-        "TurnRate": 130,
+        "TurnRate": 120,
         "MaxSpeed": 2
       },
       "General": {
@@ -6204,13 +6166,14 @@
           "Engineering Suite",
           "Not Capturable",
           "Omni Sensor",
+          "Radar",
           "Volatile"
         ]
       },
       "Economy": {
         "StorageMass": 275,
         "ProductionPerSecondMass": 1,
-        "BuildCostEnergy": 25200,
+        "BuildCostEnergy": 25000,
         "BuildTime": 10080,
         "BuildCostMass": 2100,
         "MaintenanceConsumptionPerSecondEnergy": 0,
@@ -6219,37 +6182,6 @@
         "ProductionPerSecondEnergy": 20
       },
       "Weapon": [
-        {
-          "RateOfFire": 0,
-          "TurretYaw": 0,
-          "RackBones": [
-            {
-              "MuzzleBones": [
-                "Arm_Left_Muzzle"
-              ]
-            }
-          ],
-          "Damage": 0,
-          "BeamCollisionDelay": 999,
-          "DamageType": "Normal",
-          "TurretPitch": 0,
-          "TurretPitchRange": 0,
-          "DisplayName": "Sighting System",
-          "TurretPitchSpeed": 0,
-          "ContinuousBeam": false,
-          "WeaponCategory": "Direct Fire",
-          "RackFireTogether": false,
-          "RackSalvoChargeTime": 0,
-          "MuzzleSalvoSize": 0,
-          "MaxRadius": 25,
-          "BeamLifetime": 0,
-          "TurretYawSpeed": 30,
-          "MuzzleSalvoDelay": 0,
-          "ProjectileLifetimeUsesMultiplier": 0,
-          "RackSalvoReloadTime": 0,
-          "FiringTolerance": 2,
-          "TurretYawRange": 0
-        },
         {
           "DamageRadius": 0,
           "RateOfFire": 1,
@@ -6282,44 +6214,6 @@
           "FiringTolerance": 2,
           "TurretYawSpeed": 160,
           "WeaponCategory": "Direct Fire"
-        },
-        {
-          "DamageRadius": 0,
-          "RateOfFire": 2,
-          "ProjectilesPerOnFire": 1,
-          "TurretYaw": 0,
-          "RackBones": [
-            {
-              "MuzzleBones": [
-                "Arm_Right_Muzzle"
-              ]
-            },
-            {
-              "MuzzleBones": [
-                "Arm_Left_Muzzle"
-              ]
-            }
-          ],
-          "Damage": 250,
-          "DamageType": "Normal",
-          "TurretPitch": 0,
-          "TurretPitchRange": 160,
-          "DisplayName": "Double Gun",
-          "TurretPitchSpeed": 90,
-          "MinRadius": 1,
-          "WeaponCategory": "Direct Fire",
-          "ProjectileId": "/projectiles/TDFPlasmaHeavy03/TDFPlasmaHeavy03_proj.bp",
-          "MuzzleVelocity": 25,
-          "RackFireTogether": false,
-          "RackSalvoChargeTime": 0,
-          "TurretYawRange": 360,
-          "MuzzleSalvoDelay": 0,
-          "ProjectileLifetimeUsesMultiplier": 1.3,
-          "RackSalvoReloadTime": 0,
-          "FiringTolerance": 3,
-          "TurretYawSpeed": 160,
-          "MuzzleSalvoSize": 1,
-          "MaxRadius": 25
         },
         {
           "DamageRadius": 10,
@@ -6418,7 +6312,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SILO",
-        "SNIPEMODE",
         "SUBMERSIBLE",
         "TECH3",
         "UEF",
@@ -6763,7 +6656,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH3",
         "UEF",
         "VISIBLETORECON",
@@ -6943,7 +6835,6 @@
         "PRODUCTFA",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH3",
         "UEF",
         "VISIBLETORECON",
@@ -7302,7 +7193,8 @@
       "Economy": {
         "BuildTime": 3840,
         "BuildCostEnergy": 51200,
-        "BuildCostMass": 450
+        "BuildCostMass": 450,
+        "MaintenanceConsumptionPerSecondEnergy": 40
       },
       "Weapon": [
         {
@@ -7358,7 +7250,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH3",
         "UEF",
         "VISIBLETORECON",
@@ -7548,7 +7439,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SILO",
-        "SNIPEMODE",
         "TECH3",
         "UEF",
         "VISIBLETORECON",
@@ -7937,7 +7827,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH3",
         "UEF",
         "VISIBLETORECON",
@@ -7967,7 +7856,7 @@
       },
       "Physics": {
         "TurnRate": 100,
-        "Elevation": 10,
+        "Elevation": 18,
         "MaxSpeed": 10,
         "FuelRechargeRate": 15,
         "FuelUseTime": 800
@@ -8307,7 +8196,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHIELD",
-        "SNIPEMODE",
         "TECH3",
         "TRANSPORTATION",
         "TRANSPORTBUILTBYTIER3FACTORY",
@@ -8668,7 +8556,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
         "TECH3",
@@ -8859,7 +8746,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SIZE16",
-        "SNIPEMODE",
         "SORTSTRATEGIC",
         "STRATEGIC",
         "STRUCTURE",
@@ -10618,7 +10504,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH1",
         "VISIBLETORECON",
         null
@@ -10711,7 +10596,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "SUBMERSIBLE",
         "T1SUBMARINE",
         "TECH1",
@@ -10837,7 +10721,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH1",
         "VISIBLETORECON",
         null
@@ -11111,7 +10994,6 @@
         "RADAR",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "SONAR",
         "TECH1",
         "VISIBLETORECON",
@@ -11246,7 +11128,6 @@
         "PRODUCTFA",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH1",
         "VISIBLETORECON",
         null
@@ -11615,7 +11496,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH1",
         "VISIBLETORECON",
         null
@@ -12090,7 +11970,7 @@
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoSize": 1,
           "ProjectileLifetimeUsesMultiplier": 2,
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 110,
           "TurretYawRange": 180,
           "MuzzleSalvoDelay": 0,
           "RackSalvoReloadTime": 0,
@@ -12117,7 +11997,7 @@
           "ManualFire": true,
           "MaxRadius": 22,
           "ProjectileId": "/projectiles/CDFCannonMolecularOvercharge01/CDFCannonMolecularOvercharge01_proj.bp",
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 110,
           "MuzzleVelocity": 25,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
@@ -12153,7 +12033,7 @@
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoSize": 1,
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 110,
           "TurretYawRange": 180,
           "MuzzleSalvoDelay": 0,
           "ProjectileLifetimeUsesMultiplier": 2,
@@ -12217,7 +12097,7 @@
           "RackSalvoReloadTime": 0,
           "FiringTolerance": 1,
           "TurretYawRange": 30,
-          "TurretYawSpeed": 110,
+          "TurretYawSpeed": 90,
           "MaxRadius": 22
         },
         {
@@ -12276,7 +12156,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
         "TECH1",
@@ -12467,7 +12346,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
         "TECH1",
@@ -12839,7 +12717,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -13086,7 +12963,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -13288,7 +13164,6 @@
         "PRODUCTFA",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "SUBMERSIBLE",
         "T2SUBMARINE",
         "TECH2",
@@ -13403,6 +13278,51 @@
           "MaxRadius": 25
         }
       ]
+    },
+    {
+      "Categories": [
+        "CONSTRUCTION",
+        "CRABEGG",
+        "CYBRAN",
+        "DRAGBUILD",
+        "FACTORY",
+        "LAND",
+        "PRODUCTFA",
+        "RALLYPOINT",
+        "RECLAIMABLE",
+        "SELECTABLE",
+        "SHOWQUEUE",
+        "STRUCTURE",
+        "TECH2",
+        "VISIBLETORECON",
+        null
+      ],
+      "Description": "Crab Egg (Flak)",
+      "StrategicIconName": "icon_structure_generic",
+      "General": {
+        "FactionName": "Cybran",
+        "Icon": "land",
+        "Classification": "RULEUC_Factory"
+      },
+      "Economy": {
+        "BuildTime": 500,
+        "BuildCostMass": 320,
+        "BuildCostEnergy": 1600
+      },
+      "Intel": {
+        "VisionRadius": 4
+      },
+      "Defense": {
+        "Health": 100
+      },
+      "Id": "XRL0004",
+      "Wreckage": {
+        "HealthMult": 0.9,
+        "MassMult": 0.9
+      },
+      "Physics": {},
+      "Display": {},
+      "BuildIconSortPriority": 24
     },
     {
       "Categories": [
@@ -13586,7 +13506,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         "WEAKANTIAIR",
@@ -13783,7 +13702,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -13811,7 +13729,7 @@
       "Physics": {
         "FuelRechargeRate": 5,
         "MaxSpeed": 0.5,
-        "Elevation": 10,
+        "Elevation": 18,
         "FuelUseTime": 400
       },
       "Id": "URA0203",
@@ -14022,7 +13940,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -14212,51 +14129,6 @@
     },
     {
       "Categories": [
-        "CONSTRUCTION",
-        "CRABEGG",
-        "CYBRAN",
-        "DRAGBUILD",
-        "FACTORY",
-        "LAND",
-        "PRODUCTFA",
-        "RALLYPOINT",
-        "RECLAIMABLE",
-        "SELECTABLE",
-        "SHOWQUEUE",
-        "STRUCTURE",
-        "TECH2",
-        "VISIBLETORECON",
-        null
-      ],
-      "Description": "Crab Egg (Flak)",
-      "StrategicIconName": "icon_structure_generic",
-      "General": {
-        "Icon": "land",
-        "FactionName": "Cybran",
-        "Classification": "RULEUC_Factory"
-      },
-      "Economy": {
-        "BuildTime": 400,
-        "BuildCostMass": 160,
-        "BuildCostEnergy": 800
-      },
-      "Defense": {
-        "Health": 10
-      },
-      "Id": "XRL0004",
-      "Wreckage": {
-        "HealthMult": 0.9,
-        "MassMult": 0.9
-      },
-      "Intel": {
-        "VisionRadius": 4
-      },
-      "Display": {},
-      "Physics": {},
-      "BuildIconSortPriority": 30
-    },
-    {
-      "Categories": [
         "AIR",
         "CANNOTUSEAIRSTAGING",
         "CANTRANSPORTCOMMANDER",
@@ -14267,7 +14139,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH2",
         "TRANSPORTATION",
         "TRANSPORTBUILTBYTIER2FACTORY",
@@ -14474,7 +14345,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SILO",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -15318,7 +15188,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
         "TECH2",
@@ -15516,7 +15385,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STEALTH",
         "STRUCTURE",
@@ -15619,7 +15487,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTSTRATEGIC",
         "STRATEGIC",
         "STRUCTURE",
@@ -16452,15 +16319,16 @@
         "LAND",
         "MASSPRODUCTION",
         "MOBILE",
+        "OVERLAYRADAR",
         "OVERLAYDIRECTFIRE",
         "OVERLAYOMNI",
         "PATROLHELPER",
         "PRODUCTSC1",
+        "RADAR",
         "RECLAIM",
         "REPAIR",
         "SELECTABLE",
         "SHOWQUEUE",
-        "SNIPEMODE",
         "SUBCOMMANDER",
         "TECH3",
         "USEBUILDPRESETS",
@@ -16473,7 +16341,7 @@
           "BuildTime": 1680,
           "BuildCostMass": 800,
           "Name": "Disintegrator Amplifier",
-          "Slot": "RCH",
+          "Slot": "LCH",
           "BuildCostEnergy": 12000,
           "Icon": "fc",
           "NewMaxRadius": 35
@@ -16482,19 +16350,19 @@
           "Slot": "Back",
           "BuildCostEnergy": 176200,
           "BuildTime": 13440,
-          "Icon": "cfs",
           "Name": "Personal Cloaking Generator",
-          "NewHealth": 15500,
           "MaintenanceConsumptionPerSecondEnergy": 1520,
-          "BuildCostMass": 3600
+          "Icon": "cfs",
+          "BuildCostMass": 3600,
+          "NewHealth": 15500
         },
         "NaniteMissileSystem": {
           "BuildTime": 2240,
-          "Name": "Nanite Missile System",
-          "Slot": "LCH",
           "BuildCostMass": 800,
-          "Icon": "nms",
-          "BuildCostEnergy": 20000
+          "Name": "Nanite Missile System",
+          "Slot": "Back",
+          "BuildCostEnergy": 20000,
+          "Icon": "nms"
         },
         "Switchback": {
           "Slot": "RCH",
@@ -16504,14 +16372,6 @@
           "Icon": "ses",
           "BuildCostMass": 560,
           "BuildCostEnergy": 12800
-        },
-        "DisintigratorGun": {
-          "BuildTime": 5040,
-          "Name": "Disintegrator",
-          "Slot": "LCH",
-          "BuildCostMass": 2300,
-          "Icon": "emp",
-          "BuildCostEnergy": 70000
         },
         "StealthGenerator": {
           "BuildTime": 1120,
@@ -16527,22 +16387,22 @@
           "BuildCostEnergy": 33600,
           "BuildTime": 6720,
           "Name": "Nano-Repair System",
-          "NewHealth": 19500,
-          "BuildCostMass": 2000,
+          "NewHealth": 10000,
+          "BuildCostMass": 2300,
           "Icon": "srs",
-          "NewRegenRate": 180
+          "NewRegenRate": 200
         },
         "RapidFire": {
+          "BuildTime": 1680,
+          "BuildCostMass": 900,
+          "Name": "Cooling module",
           "Slot": "RCH",
           "BuildCostEnergy": 8000,
-          "BuildTime": 1680,
-          "Name": "Cooling module",
           "Icon": "saa",
-          "BuildCostMass": 900,
           "NewRateOfFire": 2
         },
         "ResourceAllocation": {
-          "Slot": "Back",
+          "Slot": "LCH",
           "ProductionPerSecondMass": 10,
           "BuildCostEnergy": 90000,
           "BuildTime": 8400,
@@ -16550,6 +16410,16 @@
           "Icon": "ras",
           "ProductionPerSecondEnergy": 1000,
           "BuildCostMass": 4500
+        },
+        "SensorRangeEnhancer": {
+          "NewOmniRadius": 35,
+          "Slot": "LCH",
+          "BuildCostEnergy": 20000,
+          "BuildTime": 3360,
+          "Name": "Enhanced Sensor System",
+          "MaintenanceConsumptionPerSecondEnergy": 50,
+          "Icon": "rads",
+          "BuildCostMass": 300
         }
       },
       "Id": "URL0301",
@@ -16562,7 +16432,7 @@
       },
       "Description": "Support Armored Command Unit",
       "Defense": {
-        "Health": 14500,
+        "Health": 14000,
         "RegenRate": 20
       },
       "General": {
@@ -16571,7 +16441,7 @@
         "Classification": "RULEUC_Engineer"
       },
       "Physics": {
-        "TurnRate": 130,
+        "TurnRate": 120,
         "MaxSpeed": 2
       },
       "Wreckage": {
@@ -16590,6 +16460,7 @@
           "Engineering Suite",
           "Not Capturable",
           "Omni Sensor",
+          "Radar",
           "Volatile"
         ]
       },
@@ -16618,52 +16489,13 @@
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoSize": 1,
-          "ProjectileLifetimeUsesMultiplier": 1.4,
           "MuzzleSalvoDelay": 0,
+          "ProjectileLifetimeUsesMultiplier": 1.4,
           "TurretYawSpeed": 160,
           "TurretYawRange": 360,
-          "FiringTolerance": 2,
           "RackSalvoReloadTime": 0,
+          "FiringTolerance": 2,
           "MaxRadius": 25
-        },
-        {
-          "FiringRandomness": 0.2,
-          "RateOfFire": 0.33333333333333,
-          "ProjectilesPerOnFire": 1,
-          "RackBones": [
-            {
-              "MuzzleBones": [
-                "Muzzle_Left"
-              ]
-            }
-          ],
-          "Damage": 600,
-          "DamageType": "Normal",
-          "TurretPitch": 0,
-          "TurretPitchRange": 160,
-          "DisplayName": "Disintigrator Weapon",
-          "TurretPitchSpeed": 90,
-          "Buffs": [
-            {},
-            {},
-            {},
-            {}
-          ],
-          "MaxRadius": 25,
-          "ProjectileId": "/projectiles/CDFBolter03/CDFBolter03_proj.bp",
-          "TurretYawSpeed": 60,
-          "MuzzleVelocity": 29,
-          "RackFireTogether": false,
-          "RackSalvoChargeTime": 0,
-          "MuzzleSalvoSize": 3,
-          "ProjectileLifetimeUsesMultiplier": 1.3,
-          "TurretYaw": 0,
-          "MuzzleSalvoDelay": 0.2,
-          "RackSalvoReloadTime": 0,
-          "DamageRadius": 3,
-          "FiringTolerance": 2,
-          "TurretYawRange": 20,
-          "WeaponCategory": "Direct Fire"
         },
         {
           "DamageRadius": 1.5,
@@ -16811,28 +16643,29 @@
       "Description": "Crab Egg (Engineer)",
       "StrategicIconName": "icon_structure_generic",
       "General": {
-        "Icon": "land",
         "FactionName": "Cybran",
+        "Icon": "amph",
         "Classification": "RULEUC_Factory"
       },
       "Economy": {
-        "BuildTime": 780,
+        "BuildTime": 500,
         "BuildCostMass": 312,
         "BuildCostEnergy": 1560
       },
+      "Intel": {
+        "VisionRadius": 4
+      },
       "Defense": {
-        "Health": 10
+        "Health": 100,
+        "RegenRate": 2
       },
       "Id": "XRL0002",
       "Wreckage": {
         "HealthMult": 0.9,
         "MassMult": 0.9
       },
-      "Intel": {
-        "VisionRadius": 4
-      },
-      "Display": {},
       "Physics": {},
+      "Display": {},
       "BuildIconSortPriority": 10
     },
     {
@@ -17103,7 +16936,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SILO",
-        "SNIPEMODE",
         "SUBMERSIBLE",
         "TECH3",
         "VISIBLETORECON",
@@ -17285,28 +17117,29 @@
       "Description": "Crab Egg (Brick)",
       "StrategicIconName": "icon_structure_generic",
       "General": {
-        "Icon": "amph",
         "FactionName": "Cybran",
+        "Icon": "amph",
         "Classification": "RULEUC_Factory"
       },
       "Economy": {
-        "BuildTime": 2400,
+        "BuildTime": 2900,
         "BuildCostMass": 1280,
-        "BuildCostEnergy": 17600
+        "BuildCostEnergy": 14000
+      },
+      "Intel": {
+        "VisionRadius": 4
       },
       "Defense": {
-        "Health": 10
+        "Health": 100,
+        "RegenRate": 2
       },
       "Id": "XRL0003",
       "Wreckage": {
         "HealthMult": 0.9,
         "MassMult": 0.9
       },
-      "Intel": {
-        "VisionRadius": 4
-      },
-      "Display": {},
       "Physics": {},
+      "Display": {},
       "BuildIconSortPriority": 20
     },
     {
@@ -17805,7 +17638,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH3",
         "VISIBLETORECON",
         null
@@ -17905,7 +17737,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH3",
         "VISIBLETORECON",
         "WEAKANTIAIR",
@@ -18125,28 +17956,29 @@
       "Description": "Crab Egg (Artillery)",
       "StrategicIconName": "icon_structure_generic",
       "General": {
-        "Icon": "land",
         "FactionName": "Cybran",
+        "Icon": "land",
         "Classification": "RULEUC_Factory"
       },
       "Economy": {
-        "BuildTime": 2400,
+        "BuildTime": 1200,
         "BuildCostMass": 800,
         "BuildCostEnergy": 8000
       },
+      "Intel": {
+        "VisionRadius": 4
+      },
       "Defense": {
-        "Health": 10
+        "Health": 100,
+        "RegenRate": 2
       },
       "Id": "XRL0005",
       "Wreckage": {
         "HealthMult": 0.9,
         "MassMult": 0.9
       },
-      "Intel": {
-        "VisionRadius": 4
-      },
-      "Display": {},
       "Physics": {},
+      "Display": {},
       "BuildIconSortPriority": 30
     },
     {
@@ -18724,7 +18556,6 @@
         "PRODUCTFA",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH3",
         "VISIBLETORECON",
         "WEAKANTIAIR",
@@ -18753,7 +18584,7 @@
       },
       "Physics": {
         "TurnRate": 100,
-        "Elevation": 10,
+        "Elevation": 18,
         "MaxSpeed": 10,
         "FuelRechargeRate": 15,
         "FuelUseTime": 800
@@ -19209,7 +19040,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STEALTH",
         "STRUCTURE",
@@ -19316,7 +19146,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SIZE16",
-        "SNIPEMODE",
         "SORTSTRATEGIC",
         "STRATEGIC",
         "STRUCTURE",
@@ -19745,7 +19574,7 @@
         "BuildTime": 1400,
         "BuildCostEnergy": 14400,
         "BuildCostMass": 1200,
-        "MaintenanceConsumptionPerSecondEnergy": 600
+        "MaintenanceConsumptionPerSecondEnergy": 1200
       },
       "Intel": {
         "SonarRadius": 448,
@@ -20268,16 +20097,16 @@
         "LAND",
         "LOWSELECTPRIO",
         "MOBILE",
-        "NEEDMOBILEBUILD",
         "OVERLAYANTIAIR",
         "OVERLAYANTINAVY",
+        "NEEDMOBILEBUILD",
         "OVERLAYDEFENSE",
+        "OVERLAYINDIRECTFIRE",
         "OVERLAYDIRECTFIRE",
         "OVERLAYSONAR",
         "PRODUCTFA",
         "SELECTABLE",
         "SHOWQUEUE",
-        "SNIPEMODE",
         "SNIPER",
         "SONAR",
         "VISIBLETORECON",
@@ -20295,13 +20124,13 @@
       "Description": "Experimental Megabot",
       "Economy": {
         "BuildTime": 60625,
-        "BuildRate": 45,
+        "BuildRate": 220,
         "BuildCostEnergy": 437500,
         "BuildCostMass": 37500
       },
       "Defense": {
         "Health": 110000,
-        "RegenRate": 0.5
+        "RegenRate": 0
       },
       "General": {
         "UnitName": "Megalith",
@@ -20310,8 +20139,8 @@
         "Classification": "RULEUC_MilitaryVehicle"
       },
       "Physics": {
-        "MaxSpeed": 2.2,
-        "TurnRate": 36
+        "MaxSpeed": 2,
+        "TurnRate": 45
       },
       "Wreckage": {
         "HealthMult": 0.9,
@@ -20487,37 +20316,38 @@
           "WeaponCategory": "Anti Air"
         },
         {
-          "DamageRadius": 0,
-          "FiringRandomness": 0,
-          "RateOfFire": 0.03003003003003,
-          "ProjectilesPerOnFire": 5,
+          "DamageRadius": 10,
+          "FiringRandomness": 1.3,
+          "RateOfFire": 0.1,
+          "ProjectilesPerOnFire": 1,
           "TurretYaw": 0,
           "RackBones": [
             {
               "MuzzleBones": [
-                "XRL0403"
+                "Missile_Muzzle"
               ]
             }
           ],
-          "Damage": 0,
+          "Damage": 1000,
+          "ProjectileLifetime": 60,
           "DamageType": "Normal",
-          "TurretPitch": 45,
-          "TurretPitchRange": 90,
-          "DisplayName": "Brackman Hack Peg Launcher",
-          "TurretPitchSpeed": 70,
-          "MinRadius": 6,
-          "WeaponCategory": "Artillery",
-          "ProjectileId": "/projectiles/CIFBrackmanHackPegs01/CIFBrackmanHackPegs01_proj.bp",
-          "MuzzleVelocity": 14,
+          "TurretPitch": 16,
+          "TurretPitchRange": 38,
+          "DisplayName": "Megalith heavy artillery",
+          "TurretPitchSpeed": 5,
+          "MinRadius": 40,
+          "MaxRadius": 100,
+          "ProjectileId": "/projectiles/CIFArtilleryProton02/CIFArtilleryProton02_proj.bp",
+          "MuzzleVelocity": 26,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoSize": 1,
           "MuzzleSalvoDelay": 0,
-          "TurretYawSpeed": 70,
-          "TurretYawRange": 45,
-          "FiringTolerance": 0,
+          "TurretYawSpeed": 20,
+          "TurretYawRange": 50,
+          "FiringTolerance": 8,
           "RackSalvoReloadTime": 0,
-          "MaxRadius": 30
+          "WeaponCategory": "Artillery"
         },
         {
           "DamageType": "DeathExplosion",
@@ -20579,7 +20409,7 @@
         "VisionRadius": 46
       },
       "Defense": {
-        "Health": 70000,
+        "Health": 75000,
         "RegenRate": 75
       },
       "Id": "URA0401",
@@ -20665,7 +20495,7 @@
           "MuzzleSalvoDelay": 0.1,
           "RackSalvoReloadTime": 0,
           "FiringTolerance": 120,
-          "RateOfFire": 3.3333333333333,
+          "RateOfFire": 1,
           "TurretPitchRange": 90,
           "MaxRadius": 70,
           "WeaponNumber": 2
@@ -21251,7 +21081,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH1",
         "VISIBLETORECON",
         null
@@ -21344,7 +21173,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "SUBMERSIBLE",
         "T1SUBMARINE",
         "TECH1",
@@ -21799,7 +21627,6 @@
         "RADAR",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "SONAR",
         "TECH1",
         "VISIBLETORECON",
@@ -22226,7 +22053,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH1",
         "VISIBLETORECON",
         null
@@ -22631,7 +22457,7 @@
           "RackSalvoReloadTime": 0,
           "MaxRadius": 22,
           "FiringTolerance": 2,
-          "TurretYawSpeed": 90
+          "TurretYawSpeed": 110
         },
         {
           "RateOfFire": 0.3030303030303,
@@ -22651,7 +22477,7 @@
           "TurretPitchSpeed": 30,
           "ManualFire": true,
           "MuzzleSalvoSize": 1,
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 110,
           "MaxRadius": 22,
           "ProjectileId": "/projectiles/ADFOverCharge01/ADFOverCharge01_proj.bp",
           "MuzzleVelocity": 25,
@@ -22687,7 +22513,7 @@
           "MuzzleVelocity": 25,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 110,
           "FiringTolerance": 2,
           "RackSalvoReloadTime": 0,
           "MuzzleSalvoDelay": 0,
@@ -22794,7 +22620,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
         "TECH1",
@@ -22984,7 +22809,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
         "TECH1",
@@ -23466,7 +23290,6 @@
         "PRODUCTFA",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "SUBMERSIBLE",
         "T2SUBMARINE",
         "TECH2",
@@ -23596,7 +23419,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -24025,7 +23847,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -24051,7 +23872,7 @@
         "Health": 848
       },
       "Physics": {
-        "Elevation": 10,
+        "Elevation": 18,
         "FuelRechargeRate": 5,
         "MaxSpeed": 0.5,
         "FuelUseTime": 400
@@ -24133,7 +23954,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SILO",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -24231,7 +24051,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -24508,7 +24327,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH2",
         "TRANSPORTATION",
         "TRANSPORTBUILTBYTIER2FACTORY",
@@ -25419,7 +25237,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
         "TECH2",
@@ -25610,7 +25427,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STEALTH",
         "STRUCTURE",
@@ -25714,7 +25530,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTSTRATEGIC",
         "STRATEGIC",
         "STRUCTURE",
@@ -26232,15 +26047,16 @@
         "LAND",
         "MASSPRODUCTION",
         "MOBILE",
+        "OVERLAYRADAR",
         "OVERLAYDIRECTFIRE",
         "OVERLAYOMNI",
         "PATROLHELPER",
         "PRODUCTSC1",
+        "RADAR",
         "RECLAIM",
         "REPAIR",
         "SELECTABLE",
         "SHOWQUEUE",
-        "SNIPEMODE",
         "SUBCOMMANDER",
         "TECH3",
         "USEBUILDPRESETS",
@@ -26255,12 +26071,12 @@
           "ShieldRegenRate": 50,
           "Icon": "tsg",
           "Slot": "Back",
-          "ShieldRegenStartTime": 3,
-          "MaintenanceConsumptionPerSecondEnergy": 220,
+          "ShieldRegenStartTime": 2,
+          "MaintenanceConsumptionPerSecondEnergy": 270,
           "BuildCostMass": 2500,
           "Name": "Personal Shield Generator",
           "ShieldRechargeTime": 150,
-          "ShieldMaxHealth": 20000
+          "ShieldMaxHealth": 15000
         },
         "Teleporter": {
           "BuildTime": 20160,
@@ -26269,12 +26085,12 @@
           "MaintenanceConsumptionPerSecondEnergy": 10000,
           "BuildCostEnergy": 1500000,
           "Icon": "pqt",
-          "Slot": "LCH"
+          "Slot": "Back"
         },
         "StabilitySuppressant": {
           "Slot": "RCH",
           "BuildCostEnergy": 12500,
-          "BuildTime": 1680,
+          "BuildTime": 5040,
           "Icon": "ss",
           "Name": "Reacton Refractor",
           "BuildCostMass": 1250,
@@ -26289,6 +26105,19 @@
           "Icon": "sp",
           "BuildCostEnergy": 2500
         },
+        "ShieldHeavy": {
+          "BuildCostEnergy": 50000,
+          "BuildTime": 6720,
+          "ShieldRegenRate": 100,
+          "Icon": "phtsg",
+          "Slot": "Back",
+          "ShieldRegenStartTime": 3,
+          "MaintenanceConsumptionPerSecondEnergy": 420,
+          "BuildCostMass": 2500,
+          "Name": "Heavy Personal Shield Generator",
+          "ShieldRechargeTime": 200,
+          "ShieldMaxHealth": 35000
+        },
         "EngineeringFocusingModule": {
           "Slot": "RCH",
           "NewBuildRate": 112,
@@ -26299,7 +26128,7 @@
           "BuildCostEnergy": 12800
         },
         "ResourceAllocation": {
-          "Slot": "Back",
+          "Slot": "LCH",
           "ProductionPerSecondMass": 10,
           "BuildCostEnergy": 90000,
           "BuildTime": 8400,
@@ -26308,36 +26137,25 @@
           "ProductionPerSecondEnergy": 1000,
           "BuildCostMass": 4500
         },
-        "Redeemer": {
-          "BuildTime": 6720,
-          "Name": "Redeemer",
-          "Slot": "LCH",
-          "BuildCostMass": 2300,
-          "Icon": "rdmr",
-          "BuildCostEnergy": 70000
-        },
         "SystemIntegrityCompensator": {
           "Slot": "Back",
-          "BuildCostEnergy": 10000,
+          "BuildCostEnergy": 12000,
           "BuildTime": 1960,
           "Name": "Nano-Repair System",
-          "NewHealth": 5000,
-          "BuildCostMass": 1000,
+          "NewHealth": 4500,
+          "BuildCostMass": 1200,
           "Icon": "sic",
-          "NewRegenRate": 50
+          "NewRegenRate": 100
         },
-        "ShieldHeavy": {
-          "BuildCostEnergy": 50000,
-          "BuildTime": 6720,
-          "ShieldRegenRate": 200,
-          "Icon": "phtsg",
-          "Slot": "Back",
-          "ShieldRegenStartTime": 3,
-          "MaintenanceConsumptionPerSecondEnergy": 670,
-          "BuildCostMass": 3500,
-          "Name": "Heavy Personal Shield Generator",
-          "ShieldRechargeTime": 200,
-          "ShieldMaxHealth": 40000
+        "SensorRangeEnhancer": {
+          "NewOmniRadius": 55,
+          "Slot": "LCH",
+          "BuildCostEnergy": 20000,
+          "BuildTime": 3360,
+          "Name": "Enhanced Sensor System",
+          "MaintenanceConsumptionPerSecondEnergy": 50,
+          "Icon": "rads",
+          "BuildCostMass": 300
         }
       },
       "Id": "UAL0301",
@@ -26354,7 +26172,7 @@
         "RegenRate": 15
       },
       "Physics": {
-        "TurnRate": 130,
+        "TurnRate": 120,
         "MaxSpeed": 2
       },
       "Wreckage": {
@@ -26388,6 +26206,7 @@
           "Engineering Suite",
           "Not Capturable",
           "Omni Sensor",
+          "Radar",
           "Volatile"
         ]
       },
@@ -26423,38 +26242,6 @@
           "FiringTolerance": 2,
           "WeaponCategory": "Direct Fire",
           "TurretYawSpeed": 160
-        },
-        {
-          "FiringRandomness": 0.1,
-          "RateOfFire": 0.27027027027027,
-          "TurretYaw": 0,
-          "RackBones": [
-            {
-              "MuzzleBones": [
-                "Arm_Right_Build"
-              ]
-            }
-          ],
-          "Damage": 2000,
-          "DamageType": "Normal",
-          "TurretPitch": 0,
-          "TurretPitchRange": 160,
-          "DisplayName": "Redeemer",
-          "TurretPitchSpeed": 90,
-          "MinRadius": 1,
-          "MaxRadius": 30,
-          "ProjectileId": "/projectiles/AIFSonanceShell02/AIFSonanceShell02_proj.bp",
-          "MuzzleVelocity": 32,
-          "RackFireTogether": false,
-          "RackSalvoChargeTime": 0,
-          "MuzzleSalvoSize": 1,
-          "DamageRadius": 3.5,
-          "MuzzleSalvoDelay": 0,
-          "FiringTolerance": 2,
-          "RackSalvoReloadTime": 0,
-          "TurretYawRange": 20,
-          "WeaponCategory": "Direct Fire",
-          "TurretYawSpeed": 60
         },
         {
           "DamageRadius": 10,
@@ -26566,7 +26353,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SILO",
-        "SNIPEMODE",
         "SUBMERSIBLE",
         "TECH3",
         "VISIBLETORECON",
@@ -26708,7 +26494,6 @@
         "PRODUCTFA",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "SNIPER",
         "TECH3",
         "VISIBLETORECON",
@@ -26802,7 +26587,6 @@
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH3",
         "VISIBLETORECON",
         null
@@ -27114,7 +26898,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH3",
         "VISIBLETORECON",
         null
@@ -27462,7 +27245,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH3",
         "VISIBLETORECON",
         null
@@ -27478,7 +27260,7 @@
       "Physics": {
         "TurnRate": 90,
         "Elevation": 0.35,
-        "MaxSpeed": 4
+        "MaxSpeed": 2.2
       },
       "Intel": {
         "VisionRadius": 26
@@ -27685,7 +27467,6 @@
         "PRODUCTFA",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH3",
         "VISIBLETORECON",
         null
@@ -27800,7 +27581,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TANK",
         "TECH3",
         "VISIBLETORECON",
@@ -28283,7 +28063,6 @@
         "PRODUCTFA",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SNIPEMODE",
         "TECH3",
         "VISIBLETORECON",
         null
@@ -28309,7 +28088,7 @@
         "Health": 6000
       },
       "Physics": {
-        "Elevation": 10,
+        "Elevation": 18,
         "FuelRechargeRate": 15,
         "MaxSpeed": 0.5,
         "FuelUseTime": 800
@@ -28743,7 +28522,6 @@
         "SELECTABLE",
         "SHOWATTACKRETICLE",
         "SIZE16",
-        "SNIPEMODE",
         "SORTSTRATEGIC",
         "STRATEGIC",
         "STRUCTURE",
@@ -29994,7 +29772,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SIZE20",
-        "SNIPEMODE",
         "STRATEGIC",
         "STRUCTURE",
         "VISIBLETORECON",
@@ -30707,7 +30484,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SERAPHIM",
-        "SNIPEMODE",
         "SUBMERSIBLE",
         "T1SUBMARINE",
         "TECH1",
@@ -30863,7 +30639,6 @@
         "SELECTABLE",
         "SERAPHIM",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH1",
         "VISIBLETORECON",
         null
@@ -31027,7 +30802,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SERAPHIM",
-        "SNIPEMODE",
         "SONAR",
         "TECH1",
         "VISIBLETORECON",
@@ -31406,7 +31180,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SERAPHIM",
-        "SNIPEMODE",
         "TECH1",
         "VISIBLETORECON",
         null
@@ -31892,7 +31665,7 @@
           "RackSalvoReloadTime": 0,
           "MaxRadius": 22,
           "FiringTolerance": 2,
-          "TurretYawSpeed": 90
+          "TurretYawSpeed": 110
         },
         {
           "RateOfFire": 0.3030303030303,
@@ -31911,7 +31684,7 @@
           "DisplayName": "Overcharge Cannon",
           "TurretPitchSpeed": 30,
           "ManualFire": true,
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 110,
           "MuzzleSalvoSize": 1,
           "TurretYawRange": 180,
           "MinRadius": 0,
@@ -31944,7 +31717,7 @@
           "DisplayName": "AutoOvercharge Cannon",
           "TurretPitchSpeed": 30,
           "DamageRadius": 2.5,
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 110,
           "MinRadius": 0,
           "MaxRadius": 22,
           "ProjectileId": "/projectiles/SDFChronatronCannon02/SDFChronatronCannon02_proj.bp",
@@ -32041,7 +31814,6 @@
         "SELECTABLE",
         "SERAPHIM",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
         "TECH1",
@@ -32237,7 +32009,6 @@
         "SELECTABLE",
         "SERAPHIM",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
         "TECH1",
@@ -32618,7 +32389,6 @@
         "SELECTABLE",
         "SERAPHIM",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -32764,7 +32534,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SERAPHIM",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -32967,7 +32736,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SERAPHIM",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -32993,7 +32761,7 @@
         "Health": 1800
       },
       "Physics": {
-        "Elevation": 10,
+        "Elevation": 18,
         "FuelRechargeRate": 10,
         "MaxSpeed": 0.5,
         "FuelUseTime": 600
@@ -33173,7 +32941,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SERAPHIM",
-        "SNIPEMODE",
         "SUBMERSIBLE",
         "TECH2",
         "VISIBLETORECON",
@@ -33364,7 +33131,6 @@
         "SERAPHIM",
         "SHOWATTACKRETICLE",
         "SILO",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -33668,7 +33434,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SERAPHIM",
-        "SNIPEMODE",
         "TECH2",
         "TRANSPORTATION",
         "TRANSPORTBUILTBYTIER2FACTORY",
@@ -33873,7 +33638,6 @@
         "SELECTABLE",
         "SERAPHIM",
         "SILO",
-        "SNIPEMODE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -34445,7 +34209,6 @@
         "SELECTABLE",
         "SERAPHIM",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STRUCTURE",
         "TECH2",
@@ -34638,7 +34401,6 @@
         "SELECTABLE",
         "SERAPHIM",
         "SIZE4",
-        "SNIPEMODE",
         "SORTDEFENSE",
         "STEALTH",
         "STRUCTURE",
@@ -34772,7 +34534,6 @@
         "SERAPHIM",
         "SHOWATTACKRETICLE",
         "SIZE4",
-        "SNIPEMODE",
         "SORTSTRATEGIC",
         "STRATEGIC",
         "STRUCTURE",
@@ -35300,10 +35061,12 @@
         "LAND",
         "MASSPRODUCTION",
         "MOBILE",
+        "OVERLAYRADAR",
         "OVERLAYDIRECTFIRE",
         "OVERLAYOMNI",
         "PATROLHELPER",
         "PRODUCTFA",
+        "RADAR",
         "RECLAIM",
         "REPAIR",
         "SELECTABLE",
@@ -35323,35 +35086,15 @@
         "Shield": {
           "BuildCostEnergy": 10000,
           "BuildTime": 1960,
-          "ShieldRegenRate": 20,
+          "ShieldRegenRate": 25,
           "Icon": "sp",
           "Slot": "Back",
-          "ShieldRegenStartTime": 1,
-          "MaintenanceConsumptionPerSecondEnergy": 300,
+          "ShieldRegenStartTime": 3,
+          "MaintenanceConsumptionPerSecondEnergy": 170,
           "BuildCostMass": 1000,
           "Name": "Personal Shield Generator",
           "ShieldRechargeTime": 60,
           "ShieldMaxHealth": 5000
-        },
-        "Teleporter": {
-          "Slot": "LCH",
-          "BuildCostEnergy": 1500000,
-          "BuildTime": 20160,
-          "Name": "Personal Teleporter",
-          "MaintenanceConsumptionPerSecondEnergy": 10000,
-          "BuildCostMass": 15000,
-          "Icon": "pqt"
-        },
-        "EnhancedSensors": {
-          "NewOmniRadius": 30,
-          "Slot": "RCH",
-          "BuildCostEnergy": 12500,
-          "Icon": "sre",
-          "BuildTime": 2240,
-          "BuildCostMass": 1250,
-          "Name": "Enhanced Sensor System",
-          "NewMaxRadius": 35,
-          "NewRateOfFire": 1.5
         },
         "EngineeringThroughput": {
           "Slot": "RCH",
@@ -35362,14 +35105,6 @@
           "BuildCostMass": 410,
           "BuildCostEnergy": 10000
         },
-        "Medusa": {
-          "BuildTime": 4480,
-          "BuildCostMass": 2000,
-          "Name": "Medusa",
-          "Slot": "LCH",
-          "BuildCostEnergy": 72300,
-          "Icon": "medu"
-        },
         "Missile": {
           "Slot": "Back",
           "BuildCostEnergy": 46000,
@@ -35377,6 +35112,25 @@
           "Name": "Tactical Missile Launcher",
           "BuildCostMass": 1500,
           "Icon": "tmu"
+        },
+        "Teleporter": {
+          "Slot": "LCH",
+          "BuildCostEnergy": 1500000,
+          "BuildTime": 20160,
+          "Name": "Personal Teleporter",
+          "MaintenanceConsumptionPerSecondEnergy": 10000,
+          "BuildCostMass": 15000,
+          "Icon": "pqt"
+        },
+        "RapidFire": {
+          "Slot": "RCH",
+          "BuildCostEnergy": 12500,
+          "BuildTime": 5040,
+          "Icon": "cba",
+          "Name": "Rapid Fire",
+          "BuildCostMass": 1250,
+          "NewMaxRadius": 35,
+          "NewRateOfFire": 1.5
         },
         "Overcharge": {
           "BuildTime": 5600,
@@ -35386,31 +35140,51 @@
           "BuildCostEnergy": 97300,
           "Icon": "oc"
         },
+        "ResourceAllocation": {
+          "Slot": "Back",
+          "ProductionPerSecondMass": 10,
+          "BuildCostEnergy": 90000,
+          "BuildTime": 8400,
+          "Name": "Resource Allocation System",
+          "Icon": "ras",
+          "ProductionPerSecondEnergy": 1000,
+          "BuildCostMass": 4500
+        },
         "DamageStabilization": {
           "Slot": "Back",
           "BuildCostEnergy": 35000,
           "BuildTime": 5600,
           "Name": "Nano-Repair System",
-          "NewHealth": 21000,
-          "BuildCostMass": 2350,
+          "NewHealth": 7500,
+          "BuildCostMass": 2000,
           "Icon": "dss",
-          "NewRegenRate": 150
+          "NewRegenRate": 175
+        },
+        "SensorRangeEnhancer": {
+          "NewOmniRadius": 40,
+          "Slot": "LCH",
+          "BuildCostEnergy": 20000,
+          "BuildTime": 3360,
+          "Name": "Enhanced Sensor System",
+          "MaintenanceConsumptionPerSecondEnergy": 50,
+          "Icon": "sre",
+          "BuildCostMass": 300
         }
       },
       "Economy": {
         "StorageMass": 275,
-        "ProductionPerSecondMass": 3,
-        "BuildCostEnergy": 30200,
+        "ProductionPerSecondMass": 1,
+        "BuildCostEnergy": 25700,
         "BuildTime": 10080,
-        "BuildCostMass": 2400,
+        "BuildCostMass": 2050,
         "BuildRate": 56,
         "StorageEnergy": 500,
-        "ProductionPerSecondEnergy": 300
+        "ProductionPerSecondEnergy": 20
       },
       "BuildIconSortPriority": 10,
       "Description": "Support Armored Command Unit",
       "Physics": {
-        "TurnRate": 130,
+        "TurnRate": 120,
         "MaxSpeed": 2
       },
       "Intel": {
@@ -35418,7 +35192,7 @@
         "WaterVisionRadius": 24
       },
       "Defense": {
-        "Health": 14000,
+        "Health": 14500,
         "RegenRate": 25
       },
       "Id": "XSL0301",
@@ -35484,45 +35258,7 @@
           "WeaponCategory": "Direct Fire"
         },
         {
-          "TurretYawRange": 20,
-          "RateOfFire": 10,
-          "ProjectilesPerOnFire": 1,
-          "TurretYaw": 0,
-          "RackBones": [
-            {
-              "MuzzleBones": [
-                "Turret_Muzzle_01"
-              ]
-            },
-            {
-              "MuzzleBones": [
-                "Turret_Muzzle_02"
-              ]
-            }
-          ],
-          "Damage": 70,
-          "DamageType": "Normal",
-          "TurretPitch": 0,
-          "DisplayName": "Medusa",
-          "TurretPitchSpeed": 90,
-          "WeaponCategory": "Direct Fire",
-          "FiringRandomness": 0,
-          "ProjectileLifetimeUsesMultiplier": 1.3,
-          "TurretYawSpeed": 60,
-          "MaxRadius": 25,
-          "ProjectileId": "/projectiles/SACUHeavyPhasicAutogun02/SACUHeavyPhasicAutogun02_proj.bp",
-          "MuzzleVelocity": 25,
-          "RackFireTogether": false,
-          "RackSalvoChargeTime": 0,
-          "MuzzleSalvoSize": 4,
-          "MuzzleSalvoDelay": 0,
-          "RackSalvoReloadTime": 0,
-          "FiringTolerance": 2,
-          "TurretPitchRange": 160,
-          "MinRadius": 1
-        },
-        {
-          "RateOfFire": 0.16666666666667,
+          "RateOfFire": 0.18867924528302,
           "TurretYaw": 0,
           "RackBones": [
             {
@@ -35531,12 +35267,12 @@
               ]
             }
           ],
-          "Damage": 8000,
+          "Damage": 15000,
           "DamageType": "Overcharge",
           "TurretPitch": 0,
-          "TurretPitchRange": 160,
+          "TurretPitchRange": 60,
           "DisplayName": "Light Overcharge Cannon",
-          "TurretPitchSpeed": 90,
+          "TurretPitchSpeed": 30,
           "ManualFire": true,
           "MuzzleSalvoSize": 1,
           "WeaponCategory": "Direct Fire",
@@ -35544,7 +35280,7 @@
           "MuzzleVelocity": 22,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 110,
           "FiringTolerance": 2,
           "RackSalvoReloadTime": 0,
           "MuzzleSalvoDelay": 0,
@@ -35563,7 +35299,7 @@
               ]
             }
           ],
-          "Damage": 8000,
+          "Damage": 15000,
           "DamageType": "Overcharge",
           "TurretPitch": 0,
           "TurretPitchRange": 60,
@@ -35575,7 +35311,7 @@
           "MuzzleVelocity": 22,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
-          "TurretYawSpeed": 90,
+          "TurretYawSpeed": 110,
           "FiringTolerance": 2,
           "MuzzleSalvoDelay": 0,
           "ProjectileLifetimeUsesMultiplier": 2,
@@ -35722,7 +35458,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SERAPHIM",
-        "SNIPEMODE",
         "SUBMERSIBLE",
         "TECH3",
         "VISIBLETORECON",
@@ -36119,7 +35854,6 @@
         "RECLAIMABLE",
         "SELECTABLE",
         "SERAPHIM",
-        "SNIPEMODE",
         "SNIPER",
         "TECH3",
         "VISIBLETORECON",
@@ -36267,7 +36001,6 @@
         "SERAPHIM",
         "SHOWATTACKRETICLE",
         "SILO",
-        "SNIPEMODE",
         "TECH3",
         "VISIBLETORECON",
         null
@@ -37255,7 +36988,6 @@
         "SELECTABLE",
         "SERAPHIM",
         "SHOWATTACKRETICLE",
-        "SNIPEMODE",
         "TECH3",
         "VISIBLETORECON",
         null
@@ -37749,7 +37481,6 @@
         "SERAPHIM",
         "SHOWATTACKRETICLE",
         "SIZE16",
-        "SNIPEMODE",
         "SORTSTRATEGIC",
         "STRATEGIC",
         "STRUCTURE",
@@ -38189,7 +37920,6 @@
     {
       "Categories": [
         "AIR",
-        "ANTIAIR",
         "BOMBER",
         "BUILTBYTIER3COMMANDER",
         "BUILTBYTIER3ENGINEER",
