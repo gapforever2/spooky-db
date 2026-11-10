@@ -10,6 +10,8 @@ param (
     [string]$inputLua = ""
 )
 
+$ErrorActionPreference = 'Stop'
+
 Write-Output "target: $target"
 Write-Output "inputUnits: $inputUnits"
 Write-Output "inputLua: $inputLua"
@@ -23,13 +25,20 @@ Function Create-UnitIndex {
     )
 
     $version = lua getVersion.lua "$luaVersionFile"
+    if ($LASTEXITCODE -ne 0) {
+        throw "Failed to read game version from $luaVersionFile"
+    }
 
     Write-Output '{'
     Write-Output "`"version`": `"$version`","
 
-    $blueprints = Get-ChildItem "$unitDir\**\*_unit.bp"
+    $blueprints = @(Get-ChildItem "$unitDir\**\*_unit.bp")
+    if ($blueprints.Count -eq 0) {
+        throw "No unit blueprints found in $unitDir"
+    }
     $count = 1
     $total = $blueprints.Count
+    $exported = 0
 
     Write-Output '"units": '
     Write-Output '['
@@ -37,12 +46,22 @@ Function Create-UnitIndex {
         $file = $_.BaseName
         Write-Progress -Activity "Parsing $file" -Status "($count/$total)"
 
-        lua blueprint2json.lua $_.FullName
-        if ($count -lt $total) {
-            Write-Output ','
+        $unitJson = lua blueprint2json.lua $_.FullName
+        if ($LASTEXITCODE -ne 0) {
+            throw "Failed to export blueprint $($_.FullName)"
+        }
+        if ($unitJson) {
+            if ($exported -gt 0) {
+                Write-Output ','
+            }
+            Write-Output $unitJson
+            $exported++
         }
 
         $count++
+    }
+    if ($exported -eq 0) {
+        throw "No static unit blueprints exported from $unitDir"
     }
     Write-Output ']'
 
@@ -55,6 +74,9 @@ Function Create-Version {
     )
 
     $version = lua getVersion.lua "$luaVersionFile"
+    if ($LASTEXITCODE -ne 0) {
+        throw "Failed to read game version from $luaVersionFile"
+    }
 
     Write-Output "{ `"version`": `"$version`" }"
 }
@@ -73,6 +95,9 @@ Function Run {
 
     Write-Progress -Activity "Cleaning"
     python cleaner.py $target
+    if ($LASTEXITCODE -ne 0) {
+        throw "Failed to clean generated unit data"
+    }
 }
 
 Run $target

@@ -35,7 +35,7 @@ jobs:
               uses: actions/checkout@v4
               with:
                   repository: gapforever2/spooky-db
-                  ref: master
+                  ref: ${{ github.sha }}
 
             - name: Checkout GAP Forever blueprints and lua files
               uses: actions/checkout@v4
@@ -57,6 +57,9 @@ jobs:
                   sudo apt-get install --no-install-recommends -y lua5.1 lua-dkjson
                   sudo update-alternatives --set lua-interpreter /usr/bin/lua5.1
                   lua -e "assert(_VERSION == 'Lua 5.1'); require('dkjson')"
+
+            - name: Test blueprint exporter
+              run: python -m unittest discover -s test/tools -p 'test_*.py' -v
 
             # Prepare the script context
 

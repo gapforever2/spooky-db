@@ -34,12 +34,11 @@ function common.readFile(file, errCallback)
 end
 
 function common.load(str)
-    f, err = loadstring(str)
+    local f, err = loadstring(str)
 
     -- print parse errors
     if f == nil then
-        print(err)
-        os.exit(-1)
+        error(err)
     end
 
     return f

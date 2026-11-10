@@ -10,10 +10,17 @@ function usage(msg)
     )
 end
 
--- this is the main function that's called in
--- blueprint code
+local unitBlueprint
+
+-- Capture static unit declarations while executing the blueprint chunk.
 function UnitBlueprint(table)
+    unitBlueprint = table
     return table
+end
+
+-- Engine callbacks need the complete game's blueprint context. Files that
+-- only register callbacks do not contain a static unit for this exporter.
+function SetModBlueprintFunction(callback)
 end
 
 -- this is a function used in some blueprints,
@@ -54,10 +61,14 @@ local blueprint = cmn.readFile(arg[1], readError)
 -- syntax than Lua
 blueprint = blueprint:gsub('#', '--')
 
-blueprint = cmn.load('return ' .. blueprint)
+blueprint = cmn.load(blueprint)
 
 -- evaluate the blueprint and add "Id" key to it
-blueprint = blueprint()
+blueprint()
+if unitBlueprint == nil then
+    os.exit(0)
+end
+blueprint = unitBlueprint
 blueprint['Id'] = arg[1]:match'^.*[/\\]([A-Z0-9]+).*.bp$'
 
 print(json.encode(stripLoc(blueprint)))
