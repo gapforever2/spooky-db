@@ -48,15 +48,13 @@ jobs:
 
             # Prepare the Lua context
 
-            - name: Install Lua
-              uses: leafo/gh-actions-lua@v10
-              with:
-                  luaVersion: '5.1.5'
-
-            - uses: leafo/gh-actions-luarocks@v4
-
-            - name: Install JSON module for Lua
-              run: luarocks install dkjson
+            - name: Install Lua 5.1 and JSON module
+              timeout-minutes: 5
+              run: |
+                  sudo apt-get update
+                  sudo apt-get install --no-install-recommends -y lua5.1 lua-dkjson
+                  sudo update-alternatives --set lua-interpreter /usr/bin/lua5.1
+                  lua -e "assert(_VERSION == 'Lua 5.1'); require('dkjson')"
 
             # Prepare the script context
 
@@ -112,7 +110,7 @@ jobs:
                   git stage .
                   git commit -m 'Update unit blueprint information
 
-                  Commit hash of FA repository: ${{ steps.hashFA.outputs.hash }}
+                  Commit hash of FA repository: ${{ steps.hashFA.outputs.hash }}'
 
                   git push origin HEAD:master
 

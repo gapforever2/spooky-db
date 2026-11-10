@@ -65,7 +65,7 @@ jobs:
 
             - name: Build
               run: |
-                  grunt build
+                  npx --no-install grunt build
 
             - name: Upload
               uses: actions/upload-artifact@v4
