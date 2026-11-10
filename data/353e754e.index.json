@@ -1,5 +1,5 @@
 {
-  "version": "13",
+  "version": "14",
   "units": [
     {
       "Categories": [
@@ -353,6 +353,7 @@
       },
       "Intel": {
         "SonarRadius": 160,
+        "WaterVisionRadius": 35,
         "VisionRadius": 20
       },
       "Defense": {
@@ -1076,7 +1077,6 @@
       "Weapon": [
         {
           "DamageRadius": 3,
-          "RateOfFire": 0.2,
           "RackBones": [
             {
               "MuzzleBones": [
@@ -1098,7 +1098,8 @@
           "DoTTime": 3.6,
           "InitialDamage": 42.5,
           "FiringTolerance": 6,
-          "MaxRadius": 40
+          "MaxRadius": 40,
+          "RateOfFire": 0.2
         },
         {
           "DamageRadius": 1,
@@ -1430,6 +1431,7 @@
             }
           ],
           "Damage": 13,
+          "ProjectileLifetime": 1.3,
           "DamageType": "Normal",
           "TurretPitch": 45,
           "TurretPitchRange": 45,
@@ -1442,7 +1444,6 @@
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoSize": 1,
           "MuzzleSalvoDelay": 0,
-          "ProjectileLifetimeUsesMultiplier": 1.25,
           "TurretYawSpeed": 180,
           "TurretYawRange": 180,
           "FiringTolerance": 1,
@@ -1473,10 +1474,10 @@
       "Description": "Mass Storage",
       "BuildIconSortPriority": 60,
       "Economy": {
-        "BuildTime": 250,
+        "BuildTime": 120,
         "StorageMass": 500,
-        "BuildCostEnergy": 1500,
-        "BuildCostMass": 200
+        "BuildCostEnergy": 750,
+        "BuildCostMass": 100
       },
       "General": {
         "FactionName": "UEF",
@@ -1484,7 +1485,7 @@
         "Classification": "RULEUC_Resource"
       },
       "Defense": {
-        "Health": 800
+        "Health": 400
       },
       "Id": "UEB1106",
       "StrategicIconName": "icon_structure_mass",
@@ -1799,17 +1800,17 @@
         },
         "ShieldGeneratorFieldUEF": {
           "ShieldSize": 20,
-          "BuildCostEnergy": 45000,
+          "BuildCostEnergy": 35000,
           "ShieldRegenRate": 60,
           "Icon": "sgf",
-          "MaintenanceConsumptionPerSecondEnergy": 250,
-          "ShieldRechargeTime": 45,
+          "MaintenanceConsumptionPerSecondEnergy": 350,
+          "ShieldRechargeTime": 50,
           "Slot": "Back",
           "ShieldRegenStartTime": 1,
-          "ShieldMaxHealth": 5000,
+          "ShieldMaxHealth": 7000,
           "Name": "Shield Generator Field",
-          "BuildCostMass": 1400,
-          "BuildTime": 1500
+          "BuildCostMass": 1250,
+          "BuildTime": 1100
         },
         "TacticalMissileUEF": {
           "Slot": "Back",
@@ -1823,6 +1824,7 @@
           "Slot": "LCH",
           "BuildCostEnergy": 1500000,
           "BuildTime": 4200,
+          "BuildIconSortPriority": 20,
           "Name": "Personal Teleporter",
           "MaintenanceConsumptionPerSecondEnergy": 10000,
           "BuildCostMass": 15000,
@@ -1832,7 +1834,7 @@
           "Slot": "Back",
           "BuildCostEnergy": 2400,
           "BuildTime": 350,
-          "Name": "C-D1 Shoulder Drone",
+          "Name": "C-D1 Orlik",
           "BuildCostMass": 300,
           "Icon": "red"
         },
@@ -1848,6 +1850,7 @@
           "Slot": "LCH",
           "BuildCostEnergy": 24000,
           "BuildTime": 800,
+          "BuildIconSortPriority": 30,
           "Name": "Nano-Repair System",
           "NewHealth": 1500,
           "BuildCostMass": 800,
@@ -1855,13 +1858,13 @@
           "NewRegenRate": 40
         },
         "HeavyAntiMatterDeeKeyUEF": {
-          "BuildCostEnergy": 120000,
+          "BuildCostEnergy": 80000,
           "BuildTime": 3500,
           "Slot": "RCH",
           "AdditionalDamage": 100,
           "Icon": "hamc2",
           "NewDamageRadius": 1.5,
-          "BuildCostMass": 2100,
+          "BuildCostMass": 2000,
           "Name": " Zephyr DeeKey",
           "NewMaxRadius": 30,
           "NewRateOfFire": 1.5,
@@ -1871,17 +1874,18 @@
           "Slot": "Back",
           "BuildCostEnergy": 2400,
           "BuildTime": 350,
-          "Name": "C-D1 Shoulder Drone",
+          "Name": "C-D1 Hedwig",
           "BuildCostMass": 300,
           "Icon": "led"
         },
         "T3EngineeringUEF": {
-          "Slot": "LCH",
-          "NewBuildRate": 100,
           "BuildCostEnergy": 50000,
+          "Slot": "LCH",
           "BuildCostMass": 2400,
-          "BuildTime": 8400,
+          "NewBuildRate": 100,
           "NewHealth": 3000,
+          "BuildTime": 8400,
+          "BuildIconSortPriority": 40,
           "Name": "Tech 3 Engineering Suite",
           "Icon": "ees",
           "NewRegenRate": 20
@@ -1911,11 +1915,12 @@
           "ShieldMaxHealth": 19000
         },
         "EngineeringT2UEF": {
-          "Slot": "LCH",
           "NewBuildRate": 42,
+          "Slot": "LCH",
           "BuildCostEnergy": 21000,
-          "BuildTime": 1000,
           "BuildCostMass": 800,
+          "BuildTime": 1000,
+          "BuildIconSortPriority": 40,
           "Name": "Tech 2 Engineering Suite",
           "NewHealth": 2000,
           "Icon": "aes",
@@ -2080,7 +2085,7 @@
           "DamageType": "Normal",
           "DisplayName": "Tactical Warhead",
           "ManualFire": true,
-          "MinRadius": 20,
+          "MinRadius": 10,
           "ProjectileId": "/projectiles/TIFMissileCruiseCDR/TIFMissileCruiseCDR_proj.bp",
           "MuzzleVelocity": 3,
           "RackFireTogether": false,
@@ -2330,6 +2335,7 @@
             }
           ],
           "Damage": 23,
+          "ProjectileLifetime": 1.3,
           "DamageType": "Normal",
           "TurretPitch": 45,
           "TurretPitchRange": 45,
@@ -2341,7 +2347,6 @@
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoDelay": 0,
-          "ProjectileLifetimeUsesMultiplier": 1.25,
           "TurretYawSpeed": 180,
           "RackSalvoReloadTime": 0,
           "FiringTolerance": 0.5,
@@ -2828,8 +2833,7 @@
         },
         {
           "DamageRadius": 3,
-          "TurretYawRange": 180,
-          "RateOfFire": 0.1,
+          "FiringRandomness": 0.1,
           "RackBones": [
             {
               "MuzzleBones": [
@@ -2844,21 +2848,22 @@
           "TurretPitch": -90,
           "DisplayName": "Napalm Carpet Bomb",
           "TurretPitchSpeed": 60,
-          "DoTPulses": 10,
           "DoTTime": 5.4,
+          "DoTPulses": 10,
           "InitialDamage": 20,
+          "WeaponCategory": "Bomb",
           "MaxRadius": 60,
           "ProjectileId": "/projectiles/TIFNapalmCarpetBomb02/TIFNapalmCarpetBomb02_proj.bp",
-          "FiringRandomness": 0.1,
           "MuzzleVelocity": 0,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
-          "TurretYaw": 0,
           "RackSalvoReloadTime": 0,
           "MuzzleSalvoDelay": 0.1,
           "TurretPitchRange": 20,
+          "TurretYaw": 0,
           "FiringTolerance": 6,
-          "WeaponCategory": "Bomb",
+          "TurretYawRange": 180,
+          "RateOfFire": 0.1,
           "MuzzleSalvoSize": 20,
           "TurretYawSpeed": 120
         },
@@ -2923,7 +2928,7 @@
       "Description": "Gatling Bot",
       "Display": {},
       "Economy": {
-        "BuildTime": 1000,
+        "BuildTime": 800,
         "BuildCostEnergy": 1000,
         "BuildCostMass": 200
       },
@@ -2961,9 +2966,7 @@
           "MaxRadius": 34
         },
         {
-          "DamageRadius": 2,
           "FiringRandomness": 2.5,
-          "RateOfFire": 0.14925373134328,
           "ProjectilesPerOnFire": 3,
           "TurretYaw": 0,
           "RackBones": [
@@ -2985,11 +2988,13 @@
           "RackSalvoReloadTime": 0,
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoSize": 4,
-          "MuzzleSalvoDelay": 0.3,
           "ProjectileLifetimeUsesMultiplier": 1.3,
+          "MuzzleSalvoDelay": 0.3,
           "TurretYawSpeed": 90,
+          "RateOfFire": 0.14925373134328,
           "FiringTolerance": 1,
           "TurretYawRange": 20,
+          "DamageRadius": 2,
           "MaxRadius": 34
         }
       ]
@@ -3132,13 +3137,13 @@
         "MaxSpeed": 3.1
       },
       "Economy": {
-        "BuildTime": 1250,
+        "BuildTime": 1160,
         "BuildCostEnergy": 1450,
-        "BuildCostMass": 280
+        "BuildCostMass": 300
       },
       "Description": "Heavy Tank",
       "Defense": {
-        "Health": 2000
+        "Health": 2200
       },
       "Id": "UEL0202",
       "Wreckage": {
@@ -3171,7 +3176,7 @@
               ]
             }
           ],
-          "Damage": 47.5,
+          "Damage": 54,
           "DamageType": "Normal",
           "TurretPitch": 0,
           "TurretPitchRange": 45,
@@ -3348,16 +3353,16 @@
       "Physics": {
         "TurnRate": 90,
         "Elevation": 0.125,
-        "MaxSpeed": 3.7
+        "MaxSpeed": 3.9
       },
       "Economy": {
-        "BuildTime": 1420,
-        "BuildCostEnergy": 1650,
-        "BuildCostMass": 320
+        "BuildTime": 920,
+        "BuildCostEnergy": 1120,
+        "BuildCostMass": 220
       },
       "Description": "Amphibious Tank",
       "Defense": {
-        "Health": 1800
+        "Health": 1500
       },
       "Id": "UEL0203",
       "Wreckage": {
@@ -3393,7 +3398,7 @@
               ]
             }
           ],
-          "Damage": 13.5,
+          "Damage": 10,
           "DamageType": "Normal",
           "TurretPitch": 10,
           "TurretPitchRange": 40,
@@ -3411,7 +3416,7 @@
           "TurretYawRange": 10,
           "FiringTolerance": 2,
           "RackSalvoReloadTime": 0,
-          "MaxRadius": 18
+          "MaxRadius": 20
         }
       ]
     },
@@ -3441,13 +3446,13 @@
       },
       "Economy": {
         "BuildTime": 1280,
-        "BuildCostEnergy": 3840,
-        "BuildCostMass": 192
+        "BuildCostEnergy": 4000,
+        "BuildCostMass": 200
       },
       "BuildIconSortPriority": 30,
       "StrategicIconName": "icon_gunship2_directfire",
       "Physics": {
-        "Elevation": 18,
+        "Elevation": 12,
         "FuelRechargeRate": 5,
         "MaxSpeed": 0.5,
         "FuelUseTime": 400
@@ -3457,10 +3462,10 @@
       },
       "Air": {
         "MinAirspeed": 3,
-        "MaxAirspeed": 13.5
+        "MaxAirspeed": 15
       },
       "Defense": {
-        "Health": 700
+        "Health": 900
       },
       "Id": "UEA0203",
       "Wreckage": {
@@ -4807,16 +4812,16 @@
       "StrategicIconName": "icon_land2_antiair",
       "Physics": {
         "TurnRate": 90,
-        "MaxSpeed": 3.1
+        "MaxSpeed": 3
       },
       "Economy": {
         "BuildTime": 800,
-        "BuildCostEnergy": 800,
-        "BuildCostMass": 160
+        "BuildCostEnergy": 2000,
+        "BuildCostMass": 300
       },
       "Description": "Mobile AA Flak Artillery",
       "Defense": {
-        "Health": 1000
+        "Health": 1700
       },
       "Id": "UEL0205",
       "Wreckage": {
@@ -4824,8 +4829,7 @@
         "MassMult": 0.9
       },
       "Intel": {
-        "VisionRadius": 22,
-        "RadarRadius": 52
+        "VisionRadius": 22
       },
       "Veteran": {
         "Level2": 8,
@@ -4836,14 +4840,13 @@
       },
       "Display": {
         "Abilities": [
-          "Anti-Air",
-          "Radar"
+          "Anti-Air"
         ]
       },
       "BuildIconSortPriority": 90,
       "Weapon": [
         {
-          "MaxRadius": 33,
+          "MaxRadius": 50,
           "RateOfFire": 0.5,
           "Damage": 0,
           "RackBones": [
@@ -4855,9 +4858,9 @@
           ]
         },
         {
-          "DamageRadius": 4,
-          "FiringRandomness": 2.5,
-          "RateOfFire": 2,
+          "DamageRadius": 1,
+          "FiringRandomness": 1.9,
+          "RateOfFire": 0.5,
           "ProjectilesPerOnFire": 2,
           "TurretYaw": 0,
           "RackBones": [
@@ -4872,7 +4875,7 @@
               ]
             }
           ],
-          "Damage": 36,
+          "Damage": 150,
           "DamageType": "Normal",
           "TurretPitch": 35,
           "TurretPitchRange": 80,
@@ -4880,7 +4883,7 @@
           "TurretPitchSpeed": 180,
           "MaxRadius": 40,
           "ProjectileId": "/projectiles/TAALightFragmentationShell01/TAALightFragmentationShell01_proj.bp",
-          "MuzzleVelocity": 20,
+          "MuzzleVelocity": 60,
           "RackFireTogether": true,
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoSize": 1,
@@ -4888,7 +4891,7 @@
           "ProjectileLifetimeUsesMultiplier": 1.25,
           "TurretYawSpeed": 180,
           "RackSalvoReloadTime": 0,
-          "FiringTolerance": 2,
+          "FiringTolerance": 1.5,
           "TurretYawRange": 180,
           "WeaponCategory": "Anti Air"
         }
@@ -5178,7 +5181,7 @@
       "Description": "Mobile Shield Generator",
       "Economy": {
         "BuildTime": 660,
-        "MaintenanceConsumptionPerSecondEnergy": 80,
+        "MaintenanceConsumptionPerSecondEnergy": 50,
         "BuildCostEnergy": 900,
         "BuildCostMass": 220
       },
@@ -5247,7 +5250,7 @@
       ],
       "Description": "Anti-Air Flak Artillery",
       "Economy": {
-        "BuildTime": 540,
+        "BuildTime": 600,
         "BuildCostMass": 400,
         "BuildCostEnergy": 4000
       },
@@ -5286,9 +5289,9 @@
       },
       "Weapon": [
         {
-          "DamageRadius": 3.5,
+          "DamageRadius": 3,
           "FiringRandomness": 2,
-          "RateOfFire": 1.25,
+          "RateOfFire": 0.5,
           "ProjectilesPerOnFire": 1,
           "TurretYaw": 0,
           "RackBones": [
@@ -5303,7 +5306,7 @@
               ]
             }
           ],
-          "Damage": 125,
+          "Damage": 300,
           "DamageType": "Normal",
           "TurretPitch": 35,
           "TurretPitchRange": 55,
@@ -5311,7 +5314,7 @@
           "TurretPitchSpeed": 180,
           "MaxRadius": 50,
           "ProjectileId": "/projectiles/TAALightFragmentationShell01/TAALightFragmentationShell01_proj.bp",
-          "MuzzleVelocity": 35,
+          "MuzzleVelocity": 60,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoSize": 1,
@@ -5849,15 +5852,16 @@
         "BUILTBYTIER3ENGINEER",
         "CQUEMOV",
         "INTELLIGENCE",
+        "MOBILE",
+        "MOBILESONAR",
+        "NAVAL",
+        "NEEDMOBILEBUILD",
         "OVERLAYSONAR",
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SHOWQUEUE",
-        "SIZE4",
         "SONAR",
         "SORTINTEL",
-        "STRUCTURE",
         "TECH2",
         "UEF",
         "VISIBLETORECON",
@@ -5869,7 +5873,7 @@
         "UnitName": "SP2 - 2000",
         "Icon": "sea",
         "FactionName": "UEF",
-        "Classification": "RULEUC_Sensor"
+        "Classification": "RULEUC_MilitaryShip"
       },
       "Economy": {
         "BuildTime": 780,
@@ -5880,6 +5884,7 @@
       },
       "Intel": {
         "SonarRadius": 288,
+        "WaterVisionRadius": 65,
         "VisionRadius": 24
       },
       "Defense": {
@@ -5890,7 +5895,10 @@
         "HealthMult": 0.9,
         "MassMult": 0.9
       },
-      "Physics": {},
+      "Physics": {
+        "MaxSpeed": 2.8,
+        "TurnRate": 60
+      },
       "Display": {
         "Abilities": [
           "Sonar",
@@ -6058,49 +6066,55 @@
           "ShieldMaxHealth": 26000
         },
         "RadarJammer": {
-          "Slot": "Back",
+          "Slot": "RCH",
           "BuildCostEnergy": 8000,
           "BuildTime": 1120,
           "Name": "Radar Jammer",
           "MaintenanceConsumptionPerSecondEnergy": 20,
           "BuildCostMass": 300,
-          "Icon": "rj"
+          "Icon": "jammer"
+        },
+        "ShieldGeneratorFieldSupport": {
+          "ShieldSize": 35,
+          "BuildCostEnergy": 70000,
+          "Icon": "LightShield",
+          "MaintenanceConsumptionPerSecondEnergy": 720,
+          "BuildTime": 6000,
+          "Slot": "Back",
+          "ShieldRegenRate": 50,
+          "ShieldRegenStartTime": 5,
+          "ShieldMaxHealth": 17500,
+          "Name": "Light Dome Shield",
+          "ShieldRechargeTime": 90,
+          "BuildCostMass": 2250
         },
         "ShieldGeneratorField": {
           "ShieldSize": 20,
-          "BuildCostEnergy": 360800,
+          "BuildCostEnergy": 150000,
           "ShieldRegenRate": 150,
-          "Icon": "sgf",
-          "MaintenanceConsumptionPerSecondEnergy": 1020,
+          "Icon": "HeavyShield",
+          "MaintenanceConsumptionPerSecondEnergy": 1220,
           "ShieldRechargeTime": 215,
           "Slot": "Back",
           "ShieldRegenStartTime": 5,
-          "Name": "Shield Generator Field",
+          "Name": "Heavy Dome Shield",
           "ShieldMaxHealth": 52000,
-          "BuildCostMass": 4500,
+          "BuildCostMass": 3500,
           "BuildTime": 10080
         },
         "HighExplosiveOrdnance": {
           "Slot": "LCH",
           "BuildCostEnergy": 15000,
-          "NewDamageRadius": 2,
+          "BuildTime": 1680,
+          "BuildIconSortPriority": 10,
           "Name": "Heavy Plasma Refractor",
           "Icon": "heo",
           "NewMaxRadius": 35,
           "BuildCostMass": 800,
-          "BuildTime": 1680
-        },
-        "AdvancedCoolingUpgrade": {
-          "BuildTime": 3360,
-          "BuildCostMass": 1000,
-          "Name": "Energy Accelerator",
-          "Slot": "RCH",
-          "BuildCostEnergy": 10000,
-          "Icon": "col",
-          "NewRateOfFire": 2
+          "NewDamageRadius": 2
         },
         "ResourceAllocation": {
-          "Slot": "LCH",
+          "Slot": "RCH",
           "ProductionPerSecondMass": 10,
           "BuildCostEnergy": 90000,
           "BuildTime": 8400,
@@ -6109,18 +6123,29 @@
           "BuildCostMass": 4500,
           "ProductionPerSecondEnergy": 1000
         },
-        "Pod": {
-          "BuildTime": 840,
-          "BuildCostMass": 350,
-          "Name": "C-D3 Engineering Drone",
+        "AdvancedCoolingUpgrade": {
+          "BuildTime": 3360,
+          "BuildCostMass": 1000,
+          "Name": "Energy Accelerator",
           "Slot": "RCH",
+          "BuildCostEnergy": 10000,
+          "Icon": "acu",
+          "NewRateOfFire": 2
+        },
+        "Pod": {
+          "Slot": "LCH",
           "BuildCostEnergy": 8500,
+          "BuildTime": 840,
+          "BuildIconSortPriority": 30,
+          "Name": "C-D3 Engineering Drone",
+          "BuildCostMass": 350,
           "Icon": "ed"
         },
         "SensorRangeEnhancer": {
           "NewOmniRadius": 35,
           "BuildCostEnergy": 20000,
           "BuildTime": 3360,
+          "BuildIconSortPriority": 20,
           "Name": "Enhanced Sensor System",
           "MaintenanceConsumptionPerSecondEnergy": 50,
           "Icon": "sre",
@@ -6173,7 +6198,7 @@
       "Economy": {
         "StorageMass": 275,
         "ProductionPerSecondMass": 1,
-        "BuildCostEnergy": 25000,
+        "BuildCostEnergy": 25200,
         "BuildTime": 10080,
         "BuildCostMass": 2100,
         "MaintenanceConsumptionPerSecondEnergy": 0,
@@ -6552,6 +6577,7 @@
         null
       ],
       "General": {
+        "Description": "Heavy Assault Bot",
         "FactionName": "UEF",
         "Icon": "land",
         "UnitName": "Titan",
@@ -6591,12 +6617,13 @@
       },
       "Display": {
         "Abilities": [
-          "Personal Shield"
+          "Personal Shield",
+          "Missile Pod"
         ]
       },
       "Economy": {
-        "BuildTime": 2400,
-        "MaintenanceConsumptionPerSecondEnergy": 25,
+        "BuildTime": 2250,
+        "MaintenanceConsumptionPerSecondEnergy": 7,
         "BuildCostEnergy": 5250,
         "BuildCostMass": 480
       },
@@ -6617,7 +6644,7 @@
               ]
             }
           ],
-          "Damage": 60,
+          "Damage": 57,
           "DamageType": "Normal",
           "TurretPitch": 10,
           "TurretPitchRange": 90,
@@ -6636,6 +6663,70 @@
           "FiringTolerance": 2,
           "TurretYawRange": 180,
           "MaxRadius": 24
+        },
+        {
+          "DamageRadius": 0,
+          "FiringRandomness": 0,
+          "RateOfFire": 0.2,
+          "ProjectilesPerOnFire": 1,
+          "RackBones": [
+            {
+              "MuzzleBones": [
+                "missile_01",
+                "missile_02",
+                "missile_03",
+                "missile_04",
+                "missile_05"
+              ]
+            },
+            {
+              "MuzzleBones": [
+                "missile_06",
+                "missile_07",
+                "missile_08",
+                "missile_09",
+                "missile_10"
+              ]
+            },
+            {
+              "MuzzleBones": [
+                "missile_11",
+                "missile_12",
+                "missile_13",
+                "missile_14",
+                "missile_15"
+              ]
+            },
+            {
+              "MuzzleBones": [
+                "missile_16",
+                "missile_17",
+                "missile_18",
+                "missile_19",
+                "missile_20"
+              ]
+            }
+          ],
+          "Damage": 10,
+          "ProjectileLifetime": 1.33,
+          "DamageType": "fire",
+          "DisplayName": "Mini Cruise Missile Launcher MK2",
+          "MinRadius": 5,
+          "MaxRadius": 24,
+          "ProjectileId": "/projectiles/TIFMissileCruiseUEL0303/TIFMissileCruiseUEL0303_proj.bp",
+          "MuzzleVelocity": 16,
+          "RackFireTogether": false,
+          "RackSalvoChargeTime": 0,
+          "MuzzleSalvoDelay": 0.3,
+          "RackSalvoReloadTime": 20,
+          "FiringTolerance": 15,
+          "WeaponCategory": "Missile",
+          "MuzzleSalvoSize": 5
+        },
+        {
+          "DamageType": "Normal",
+          "DamageRadius": 2,
+          "Damage": 250
         }
       ]
     },
@@ -7053,7 +7144,7 @@
         "RadarRadius": 72
       },
       "Defense": {
-        "Health": 1900
+        "Health": 3200
       },
       "Id": "DELK002",
       "Wreckage": {
@@ -7077,7 +7168,7 @@
       "Economy": {
         "BuildTime": 3000,
         "BuildCostEnergy": 9600,
-        "BuildCostMass": 720
+        "BuildCostMass": 800
       },
       "Weapon": [
         {
@@ -7194,7 +7285,7 @@
         "BuildTime": 3840,
         "BuildCostEnergy": 51200,
         "BuildCostMass": 450,
-        "MaintenanceConsumptionPerSecondEnergy": 40
+        "MaintenanceConsumptionPerSecondEnergy": 15
       },
       "Weapon": [
         {
@@ -7546,23 +7637,18 @@
         "MaintenanceConsumptionPerSecondEnergy": 25
       },
       "BuildIconSortPriority": 40,
-      "StrategicIconName": "icon_bomber3_directfire",
       "Physics": {
         "Elevation": 18,
         "FuelRechargeRate": 15,
         "MaxSpeed": 0.5,
         "FuelUseTime": 1500
       },
-      "Intel": {
-        "RadarRadius": 64,
-        "VisionRadius": 32
-      },
       "Air": {
-        "TurnSpeed": 0.8,
+        "TurnSpeed": 1.2,
         "MaxAirspeed": 17,
         "EngageDistance": 50,
         "MinAirspeed": 15,
-        "CombatTurnSpeed": 0.8
+        "CombatTurnSpeed": 1.2
       },
       "Defense": {
         "Health": 4000
@@ -7571,6 +7657,10 @@
       "Wreckage": {
         "HealthMult": 0.9,
         "MassMult": 0.9
+      },
+      "Intel": {
+        "RadarRadius": 64,
+        "VisionRadius": 32
       },
       "Veteran": {
         "Level2": 24,
@@ -7587,10 +7677,14 @@
           "Jamming"
         ]
       },
+      "StrategicIconName": "icon_bomber3_directfire",
       "Weapon": [
         {
+          "RateOfFire": 0,
+          "MaxRadius": 64
+        },
+        {
           "DamageRadius": 5.5,
-          "FiringRandomness": 0,
           "ProjectilesPerOnFire": 1,
           "RackBones": [
             {
@@ -7608,6 +7702,7 @@
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoDelay": 0,
+          "FiringRandomness": 0,
           "RackSalvoReloadTime": 0,
           "RateOfFire": 0.125,
           "FiringTolerance": 6,
@@ -7737,10 +7832,10 @@
       },
       "Economy": {
         "BuildTime": 2875,
+        "BuildCostMass": 4600,
         "MaintenanceConsumptionPerSecondEnergy": 54,
         "ProductionPerSecondMass": 18,
-        "BuildCostEnergy": 31625,
-        "BuildCostMass": 4600
+        "BuildCostEnergy": 31625
       },
       "Physics": {},
       "Defense": {
@@ -7849,14 +7944,14 @@
       },
       "Air": {
         "MinAirspeed": 3,
-        "MaxAirspeed": 10
+        "MaxAirspeed": 15
       },
       "Defense": {
         "Health": 6000
       },
       "Physics": {
         "TurnRate": 100,
-        "Elevation": 18,
+        "Elevation": 12,
         "MaxSpeed": 10,
         "FuelRechargeRate": 15,
         "FuelUseTime": 800
@@ -8070,7 +8165,7 @@
         {
           "Damage": 5000,
           "WeaponCategory": "Death",
-          "DamageRadius": 14,
+          "DamageRadius": 10,
           "DamageType": "DeathExplosion",
           "DisplayName": "Death Weapon"
         }
@@ -9114,7 +9209,7 @@
       },
       "Intel": {
         "SonarRadius": 448,
-        "WaterVisionRadius": 24,
+        "WaterVisionRadius": 75,
         "VisionRadius": 32
       },
       "Defense": {
@@ -9133,7 +9228,9 @@
         "Abilities": [
           "Sonar",
           "Torpedoes",
-          "Jamming"
+          "Jamming",
+          "Sonar consumption: 400 (Energy/sec)",
+          "Jammer consumption: 100 (Energy/sec)"
         ]
       },
       "BuildIconSortPriority": 190
@@ -9273,10 +9370,10 @@
         "Classification": "RULEUC_Factory"
       },
       "Economy": {
-        "BuildTime": 4097,
+        "BuildTime": 1950,
         "BuildRate": 150,
-        "BuildCostEnergy": 30000,
-        "BuildCostMass": 3000
+        "BuildCostEnergy": 24000,
+        "BuildCostMass": 1200
       },
       "Physics": {},
       "Defense": {
@@ -10775,7 +10872,6 @@
       "Weapon": [
         {
           "DamageRadius": 3,
-          "RateOfFire": 0.2,
           "RackBones": [
             {
               "MuzzleBones": [
@@ -10800,13 +10896,14 @@
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoSize": 6,
           "MuzzleSalvoDelay": 0.2,
-          "TurretYawRange": 0,
-          "TurretPitchRange": 0,
-          "RackSalvoReloadTime": 0,
-          "FiringTolerance": 6,
+          "TurretYawSpeed": 0,
           "TurretYaw": 0,
+          "RackSalvoReloadTime": 0,
+          "TurretPitchRange": 0,
+          "FiringTolerance": 6,
+          "TurretYawRange": 0,
           "MaxRadius": 40,
-          "TurretYawSpeed": 0
+          "RateOfFire": 0.2
         },
         {
           "DamageRadius": 1,
@@ -11370,7 +11467,7 @@
       },
       "Weapon": [
         {
-          "FiringRandomness": 1.5,
+          "FiringRandomness": 1.05,
           "RateOfFire": 2,
           "ProjectilesPerOnFire": 1,
           "TurretYaw": 0,
@@ -11459,10 +11556,10 @@
       "Description": "Mass Storage",
       "BuildIconSortPriority": 60,
       "Economy": {
-        "BuildTime": 250,
+        "BuildTime": 120,
         "StorageMass": 500,
-        "BuildCostEnergy": 1500,
-        "BuildCostMass": 200
+        "BuildCostEnergy": 750,
+        "BuildCostMass": 100
       },
       "General": {
         "FactionName": "Cybran",
@@ -11470,7 +11567,7 @@
         "Classification": "RULEUC_Resource"
       },
       "Defense": {
-        "Health": 600,
+        "Health": 300,
         "RegenRate": 3
       },
       "Id": "URB1106",
@@ -11762,8 +11859,10 @@
         "LAND",
         "MASSPRODUCTION",
         "MOBILE",
+        "OVERLAYCOUNTERINTEL",
         "OVERLAYDIRECTFIRE",
         "OVERLAYOMNI",
+        "OVERLAYSONAR",
         "PATROLHELPER",
         "PRODUCTSC1",
         "RECLAIM",
@@ -11791,6 +11890,7 @@
           "ProductionPerSecondMass": 12,
           "BuildCostEnergy": 175000,
           "BuildTime": 2800,
+          "BuildIconSortPriority": 40,
           "Name": "Resource Allocation System",
           "Icon": "ras",
           "BuildCostMass": 5000,
@@ -11829,19 +11929,32 @@
         },
         "NaniteTorpedoTubeCybran": {
           "Slot": "RCH",
+          "BuildCostEnergy": 37500,
           "BuildTime": 1500,
+          "BuildIconSortPriority": 20,
           "Name": "Nanite Torpedo Launcher",
-          "Icon": "ntt",
           "BuildCostMass": 1500,
-          "BuildCostEnergy": 37500
+          "Icon": "ntt"
         },
         "MicrowaveLaserGeneratorCybran": {
           "Slot": "RCH",
           "BuildCostEnergy": 500000,
           "BuildTime": 2800,
+          "BuildIconSortPriority": 10,
           "Name": "Microwave Laser Generator",
           "BuildCostMass": 4000,
           "Icon": "mlg"
+        },
+        "StealthFieldGeneratorCybran": {
+          "Slot": "RCH",
+          "BuildCostEnergy": 24000,
+          "BuildTime": 900,
+          "BuildIconSortPriority": 30,
+          "Name": "Stealth Field Generator",
+          "MaintenanceConsumptionPerSecondEnergy": 170,
+          "BuildCostMass": 1000,
+          "Icon": "stealth_aura",
+          "NewHealth": 1750
         },
         "CloakingGeneratorCybran": {
           "Slot": "Back",
@@ -11855,12 +11968,12 @@
         },
         "StealthGeneratorCybran": {
           "Slot": "Back",
-          "BuildCostEnergy": 14000,
-          "BuildTime": 800,
+          "BuildCostEnergy": 10000,
+          "BuildTime": 600,
           "Name": "Personal Stealth Generator",
           "MaintenanceConsumptionPerSecondEnergy": 50,
-          "Icon": "psg",
-          "BuildCostMass": 650,
+          "Icon": "personal_stealth",
+          "BuildCostMass": 600,
           "NewHealth": 2000
         },
         "EngineeringT2Cybran": {
@@ -11902,7 +12015,7 @@
         "MassMult": 0.3
       },
       "Intel": {
-        "SonarRadius": 24,
+        "SonarRadius": 0,
         "WaterVisionRadius": 24,
         "VisionRadius": 26
       },
@@ -12101,6 +12214,7 @@
           "MaxRadius": 22
         },
         {
+          "DamageRadius": 0.1,
           "RateOfFire": 0.25,
           "ProjectilesPerOnFire": 1,
           "RackBones": [
@@ -12112,20 +12226,18 @@
           ],
           "ProjectileLifetime": 7,
           "DamageType": "Normal",
-          "DoTPulses": 5,
           "WeaponCategory": "Anti Navy",
-          "ProjectileId": "/projectiles/CANTorpedoNanite01/CANTorpedoNanite01_proj.bp",
+          "ProjectileId": "/projectiles/CANTorpedoNanite01ACU/CANTorpedoNanite01ACU_proj.bp",
           "MuzzleVelocity": 5,
-          "RackFireTogether": false,
+          "RackSalvoReloadTime": 0,
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoSize": 3,
           "MuzzleSalvoDelay": 0.8,
           "DisplayName": "Nanite Torpedo",
-          "DoTTime": 0.4,
           "FiringTolerance": 2,
-          "RackSalvoReloadTime": 0,
           "MaxRadius": 60,
-          "Damage": 60
+          "RackFireTogether": false,
+          "Damage": 300
         },
         {
           "DamageRadius": 4,
@@ -12307,6 +12419,7 @@
             }
           ],
           "Damage": 14,
+          "ProjectileLifetime": 1.3,
           "DamageType": "Normal",
           "TurretPitch": 45,
           "TurretPitchRange": 45,
@@ -12317,14 +12430,13 @@
           "MuzzleVelocity": 45,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
+          "MuzzleSalvoSize": 2,
           "MuzzleSalvoDelay": 0.1,
-          "ProjectileLifetimeUsesMultiplier": 1.25,
           "TurretYawSpeed": 180,
           "RackSalvoReloadTime": 0,
           "FiringTolerance": 0.5,
           "TurretYawRange": 180,
-          "WeaponCategory": "Anti Air",
-          "MuzzleSalvoSize": 2
+          "WeaponCategory": "Anti Air"
         }
       ]
     },
@@ -12526,6 +12638,7 @@
       },
       "Intel": {
         "SonarRadius": 160,
+        "WaterVisionRadius": 35,
         "VisionRadius": 20
       },
       "Defense": {
@@ -12810,7 +12923,6 @@
         {
           "DamageRadius": 3,
           "FiringRandomness": 0.35,
-          "RateOfFire": 0.1,
           "ProjectilesPerOnFire": 2,
           "TurretYaw": 0,
           "RackBones": [
@@ -12840,11 +12952,12 @@
           "ProjectileLifetimeUsesMultiplier": 1.15,
           "TurretYawSpeed": 360,
           "MuzzleSalvoDelay": 0.03,
-          "TurretYawRange": 20,
           "RackSalvoReloadTime": 0,
-          "FiringTolerance": 7,
           "TurretPitchRange": 110,
-          "MaxRadius": 40
+          "FiringTolerance": 7,
+          "TurretYawRange": 20,
+          "MaxRadius": 40,
+          "RateOfFire": 0.1
         },
         {
           "DamageRadius": 1,
@@ -12886,7 +12999,7 @@
         "MaxSpeed": 3.4
       },
       "Economy": {
-        "BuildTime": 1000,
+        "BuildTime": 800,
         "BuildCostEnergy": 1000,
         "BuildCostMass": 200
       },
@@ -12946,6 +13059,41 @@
           "FiringTolerance": 0.1,
           "RackSalvoReloadTime": 0,
           "WeaponCategory": "Direct Fire"
+        },
+        {
+          "DamageRadius": 2,
+          "FiringRandomness": 0,
+          "RateOfFire": 0.25,
+          "ProjectilesPerOnFire": 3,
+          "TurretYaw": 0,
+          "RackBones": [
+            {
+              "MuzzleBones": [
+                "Turret_Muzzle_01",
+                "Turret_Muzzle_02",
+                "Turret_Muzzle_03"
+              ]
+            }
+          ],
+          "Damage": 0,
+          "ProjectileLifetime": 5,
+          "DamageType": "Normal",
+          "TurretPitch": 0,
+          "TurretPitchRange": 45,
+          "DisplayName": "Radonium Rocket Pack (EMP)",
+          "TurretPitchSpeed": 100,
+          "WeaponCategory": "Direct Fire",
+          "ProjectileId": "/projectiles/CDFRocketRadonium01/CDFRocketRadonium01_proj.bp",
+          "MuzzleVelocity": 25,
+          "RackFireTogether": false,
+          "RackSalvoChargeTime": 0,
+          "MuzzleSalvoSize": 3,
+          "MuzzleSalvoDelay": 0.1,
+          "TurretYawSpeed": 130,
+          "RackSalvoReloadTime": 0,
+          "FiringTolerance": 0.1,
+          "TurretYawRange": 180,
+          "MaxRadius": 38
         }
       ]
     },
@@ -13091,7 +13239,7 @@
         "VisionRadius": 22
       },
       "Defense": {
-        "Health": 1900
+        "Health": 2000
       },
       "Physics": {
         "TurnRate": 90,
@@ -13111,9 +13259,9 @@
       },
       "Display": {},
       "Economy": {
-        "BuildTime": 1300,
+        "BuildTime": 1160,
         "BuildCostEnergy": 1500,
-        "BuildCostMass": 290
+        "BuildCostMass": 300
       },
       "Weapon": [
         {
@@ -13128,7 +13276,7 @@
               ]
             }
           ],
-          "Damage": 25,
+          "Damage": 30,
           "DamageType": "Normal",
           "TurretPitch": 0,
           "TurretPitchRange": 30,
@@ -13353,12 +13501,12 @@
       "StrategicIconName": "icon_land2_directfire",
       "Physics": {
         "TurnRate": 90,
-        "MaxSpeed": 3.7
+        "MaxSpeed": 3.9
       },
       "Economy": {
-        "BuildTime": 1320,
-        "BuildCostEnergy": 1650,
-        "BuildCostMass": 280
+        "BuildTime": 880,
+        "BuildCostEnergy": 1280,
+        "BuildCostMass": 240
       },
       "Description": "Amphibious Tank",
       "Defense": {
@@ -13591,7 +13739,7 @@
           "TurretYawRange": 145,
           "FiringTolerance": 2,
           "RackSalvoReloadTime": 0,
-          "MaxRadius": 85
+          "MaxRadius": 80
         },
         {
           "FiringRandomness": 0,
@@ -13721,15 +13869,15 @@
       },
       "Air": {
         "MinAirspeed": 3,
-        "MaxAirspeed": 12
+        "MaxAirspeed": 15
       },
       "Defense": {
-        "Health": 832
+        "Health": 830
       },
       "Physics": {
         "FuelRechargeRate": 5,
         "MaxSpeed": 0.5,
-        "Elevation": 18,
+        "Elevation": 12,
         "FuelUseTime": 400
       },
       "Id": "URA0203",
@@ -13824,14 +13972,13 @@
       "BuildIconSortPriority": 30,
       "Physics": {
         "TurnRate": 90,
-        "MaxSpeed": 2.9
+        "MaxSpeed": 3
       },
       "Intel": {
-        "VisionRadius": 22,
-        "RadarRadius": 52
+        "VisionRadius": 22
       },
       "Defense": {
-        "Health": 1000
+        "Health": 1700
       },
       "Id": "URL0205",
       "Wreckage": {
@@ -13848,18 +13995,17 @@
       "Description": "Mobile AA Flak Artillery",
       "Display": {
         "Abilities": [
-          "Anti-Air",
-          "Radar"
+          "Anti-Air"
         ]
       },
       "Economy": {
         "BuildTime": 800,
-        "BuildCostEnergy": 800,
-        "BuildCostMass": 160
+        "BuildCostEnergy": 2000,
+        "BuildCostMass": 300
       },
       "Weapon": [
         {
-          "MaxRadius": 33,
+          "MaxRadius": 50,
           "RateOfFire": 0.5,
           "Damage": 0,
           "RackBones": [
@@ -13871,9 +14017,9 @@
           ]
         },
         {
-          "DamageRadius": 4,
-          "FiringRandomness": 2.5,
-          "RateOfFire": 1.6666666666667,
+          "DamageRadius": 1,
+          "FiringRandomness": 1.9,
+          "RateOfFire": 1,
           "ProjectilesPerOnFire": 1,
           "TurretYaw": 0,
           "RackBones": [
@@ -13898,7 +14044,7 @@
               ]
             }
           ],
-          "Damage": 90,
+          "Damage": 150,
           "DamageType": "Normal",
           "TurretPitch": 35,
           "TurretPitchRange": 80,
@@ -13906,7 +14052,7 @@
           "TurretPitchSpeed": 180,
           "MaxRadius": 40,
           "ProjectileId": "/projectiles/CAABurstCloud01/CAABurstCloud01_proj.bp",
-          "MuzzleVelocity": 20,
+          "MuzzleVelocity": 60,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoSize": 1,
@@ -13914,7 +14060,7 @@
           "ProjectileLifetimeUsesMultiplier": 1.25,
           "TurretYawSpeed": 180,
           "RackSalvoReloadTime": 0,
-          "FiringTolerance": 2,
+          "FiringTolerance": 1.5,
           "TurretYawRange": 180,
           "WeaponCategory": "Anti Air"
         }
@@ -14086,7 +14232,7 @@
           "WeaponCategory": "Defense"
         },
         {
-          "FiringRandomness": 0.9,
+          "FiringRandomness": 0.63,
           "RateOfFire": 1,
           "TurretYaw": 0,
           "RackBones": [
@@ -15288,7 +15434,7 @@
       ],
       "Description": "Anti-Air Flak Artillery",
       "Economy": {
-        "BuildTime": 540,
+        "BuildTime": 600,
         "BuildCostMass": 400,
         "BuildCostEnergy": 4000
       },
@@ -15327,9 +15473,9 @@
       },
       "Weapon": [
         {
-          "DamageRadius": 5,
-          "FiringRandomness": 4,
-          "RateOfFire": 2,
+          "DamageRadius": 3,
+          "FiringRandomness": 2,
+          "RateOfFire": 1,
           "ProjectilesPerOnFire": 2,
           "TurretYaw": 0,
           "RackBones": [
@@ -15346,15 +15492,15 @@
               ]
             }
           ],
-          "Damage": 38,
+          "Damage": 75,
           "DamageType": "Normal",
           "TurretPitch": 35,
           "TurretPitchRange": 55,
           "DisplayName": "Electron Flak",
           "TurretPitchSpeed": 180,
-          "MaxRadius": 44,
+          "MaxRadius": 50,
           "ProjectileId": "/projectiles/CAABurstCloud01/CAABurstCloud01_proj.bp",
-          "MuzzleVelocity": 30,
+          "MuzzleVelocity": 60,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoDelay": 0.1,
@@ -16028,15 +16174,16 @@
         "CQUEMOV",
         "CYBRAN",
         "INTELLIGENCE",
+        "MOBILE",
+        "MOBILESONAR",
+        "NAVAL",
+        "NEEDMOBILEBUILD",
         "OVERLAYSONAR",
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SHOWQUEUE",
-        "SIZE4",
         "SONAR",
         "SORTINTEL",
-        "STRUCTURE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -16047,7 +16194,7 @@
         "UnitName": "Flood",
         "Icon": "sea",
         "FactionName": "Cybran",
-        "Classification": "RULEUC_Sensor"
+        "Classification": "RULEUC_MilitaryShip"
       },
       "Economy": {
         "BuildTime": 780,
@@ -16058,6 +16205,7 @@
       },
       "Intel": {
         "SonarRadius": 288,
+        "WaterVisionRadius": 65,
         "VisionRadius": 24
       },
       "Defense": {
@@ -16068,7 +16216,10 @@
         "HealthMult": 0.9,
         "MassMult": 0.9
       },
-      "Physics": {},
+      "Physics": {
+        "TurnRate": 60,
+        "MaxSpeed": 2.8
+      },
       "Display": {
         "Abilities": [
           "Sonar",
@@ -16322,6 +16473,7 @@
         "OVERLAYRADAR",
         "OVERLAYDIRECTFIRE",
         "OVERLAYOMNI",
+        "OVERLAYCOUNTERINTEL",
         "PATROLHELPER",
         "PRODUCTSC1",
         "RADAR",
@@ -16338,11 +16490,12 @@
       "StrategicIconName": "icon_subcommander",
       "Enhancements": {
         "FocusConvertor": {
-          "BuildTime": 1680,
-          "BuildCostMass": 800,
-          "Name": "Disintegrator Amplifier",
           "Slot": "LCH",
           "BuildCostEnergy": 12000,
+          "BuildTime": 1680,
+          "BuildIconSortPriority": 10,
+          "Name": "Specialized Converter",
+          "BuildCostMass": 800,
           "Icon": "fc",
           "NewMaxRadius": 35
         },
@@ -16350,62 +16503,90 @@
           "Slot": "Back",
           "BuildCostEnergy": 176200,
           "BuildTime": 13440,
+          "BuildIconSortPriority": 10,
           "Name": "Personal Cloaking Generator",
           "MaintenanceConsumptionPerSecondEnergy": 1520,
           "Icon": "cfs",
           "BuildCostMass": 3600,
           "NewHealth": 15500
         },
+        "StealthField": {
+          "Slot": "LCH",
+          "BuildCostMass": 800,
+          "BuildCostEnergy": 24000,
+          "MaintenanceConsumptionPerSecondEnergy": 170,
+          "BuildTime": 900,
+          "BuildIconSortPriority": 40,
+          "Name": "Stealth Field Generator",
+          "Icon": "stealth_aura"
+        },
         "NaniteMissileSystem": {
           "BuildTime": 2240,
-          "BuildCostMass": 800,
+          "BuildIconSortPriority": 30,
           "Name": "Nanite Missile System",
           "Slot": "Back",
-          "BuildCostEnergy": 20000,
-          "Icon": "nms"
-        },
-        "Switchback": {
-          "Slot": "RCH",
-          "NewBuildRate": 112,
-          "BuildTime": 1120,
-          "Name": "Rapid Fabricator",
-          "Icon": "ses",
-          "BuildCostMass": 560,
-          "BuildCostEnergy": 12800
-        },
-        "StealthGenerator": {
-          "BuildTime": 1120,
-          "BuildCostMass": 400,
-          "Name": "Personal Stealth Generator",
-          "MaintenanceConsumptionPerSecondEnergy": 100,
-          "BuildCostEnergy": 7400,
-          "Icon": "sfs",
-          "Slot": "Back"
+          "BuildCostMass": 800,
+          "Icon": "nms",
+          "BuildCostEnergy": 20000
         },
         "SelfRepairSystem": {
           "Slot": "Back",
           "BuildCostEnergy": 33600,
           "BuildTime": 6720,
+          "BuildIconSortPriority": 30,
           "Name": "Nano-Repair System",
-          "NewHealth": 10000,
-          "BuildCostMass": 2300,
+          "NewHealth": 10500,
+          "BuildCostMass": 2200,
           "Icon": "srs",
           "NewRegenRate": 200
         },
+        "Switchback": {
+          "Slot": "RCH",
+          "NewBuildRate": 112,
+          "BuildTime": 1120,
+          "BuildIconSortPriority": 30,
+          "Name": "Rapid Fabricator",
+          "Icon": "ses",
+          "BuildCostMass": 560,
+          "BuildCostEnergy": 12800
+        },
+        "SpeedAura": {
+          "Slot": "Back",
+          "BuildCostMass": 1400,
+          "BuildCostEnergy": 58000,
+          "BuildTime": 5600,
+          "BuildIconSortPriority": 20,
+          "Name": "Kinetic Acceleration Field",
+          "MaintenanceConsumptionPerSecondEnergy": 520,
+          "Icon": "speed_aura"
+        },
+        "StealthGenerator": {
+          "Slot": "LCH",
+          "BuildCostEnergy": 7400,
+          "BuildCostMass": 400,
+          "BuildTime": 1120,
+          "BuildIconSortPriority": 20,
+          "Name": "Personal Stealth Generator",
+          "NewHealth": 2500,
+          "Icon": "personal_stealth",
+          "MaintenanceConsumptionPerSecondEnergy": 50
+        },
         "RapidFire": {
-          "BuildTime": 1680,
-          "BuildCostMass": 900,
-          "Name": "Cooling module",
           "Slot": "RCH",
           "BuildCostEnergy": 8000,
-          "Icon": "saa",
-          "NewRateOfFire": 2
+          "BuildTime": 1680,
+          "BuildIconSortPriority": 10,
+          "Name": "Cooling module",
+          "Icon": "acu",
+          "NewRateOfFire": 2,
+          "BuildCostMass": 900
         },
         "ResourceAllocation": {
           "Slot": "LCH",
           "ProductionPerSecondMass": 10,
           "BuildCostEnergy": 90000,
           "BuildTime": 8400,
+          "BuildIconSortPriority": 40,
           "Name": "Resource Allocation System",
           "Icon": "ras",
           "ProductionPerSecondEnergy": 1000,
@@ -16413,13 +16594,14 @@
         },
         "SensorRangeEnhancer": {
           "NewOmniRadius": 35,
-          "Slot": "LCH",
           "BuildCostEnergy": 20000,
           "BuildTime": 3360,
+          "BuildIconSortPriority": 20,
           "Name": "Enhanced Sensor System",
           "MaintenanceConsumptionPerSecondEnergy": 50,
           "Icon": "rads",
-          "BuildCostMass": 300
+          "BuildCostMass": 300,
+          "Slot": "RCH"
         }
       },
       "Id": "URL0301",
@@ -16432,7 +16614,7 @@
       },
       "Description": "Support Armored Command Unit",
       "Defense": {
-        "Health": 14000,
+        "Health": 14500,
         "RegenRate": 20
       },
       "General": {
@@ -16491,10 +16673,16 @@
           "MuzzleSalvoSize": 1,
           "MuzzleSalvoDelay": 0,
           "ProjectileLifetimeUsesMultiplier": 1.4,
-          "TurretYawSpeed": 160,
+          "Buffs": [
+            {},
+            {},
+            {},
+            {}
+          ],
           "TurretYawRange": 360,
-          "RackSalvoReloadTime": 0,
+          "TurretYawSpeed": 160,
           "FiringTolerance": 2,
+          "RackSalvoReloadTime": 0,
           "MaxRadius": 25
         },
         {
@@ -16771,7 +16959,7 @@
       ],
       "Description": "Siege Assault Bot",
       "Economy": {
-        "BuildTime": 2400,
+        "BuildTime": 2250,
         "BuildCostEnergy": 5250,
         "BuildCostMass": 480
       },
@@ -17328,10 +17516,10 @@
       "Economy": {
         "BuildTime": 3000,
         "BuildCostEnergy": 9600,
-        "BuildCostMass": 720
+        "BuildCostMass": 800
       },
       "Defense": {
-        "Health": 1900
+        "Health": 3200
       },
       "Id": "DRLK001",
       "Wreckage": {
@@ -17387,7 +17575,7 @@
           "TurretYawSpeed": 180
         },
         {
-          "FiringRandomness": 1,
+          "FiringRandomness": 0.7,
           "RateOfFire": 1.6666666666667,
           "TurretYaw": 0,
           "RackBones": [
@@ -18017,23 +18205,18 @@
         "MaintenanceConsumptionPerSecondEnergy": 150
       },
       "BuildIconSortPriority": 40,
-      "StrategicIconName": "icon_bomber3_directfire",
       "Physics": {
         "FuelRechargeRate": 15,
         "MaxSpeed": 0.5,
         "Elevation": 18,
         "FuelUseTime": 1000
       },
-      "Intel": {
-        "RadarRadius": 64,
-        "VisionRadius": 32
-      },
       "Air": {
-        "TurnSpeed": 0.8,
+        "TurnSpeed": 1.2,
         "MaxAirspeed": 17,
         "EngageDistance": 50,
         "MinAirspeed": 15,
-        "CombatTurnSpeed": 0.8
+        "CombatTurnSpeed": 1.2
       },
       "Defense": {
         "Health": 3700
@@ -18042,6 +18225,10 @@
       "Wreckage": {
         "HealthMult": 0.9,
         "MassMult": 0.9
+      },
+      "Intel": {
+        "RadarRadius": 64,
+        "VisionRadius": 32
       },
       "Veteran": {
         "Level2": 24,
@@ -18058,10 +18245,16 @@
           "Radar"
         ]
       },
+      "StrategicIconName": "icon_bomber3_directfire",
       "Weapon": [
+        {
+          "RateOfFire": 0,
+          "MaxRadius": 64
+        },
         {
           "DamageRadius": 6.5,
           "FiringRandomness": 0,
+          "RateOfFire": 0.125,
           "ProjectilesPerOnFire": 1,
           "RackBones": [
             {
@@ -18082,7 +18275,6 @@
           "MuzzleSalvoDelay": 0,
           "FiringTolerance": 6,
           "RackSalvoReloadTime": 0,
-          "RateOfFire": 0.125,
           "MaxRadius": 90
         },
         {
@@ -18212,10 +18404,10 @@
       },
       "Economy": {
         "BuildTime": 2875,
+        "BuildCostMass": 4600,
         "MaintenanceConsumptionPerSecondEnergy": 54,
         "ProductionPerSecondMass": 18,
-        "BuildCostEnergy": 31625,
-        "BuildCostMass": 4600
+        "BuildCostEnergy": 31625
       },
       "Physics": {},
       "Defense": {
@@ -18537,7 +18729,7 @@
         {
           "Damage": 5000,
           "WeaponCategory": "Death",
-          "DamageRadius": 14,
+          "DamageRadius": 10,
           "DamageType": "DeathExplosion",
           "DisplayName": "Death Weapon"
         }
@@ -18577,14 +18769,14 @@
       },
       "Air": {
         "MinAirspeed": 3,
-        "MaxAirspeed": 10
+        "MaxAirspeed": 15
       },
       "Defense": {
         "Health": 5900
       },
       "Physics": {
         "TurnRate": 100,
-        "Elevation": 18,
+        "Elevation": 12,
         "MaxSpeed": 10,
         "FuelRechargeRate": 15,
         "FuelUseTime": 800
@@ -19574,11 +19766,11 @@
         "BuildTime": 1400,
         "BuildCostEnergy": 14400,
         "BuildCostMass": 1200,
-        "MaintenanceConsumptionPerSecondEnergy": 1200
+        "MaintenanceConsumptionPerSecondEnergy": 600
       },
       "Intel": {
         "SonarRadius": 448,
-        "WaterVisionRadius": 24,
+        "WaterVisionRadius": 75,
         "VisionRadius": 32
       },
       "Defense": {
@@ -19592,7 +19784,9 @@
       "Display": {
         "Abilities": [
           "Sonar",
-          "Stealth Field"
+          "Stealth Field",
+          "Sonar consumption: 400 (Energy/sec)",
+          "Stealth field consumption: 200 (Energy/sec)"
         ]
       },
       "Physics": {
@@ -19730,10 +19924,10 @@
         "Classification": "RULEUC_Factory"
       },
       "Economy": {
-        "BuildTime": 4097,
+        "BuildTime": 1950,
         "BuildRate": 150,
-        "BuildCostEnergy": 30000,
-        "BuildCostMass": 3000
+        "BuildCostEnergy": 24000,
+        "BuildCostMass": 1200
       },
       "Intel": {
         "VisionRadius": 20
@@ -20099,9 +20293,9 @@
         "MOBILE",
         "OVERLAYANTIAIR",
         "OVERLAYANTINAVY",
-        "NEEDMOBILEBUILD",
         "OVERLAYDEFENSE",
         "OVERLAYINDIRECTFIRE",
+        "NEEDMOBILEBUILD",
         "OVERLAYDIRECTFIRE",
         "OVERLAYSONAR",
         "PRODUCTFA",
@@ -20409,7 +20603,7 @@
         "VisionRadius": 46
       },
       "Defense": {
-        "Health": 75000,
+        "Health": 70000,
         "RegenRate": 75
       },
       "Id": "URA0401",
@@ -21331,7 +21525,6 @@
         {
           "DamageRadius": 4,
           "FiringRandomness": 0,
-          "RateOfFire": 0.2,
           "ProjectilesPerOnFire": 1,
           "RackBones": [
             {
@@ -21350,9 +21543,10 @@
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoSize": 1,
           "MuzzleSalvoDelay": 0,
+          "RateOfFire": 0.2,
           "MaxRadius": 40,
-          "FiringTolerance": 6,
           "RackSalvoReloadTime": 0,
+          "FiringTolerance": 6,
           "Buffs": [
             {}
           ]
@@ -21857,13 +22051,13 @@
         "Classification": "RULEUC_Resource"
       },
       "Economy": {
-        "BuildTime": 250,
+        "BuildTime": 120,
         "StorageMass": 500,
-        "BuildCostEnergy": 1500,
-        "BuildCostMass": 200
+        "BuildCostEnergy": 750,
+        "BuildCostMass": 100
       },
       "Defense": {
-        "Health": 650
+        "Health": 325
       },
       "Id": "UAB1106",
       "StrategicIconName": "icon_structure_mass",
@@ -21959,6 +22153,7 @@
             }
           ],
           "Damage": 8,
+          "ProjectileLifetime": 1.3,
           "DamageType": "Normal",
           "TurretPitch": 0,
           "TurretPitchRange": 90,
@@ -21971,7 +22166,6 @@
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoSize": 3,
           "MuzzleSalvoDelay": 0.2,
-          "ProjectileLifetimeUsesMultiplier": 1.25,
           "TurretYawSpeed": 240,
           "TurretYawRange": 180,
           "FiringTolerance": 0.5,
@@ -22283,7 +22477,7 @@
           "NewRegenRate": 20
         },
         "ChronoDampenerAeon": {
-          "Slot": "Back",
+          "Slot": "RCH",
           "BuildCostEnergy": 60375,
           "BuildTime": 1225,
           "Name": "Chrono Dampener",
@@ -22292,14 +22486,14 @@
           "Icon": "cd"
         },
         "ShieldAeon": {
-          "BuildCostEnergy": 38500,
+          "BuildCostEnergy": 35000,
           "BuildTime": 1450,
           "ShieldRegenRate": 30,
           "Icon": "ptsg",
-          "Slot": "RCH",
+          "Slot": "Back",
           "ShieldRegenStartTime": 1,
           "MaintenanceConsumptionPerSecondEnergy": 150,
-          "BuildCostMass": 1430,
+          "BuildCostMass": 1400,
           "Name": "Personal Shield Generator",
           "ShieldRechargeTime": 75,
           "ShieldMaxHealth": 8000
@@ -22328,17 +22522,19 @@
           "Slot": "LCH",
           "BuildCostEnergy": 4000,
           "BuildTime": 200,
+          "BuildIconSortPriority": 10,
           "Name": "Advanced Quantum Disruptor",
           "Icon": "ecba",
           "BuildCostMass": 200,
           "NewMaxRadius": 30
         },
         "EngineeringT2Aeon": {
-          "Slot": "LCH",
           "NewBuildRate": 42,
+          "Slot": "LCH",
           "BuildCostEnergy": 21000,
-          "BuildTime": 1000,
           "BuildCostMass": 800,
+          "BuildTime": 1000,
+          "BuildIconSortPriority": 20,
           "Name": "Tech 2 Engineering Suite",
           "NewHealth": 2000,
           "Icon": "aes",
@@ -22346,15 +22542,16 @@
         },
         "EnhancedSensorsAeon": {
           "NewOmniRadius": 36,
-          "Slot": "RCH",
           "BuildCostEnergy": 5000,
           "BuildTime": 500,
           "Name": "Enhanced Sensor System",
+          "MaintenanceConsumptionPerSecondEnergy": 50,
           "Icon": "ess",
-          "BuildCostMass": 350
+          "BuildCostMass": 350,
+          "Slot": "RCH"
         },
         "ResourceAllocationAeon": {
-          "Slot": "Back",
+          "Slot": "RCH",
           "ProductionPerSecondMass": 18,
           "BuildCostEnergy": 175000,
           "BuildTime": 2800,
@@ -22364,7 +22561,7 @@
           "ProductionPerSecondEnergy": 1700
         },
         "ResourceAllocationAdvancedAeon": {
-          "Slot": "Back",
+          "Slot": "RCH",
           "ProductionPerSecondMass": 36,
           "BuildCostEnergy": 175000,
           "BuildTime": 2800,
@@ -22374,14 +22571,14 @@
           "ProductionPerSecondEnergy": 3400
         },
         "ShieldHeavyAeon": {
-          "BuildCostEnergy": 136125,
+          "BuildCostEnergy": 135000,
           "BuildTime": 2450,
           "ShieldRegenRate": 32,
           "Icon": "phtsg",
-          "Slot": "RCH",
+          "Slot": "Back",
           "ShieldRegenStartTime": 1,
           "MaintenanceConsumptionPerSecondEnergy": 250,
-          "BuildCostMass": 2530,
+          "BuildCostMass": 2500,
           "Name": "Heavy Personal Shield Generator",
           "ShieldRechargeTime": 160,
           "ShieldMaxHealth": 25000
@@ -22770,6 +22967,7 @@
             }
           ],
           "Damage": 14,
+          "ProjectileLifetime": 1.3,
           "DamageType": "Normal",
           "TurretPitch": 45,
           "TurretPitchRange": 45,
@@ -22782,7 +22980,6 @@
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoSize": 3,
           "MuzzleSalvoDelay": 0.2,
-          "ProjectileLifetimeUsesMultiplier": 1.25,
           "TurretYawSpeed": 180,
           "TurretYawRange": 180,
           "FiringTolerance": 0.5,
@@ -23034,6 +23231,7 @@
       },
       "Intel": {
         "SonarRadius": 160,
+        "WaterVisionRadius": 35,
         "VisionRadius": 20
       },
       "Defense": {
@@ -23551,7 +23749,7 @@
         "MaxSpeed": 2.7
       },
       "Economy": {
-        "BuildTime": 1600,
+        "BuildTime": 1280,
         "MaintenanceConsumptionPerSecondEnergy": 4,
         "BuildCostEnergy": 1800,
         "BuildCostMass": 360
@@ -23654,7 +23852,7 @@
         "MaxSpeed": 4
       },
       "Economy": {
-        "BuildTime": 900,
+        "BuildTime": 720,
         "BuildCostEnergy": 1080,
         "BuildCostMass": 180
       },
@@ -23753,12 +23951,12 @@
       "BuildIconSortPriority": 25,
       "Description": "Mobile AA Flak Artillery",
       "Defense": {
-        "Health": 1000
+        "Health": 1700
       },
       "Physics": {
         "TurnRate": 120,
         "Elevation": 0.25,
-        "MaxSpeed": 2.7
+        "MaxSpeed": 3
       },
       "Id": "UAL0205",
       "Wreckage": {
@@ -23766,8 +23964,7 @@
         "MassMult": 0.9
       },
       "Intel": {
-        "VisionRadius": 22,
-        "RadarRadius": 52
+        "VisionRadius": 22
       },
       "Veteran": {
         "Level2": 8,
@@ -23779,18 +23976,17 @@
       "Display": {
         "Abilities": [
           "Anti-Air",
-          "Hover",
-          "Radar"
+          "Hover"
         ]
       },
       "Economy": {
         "BuildTime": 800,
-        "BuildCostEnergy": 800,
-        "BuildCostMass": 160
+        "BuildCostEnergy": 2000,
+        "BuildCostMass": 300
       },
       "Weapon": [
         {
-          "MaxRadius": 33,
+          "MaxRadius": 50,
           "RateOfFire": 0.5,
           "Damage": 0,
           "RackBones": [
@@ -23802,9 +23998,9 @@
           ]
         },
         {
-          "DamageRadius": 4,
-          "FiringRandomness": 2.5,
-          "RateOfFire": 2,
+          "DamageRadius": 1,
+          "FiringRandomness": 1.9,
+          "RateOfFire": 0.5,
           "TurretYaw": 0,
           "RackBones": [
             {
@@ -23813,7 +24009,7 @@
               ]
             }
           ],
-          "Damage": 72,
+          "Damage": 300,
           "DamageType": "Normal",
           "TurretPitch": 35,
           "TurretPitchRange": 80,
@@ -23821,14 +24017,14 @@
           "TurretPitchSpeed": 180,
           "WeaponCategory": "Anti Air",
           "ProjectileId": "/projectiles/AAAFizz01/AAAFizz01_proj.bp",
-          "MuzzleVelocity": 20,
+          "MuzzleVelocity": 60,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoSize": 1,
           "MuzzleSalvoDelay": 0,
           "ProjectileLifetimeUsesMultiplier": 1.25,
           "TurretYawRange": 180,
-          "FiringTolerance": 2,
+          "FiringTolerance": 1.5,
           "RackSalvoReloadTime": 0,
           "TurretYawSpeed": 180,
           "MaxRadius": 40
@@ -23866,13 +24062,13 @@
       },
       "Air": {
         "MinAirspeed": 3,
-        "MaxAirspeed": 12
+        "MaxAirspeed": 15
       },
       "Defense": {
-        "Health": 848
+        "Health": 850
       },
       "Physics": {
-        "Elevation": 18,
+        "Elevation": 12,
         "FuelRechargeRate": 5,
         "MaxSpeed": 0.5,
         "FuelUseTime": 400
@@ -24232,6 +24428,7 @@
         "TRANSPORTBUILTBYTIER2FACTORY",
         "TRANSPORTBUILTBYTIER3FACTORY",
         "VISIBLETORECON",
+        "OVERLAYDIRECTFIRE",
         null
       ],
       "General": {
@@ -24244,13 +24441,13 @@
       "Description": "Guided Missile",
       "Economy": {
         "BuildTime": 1600,
-        "BuildCostEnergy": 8850,
-        "BuildCostMass": 270
+        "BuildCostEnergy": 9000,
+        "BuildCostMass": 360
       },
       "Air": {
         "TurnSpeed": 1.5,
-        "MinAirspeed": 15,
-        "MaxAirspeed": 17
+        "MinAirspeed": 10,
+        "MaxAirspeed": 10
       },
       "Defense": {
         "Health": 15
@@ -24273,6 +24470,7 @@
       },
       "Weapon": [
         {
+          "DamageRadius": 3,
           "ProjectilesPerOnFire": 1,
           "TurretYaw": 0,
           "RackBones": [
@@ -24282,29 +24480,44 @@
               ]
             }
           ],
-          "Damage": 350,
+          "Damage": 2000,
           "ProjectileLifetime": 3,
           "DamageType": "Normal",
           "TurretPitch": 0,
           "TurretPitchRange": 90,
           "DisplayName": "Kamikaze",
           "TurretPitchSpeed": 720,
-          "DoTPulses": 6,
-          "MaxRadius": 25,
+          "MaxRadius": 20,
           "ProjectileId": "/projectiles/AIFGuidedMissile01/AIFGuidedMissile01_proj.bp",
-          "DoTTime": 4,
           "MuzzleVelocity": 18,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoSize": 1,
-          "TurretYawSpeed": 720,
           "MuzzleSalvoDelay": 0,
-          "RateOfFire": 10,
+          "TurretYawSpeed": 720,
           "FiringTolerance": 0.1,
+          "RateOfFire": 10,
           "RackSalvoReloadTime": 10,
           "TurretYawRange": 40,
-          "DamageRadius": 3.5,
           "WeaponCategory": "Kamikaze"
+        },
+        {
+          "TurretYawSpeed": 720,
+          "MaxRadius": 20,
+          "RateOfFire": 10,
+          "TurretYaw": 0,
+          "Damage": 0,
+          "TurretPitch": 0,
+          "RackBones": [
+            {
+              "MuzzleBones": [
+                "DAA0206"
+              ]
+            }
+          ],
+          "TurretPitchRange": 90,
+          "TurretPitchSpeed": 720,
+          "TurretYawRange": 40
         },
         {
           "DamageRadius": 3,
@@ -25345,7 +25558,7 @@
         "Classification": "RULEUC_MilitaryStructure"
       },
       "Economy": {
-        "BuildTime": 540,
+        "BuildTime": 600,
         "BuildCostMass": 400,
         "BuildCostEnergy": 4000
       },
@@ -25378,7 +25591,7 @@
         {
           "DamageRadius": 3,
           "FiringRandomness": 1.5,
-          "RateOfFire": 1,
+          "RateOfFire": 0.5,
           "ProjectilesPerOnFire": 1,
           "TurretYaw": 0,
           "RackBones": [
@@ -25388,7 +25601,7 @@
               ]
             }
           ],
-          "Damage": 150,
+          "Damage": 300,
           "DamageType": "Normal",
           "TurretPitch": 35,
           "TurretPitchRange": 55,
@@ -25396,7 +25609,7 @@
           "TurretPitchSpeed": 180,
           "MaxRadius": 50,
           "ProjectileId": "/projectiles/AAAFizz01/AAAFizz01_proj.bp",
-          "MuzzleVelocity": 35,
+          "MuzzleVelocity": 60,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoSize": 1,
@@ -25933,15 +26146,16 @@
         "BUILTBYTIER3ENGINEER",
         "CQUEMOV",
         "INTELLIGENCE",
+        "MOBILE",
+        "MOBILESONAR",
+        "NAVAL",
+        "NEEDMOBILEBUILD",
         "OVERLAYSONAR",
         "PRODUCTSC1",
         "RECLAIMABLE",
         "SELECTABLE",
-        "SHOWQUEUE",
-        "SIZE4",
         "SONAR",
         "SORTINTEL",
-        "STRUCTURE",
         "TECH2",
         "VISIBLETORECON",
         null
@@ -25951,7 +26165,7 @@
       "General": {
         "FactionName": "Aeon",
         "Icon": "sea",
-        "Classification": "RULEUC_Sensor"
+        "Classification": "RULEUC_MilitaryShip"
       },
       "Economy": {
         "BuildTime": 780,
@@ -25962,6 +26176,7 @@
       },
       "Intel": {
         "SonarRadius": 288,
+        "WaterVisionRadius": 65,
         "VisionRadius": 24
       },
       "Defense": {
@@ -25972,7 +26187,10 @@
         "HealthMult": 0.9,
         "MassMult": 0.9
       },
-      "Physics": {},
+      "Physics": {
+        "TurnRate": 60,
+        "MaxSpeed": 2.8
+      },
       "Display": {
         "Abilities": [
           "Sonar",
@@ -26066,14 +26284,14 @@
       "BuildIconSortPriority": 10,
       "Enhancements": {
         "Shield": {
-          "BuildCostEnergy": 40400,
+          "BuildCostEnergy": 40000,
           "BuildTime": 5040,
           "ShieldRegenRate": 50,
           "Icon": "tsg",
           "Slot": "Back",
           "ShieldRegenStartTime": 2,
           "MaintenanceConsumptionPerSecondEnergy": 270,
-          "BuildCostMass": 2500,
+          "BuildCostMass": 1500,
           "Name": "Personal Shield Generator",
           "ShieldRechargeTime": 150,
           "ShieldMaxHealth": 15000
@@ -26087,11 +26305,30 @@
           "Icon": "pqt",
           "Slot": "Back"
         },
+        "RegenDampener": {
+          "Slot": "RCH",
+          "BuildCostEnergy": 30000,
+          "BuildTime": 5040,
+          "BuildIconSortPriority": 20,
+          "Name": "Entropy Field",
+          "BuildCostMass": 1200,
+          "Icon": "entropfy"
+        },
+        "ShieldAmplifier": {
+          "Slot": "Back",
+          "BuildCostEnergy": 75000,
+          "BuildTime": 5600,
+          "Name": "Shield Amplifier",
+          "MaintenanceConsumptionPerSecondEnergy": 500,
+          "Icon": "AuShild",
+          "BuildCostMass": 1750
+        },
         "StabilitySuppressant": {
           "Slot": "RCH",
           "BuildCostEnergy": 12500,
+          "Icon": "hsa",
           "BuildTime": 5040,
-          "Icon": "ss",
+          "BuildIconSortPriority": 10,
           "Name": "Reacton Refractor",
           "BuildCostMass": 1250,
           "NewRateOfFire": 1.5,
@@ -26099,6 +26336,7 @@
         },
         "Sacrifice": {
           "BuildTime": 700,
+          "BuildIconSortPriority": 40,
           "Name": "Sacrificial System",
           "Slot": "RCH",
           "BuildCostMass": 150,
@@ -26106,7 +26344,7 @@
           "BuildCostEnergy": 2500
         },
         "ShieldHeavy": {
-          "BuildCostEnergy": 50000,
+          "BuildCostEnergy": 70000,
           "BuildTime": 6720,
           "ShieldRegenRate": 100,
           "Icon": "phtsg",
@@ -26116,45 +26354,48 @@
           "BuildCostMass": 2500,
           "Name": "Heavy Personal Shield Generator",
           "ShieldRechargeTime": 200,
-          "ShieldMaxHealth": 35000
-        },
-        "EngineeringFocusingModule": {
-          "Slot": "RCH",
-          "NewBuildRate": 112,
-          "BuildTime": 1120,
-          "Name": "Rapid Fabricator",
-          "Icon": "efm",
-          "BuildCostMass": 560,
-          "BuildCostEnergy": 12800
+          "ShieldMaxHealth": 30000
         },
         "ResourceAllocation": {
           "Slot": "LCH",
           "ProductionPerSecondMass": 10,
           "BuildCostEnergy": 90000,
           "BuildTime": 8400,
+          "BuildIconSortPriority": 20,
           "Name": "Resource Allocation System",
           "Icon": "ras",
           "ProductionPerSecondEnergy": 1000,
           "BuildCostMass": 4500
         },
+        "EngineeringFocusingModule": {
+          "Slot": "RCH",
+          "NewBuildRate": 112,
+          "BuildTime": 1120,
+          "BuildIconSortPriority": 30,
+          "Name": "Rapid Fabricator",
+          "Icon": "efm",
+          "BuildCostMass": 560,
+          "BuildCostEnergy": 12800
+        },
         "SystemIntegrityCompensator": {
           "Slot": "Back",
-          "BuildCostEnergy": 12000,
+          "BuildCostEnergy": 10000,
           "BuildTime": 1960,
           "Name": "Nano-Repair System",
-          "NewHealth": 4500,
-          "BuildCostMass": 1200,
+          "NewHealth": 2000,
+          "BuildCostMass": 1000,
           "Icon": "sic",
-          "NewRegenRate": 100
+          "NewRegenRate": 50
         },
         "SensorRangeEnhancer": {
-          "NewOmniRadius": 55,
-          "Slot": "LCH",
+          "NewOmniRadius": 45,
           "BuildCostEnergy": 20000,
+          "Icon": "rads",
           "BuildTime": 3360,
+          "BuildIconSortPriority": 10,
           "Name": "Enhanced Sensor System",
           "MaintenanceConsumptionPerSecondEnergy": 50,
-          "Icon": "rads",
+          "Slot": "LCH",
           "BuildCostMass": 300
         }
       },
@@ -26242,6 +26483,40 @@
           "FiringTolerance": 2,
           "WeaponCategory": "Direct Fire",
           "TurretYawSpeed": 160
+        },
+        {
+          "DamageRadius": 0,
+          "RateOfFire": 0.1,
+          "TurretYaw": 0,
+          "RackBones": [
+            {
+              "MuzzleBones": [
+                "Torso"
+              ]
+            }
+          ],
+          "Damage": 0,
+          "DamageType": "Normal",
+          "TurretPitch": 0,
+          "TurretPitchRange": 0,
+          "DisplayName": "Entropy Field",
+          "TurretPitchSpeed": 0,
+          "MinRadius": 0,
+          "MaxRadius": 28,
+          "MuzzleVelocity": 30,
+          "RackSalvoChargeTime": 0,
+          "MuzzleSalvoSize": 1,
+          "RackFireTogether": false,
+          "TurretYawSpeed": 0,
+          "MuzzleSalvoDelay": 0,
+          "ProjectileLifetimeUsesMultiplier": 1.15,
+          "TurretYawRange": 0,
+          "RackSalvoReloadTime": 0,
+          "FiringTolerance": 360,
+          "Buffs": [
+            {}
+          ],
+          "WeaponCategory": "Direct Fire"
         },
         {
           "DamageRadius": 10,
@@ -27048,11 +27323,11 @@
       "Economy": {
         "BuildTime": 3000,
         "BuildCostEnergy": 9600,
-        "BuildCostMass": 720
+        "BuildCostMass": 800
       },
       "Description": "Mobile Missile Anti-Air",
       "Defense": {
-        "Health": 1700
+        "Health": 3200
       },
       "Id": "DALK003",
       "Wreckage": {
@@ -27111,7 +27386,7 @@
           "TurretPitchSpeed": 0,
           "MaxRadius": 50,
           "ProjectileId": "/projectiles/AASerpentine/AASerpentine_proj.bp",
-          "MuzzleVelocity": 34,
+          "MuzzleVelocity": 50,
           "RackSalvoReloadTime": 0,
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoDelay": 0.2,
@@ -27701,11 +27976,11 @@
         "BuildCostMass": 1750
       },
       "Air": {
-        "TurnSpeed": 0.8,
+        "TurnSpeed": 1.2,
         "MaxAirspeed": 17,
         "EngageDistance": 50,
         "MinAirspeed": 15,
-        "CombatTurnSpeed": 0.8
+        "CombatTurnSpeed": 1.2
       },
       "Defense": {
         "Health": 3800
@@ -27732,11 +28007,11 @@
           "Radar"
         ]
       },
-      "Intel": {
-        "RadarRadius": 64,
-        "VisionRadius": 32
-      },
       "Weapon": [
+        {
+          "RateOfFire": 0,
+          "MaxRadius": 64
+        },
         {
           "DamageRadius": 5.25,
           "FiringRandomness": 0,
@@ -27757,8 +28032,8 @@
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoSize": 1,
           "MuzzleSalvoDelay": 0,
-          "MaxRadius": 90,
           "FiringTolerance": 6,
+          "MaxRadius": 90,
           "Display": "Quark Bomb",
           "Buffs": [
             {}
@@ -27774,7 +28049,11 @@
           "DamageType": "Normal",
           "Damage": 500
         }
-      ]
+      ],
+      "Intel": {
+        "RadarRadius": 64,
+        "VisionRadius": 32
+      }
     },
     {
       "Categories": [
@@ -27859,10 +28138,10 @@
       },
       "Economy": {
         "BuildTime": 2875,
+        "BuildCostMass": 4600,
         "MaintenanceConsumptionPerSecondEnergy": 54,
         "ProductionPerSecondMass": 18,
-        "BuildCostEnergy": 31625,
-        "BuildCostMass": 4600
+        "BuildCostEnergy": 31625
       },
       "Physics": {},
       "Defense": {
@@ -28044,7 +28323,7 @@
         {
           "Damage": 5000,
           "WeaponCategory": "Death",
-          "DamageRadius": 14,
+          "DamageRadius": 10,
           "DamageType": "DeathExplosion",
           "DisplayName": "Death Weapon"
         }
@@ -28088,7 +28367,7 @@
         "Health": 6000
       },
       "Physics": {
-        "Elevation": 18,
+        "Elevation": 12,
         "FuelRechargeRate": 15,
         "MaxSpeed": 0.5,
         "FuelUseTime": 800
@@ -28893,7 +29172,7 @@
         "BuildTime": 1200,
         "BuildCostEnergy": 12000,
         "BuildCostMass": 1000,
-        "MaintenanceConsumptionPerSecondEnergy": 500
+        "MaintenanceConsumptionPerSecondEnergy": 400
       },
       "Defense": {
         "Health": 1500
@@ -28905,7 +29184,7 @@
       },
       "Intel": {
         "SonarRadius": 448,
-        "WaterVisionRadius": 24,
+        "WaterVisionRadius": 75,
         "VisionRadius": 32
       },
       "Display": {
@@ -28925,7 +29204,7 @@
               ]
             }
           ],
-          "Damage": 1,
+          "Damage": 3,
           "ProjectileLifetime": 1.5,
           "DamageType": "Normal",
           "TurretPitch": 0,
@@ -29081,10 +29360,10 @@
         "Classification": "RULEUC_Factory"
       },
       "Economy": {
-        "BuildTime": 4097,
+        "BuildTime": 1950,
         "BuildRate": 150,
-        "BuildCostEnergy": 30000,
-        "BuildCostMass": 3000
+        "BuildCostEnergy": 24000,
+        "BuildCostMass": 1200
       },
       "Intel": {
         "VisionRadius": 20
@@ -29143,7 +29422,7 @@
         "BuildCostMass": 27500
       },
       "Defense": {
-        "Health": 99999,
+        "Health": 100000,
         "RegenRate": 10
       },
       "Id": "UAL0401",
@@ -29182,7 +29461,7 @@
               ]
             }
           ],
-          "Damage": 200,
+          "Damage": 250,
           "BeamCollisionDelay": 0,
           "DamageType": "Normal",
           "TurretPitch": -20,
@@ -30693,7 +30972,7 @@
       "Weapon": [
         {
           "DamageRadius": 4,
-          "RateOfFire": 0.2,
+          "FiringRandomness": 0,
           "ProjectilesPerOnFire": 1,
           "RackBones": [
             {
@@ -30712,10 +30991,10 @@
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoSize": 1,
           "MuzzleSalvoDelay": 0,
-          "FiringTolerance": 6,
           "RackSalvoReloadTime": 0,
-          "FiringRandomness": 0,
-          "MaxRadius": 40
+          "FiringTolerance": 6,
+          "MaxRadius": 40,
+          "RateOfFire": 0.2
         },
         {
           "DamageRadius": 1,
@@ -31097,7 +31376,7 @@
             }
           ],
           "Damage": 13,
-          "ProjectileLifetime": 10,
+          "ProjectileLifetime": 1.3,
           "DamageType": "Normal",
           "TurretPitch": 0,
           "TurretPitchRange": 90,
@@ -31110,7 +31389,6 @@
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoSize": 2,
           "MuzzleSalvoDelay": 0,
-          "ProjectileLifetimeUsesMultiplier": 1.25,
           "TurretYawSpeed": 240,
           "TurretYawRange": 180,
           "FiringTolerance": 0.5,
@@ -31148,13 +31426,13 @@
         "Classification": "RULEUC_Resource"
       },
       "Economy": {
-        "BuildTime": 250,
+        "BuildTime": 120,
         "StorageMass": 500,
-        "BuildCostEnergy": 1500,
-        "BuildCostMass": 200
+        "BuildCostEnergy": 750,
+        "BuildCostMass": 100
       },
       "Defense": {
-        "Health": 700
+        "Health": 350
       },
       "Id": "XSB1106",
       "StrategicIconName": "icon_structure_mass",
@@ -31496,6 +31774,8 @@
         },
         "RegenAuraSeraphim": {
           "BuildCostEnergy": 18000,
+          "BuildIconSortPriority": 20,
+          "MaintenanceConsumptionPerSecondEnergy": 50,
           "Icon": "nrf",
           "NewRegenRate": 10,
           "Slot": "LCH",
@@ -31505,13 +31785,14 @@
         },
         "BlastAttackSeraphim": {
           "Slot": "LCH",
-          "AdditionalDamage": 620,
-          "NewDamageRadius": 2.7,
+          "AdditionalDamage": 600,
+          "BuildCostEnergy": 180000,
+          "BuildTime": 4200,
+          "BuildIconSortPriority": 10,
           "Name": "Refracting Chronotron Amplifier",
-          "BuildCostEnergy": 270000,
-          "BuildCostMass": 5400,
-          "Icon": "cba",
-          "BuildTime": 4600
+          "BuildCostMass": 4800,
+          "NewDamageRadius": 2.7,
+          "Icon": "cba"
         },
         "DamageStabilizationAdvancedSeraphim": {
           "Slot": "Back",
@@ -31534,11 +31815,12 @@
           "ProductionPerSecondEnergy": 4000
         },
         "EngineeringT2Seraphim": {
-          "Slot": "LCH",
           "NewBuildRate": 42,
+          "Slot": "LCH",
           "BuildCostEnergy": 21000,
-          "BuildTime": 1000,
           "BuildCostMass": 800,
+          "BuildTime": 1000,
+          "BuildIconSortPriority": 30,
           "Name": "Tech 2 Engineering Suite",
           "NewHealth": 2000,
           "Icon": "aes",
@@ -31567,6 +31849,7 @@
         },
         "AdvancedRegenAuraSeraphim": {
           "BuildCostEnergy": 42000,
+          "MaintenanceConsumptionPerSecondEnergy": 750,
           "Icon": "anrf",
           "NewRegenRate": 20,
           "Slot": "LCH",
@@ -31772,7 +32055,7 @@
           "DamageType": "Normal",
           "DisplayName": "Laanse Tactical Missile Launcher",
           "ManualFire": true,
-          "MinRadius": 20,
+          "MinRadius": 10,
           "ProjectileId": "/projectiles/SIFLaanseTacticalMissileCDR/SIFLaanseTacticalMissileCDR_proj.bp",
           "MuzzleVelocity": 12,
           "RackFireTogether": false,
@@ -31970,6 +32253,7 @@
             }
           ],
           "Damage": 10,
+          "ProjectileLifetime": 1.3,
           "DamageType": "Normal",
           "TurretPitch": 45,
           "TurretPitchRange": 45,
@@ -31982,7 +32266,6 @@
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoSize": 2,
           "MuzzleSalvoDelay": 0,
-          "ProjectileLifetimeUsesMultiplier": 1.25,
           "TurretYawSpeed": 180,
           "TurretYawRange": 180,
           "FiringTolerance": 0.5,
@@ -32242,6 +32525,7 @@
       },
       "Intel": {
         "SonarRadius": 180,
+        "WaterVisionRadius": 35,
         "VisionRadius": 20
       },
       "Defense": {
@@ -32480,8 +32764,7 @@
         },
         {
           "DamageRadius": 3,
-          "TurretYawRange": 180,
-          "RateOfFire": 0.1,
+          "FiringRandomness": 0,
           "ProjectilesPerOnFire": 1,
           "RackBones": [
             {
@@ -32495,19 +32778,20 @@
           "TurretPitch": -90,
           "DisplayName": "Othe Tactical Bomb",
           "TurretPitchSpeed": 60,
-          "WeaponCategory": "Bomb",
+          "MaxRadius": 60,
           "ProjectileId": "/projectiles/SBOOtheTacticalBomb02/SBOOtheTacticalBomb02_proj.bp",
           "MuzzleVelocity": 0,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoSize": 1,
-          "FiringRandomness": 0,
+          "WeaponCategory": "Bomb",
           "RackSalvoReloadTime": 0,
+          "TurretYaw": 0,
           "MuzzleSalvoDelay": 0,
           "TurretPitchRange": 20,
           "FiringTolerance": 6,
-          "TurretYaw": 0,
-          "MaxRadius": 60,
+          "TurretYawRange": 180,
+          "RateOfFire": 0.1,
           "TurretYawSpeed": 120
         },
         {
@@ -32656,7 +32940,7 @@
       "StrategicIconName": "icon_bot2_directfire",
       "Description": "Assault Bot",
       "Economy": {
-        "BuildTime": 1600,
+        "BuildTime": 1280,
         "BuildCostEnergy": 1800,
         "BuildCostMass": 360
       },
@@ -32750,18 +33034,18 @@
       "Description": "Gunship",
       "Economy": {
         "BuildTime": 2700,
-        "BuildCostEnergy": 10000,
-        "BuildCostMass": 500
+        "BuildCostEnergy": 8100,
+        "BuildCostMass": 450
       },
       "Air": {
         "MinAirspeed": 3,
-        "MaxAirspeed": 11
+        "MaxAirspeed": 15
       },
       "Defense": {
         "Health": 1800
       },
       "Physics": {
-        "Elevation": 18,
+        "Elevation": 12,
         "FuelRechargeRate": 10,
         "MaxSpeed": 0.5,
         "FuelUseTime": 600
@@ -32858,8 +33142,8 @@
         "MaxSpeed": 4
       },
       "Economy": {
-        "BuildTime": 1050,
-        "BuildCostEnergy": 1400,
+        "BuildTime": 840,
+        "BuildCostEnergy": 1200,
         "BuildCostMass": 230
       },
       "Description": "Hover Tank",
@@ -33340,20 +33624,19 @@
       "Description": "Mobile Anti-Air Cannon",
       "Economy": {
         "BuildTime": 800,
-        "BuildCostEnergy": 800,
-        "BuildCostMass": 160
+        "BuildCostEnergy": 2000,
+        "BuildCostMass": 300
       },
       "Intel": {
-        "VisionRadius": 22,
-        "RadarRadius": 52
+        "VisionRadius": 22
       },
       "Defense": {
-        "Health": 1000
+        "Health": 1700
       },
       "Physics": {
         "TurnRate": 120,
         "Elevation": 0.25,
-        "MaxSpeed": 2.6
+        "MaxSpeed": 3
       },
       "Id": "XSL0205",
       "Wreckage": {
@@ -33370,14 +33653,13 @@
       "Display": {
         "Abilities": [
           "Anti-Air",
-          "Hover",
-          "Radar"
+          "Hover"
         ]
       },
       "BuildIconSortPriority": 35,
       "Weapon": [
         {
-          "MaxRadius": 33,
+          "MaxRadius": 50,
           "RateOfFire": 0.5,
           "Damage": 0,
           "RackBones": [
@@ -33389,9 +33671,9 @@
           ]
         },
         {
-          "DamageRadius": 4,
-          "FiringRandomness": 2.5,
-          "RateOfFire": 2,
+          "DamageRadius": 1,
+          "FiringRandomness": 1.9,
+          "RateOfFire": 0.5,
           "RackBones": [
             {
               "MuzzleBones": [
@@ -33399,7 +33681,7 @@
               ]
             }
           ],
-          "Damage": 72,
+          "Damage": 300,
           "DamageType": "Normal",
           "TurretPitch": 35,
           "TurretPitchRange": 80,
@@ -33407,7 +33689,7 @@
           "TurretPitchSpeed": 180,
           "WeaponCategory": "Anti Air",
           "ProjectileId": "/projectiles/SAAOlarisAAArtillery02/SAAOlarisAAArtillery02_proj.bp",
-          "MuzzleVelocity": 20,
+          "MuzzleVelocity": 60,
           "RackFireTogether": false,
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoSize": 1,
@@ -33416,7 +33698,7 @@
           "ProjectileLifetimeUsesMultiplier": 1.25,
           "TurretYawRange": 180,
           "RackSalvoReloadTime": 0,
-          "FiringTolerance": 2,
+          "FiringTolerance": 1.5,
           "TurretYaw": 0,
           "MaxRadius": 40
         }
@@ -34316,7 +34598,7 @@
         "Classification": "RULEUC_MilitaryStructure"
       },
       "Economy": {
-        "BuildTime": 540,
+        "BuildTime": 600,
         "BuildCostMass": 400,
         "BuildCostEnergy": 4000
       },
@@ -34347,9 +34629,9 @@
       },
       "Weapon": [
         {
-          "DamageRadius": 4,
+          "DamageRadius": 3,
           "FiringRandomness": 2,
-          "RateOfFire": 1.4285714285714,
+          "RateOfFire": 0.5,
           "ProjectilesPerOnFire": 2,
           "RackBones": [
             {
@@ -34359,15 +34641,15 @@
               ]
             }
           ],
-          "Damage": 50,
+          "Damage": 150,
           "DamageType": "Normal",
           "TurretPitch": 35,
           "TurretPitchRange": 55,
           "DisplayName": "Olaris AA Artillery Cannon",
           "TurretPitchSpeed": 180,
-          "MaxRadius": 44,
+          "MaxRadius": 50,
           "ProjectileId": "/projectiles/SAAOlarisAAArtillery06/SAAOlarisAAArtillery06_proj.bp",
-          "MuzzleVelocity": 35,
+          "MuzzleVelocity": 60,
           "RackFireTogether": true,
           "RackSalvoChargeTime": 0,
           "MuzzleSalvoSize": 2,
@@ -34972,7 +35254,8 @@
         "MaintenanceConsumptionPerSecondEnergy": 200
       },
       "Intel": {
-        "SonarRadius": 348,
+        "SonarRadius": 350,
+        "WaterVisionRadius": 70,
         "VisionRadius": 24
       },
       "Defense": {
@@ -34992,7 +35275,7 @@
       "Physics": {
         "TurnRate": 60,
         "Elevation": -2,
-        "MaxSpeed": 2.8
+        "MaxSpeed": 3.5
       },
       "BuildIconSortPriority": 190
     },
@@ -35089,29 +35372,12 @@
           "ShieldRegenRate": 25,
           "Icon": "sp",
           "Slot": "Back",
-          "ShieldRegenStartTime": 3,
           "MaintenanceConsumptionPerSecondEnergy": 170,
+          "ShieldRegenStartTime": 3,
           "BuildCostMass": 1000,
-          "Name": "Personal Shield Generator",
           "ShieldRechargeTime": 60,
+          "Name": "Ultra-Light Personal Shield",
           "ShieldMaxHealth": 5000
-        },
-        "EngineeringThroughput": {
-          "Slot": "RCH",
-          "NewBuildRate": 98,
-          "BuildTime": 1008,
-          "Name": "Rapid Fabricator",
-          "Icon": "efm",
-          "BuildCostMass": 410,
-          "BuildCostEnergy": 10000
-        },
-        "Missile": {
-          "Slot": "Back",
-          "BuildCostEnergy": 46000,
-          "BuildTime": 3920,
-          "Name": "Tactical Missile Launcher",
-          "BuildCostMass": 1500,
-          "Icon": "tmu"
         },
         "Teleporter": {
           "Slot": "LCH",
@@ -35122,11 +35388,50 @@
           "BuildCostMass": 15000,
           "Icon": "pqt"
         },
+        "EngineeringThroughput": {
+          "Slot": "RCH",
+          "NewBuildRate": 98,
+          "BuildTime": 1008,
+          "BuildIconSortPriority": 30,
+          "Name": "Rapid Fabricator",
+          "Icon": "efm",
+          "BuildCostMass": 410,
+          "BuildCostEnergy": 10000
+        },
+        "SensorRangeEnhancer": {
+          "NewOmniRadius": 40,
+          "BuildCostEnergy": 20000,
+          "BuildTime": 3360,
+          "Icon": "sre",
+          "Name": "Enhanced Sensor System",
+          "MaintenanceConsumptionPerSecondEnergy": 50,
+          "Slot": "LCH",
+          "BuildCostMass": 300
+        },
+        "ResourceAllocation": {
+          "Slot": "Back",
+          "ProductionPerSecondMass": 10,
+          "BuildCostEnergy": 90000,
+          "BuildTime": 8400,
+          "Name": "Resource Allocation System",
+          "Icon": "ras",
+          "ProductionPerSecondEnergy": 1000,
+          "BuildCostMass": 4500
+        },
+        "Missile": {
+          "Slot": "Back",
+          "BuildCostEnergy": 46000,
+          "BuildTime": 3920,
+          "Name": "Tactical Missile Launcher",
+          "BuildCostMass": 1500,
+          "Icon": "tmu"
+        },
         "RapidFire": {
           "Slot": "RCH",
           "BuildCostEnergy": 12500,
-          "BuildTime": 5040,
           "Icon": "cba",
+          "BuildTime": 5040,
+          "BuildIconSortPriority": 10,
           "Name": "Rapid Fire",
           "BuildCostMass": 1250,
           "NewMaxRadius": 35,
@@ -35140,35 +35445,34 @@
           "BuildCostEnergy": 97300,
           "Icon": "oc"
         },
-        "ResourceAllocation": {
+        "HealthField": {
+          "Slot": "RCH",
+          "BuildCostEnergy": 25000,
+          "BuildCostMass": 1000,
+          "BuildTime": 2800,
+          "MaintenanceConsumptionPerSecondEnergy": 250,
+          "Name": "Vitality Field",
+          "Icon": "health_aura",
+          "BuildIconSortPriority": 20
+        },
+        "RegenField": {
+          "BuildCostEnergy": 30000,
+          "BuildTime": 3360,
+          "MaintenanceConsumptionPerSecondEnergy": 500,
+          "Icon": "regen_aura",
           "Slot": "Back",
-          "ProductionPerSecondMass": 10,
-          "BuildCostEnergy": 90000,
-          "BuildTime": 8400,
-          "Name": "Resource Allocation System",
-          "Icon": "ras",
-          "ProductionPerSecondEnergy": 1000,
-          "BuildCostMass": 4500
+          "Name": "Restoration Field",
+          "BuildCostMass": 2500
         },
         "DamageStabilization": {
           "Slot": "Back",
           "BuildCostEnergy": 35000,
           "BuildTime": 5600,
           "Name": "Nano-Repair System",
-          "NewHealth": 7500,
+          "NewHealth": 8000,
           "BuildCostMass": 2000,
           "Icon": "dss",
           "NewRegenRate": 175
-        },
-        "SensorRangeEnhancer": {
-          "NewOmniRadius": 40,
-          "Slot": "LCH",
-          "BuildCostEnergy": 20000,
-          "BuildTime": 3360,
-          "Name": "Enhanced Sensor System",
-          "MaintenanceConsumptionPerSecondEnergy": 50,
-          "Icon": "sre",
-          "BuildCostMass": 300
         }
       },
       "Economy": {
@@ -35192,7 +35496,7 @@
         "WaterVisionRadius": 24
       },
       "Defense": {
-        "Health": 14500,
+        "Health": 14000,
         "RegenRate": 25
       },
       "Id": "XSL0301",
@@ -36491,10 +36795,10 @@
       "Economy": {
         "BuildTime": 3600,
         "BuildCostEnergy": 9600,
-        "BuildCostMass": 720
+        "BuildCostMass": 800
       },
       "Defense": {
-        "Health": 1800
+        "Health": 3300
       },
       "Physics": {
         "TurnRate": 75,
@@ -36622,23 +36926,18 @@
         "BuildCostMass": 1750
       },
       "BuildIconSortPriority": 40,
-      "StrategicIconName": "icon_bomber3_directfire",
       "Physics": {
         "Elevation": 18,
         "FuelRechargeRate": 15,
         "MaxSpeed": 0.5,
         "FuelUseTime": 1500
       },
-      "Intel": {
-        "RadarRadius": 64,
-        "VisionRadius": 32
-      },
       "Air": {
-        "TurnSpeed": 0.8,
+        "TurnSpeed": 1.2,
         "MaxAirspeed": 17,
         "EngageDistance": 50,
         "MinAirspeed": 15,
-        "CombatTurnSpeed": 0.8
+        "CombatTurnSpeed": 1.2
       },
       "Defense": {
         "Health": 3900
@@ -36647,6 +36946,10 @@
       "Wreckage": {
         "HealthMult": 0.9,
         "MassMult": 0.9
+      },
+      "Intel": {
+        "RadarRadius": 64,
+        "VisionRadius": 32
       },
       "Veteran": {
         "Level2": 24,
@@ -36661,7 +36964,12 @@
           "Radar"
         ]
       },
+      "StrategicIconName": "icon_bomber3_directfire",
       "Weapon": [
+        {
+          "RateOfFire": 0,
+          "MaxRadius": 64
+        },
         {
           "DamageRadius": 6,
           "FiringRandomness": 0,
@@ -36673,7 +36981,6 @@
               ]
             }
           ],
-          "Damage": 3000,
           "DamageType": "Normal",
           "DisplayName": "Zhanasee Strategic Bomb",
           "WeaponCategory": "Bomb",
@@ -36684,8 +36991,9 @@
           "MuzzleSalvoSize": 1,
           "MuzzleSalvoDelay": 0,
           "FiringTolerance": 6,
+          "MaxRadius": 90,
           "RackSalvoReloadTime": 0,
-          "MaxRadius": 90
+          "Damage": 3000
         },
         {
           "DamageRadius": 2,
@@ -36779,10 +37087,10 @@
       },
       "Economy": {
         "BuildTime": 2875,
+        "BuildCostMass": 4600,
         "MaintenanceConsumptionPerSecondEnergy": 54,
         "ProductionPerSecondMass": 18,
-        "BuildCostEnergy": 31625,
-        "BuildCostMass": 4600
+        "BuildCostEnergy": 31625
       },
       "Physics": {},
       "Defense": {
@@ -36968,7 +37276,7 @@
         {
           "Damage": 5000,
           "WeaponCategory": "Death",
-          "DamageRadius": 14,
+          "DamageRadius": 10,
           "DamageType": "DeathExplosion",
           "DisplayName": "Death Weapon"
         }
@@ -37897,10 +38205,10 @@
       "StrategicIconName": "icon_structure3_transport",
       "BuildIconSortPriority": 220,
       "Economy": {
-        "BuildTime": 4097,
+        "BuildTime": 1950,
         "BuildRate": 150,
-        "BuildCostEnergy": 30000,
-        "BuildCostMass": 3000
+        "BuildCostEnergy": 24000,
+        "BuildCostMass": 1200
       },
       "Description": "Quantum Gateway",
       "Defense": {
